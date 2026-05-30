@@ -5,7 +5,8 @@ const de = {
   back: 'Zurück',
   continue: 'Fortfahren',
   contactRoland: 'Roland kontaktieren',
-  imageNotice: '',
+  imageNotice:
+    'Die Bilder werden som visuelle Beispiele verwendet. Sie müssen vor einer eventuellen Veröffentlichung durch eigene eller lizensierte Bilder ersetzt werden.',
   privacyNotice:
     'Wenn Sie das Formular senden, werden Name, E-Mail und Nachricht über Formspree übermittelt. Die Angaben werden nur zur Beantwortung der Anfrage verwendet.',
   languages: {
@@ -21,23 +22,23 @@ const de = {
     kicker: '',
     title: 'Persönliche Erlebnisse auf Senja',
     description:
-      'Senja Explorer & Services wird von Roland Henriksen betrieben. Mit lokaler Kenntnis der Natur, des Wetters und der Menschen auf Senja kann er kleine, persönliche Erlebnisse und praktische Details organisieren.',
+      'Senja Explorer & Services wird von Roland Henriksen betrieben. Mit lokaler Kenntnis der Natur, des Wetters und der Akteure auf Senja kann er zu persönlichen Erlebnissen und praktischer Organisation beitragen.',
   },
   summerPage: {
     kicker: 'Sommer auf Senja',
-    title: 'Kleine Bootstouren nah an der Natur',
+    title: 'Bootstouren nah an der Natur',
     description:
-      'Persönliche Bootstouren für bis zu zwei Personen. Die Tour kann an Wetter, Bedingungen und Wünsche angepasst werden. Wenn möglich, können Angeln und einfache Zubereitung von Essen Teil des Erlebnisses sein.',
+      'Persönliche Bootstouren für bis zu zwei Personen. Die Tour wird an Wetter, Bedingungen und Wünsche angepasst. Wenn die Bedingungen es zulassen, kann geangelt und einfaches Essen zubereitet werden.',
     network:
-      'Roland kann auch Kontakte zu lokalen Anbietern für Transport, Unterkunft und Essen vermitteln.',
+      'Roland kann bei der Kontaktaufnahme mit lokalen Akteuren für Transport, Unterkunft und Verpflegung behilflich sein.',
   },
   winterPage: {
     kicker: 'Winter auf Senja',
     title: 'Bergtouren, Stille und Winterlicht',
     description:
-      'Im Winter kann Roland Bergtouren für Gruppen arrangieren oder vermitteln, mit Fokus auf Natur, Stille, Aussicht und lokale Erlebnisse.',
+      'Im Winter kann Roland Bergtouren für Gruppen arrangieren oder vermitteln, mit Fokus auf Natur, Stille, Aussicht und gute lokale Erlebnisse.',
     network:
-      'Über lokale Kontakte kann das Erlebnis mit Transport, Unterkunft, Essen und weiterer praktischer Organisation kombiniert werden.',
+      'Über lokale Kontakte kann die Tour mit Transport, Unterkunft, Verpflegung und weiterer praktischer Organisation kombiniert werden.',
   },
   contactForm: {
     kicker: 'Nachricht senden',
