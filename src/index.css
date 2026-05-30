@@ -321,13 +321,53 @@ button {
   text-wrap: balance;
 }
 
-.season-page-content > p:last-child {
+.season-page-content > p:not(.season-kicker) {
   max-width: 500px;
   margin: 22px 0 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(15px, 1.8vw, 18px);
   line-height: 1.65;
   color: rgba(247, 241, 231, 0.70);
+}
+
+.season-network {
+  max-width: 520px;
+  margin-top: 18px;
+  color: rgba(247, 241, 231, 0.58);
+}
+
+.season-about {
+  max-width: 560px;
+  margin-top: clamp(28px, 5vw, 48px);
+  padding-left: 18px;
+  border-left: 1px solid rgba(247, 241, 231, 0.22);
+}
+
+.season-about p:first-child {
+  margin: 0 0 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(247, 241, 231, 0.48);
+}
+
+.season-about h3 {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  color: rgba(255, 250, 240, 0.86);
+}
+
+.season-about p:last-child {
+  max-width: 540px;
+  margin: 12px 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(13px, 1.5vw, 15px);
+  line-height: 1.6;
+  color: rgba(247, 241, 231, 0.58);
 }
 
 .contact-link {
@@ -470,6 +510,14 @@ button {
 .contact-form__submit:focus-visible {
   background: rgba(247, 241, 231, 0.18);
   border-color: rgba(247, 241, 231, 0.52);
+}
+
+.contact-form__privacy {
+  margin: 14px 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1.45;
+  color: rgba(247, 241, 231, 0.48);
 }
 
 .image-notice {

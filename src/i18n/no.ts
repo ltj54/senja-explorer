@@ -5,6 +5,8 @@ const no = {
   back: 'Tilbake',
   contactRoland: 'Kontakt Roland',
   imageNotice: 'Bildene er lånt fra internett og kan ikke brukes dersom siden går live.',
+  privacyNotice:
+    'Når du sender skjemaet, sendes navn, e-post og melding via Formspree. Opplysningene brukes kun til å svare på henvendelsen.',
   languages: {
     no: 'Norsk',
     en: 'English',
@@ -14,17 +16,27 @@ const no = {
     summer: 'Sommer',
     winter: 'Vinter',
   },
+  about: {
+    kicker: 'Lokal kjennskap',
+    title: 'Personlige opplevelser på Senja',
+    description:
+      'Senja Explorer & Services drives av Roland Henriksen. Med lokal kjennskap til naturen, været og aktører på Senja kan han bidra med små, personlige opplevelser og praktisk tilrettelegging.',
+  },
   summerPage: {
     kicker: 'Sommer på Senja',
-    title: 'Rolige dager ved havet',
+    title: 'Små båtturer tett på naturen',
     description:
-      'Sommeropplevelser, båtturer og natur på Senja. Her kan vi senere legge inn bilder, turer, kontakt og praktisk informasjon.',
+      'Personlige båtturer for inntil to personer. Turen kan tilpasses vær, forhold og ønsker. Ved anledning kan det fiskes, og enkel mat kan lages underveis.',
+    network:
+      'Roland kan også hjelpe med kontakt mot lokale aktører for transport, overnatting og mat.',
   },
   winterPage: {
     kicker: 'Vinter på Senja',
-    title: 'Snø, stillhet og nordlys',
+    title: 'Fjellturer, stillhet og vinterlys',
     description:
-      'Vinteropplevelser med dempet stemning, mørke kvelder og nordlys. Her kan vi senere legge inn turforslag, bilder og kontaktinformasjon.',
+      'Om vinteren kan Roland arrangere eller formidle fjellturer for grupper, med fokus på natur, stillhet, utsikt og gode lokale opplevelser.',
+    network:
+      'Gjennom lokale kontakter kan turen kombineres med transport, overnatting, mat og annen praktisk tilrettelegging.',
   },
   contactForm: {
     kicker: 'Send en melding',

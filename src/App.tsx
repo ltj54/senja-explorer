@@ -60,6 +60,12 @@ function App() {
             <p className="season-kicker">{text.summerPage.kicker}</p>
             <h2>{text.summerPage.title}</h2>
             <p>{text.summerPage.description}</p>
+            <p className="season-network">{text.summerPage.network}</p>
+            <aside className="season-about" aria-label={text.about.kicker}>
+              <p>{text.about.kicker}</p>
+              <h3>{text.about.title}</h3>
+              <p>{text.about.description}</p>
+            </aside>
           </div>
         </section>
       )}
@@ -70,6 +76,12 @@ function App() {
             <p className="season-kicker">{text.winterPage.kicker}</p>
             <h2>{text.winterPage.title}</h2>
             <p>{text.winterPage.description}</p>
+            <p className="season-network">{text.winterPage.network}</p>
+            <aside className="season-about" aria-label={text.about.kicker}>
+              <p>{text.about.kicker}</p>
+              <h3>{text.about.title}</h3>
+              <p>{text.about.description}</p>
+            </aside>
           </div>
         </section>
       )}
@@ -125,6 +137,8 @@ function App() {
             <button className="contact-form__submit" type="submit">
               {text.contactForm.submit}
             </button>
+
+            <p className="contact-form__privacy">{text.privacyNotice}</p>
           </form>
         </div>
       )}
