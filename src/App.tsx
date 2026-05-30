@@ -7,7 +7,30 @@ function App() {
   const [language, setLanguage] = useState<Language>('no')
   const [page, setPage] = useState<Page>('home')
   const [isContactOpen, setIsContactOpen] = useState(false)
+  const [scrollOpacity, setScrollOpacity] = useState(1)
   const text = translations[language]
+
+  // Håndter bakgrunns-fade ved scrolling
+  useEffect(() => {
+    const handleScroll = (e: Event) => {
+      const target = e.target as HTMLElement
+      if (target.classList?.contains('season-page')) {
+        const scrollTop = target.scrollTop
+        const vh = window.innerHeight
+        // Fader ut over en lengre distanse (1.5 x vh) for en mer langsom effekt
+        const opacity = Math.max(0, 1 - scrollTop / (vh * 1.5))
+        setScrollOpacity(opacity)
+      }
+    }
+
+    // Finn alle season-page elementer og legg til lytter
+    const scrollContainers = document.querySelectorAll('.season-page')
+    scrollContainers.forEach(container => container.addEventListener('scroll', handleScroll))
+    
+    return () => {
+      scrollContainers.forEach(container => container.removeEventListener('scroll', handleScroll))
+    }
+  }, [page]) // Re-bind når vi bytter side
 
   // Synkroniser med nettleserens frem/tilbake-knapper
   useEffect(() => {
@@ -75,6 +98,11 @@ function App() {
 
       {page === 'summer' && (
         <section className="season-page season-page--summer">
+          <div 
+            className="season-page-background" 
+            style={{ opacity: scrollOpacity }} 
+            aria-hidden="true" 
+          />
           <div className="season-page-panel season-page-panel--content">
             <div className="season-page-content">
               <p className="season-kicker">{text.summerPage.kicker}</p>
@@ -117,6 +145,11 @@ function App() {
 
       {page === 'winter' && (
         <section className="season-page season-page--winter">
+          <div 
+            className="season-page-background" 
+            style={{ opacity: scrollOpacity }} 
+            aria-hidden="true" 
+          />
           <div className="season-page-panel season-page-panel--content">
             <div className="season-page-content">
               <p className="season-kicker">{text.winterPage.kicker}</p>

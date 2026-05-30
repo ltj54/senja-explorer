@@ -305,20 +305,24 @@ button {
   padding-bottom: clamp(60px, 10vh, 120px);
 }
 
-.season-page::before {
-  content: '';
+.season-page-background {
   position: fixed;
   inset: 0;
   z-index: -3;
   background-size: cover;
   background-position: center;
+  transition: opacity 800ms ease-out; /* Lengre overgang for en mykere følelse */
 }
 
-.site-page--summer .season-page::before {
+.season-page--summer .season-page-background {
+  background-image: url('./assets/summer.png');
+  filter: saturate(0.88) brightness(0.82) contrast(0.96);
   transform: scale(1.15);
 }
 
-.site-page--winter .season-page::before {
+.season-page--winter .season-page-background {
+  background-image: url('./assets/winter.png');
+  filter: saturate(0.42) brightness(0.78) contrast(1.02);
   transform: scale(1.22) translateY(-16px);
 }
 
@@ -335,18 +339,6 @@ button {
     rgba(16, 22, 18, 0.95) 85%,
     #101612 100%
   );
-}
-
-.season-page--summer::before {
-  background-image: url('./assets/summer.png');
-  filter: saturate(0.88) brightness(0.82) contrast(0.96);
-  background-position: center;
-}
-
-.season-page--winter::before {
-  background-image: url('./assets/winter.png');
-  filter: saturate(0.42) brightness(0.78) contrast(1.02);
-  background-position: center;
 }
 
 .season-page-content {
@@ -718,6 +710,59 @@ button {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes notice-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-in {
+  0% {
+    opacity: 0;
+    transform: translateZ(-280px) rotateX(7deg) scale(0.78);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateZ(0) rotateX(0) scale(1);
+  }
+}
+
+@keyframes season-page-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contact-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contact-form-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
