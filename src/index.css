@@ -673,36 +673,41 @@ button {
 
 @media (max-width: 760px) {
   .site-page--home {
-    align-items: end;
-    padding-top: 88px;
-    padding-bottom: 120px;
+    align-items: center; /* Endret fra end for bedre sentrering på mobil */
+    padding: 20px;
   }
 
   .season-choices {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
+    width: 100%;
+    max-width: 320px; /* Begrenser bredden for et smalere uttrykk */
   }
 
   .season-choice {
-    min-height: 34vh;
+    min-height: 180px; /* Betydelig mindre bokser på mobil */
+    padding: 0;
   }
 
   .season-choice span {
-    min-width: 6.6em;
-    font-size: clamp(30px, 12vw, 54px);
+    min-width: 7em;
+    padding: 10px 20px;
+    font-size: 20px; /* Mindre skrift på mobil */
+    letter-spacing: 0.06em;
+    transform: translateY(0);
   }
 
   .season-page {
-    padding: 108px 22px 132px;
+    padding: 80px 20px 100px;
   }
 
   .season-page h2 {
-    font-size: clamp(38px, 15vw, 66px);
+    font-size: clamp(32px, 10vw, 48px);
   }
 
   .contact-link {
     right: 16px;
-    bottom: 72px;
+    bottom: 24px;
   }
 
   .image-notice {

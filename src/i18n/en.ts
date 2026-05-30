@@ -27,9 +27,9 @@ const en = {
     kicker: 'Summer on Senja',
     title: 'Boat trips close to nature',
     description:
-      'Personal boat trips for up to two people. The trip is adapted to weather, conditions and wishes. When conditions allow, fishing and simple food preparation can be part of the experience.',
+      'Personal boat trips for up to two people. The trip is adapted to weather, conditions and wishes. When conditions allow, fishing and simple food preparation can be part of the experience. (text and images coming soon)',
     network:
-      'Roland can help with contact towards local partners for transport, accommodation and food.',
+      'Roland can help with practical arrangements and contact with local partners for transport, accommodation and food.',
   },
   winterPage: {
     kicker: 'Winter on Senja',

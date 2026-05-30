@@ -29,13 +29,13 @@ const no = {
     description:
         'Personlige båtturer for inntil to personer. Turen tilpasses vær, forhold og ønsker. Når forholdene ligger til rette for det, kan det fiskes, og enkel mat kan lages underveis.',
     network:
-        'Roland kan hjelpe med kontakt mot lokale aktører for transport, overnatting og mat.',
+        'Roland kan hjelpe med praktisk tilrettelegging og kontakt med lokale aktører innen transport, overnatting og mat.'
   },
   winterPage: {
     kicker: 'Vinter på Senja',
     title: 'Fjellturer, stillhet og vinterlys',
     description:
-        'Om vinteren kan Roland arrangere eller formidle fjellturer for grupper, med fokus på natur, stillhet, utsikt og gode lokale opplevelser.',
+        'Om vinteren kan Roland arrangere eller formidle fjellturer for grupper, med fokus på natur, stillhet, utsikt og gode lokale opplevelser. (tekst og bilder kommer)',
     network:
         'Gjennom lokale kontakter kan turen kombineres med transport, overnatting, mat og annen praktisk tilrettelegging.',
   },
