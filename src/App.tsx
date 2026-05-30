@@ -24,15 +24,17 @@ function App() {
         ))}
       </nav>
 
-      <nav className="season-choices" aria-label={text.chooseSeason}>
-        <a className="season-choice season-choice--summer" href="#summer">
+      <section className="season-choices" aria-label={text.chooseSeason}>
+        <button className="season-choice season-choice--summer" type="button">
           <span>{text.seasons.summer}</span>
-        </a>
+        </button>
 
-        <a className="season-choice season-choice--winter" href="#winter">
+        <button className="season-choice season-choice--winter" type="button">
           <span>{text.seasons.winter}</span>
-        </a>
-      </nav>
+        </button>
+      </section>
+
+      <p className="image-notice">{text.imageNotice}</p>
     </main>
   )
 }
