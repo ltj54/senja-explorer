@@ -3,8 +3,8 @@ const de = {
   chooseLanguage: 'Sprache wählen',
   chooseSeason: 'Jahreszeit wählen',
   back: 'Zurück',
-  contactRoland: 'Roland kontaktieren',
-  imageNotice: 'Die Bilder stammen aus dem Internet und dürfen nicht verwendet werden, wenn die Seite live geht.',
+  contactRoland: 'Roland kontaktieren (Lokaler Guide)',
+  imageNotice: '',
   privacyNotice:
     'Wenn Sie das Formular senden, werden Name, E-Mail und Nachricht über Formspree übermittelt. Die Angaben werden nur zur Beantwortung der Anfrage verwendet.',
   languages: {
@@ -17,7 +17,7 @@ const de = {
     winter: 'Winter',
   },
   about: {
-    kicker: 'Lokale Kenntnis',
+    kicker: '',
     title: 'Persönliche Erlebnisse auf Senja',
     description:
       'Senja Explorer & Services wird von Roland Henriksen betrieben. Mit lokaler Kenntnis der Natur, des Wetters und der Menschen auf Senja kann er kleine, persönliche Erlebnisse und praktische Details organisieren.',

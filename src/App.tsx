@@ -61,8 +61,8 @@ function App() {
             <h2>{text.summerPage.title}</h2>
             <p>{text.summerPage.description}</p>
             <p className="season-network">{text.summerPage.network}</p>
-            <aside className="season-about" aria-label={text.about.kicker}>
-              <p>{text.about.kicker}</p>
+            <aside className="season-about" aria-label={text.about.title}>
+              {text.about.kicker && <p>{text.about.kicker}</p>}
               <h3>{text.about.title}</h3>
               <p>{text.about.description}</p>
             </aside>
@@ -77,8 +77,8 @@ function App() {
             <h2>{text.winterPage.title}</h2>
             <p>{text.winterPage.description}</p>
             <p className="season-network">{text.winterPage.network}</p>
-            <aside className="season-about" aria-label={text.about.kicker}>
-              <p>{text.about.kicker}</p>
+            <aside className="season-about" aria-label={text.about.title}>
+              {text.about.kicker && <p>{text.about.kicker}</p>}
               <h3>{text.about.title}</h3>
               <p>{text.about.description}</p>
             </aside>
@@ -143,7 +143,7 @@ function App() {
         </div>
       )}
 
-      <p className="image-notice">{text.imageNotice}</p>
+      {text.imageNotice && <p className="image-notice">{text.imageNotice}</p>}
     </main>
   )
 }
