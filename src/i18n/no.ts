@@ -5,6 +5,11 @@ const no = {
   back: 'Tilbake',
   continue: 'Fortsett',
   contactRoland: 'Kontakt Roland',
+  contactRolandContext: 'Din lokale guide på Senja',
+  homeIntro: {
+    kicker: 'Personlige turer og praktisk tilrettelegging',
+    tagline: 'Båtturer, fjellturer og lokale opplevelser tilpasset vær, sesong og ønsker.',
+  },
   imageNotice: '',
   privacyNotice:
       'Når du sender skjemaet, sendes navn, e-post og melding via Formspree. Opplysningene brukes kun til å svare på henvendelsen.',

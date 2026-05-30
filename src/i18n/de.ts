@@ -5,6 +5,11 @@ const de = {
   back: 'Zurück',
   continue: 'Fortfahren',
   contactRoland: 'Roland kontaktieren',
+  contactRolandContext: 'Ihr lokaler Guide auf Senja',
+  homeIntro: {
+    kicker: 'Persönliche Touren und praktische Organisation',
+    tagline: 'Bootstouren, Bergtouren und lokale Erlebnisse, angepasst an Wetter, Saison und Wünsche.',
+  },
   imageNotice: '',
   privacyNotice:
     'Wenn Sie das Formular senden, werden Name, E-Mail und Nachricht über Formspree übermittelt. Die Angaben werden nur zur Beantwortung der Anfrage verwendet.',

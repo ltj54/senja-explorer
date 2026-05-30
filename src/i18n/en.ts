@@ -5,6 +5,11 @@ const en = {
   back: 'Back',
   continue: 'Continue',
   contactRoland: 'Contact Roland',
+  contactRolandContext: 'Your local guide on Senja',
+  homeIntro: {
+    kicker: 'Personal trips and practical arrangements',
+    tagline: 'Boat trips, mountain walks and local experiences adapted to weather, season and wishes.',
+  },
   imageNotice: '',
   privacyNotice:
     'When you submit the form, your name, email and message are sent via Formspree. The information is only used to respond to your inquiry.',

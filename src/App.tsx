@@ -86,23 +86,31 @@ function App() {
       )}
 
       {page === 'home' && (
-        <section className="season-choices" aria-label={text.chooseSeason}>
-          <button
-            className="season-choice season-choice--summer"
-            type="button"
-            onClick={() => navigateTo('summer')}
-          >
-            <span>{text.seasons.summer}</span>
-          </button>
+        <>
+          <section className="home-intro" aria-label={text.siteName}>
+            <p>{text.homeIntro.kicker}</p>
+            <h2>{text.siteName}</h2>
+            <p>{text.homeIntro.tagline}</p>
+          </section>
 
-          <button
-            className="season-choice season-choice--winter"
-            type="button"
-            onClick={() => navigateTo('winter')}
-          >
-            <span>{text.seasons.winter}</span>
-          </button>
-        </section>
+          <section className="season-choices" aria-label={text.chooseSeason}>
+            <button
+              className="season-choice season-choice--summer"
+              type="button"
+              onClick={() => navigateTo('summer')}
+            >
+              <span>{text.seasons.summer}</span>
+            </button>
+
+            <button
+              className="season-choice season-choice--winter"
+              type="button"
+              onClick={() => navigateTo('winter')}
+            >
+              <span>{text.seasons.winter}</span>
+            </button>
+          </section>
+        </>
       )}
 
       {page === 'summer' && (
@@ -205,7 +213,8 @@ function App() {
           type="button"
           onClick={() => setIsContactOpen(true)}
         >
-          {text.contactRoland}
+          <span>{text.contactRoland}</span>
+          <small>{text.contactRolandContext}</small>
         </button>
       )}
 
