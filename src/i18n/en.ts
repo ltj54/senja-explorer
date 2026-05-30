@@ -5,8 +5,7 @@ const en = {
   back: 'Back',
   continue: 'Continue',
   contactRoland: 'Contact Roland',
-  imageNotice:
-    'The images are used as visual examples. They must be replaced with your own or licensed images before any publication.',
+  imageNotice: '',
   privacyNotice:
     'When you submit the form, your name, email and message are sent via Formspree. The information is only used to respond to your inquiry.',
   languages: {

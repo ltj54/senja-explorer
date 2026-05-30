@@ -5,8 +5,7 @@ const de = {
   back: 'Zurück',
   continue: 'Fortfahren',
   contactRoland: 'Roland kontaktieren',
-  imageNotice:
-    'Die Bilder werden som visuelle Beispiele verwendet. Sie müssen vor einer eventuellen Veröffentlichung durch eigene eller lizensierte Bilder ersetzt werden.',
+  imageNotice: '',
   privacyNotice:
     'Wenn Sie das Formular senden, werden Name, E-Mail und Nachricht über Formspree übermittelt. Die Angaben werden nur zur Beantwortung der Anfrage verwendet.',
   languages: {

@@ -5,8 +5,7 @@ const no = {
   back: 'Tilbake',
   continue: 'Fortsett',
   contactRoland: 'Kontakt Roland',
-  imageNotice:
-      'Bildene er brukt som visuelle eksempelbilder. De må byttes ut med egne eller lisensierte bilder før en eventuell publisering.',
+  imageNotice: '',
   privacyNotice:
       'Når du sender skjemaet, sendes navn, e-post og melding via Formspree. Opplysningene brukes kun til å svare på henvendelsen.',
   languages: {
