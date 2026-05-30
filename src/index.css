@@ -60,30 +60,54 @@ button {
   background: #101612;
 }
 
-.site-page--home::before,
-.site-page--home::after {
-  content: '';
-  position: absolute;
+.home-background {
+  position: fixed;
   inset: 0;
   z-index: 0;
-  background-position: center;
   background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: home-crossfade 24s linear infinite;
 }
 
-.site-page--home::before {
+.home-background--spring {
+  background-image:
+    linear-gradient(rgba(8, 15, 12, 0.20), rgba(8, 15, 12, 0.50)),
+    url('./assets/spring.png');
+  transform: scale(1);
+  animation-delay: 0s;
+}
+
+.home-background--summer {
   background-image:
     linear-gradient(rgba(8, 15, 12, 0.22), rgba(8, 15, 12, 0.52)),
     url('./assets/summer.png');
-  transform: scale(1.15);
+  transform: scale(1);
+  animation-delay: 6s;
 }
 
-.site-page--home::after {
+.home-background--autumn {
+  background-image:
+    linear-gradient(rgba(8, 15, 12, 0.20), rgba(8, 15, 12, 0.54)),
+    url('./assets/atumn.png');
+  transform: scale(1);
+  animation-delay: 12s;
+}
+
+.home-background--winter {
   background-image:
     linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.56)),
     url('./assets/winter.png');
-  opacity: 0;
-  transform: scale(1.22) translateY(-16px);
-  animation: home-season-glide 18s ease-in-out infinite alternate;
+  transform: scale(1);
+  animation-delay: 18s;
+}
+
+@keyframes home-crossfade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }  /* Bruker mer tid på å bli fullt synlig */
+  40% { opacity: 1; }  /* Holdes synlig lenger */
+  60% { opacity: 0; }  /* Veldig langsom uttoning som overlapper neste bilde */
+  100% { opacity: 0; }
 }
 
 .language-switcher {
@@ -317,13 +341,13 @@ button {
 .season-page--summer .season-page-background {
   background-image: url('./assets/summer.png');
   filter: saturate(0.88) brightness(0.82) contrast(0.96);
-  transform: scale(1.15);
+  transform: scale(1);
 }
 
 .season-page--winter .season-page-background {
   background-image: url('./assets/winter.png');
   filter: saturate(0.42) brightness(0.78) contrast(1.02);
-  transform: scale(1.22) translateY(-16px);
+  transform: scale(1); /* Nå helt lik sommersiden */
 }
 
 .season-page::after {
@@ -684,20 +708,6 @@ button {
   .image-notice {
     right: 16px;
     bottom: 14px;
-  }
-}
-
-@keyframes home-season-glide {
-  0% {
-    opacity: 0;
-  }
-
-  45% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
   }
 }
 

@@ -55,6 +55,15 @@ function App() {
     <main className={`site-page site-page--${page}`} aria-label={text.siteName}>
       <h1 className="sr-only">{text.siteName}</h1>
 
+      {page === 'home' && (
+        <>
+          <div className="home-background home-background--spring" aria-hidden="true" />
+          <div className="home-background home-background--summer" aria-hidden="true" />
+          <div className="home-background home-background--autumn" aria-hidden="true" />
+          <div className="home-background home-background--winter" aria-hidden="true" />
+        </>
+      )}
+
       <nav className="language-switcher" aria-label={text.chooseLanguage}>
         {languages.map((languageCode) => (
           <button
