@@ -4,7 +4,7 @@ const en = {
   chooseSeason: 'Choose season',
   back: 'Back',
   continue: 'Continue',
-  contactRoland: 'Contact Roland (Local Guide)',
+  contactRoland: 'Contact Roland',
   imageNotice: '',
   privacyNotice:
     'When you submit the form, your name, email and message are sent via Formspree. The information is only used to respond to your inquiry.',

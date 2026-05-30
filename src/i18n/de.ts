@@ -4,7 +4,7 @@ const de = {
   chooseSeason: 'Jahreszeit wählen',
   back: 'Zurück',
   continue: 'Fortfahren',
-  contactRoland: 'Roland kontaktieren (Lokaler Guide)',
+  contactRoland: 'Roland kontaktieren',
   imageNotice: '',
   privacyNotice:
     'Wenn Sie das Formular senden, werden Name, E-Mail und Nachricht über Formspree übermittelt. Die Angaben werden nur zur Beantwortung der Anfrage verwendet.',

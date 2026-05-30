@@ -486,6 +486,25 @@ button {
   margin-top: 32px;
 }
 
+/* Skjul tekst som standard i about-panelet */
+.season-page-panel--about .season-network,
+.season-page-panel--about .season-about {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  pointer-events: none;
+}
+
+/* Vis tekst når man holder over knappen eller panelet i about-seksjonen */
+.season-page-panel--about:has(.contact-link:hover) .season-network,
+.season-page-panel--about:has(.contact-link:hover) .season-about,
+.season-page-panel--about:has(.contact-link:focus-visible) .season-network,
+.season-page-panel--about:has(.contact-link:focus-visible) .season-about {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 .contact-link:hover,
 .contact-link:focus-visible {
   color: #fffaf0;

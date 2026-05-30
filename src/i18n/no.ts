@@ -4,7 +4,7 @@ const no = {
   chooseSeason: 'Velg årstid',
   back: 'Tilbake',
   continue: 'Fortsett',
-  contactRoland: 'Kontakt Roland (Lokal guide)',
+  contactRoland: 'Kontakt Roland',
   imageNotice: '',
   privacyNotice:
     'Når du sender skjemaet, sendes navn, e-post og melding via Formspree. Opplysningene brukes kun til å svare på henvendelsen.',

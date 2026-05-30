@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { languageLabels, languages, translations, type Language } from './i18n'
 
 type Page = 'home' | 'summer' | 'winter'
@@ -8,6 +8,25 @@ function App() {
   const [page, setPage] = useState<Page>('home')
   const [isContactOpen, setIsContactOpen] = useState(false)
   const text = translations[language]
+
+  // Synkroniser med nettleserens frem/tilbake-knapper
+  useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      if (event.state?.page) {
+        setPage(event.state.page)
+      } else {
+        setPage('home')
+      }
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  const navigateTo = (newPage: Page) => {
+    setPage(newPage)
+    window.history.pushState({ page: newPage }, '', newPage === 'home' ? '/' : `#${newPage}`)
+  }
 
   return (
     <main className={`site-page site-page--${page}`} aria-label={text.siteName}>
@@ -29,7 +48,7 @@ function App() {
       </nav>
 
       {page !== 'home' && (
-        <button className="back-button" type="button" onClick={() => setPage('home')}>
+        <button className="back-button" type="button" onClick={() => navigateTo('home')}>
           {text.back}
         </button>
       )}
@@ -39,7 +58,7 @@ function App() {
           <button
             className="season-choice season-choice--summer"
             type="button"
-            onClick={() => setPage('summer')}
+            onClick={() => navigateTo('summer')}
           >
             <span>{text.seasons.summer}</span>
           </button>
@@ -47,7 +66,7 @@ function App() {
           <button
             className="season-choice season-choice--winter"
             type="button"
-            onClick={() => setPage('winter')}
+            onClick={() => navigateTo('winter')}
           >
             <span>{text.seasons.winter}</span>
           </button>
