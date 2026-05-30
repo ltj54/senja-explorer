@@ -1,7 +1,7 @@
 :root {
   font-family: Georgia, 'Times New Roman', serif;
   color: #f7f1e7;
-  background: #111814;
+  background: #101612;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,8 +22,14 @@ body {
   margin: 0;
 }
 
-button {
+button,
+input,
+textarea {
   font: inherit;
+}
+
+button {
+  color: inherit;
 }
 
 .sr-only {
@@ -38,12 +44,28 @@ button {
   border: 0;
 }
 
+.site-page {
+  min-height: 100vh;
+  position: relative;
+  color: #f7f1e7;
+  background: #101612;
+}
+
+.site-page--home {
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 56px);
+  background:
+    linear-gradient(rgba(8, 15, 12, 0.28), rgba(8, 15, 12, 0.52)),
+    url('./assets/senja-hero.jpg') center / cover no-repeat;
+  overflow: hidden;
+}
 
 .language-switcher {
   position: fixed;
   top: clamp(16px, 3vw, 34px);
   right: clamp(16px, 3vw, 42px);
-  z-index: 5;
+  z-index: 10;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -82,15 +104,32 @@ button {
   outline-offset: 4px;
 }
 
-.season-landing {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: clamp(18px, 4vw, 56px);
-  background:
-    linear-gradient(rgba(8, 15, 12, 0.28), rgba(8, 15, 12, 0.52)),
-    url('./assets/senja-hero.jpg') center / cover no-repeat;
-  overflow: hidden;
+.back-button {
+  position: fixed;
+  top: clamp(16px, 3vw, 34px);
+  left: clamp(16px, 3vw, 42px);
+  z-index: 10;
+  padding: 8px 12px;
+  border: 1px solid rgba(247, 241, 231, 0.22);
+  background: rgba(5, 10, 8, 0.24);
+  color: rgba(247, 241, 231, 0.78);
+  backdrop-filter: blur(10px);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease;
+}
+
+.back-button:hover,
+.back-button:focus-visible {
+  color: #fffaf0;
+  border-color: rgba(247, 241, 231, 0.45);
+  background: rgba(5, 10, 8, 0.36);
 }
 
 .season-choices {
@@ -164,12 +203,12 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 7.5em;
-  padding: 16px 26px 18px;
-  border: 1px solid rgba(247, 241, 231, 0.42);
-  background: rgba(6, 12, 10, 0.22);
+  min-width: 7.2em;
+  padding: 12px 20px 14px;
+  border: 1px solid rgba(247, 241, 231, 0.36);
+  background: rgba(6, 12, 10, 0.18);
   backdrop-filter: blur(6px);
-  font-size: clamp(34px, 5vw, 76px);
+  font-size: clamp(28px, 4.4vw, 58px);
   line-height: 1;
   font-weight: 400;
   letter-spacing: 0.025em;
@@ -201,11 +240,243 @@ button {
   outline-offset: 6px;
 }
 
+.season-page {
+  min-height: 100vh;
+  display: grid;
+  align-items: end;
+  padding: clamp(28px, 7vw, 96px);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.season-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background-image: url('./assets/senja-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+}
+
+.season-page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.season-page--summer::before {
+  filter: saturate(0.82) brightness(0.82) contrast(0.96);
+  background-position: center;
+}
+
+.season-page--summer::after {
+  background:
+    radial-gradient(circle at 22% 72%, rgba(180, 137, 82, 0.20), transparent 34rem),
+    linear-gradient(90deg, rgba(7, 13, 9, 0.76), rgba(7, 13, 9, 0.28) 48%, rgba(7, 13, 9, 0.60)),
+    linear-gradient(180deg, rgba(7, 13, 9, 0.16), rgba(7, 13, 9, 0.72));
+}
+
+.season-page--winter::before {
+  filter: saturate(0.36) brightness(0.76) contrast(1.04);
+  background-position: center;
+}
+
+.season-page--winter::after {
+  background:
+    radial-gradient(circle at 24% 70%, rgba(150, 178, 190, 0.16), transparent 32rem),
+    linear-gradient(90deg, rgba(4, 9, 13, 0.82), rgba(4, 9, 13, 0.32) 50%, rgba(4, 9, 13, 0.68)),
+    linear-gradient(180deg, rgba(4, 9, 13, 0.20), rgba(4, 9, 13, 0.78));
+}
+
+.season-page-content {
+  max-width: 620px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: season-page-in 900ms ease forwards;
+  animation-delay: 180ms;
+}
+
+.season-kicker {
+  margin: 0 0 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(247, 241, 231, 0.62);
+}
+
+.season-page h2 {
+  margin: 0;
+  max-width: 720px;
+  font-size: clamp(42px, 7vw, 92px);
+  line-height: 0.96;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  color: rgba(255, 250, 240, 0.94);
+  text-wrap: balance;
+}
+
+.season-page-content > p:last-child {
+  max-width: 500px;
+  margin: 22px 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(15px, 1.8vw, 18px);
+  line-height: 1.65;
+  color: rgba(247, 241, 231, 0.70);
+}
+
+.contact-link {
+  position: fixed;
+  right: clamp(16px, 3vw, 42px);
+  bottom: clamp(42px, 5vw, 64px);
+  z-index: 10;
+  padding: 9px 13px;
+  border: 1px solid rgba(247, 241, 231, 0.24);
+  background: rgba(5, 10, 8, 0.24);
+  color: rgba(247, 241, 231, 0.78);
+  backdrop-filter: blur(10px);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease,
+    transform 220ms ease;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: #fffaf0;
+  border-color: rgba(247, 241, 231, 0.48);
+  background: rgba(5, 10, 8, 0.38);
+  transform: translateY(-1px);
+}
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.contact-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 7, 6, 0.68);
+  backdrop-filter: blur(8px);
+  animation: contact-fade-in 220ms ease forwards;
+}
+
+.contact-form {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 460px);
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid rgba(247, 241, 231, 0.18);
+  background:
+    linear-gradient(145deg, rgba(20, 28, 23, 0.92), rgba(8, 13, 11, 0.94));
+  color: #f7f1e7;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+  animation: contact-form-in 320ms ease forwards;
+}
+
+.contact-form__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  border: 0;
+  background: transparent;
+  color: rgba(247, 241, 231, 0.62);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.contact-form__kicker {
+  margin: 0 0 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(247, 241, 231, 0.54);
+}
+
+.contact-form h2 {
+  margin: 0 0 24px;
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 7px;
+  margin-top: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(247, 241, 231, 0.64);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(247, 241, 231, 0.18);
+  background: rgba(255, 255, 255, 0.055);
+  color: #fffaf0;
+  padding: 11px 12px;
+  font: inherit;
+  font-size: 15px;
+  letter-spacing: normal;
+  text-transform: none;
+  outline: none;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: rgba(247, 241, 231, 0.42);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-form__submit {
+  width: 100%;
+  margin-top: 22px;
+  padding: 12px 14px;
+  border: 1px solid rgba(247, 241, 231, 0.32);
+  background: rgba(247, 241, 231, 0.12);
+  color: #fffaf0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.contact-form__submit:hover,
+.contact-form__submit:focus-visible {
+  background: rgba(247, 241, 231, 0.18);
+  border-color: rgba(247, 241, 231, 0.52);
+}
+
 .image-notice {
   position: fixed;
   left: clamp(16px, 3vw, 42px);
   bottom: clamp(14px, 2.4vw, 30px);
-  z-index: 5;
+  z-index: 10;
   max-width: min(560px, calc(100vw - 32px));
   margin: 0;
   padding: 9px 12px;
@@ -221,6 +492,46 @@ button {
   transform: translateY(10px);
   animation: notice-appear 850ms ease forwards;
   animation-delay: 1650ms;
+}
+
+@media (max-width: 760px) {
+  .site-page--home {
+    align-items: end;
+    padding-top: 88px;
+    padding-bottom: 120px;
+  }
+
+  .season-choices {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .season-choice {
+    min-height: 34vh;
+  }
+
+  .season-choice span {
+    min-width: 6.6em;
+    font-size: clamp(30px, 12vw, 54px);
+  }
+
+  .season-page {
+    padding: 108px 22px 132px;
+  }
+
+  .season-page h2 {
+    font-size: clamp(38px, 15vw, 66px);
+  }
+
+  .contact-link {
+    right: 16px;
+    bottom: 72px;
+  }
+
+  .image-notice {
+    right: 16px;
+    bottom: 14px;
+  }
 }
 
 @keyframes language-appear {
@@ -259,36 +570,31 @@ button {
   }
 }
 
-@media (max-width: 760px) {
-  .season-choices {
-    grid-template-columns: 1fr;
-  }
-
-  .season-choice {
-    min-height: 42vh;
-  }
-
-  .season-choice span {
-    min-width: 6.5em;
-    padding: 12px 18px 14px;
+@keyframes season-page-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .language-switcher,
-  .image-notice,
-  .season-choice,
-  .season-choice::before,
-  .season-choice::after,
-  .season-choice span {
-    animation: none;
-    transition: none;
+@keyframes contact-fade-in {
+  from {
+    opacity: 0;
   }
 
-  .language-switcher,
-  .image-notice,
-  .season-choice {
+  to {
     opacity: 1;
-    transform: none;
+  }
+}
+
+@keyframes contact-form-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
