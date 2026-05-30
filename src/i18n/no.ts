@@ -3,6 +3,7 @@ const no = {
   chooseLanguage: 'Velg språk',
   chooseSeason: 'Velg årstid',
   back: 'Tilbake',
+  continue: 'Fortsett',
   contactRoland: 'Kontakt Roland (Lokal guide)',
   imageNotice: '',
   privacyNotice:

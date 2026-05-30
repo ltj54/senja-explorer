@@ -3,6 +3,7 @@ const de = {
   chooseLanguage: 'Sprache wählen',
   chooseSeason: 'Jahreszeit wählen',
   back: 'Zurück',
+  continue: 'Fortfahren',
   contactRoland: 'Roland kontaktieren (Lokaler Guide)',
   imageNotice: '',
   privacyNotice:

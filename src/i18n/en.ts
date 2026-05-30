@@ -3,6 +3,7 @@ const en = {
   chooseLanguage: 'Choose language',
   chooseSeason: 'Choose season',
   back: 'Back',
+  continue: 'Continue',
   contactRoland: 'Contact Roland (Local Guide)',
   imageNotice: '',
   privacyNotice:

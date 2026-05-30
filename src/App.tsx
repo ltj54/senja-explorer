@@ -56,43 +56,97 @@ function App() {
 
       {page === 'summer' && (
         <section className="season-page season-page--summer">
-          <div className="season-page-content">
-            <p className="season-kicker">{text.summerPage.kicker}</p>
-            <h2>{text.summerPage.title}</h2>
-            <p>{text.summerPage.description}</p>
+          <div className="season-page-panel season-page-panel--content">
+            <div className="season-page-content">
+              <p className="season-kicker">{text.summerPage.kicker}</p>
+              <h2>{text.summerPage.title}</h2>
+              <p>{text.summerPage.description}</p>
+              
+              <button
+                className="continue-button"
+                type="button"
+                onClick={() => {
+                  document.getElementById('about-panel')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >
+                <span>{text.continue}</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
+                  <path d="M19 14l-7 7-7-7M12 5v16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div id="about-panel" className="season-page-panel season-page-panel--about">
             <p className="season-network">{text.summerPage.network}</p>
             <aside className="season-about" aria-label={text.about.title}>
               {text.about.kicker && <p>{text.about.kicker}</p>}
               <h3>{text.about.title}</h3>
               <p>{text.about.description}</p>
             </aside>
+
+            <button
+              className="contact-link contact-link--inline"
+              type="button"
+              onClick={() => setIsContactOpen(true)}
+            >
+              {text.contactRoland}
+            </button>
           </div>
         </section>
       )}
 
       {page === 'winter' && (
         <section className="season-page season-page--winter">
-          <div className="season-page-content">
-            <p className="season-kicker">{text.winterPage.kicker}</p>
-            <h2>{text.winterPage.title}</h2>
-            <p>{text.winterPage.description}</p>
+          <div className="season-page-panel season-page-panel--content">
+            <div className="season-page-content">
+              <p className="season-kicker">{text.winterPage.kicker}</p>
+              <h2>{text.winterPage.title}</h2>
+              <p>{text.winterPage.description}</p>
+              
+              <button
+                className="continue-button"
+                type="button"
+                onClick={() => {
+                  document.getElementById('about-panel')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >
+                <span>{text.continue}</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
+                  <path d="M19 14l-7 7-7-7M12 5v16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div id="about-panel" className="season-page-panel season-page-panel--about">
             <p className="season-network">{text.winterPage.network}</p>
             <aside className="season-about" aria-label={text.about.title}>
               {text.about.kicker && <p>{text.about.kicker}</p>}
               <h3>{text.about.title}</h3>
               <p>{text.about.description}</p>
             </aside>
+
+            <button
+              className="contact-link contact-link--inline"
+              type="button"
+              onClick={() => setIsContactOpen(true)}
+            >
+              {text.contactRoland}
+            </button>
           </div>
         </section>
       )}
 
-      <button
-        className="contact-link"
-        type="button"
-        onClick={() => setIsContactOpen(true)}
-      >
-        {text.contactRoland}
-      </button>
+      {page === 'home' && (
+        <button
+          className="contact-link"
+          type="button"
+          onClick={() => setIsContactOpen(true)}
+        >
+          {text.contactRoland}
+        </button>
+      )}
 
       {isContactOpen && (
         <div className="contact-modal" role="dialog" aria-modal="true" aria-label={text.contactForm.title}>
