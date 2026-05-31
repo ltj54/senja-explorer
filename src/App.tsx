@@ -286,16 +286,16 @@ function App() {
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
             {text.winterPage.comingSoon && <p className="season-coming-soon">{text.winterPage.comingSoon}</p>}
-            <div className="season-details">
-              <p className="season-network">{text.winterPage.practical}</p>
-              <p className="season-network">{text.winterPage.network}</p>
-              <p className="season-network">{text.yearRound}</p>
-            </div>
-            <aside className="season-about" aria-label={text.about.title}>
-              {text.about.kicker && <p>{text.about.kicker}</p>}
-              <h3>{text.about.title}</h3>
-              <p>{text.about.description}</p>
-            </aside>
+            <section className="season-experiences" aria-label={text.winterPage.experiences.title}>
+              <h3>{text.winterPage.experiences.title}</h3>
+              {text.winterPage.experiences.items.map((item) => (
+                <article key={item.title}>
+                  <h4>{item.title}</h4>
+                  <p>{item.description}</p>
+                </article>
+              ))}
+              <p className="season-experiences__footer">{text.winterPage.footer}</p>
+            </section>
 
           </div>
         </section>

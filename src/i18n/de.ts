@@ -45,12 +45,31 @@ const de = {
     kicker: 'Winter auf Senja',
     title: 'Skitouren, Eisangeln und Winterruhe',
     description:
-      'Im Winter bietet Roland eigene Skitouren auf Berggipfel und Eisangeln auf dem Fjord an, mit Fokus auf Ruhe, lokales Wissen und persönliche Erlebnisse.',
+      'Die Wintertouren umfassen Skitouren auf Berggipfel und Eisangeln auf dem Fjord. Die Touren werden von Roland Henriksen durchgeführt und eignen sich für kleine Gruppen mit bis zu 6 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
     comingSoon: '',
     practical:
-      'Die Wintertouren sind für kleine Gruppen mit maximal 6 Personen ausgelegt. Ein einfacher Lunch mit Getränken ist inbegriffen.',
+      'Direkt mit Roland, mit Fokus auf Ruhe, lokales Wissen und ein persönliches Wintererlebnis nah an der Natur.',
     network:
       'Über lokale Kontakte kann die Tour mit Transport, Unterkunft, Verpflegung und weiterer praktischer Organisation kombiniert werden.',
+    experiences: {
+      title: 'Wintererlebnisse auf Senja',
+      items: [
+        {
+          title: 'Skitouren auf Berggipfel',
+          description: 'Ruhige Gipfeltouren mit lokalem Guide, angepasst an Wetter, Schneeverhältnisse und Niveau.',
+        },
+        {
+          title: 'Eisangeln auf dem Fjord',
+          description: 'Ein einfaches und nahes Erlebnis auf dem Fjord, mit guter Zeit und lokaler Kenntnis.',
+        },
+        {
+          title: 'Praktisch inklusive',
+          description: 'Maximal 6 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
+        },
+      ],
+    },
+    footer:
+      'Breathe Senja & Services Henriksen wird von Roland Henriksen betrieben. Mit lokaler Kenntnis von Natur, Wetter und Bedingungen auf Senja bietet er ruhige und persönliche Wintererlebnisse nah an der Natur.',
   },
   contactForm: {
     kicker: 'Nachricht senden',

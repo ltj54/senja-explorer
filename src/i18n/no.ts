@@ -45,12 +45,31 @@ const no = {
     kicker: 'Vinter på Senja',
     title: 'Randonee, isfiske og vinterro',
     description:
-        'Om vinteren tilbyr Roland egne turer til fjelltopper med randonee og isfiske på fjorden, med fokus på ro, lokal kunnskap og personlige opplevelser.',
+        'Vinterturene omfatter randonee til fjelltopper og isfiske på fjorden. Turene gjennomføres av Roland Henriksen og passer for små grupper på inntil 6 personer. Enkel lunch med drikke er inkludert.',
     comingSoon: '',
     practical:
-        'Vinterturene tilpasses små grupper på maks 6 personer. Enkel lunch med drikke er inkludert.',
+        'Direkte med Roland, med fokus på ro, lokal kunnskap og en personlig vinteropplevelse tett på naturen.',
     network:
         'Gjennom lokale kontakter kan turen kombineres med transport, overnatting, mat og annen praktisk tilrettelegging.',
+    experiences: {
+      title: 'Vinteropplevelser på Senja',
+      items: [
+        {
+          title: 'Randonee til fjelltopper',
+          description: 'Rolige toppturer med lokal guide, tilpasset vær, føre og nivå.',
+        },
+        {
+          title: 'Isfiske på fjorden',
+          description: 'En enkel og nær opplevelse på fjorden, med god tid og lokal kjennskap.',
+        },
+        {
+          title: 'Praktisk inkludert',
+          description: 'Maks 6 personer. Enkel lunch med drikke er inkludert.',
+        },
+      ],
+    },
+    footer:
+        'Breathe Senja & Services Henriksen drives av Roland Henriksen. Med lokal kjennskap til natur, vær og forhold på Senja tilbyr han rolige og personlige vinteropplevelser tett på naturen.',
   },
   contactForm: {
     kicker: 'Send en melding',

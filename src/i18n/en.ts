@@ -45,12 +45,31 @@ const en = {
     kicker: 'Winter on Senja',
     title: 'Ski touring, ice fishing and winter calm',
     description:
-      'In winter, Roland offers his own ski touring (randonee) trips to mountain summits and ice fishing on the fjord, with a focus on calm, local knowledge and personal experiences.',
+      'The winter trips include ski touring (randonee) to mountain summits and ice fishing on the fjord. The trips are run by Roland Henriksen and are suitable for small groups of up to 6 people. A simple lunch with drinks is included.',
     comingSoon: '',
     practical:
-      'Winter trips are adapted for small groups of up to 6 people. A simple lunch with drinks is included.',
+      'Directly with Roland, with a focus on calm, local knowledge and a personal winter experience close to nature.',
     network:
       'Through local contacts, the trip can be combined with transport, accommodation, food and other practical arrangements.',
+    experiences: {
+      title: 'Winter experiences on Senja',
+      items: [
+        {
+          title: 'Ski touring to mountain summits',
+          description: 'Calm summit trips with a local guide, adapted to weather, snow conditions and level.',
+        },
+        {
+          title: 'Ice fishing on the fjord',
+          description: 'A simple and close experience on the fjord, with time to settle in and local knowledge.',
+        },
+        {
+          title: 'Practical details included',
+          description: 'Maximum 6 people. A simple lunch with drinks is included.',
+        },
+      ],
+    },
+    footer:
+      'Breathe Senja & Services Henriksen is run by Roland Henriksen. With local knowledge of nature, weather and conditions on Senja, he offers calm and personal winter experiences close to nature.',
   },
   contactForm: {
     kicker: 'Send a message',
