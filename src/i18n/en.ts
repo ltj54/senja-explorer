@@ -45,7 +45,7 @@ const en = {
     kicker: 'Winter on Senja',
     title: 'Ski touring, ice fishing and winter calm',
     description:
-      'In winter, Roland offers his own ski touring trips to mountain summits and ice fishing on the fjord, with a focus on calm, local knowledge and personal experiences.',
+      'In winter, Roland offers his own ski touring (randonee) trips to mountain summits and ice fishing on the fjord, with a focus on calm, local knowledge and personal experiences.',
     comingSoon: '',
     practical:
       'Winter trips are adapted for small groups of up to 6 people. A simple lunch with drinks is included.',
