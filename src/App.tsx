@@ -1,13 +1,26 @@
-import { useEffect, useState } from 'react'
+import { type PointerEvent, useEffect, useRef, useState } from 'react'
 import { languageLabels, languages, translations, type Language } from './i18n'
 
 type Page = 'home' | 'summer' | 'winter'
+type ContactPosition = { x: number; y: number } | null
+type ContactDragState = {
+  hasMoved: boolean
+  height: number
+  offsetX: number
+  offsetY: number
+  pointerId: number
+  width: number
+}
 
 function App() {
   const [language, setLanguage] = useState<Language>('no')
   const [page, setPage] = useState<Page>('home')
   const [isContactOpen, setIsContactOpen] = useState(false)
   const [scrollOpacity, setScrollOpacity] = useState(1)
+  const [contactPosition, setContactPosition] = useState<ContactPosition>(null)
+  const [isContactDragging, setIsContactDragging] = useState(false)
+  const contactDrag = useRef<ContactDragState | null>(null)
+  const suppressContactClick = useRef(false)
   const text = translations[language]
 
   // Håndter bakgrunns-fade ved scrolling
@@ -49,6 +62,72 @@ function App() {
   const navigateTo = (newPage: Page) => {
     setPage(newPage)
     window.history.pushState({ page: newPage }, '', newPage === 'home' ? '/' : `#${newPage}`)
+  }
+
+  const clampContactPosition = (x: number, y: number, width: number, height: number) => {
+    const margin = 12
+
+    return {
+      x: Math.min(Math.max(margin, x), window.innerWidth - width - margin),
+      y: Math.min(Math.max(margin, y), window.innerHeight - height - margin),
+    }
+  }
+
+  const handleContactPointerDown = (event: PointerEvent<HTMLButtonElement>) => {
+    if (event.button !== 0) {
+      return
+    }
+
+    const rect = event.currentTarget.getBoundingClientRect()
+    event.currentTarget.setPointerCapture(event.pointerId)
+    contactDrag.current = {
+      hasMoved: false,
+      height: rect.height,
+      offsetX: event.clientX - rect.left,
+      offsetY: event.clientY - rect.top,
+      pointerId: event.pointerId,
+      width: rect.width,
+    }
+    setIsContactDragging(true)
+  }
+
+  const handleContactPointerMove = (event: PointerEvent<HTMLButtonElement>) => {
+    const drag = contactDrag.current
+    if (!drag || drag.pointerId !== event.pointerId) {
+      return
+    }
+
+    const nextPosition = clampContactPosition(
+      event.clientX - drag.offsetX,
+      event.clientY - drag.offsetY,
+      drag.width,
+      drag.height,
+    )
+
+    contactDrag.current = { ...drag, hasMoved: true }
+    suppressContactClick.current = true
+    setContactPosition(nextPosition)
+  }
+
+  const handleContactPointerUp = (event: PointerEvent<HTMLButtonElement>) => {
+    const drag = contactDrag.current
+    if (!drag || drag.pointerId !== event.pointerId) {
+      return
+    }
+
+    event.currentTarget.releasePointerCapture(event.pointerId)
+    suppressContactClick.current = drag.hasMoved
+    contactDrag.current = null
+    setIsContactDragging(false)
+  }
+
+  const handleContactClick = () => {
+    if (suppressContactClick.current) {
+      suppressContactClick.current = false
+      return
+    }
+
+    setIsContactOpen(true)
   }
 
   return (
@@ -150,13 +229,6 @@ function App() {
               <p>{text.about.description}</p>
             </aside>
 
-            <button
-              className="contact-link contact-link--inline"
-              type="button"
-              onClick={() => setIsContactOpen(true)}
-            >
-              {text.contactRoland}
-            </button>
           </div>
         </section>
       )}
@@ -198,27 +270,26 @@ function App() {
               <p>{text.about.description}</p>
             </aside>
 
-            <button
-              className="contact-link contact-link--inline"
-              type="button"
-              onClick={() => setIsContactOpen(true)}
-            >
-              {text.contactRoland}
-            </button>
           </div>
         </section>
       )}
 
-      {page === 'home' && (
-        <button
-          className="contact-link"
-          type="button"
-          onClick={() => setIsContactOpen(true)}
-        >
-          <span>{text.contactRoland}</span>
-          <small>{text.contactRolandContext}</small>
-        </button>
-      )}
+      <button
+        className={`contact-link contact-link--floating${isContactDragging ? ' is-dragging' : ''}`}
+        type="button"
+        style={contactPosition ? { bottom: 'auto', left: contactPosition.x, right: 'auto', top: contactPosition.y } : undefined}
+        onClick={handleContactClick}
+        onPointerDown={handleContactPointerDown}
+        onPointerMove={handleContactPointerMove}
+        onPointerUp={handleContactPointerUp}
+        onPointerCancel={() => {
+          contactDrag.current = null
+          setIsContactDragging(false)
+        }}
+      >
+        <span>{text.contactRoland}</span>
+        <small>{text.contactRolandContext}</small>
+      </button>
 
       {isContactOpen && (
         <div className="contact-modal" role="dialog" aria-modal="true" aria-label={text.contactForm.title}>

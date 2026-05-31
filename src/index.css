@@ -552,6 +552,7 @@ button {
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+  user-select: none;
   transition: all 220ms ease;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
@@ -565,41 +566,28 @@ button {
   text-transform: none;
 }
 
-.contact-link:not(.contact-link--inline) {
+.contact-link--floating {
   position: fixed;
   right: clamp(16px, 3vw, 42px);
   bottom: clamp(42px, 5vw, 64px);
   z-index: 10;
+  touch-action: none;
 }
 
-.contact-link--inline {
-  display: inline-flex;
-  align-items: center;
-  align-self: flex-end; /* Tvinger knappen til høyre */
-  margin-top: 32px;
+.contact-link--floating.is-dragging {
+  cursor: grabbing;
+  transition: none;
 }
 
-/* Skjul tekst som standard i about-panelet */
 .season-page-panel--about .season-network,
 .season-page-panel--about .season-about {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 600ms ease, transform 600ms ease;
-  pointer-events: none;
-}
-
-/* Vis tekst når man holder over knappen eller panelet i about-seksjonen */
-.season-page-panel--about:has(.contact-link:hover) .season-network,
-.season-page-panel--about:has(.contact-link:hover) .season-about,
-.season-page-panel--about:has(.contact-link:focus-visible) .season-network,
-.season-page-panel--about:has(.contact-link:focus-visible) .season-about {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-.contact-link:hover,
-.contact-link:focus-visible {
+.contact-link:not(.is-dragging):hover,
+.contact-link:not(.is-dragging):focus-visible {
   color: #fffaf0;
   border-color: rgba(247, 241, 231, 0.8);
   background: rgba(7, 13, 11, 0.85);
@@ -804,7 +792,7 @@ button {
     font-size: clamp(32px, 10vw, 48px);
   }
 
-  .contact-link {
+  .contact-link--floating {
     right: 16px;
     bottom: 24px;
   }
