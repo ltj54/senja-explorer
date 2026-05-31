@@ -5,7 +5,7 @@ const no = {
   back: 'Tilbake',
   continue: 'Fortsett',
   contactRoland: 'Kontakt Roland',
-  contactRolandContext: 'Din lokale guide på Senja',
+  contactRolandContext: 'DDin lokale guide på Senja',
   homeIntro: {
     kicker: 'Personlige turer og praktisk tilrettelegging',
     tagline: 'Båtturer, skiturer og lokale opplevelser tilpasset vær, sesong og ønsker.',
