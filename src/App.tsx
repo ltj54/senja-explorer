@@ -142,6 +142,7 @@ function App() {
           </div>
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
+            <p className="season-coming-soon">{text.summerPage.comingSoon}</p>
             <p className="season-network">{text.summerPage.network}</p>
             <aside className="season-about" aria-label={text.about.title}>
               {text.about.kicker && <p>{text.about.kicker}</p>}
@@ -189,6 +190,7 @@ function App() {
           </div>
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
+            <p className="season-coming-soon">{text.winterPage.comingSoon}</p>
             <p className="season-network">{text.winterPage.network}</p>
             <aside className="season-about" aria-label={text.about.title}>
               {text.about.kicker && <p>{text.about.kicker}</p>}

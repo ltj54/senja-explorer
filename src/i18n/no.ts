@@ -8,7 +8,7 @@ const no = {
   contactRolandContext: 'Din lokale guide på Senja',
   homeIntro: {
     kicker: 'Personlige turer og praktisk tilrettelegging',
-    tagline: 'Båtturer, fjellturer og lokale opplevelser tilpasset vær, sesong og ønsker.',
+    tagline: 'Båtturer, skiturer og lokale opplevelser tilpasset vær, sesong og ønsker.',
   },
   imageNotice: '',
   privacyNotice:
@@ -33,6 +33,7 @@ const no = {
     title: 'Båtturer tett på naturen',
     description:
         'Personlige båtturer for inntil to personer. Turen tilpasses vær, forhold og ønsker. Når forholdene ligger til rette for det, kan det fiskes, og enkel mat kan lages underveis.',
+    comingSoon: '(tekst og bilder kommer)',
     network:
         'Roland kan hjelpe med praktisk tilrettelegging og kontakt med lokale aktører innen transport, overnatting og mat.'
   },
@@ -40,7 +41,8 @@ const no = {
     kicker: 'Vinter på Senja',
     title: 'Fjellturer, stillhet og vinterlys',
     description:
-        'Om vinteren kan Roland arrangere eller formidle fjellturer for grupper, med fokus på natur, stillhet, utsikt og gode lokale opplevelser. (tekst og bilder kommer)',
+        'Om vinteren kan Roland arrangere eller formidle fjellturer for grupper, med fokus på natur, stillhet, utsikt og gode lokale opplevelser.',
+    comingSoon: '(tekst og bilder kommer)',
     network:
         'Gjennom lokale kontakter kan turen kombineres med transport, overnatting, mat og annen praktisk tilrettelegging.',
   },

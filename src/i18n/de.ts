@@ -33,6 +33,7 @@ const de = {
     title: 'Bootstouren nah an der Natur',
     description:
       'Persönliche Bootstouren für bis zu zwei Personen. Die Tour wird an Wetter, Bedingungen und Wünsche angepasst. Wenn die Bedingungen es zulassen, kan geangelt und einfaches Essen zubereitet werden.',
+    comingSoon: '(Text und Bilder folgen)',
     network:
       'Roland kann bei der praktischen Organisation und der Kontaktaufnahme med lokalen Akteuren für Transport, Unterkunft und Verpflegung behilflich sein.',
   },
@@ -40,7 +41,8 @@ const de = {
     kicker: 'Winter auf Senja',
     title: 'Bergtouren, Stille und Winterlicht',
     description:
-      'Im Winter kann Roland Bergtouren für Gruppen arrangieren oder vermitteln, mit Fokus auf Natur, Stille, Aussicht und gute lokale Erlebnisse. (Text und Bilder folgen)',
+      'Im Winter kann Roland Bergtouren für Gruppen arrangieren oder vermitteln, mit Fokus auf Natur, Stille, Aussicht und gute lokale Erlebnisse.',
+    comingSoon: '(Text und Bilder folgen)',
     network:
       'Über lokale Kontakte kann die Tour mit Transport, Unterkunft, Verpflegung und weiterer praktischer Organisation kombiniert werden.',
   },

@@ -466,6 +466,11 @@ button {
   color: rgba(247, 241, 231, 0.58);
 }
 
+.season-coming-soon {
+  max-width: 520px;
+  color: rgba(247, 241, 231, 0.76);
+}
+
 .season-about {
   max-width: 560px;
   padding-right: 18px; /* Flyttet fra venstre til høyre */
