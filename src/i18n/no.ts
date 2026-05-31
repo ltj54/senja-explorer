@@ -1,5 +1,5 @@
 const no = {
-  siteName: 'Senja Explorer',
+  siteName: 'Breathe Senja',
   chooseLanguage: 'Velg språk',
   chooseSeason: 'Velg årstid',
   back: 'Tilbake',
@@ -26,23 +26,29 @@ const no = {
     kicker: '',
     title: 'Personlige opplevelser på Senja',
     description:
-        'Senja Explorer & Services drives av Roland Henriksen. Med lokal kjennskap til naturen, været og aktører på Senja kan han bidra med personlige opplevelser og praktisk tilrettelegging.',
+        'Breathe Senja & Services Henriksen drives av Roland Henriksen. Med lokal kjennskap til naturen, været og aktører på Senja kan han bidra med personlige opplevelser og praktisk tilrettelegging.',
   },
+  yearRound:
+      'Hele året kan Roland formidle transport, overnatting, sightseeing med bil og guide, opplevelsesturer med bil og samarbeid med lokale aktører.',
   summerPage: {
     kicker: 'Sommer på Senja',
-    title: 'Båtturer tett på naturen',
+    title: 'Båt, strand og fiske på fjorden',
     description:
-        'Personlige båtturer for inntil to personer. Turen tilpasses vær, forhold og ønsker. Når forholdene ligger til rette for det, kan det fiskes, og enkel mat kan lages underveis.',
-    comingSoon: '(tekst og bilder kommer)',
+        'Om sommeren tilbyr Roland båtturer, sole- og badeturer til fine strender og fisketurer på fjorden eller utaskjærs. Turene kan gjøres med liten båt eller en større båt med hus.',
+    comingSoon: '',
+    practical:
+        'Sommerturene er for maks 2 personer. Enkel lunch med drikke, egnet fottøy og redningsvester tilbys. Fiskestenger kan leies, og Roland kan sløye og eventuelt filetere fisken dersom gjestene ønsker å ta den med.',
     network:
-        'Roland kan hjelpe med praktisk tilrettelegging og kontakt med lokale aktører innen transport, overnatting og mat.'
+        'Toppturer på fine fjell kan formidles via andre lokale aktører. Dette kommer i tillegg til turene Roland står for selv.'
   },
   winterPage: {
     kicker: 'Vinter på Senja',
-    title: 'Fjellturer, stillhet og vinterlys',
+    title: 'Randonee, isfiske og vinterro',
     description:
-        'Om vinteren kan Roland arrangere eller formidle fjellturer for grupper, med fokus på natur, stillhet, utsikt og gode lokale opplevelser.',
-    comingSoon: '(tekst og bilder kommer)',
+        'Om vinteren tilbyr Roland egne turer til fjelltopper med randonee og isfiske på fjorden, med fokus på ro, lokal kunnskap og personlige opplevelser.',
+    comingSoon: '',
+    practical:
+        'Vinterturene tilpasses små grupper på maks 6 personer. Enkel lunch med drikke er inkludert.',
     network:
         'Gjennom lokale kontakter kan turen kombineres med transport, overnatting, mat og annen praktisk tilrettelegging.',
   },

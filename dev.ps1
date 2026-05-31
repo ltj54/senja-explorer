@@ -1,2 +1,2 @@
-Write-Host "Starter Senja Explorer utviklingsserver..." -ForegroundColor Cyan
+Write-Host "Starter Breathe Senja utviklingsserver..." -ForegroundColor Cyan
 npm run dev

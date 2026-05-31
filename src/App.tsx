@@ -193,19 +193,19 @@ function App() {
 
           <section className="season-choices" aria-label={text.chooseSeason}>
             <button
-              className="season-choice season-choice--summer"
-              type="button"
-              onClick={() => navigateTo('summer')}
-            >
-              <span>{text.seasons.summer}</span>
-            </button>
-
-            <button
               className="season-choice season-choice--winter"
               type="button"
               onClick={() => navigateTo('winter')}
             >
               <span>{text.seasons.winter}</span>
+            </button>
+
+            <button
+              className="season-choice season-choice--summer"
+              type="button"
+              onClick={() => navigateTo('summer')}
+            >
+              <span>{text.seasons.summer}</span>
             </button>
           </section>
         </>
@@ -240,8 +240,12 @@ function App() {
           </div>
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
-            <p className="season-coming-soon">{text.summerPage.comingSoon}</p>
-            <p className="season-network">{text.summerPage.network}</p>
+            {text.summerPage.comingSoon && <p className="season-coming-soon">{text.summerPage.comingSoon}</p>}
+            <div className="season-details">
+              <p className="season-network">{text.summerPage.practical}</p>
+              <p className="season-network">{text.summerPage.network}</p>
+              <p className="season-network">{text.yearRound}</p>
+            </div>
             <aside className="season-about" aria-label={text.about.title}>
               {text.about.kicker && <p>{text.about.kicker}</p>}
               <h3>{text.about.title}</h3>
@@ -281,8 +285,12 @@ function App() {
           </div>
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
-            <p className="season-coming-soon">{text.winterPage.comingSoon}</p>
-            <p className="season-network">{text.winterPage.network}</p>
+            {text.winterPage.comingSoon && <p className="season-coming-soon">{text.winterPage.comingSoon}</p>}
+            <div className="season-details">
+              <p className="season-network">{text.winterPage.practical}</p>
+              <p className="season-network">{text.winterPage.network}</p>
+              <p className="season-network">{text.yearRound}</p>
+            </div>
             <aside className="season-about" aria-label={text.about.title}>
               {text.about.kicker && <p>{text.about.kicker}</p>}
               <h3>{text.about.title}</h3>
@@ -319,7 +327,7 @@ function App() {
             action="https://formspree.io/f/SETT-INN-DIN-FORMSPREE-ID"
             method="POST"
           >
-            <input type="hidden" name="_subject" value="Ny melding fra Senja Explorer" />
+            <input type="hidden" name="_subject" value="Ny melding fra Breathe Senja" />
             <input type="hidden" name="language" value={language} />
             <input type="hidden" name="page" value={page} />
 
