@@ -9,6 +9,8 @@ type ContactDragState = {
   offsetX: number
   offsetY: number
   pointerId: number
+  startX: number
+  startY: number
   width: number
 }
 
@@ -93,6 +95,8 @@ function App() {
       offsetX: event.clientX - rect.left,
       offsetY: event.clientY - rect.top,
       pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
       width: rect.width,
     }
     setIsContactDragging(true)
@@ -101,6 +105,14 @@ function App() {
   const handleContactPointerMove = (event: PointerEvent<HTMLButtonElement>) => {
     const drag = contactDrag.current
     if (!drag || drag.pointerId !== event.pointerId) {
+      return
+    }
+
+    const distanceX = event.clientX - drag.startX
+    const distanceY = event.clientY - drag.startY
+    const hasMovedPastTap = Math.hypot(distanceX, distanceY) > 8
+
+    if (!drag.hasMoved && !hasMovedPastTap) {
       return
     }
 
