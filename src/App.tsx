@@ -12,9 +12,14 @@ type ContactDragState = {
   width: number
 }
 
+const getPageFromHash = (): Page => {
+  const hashPage = window.location.hash.replace('#', '')
+  return hashPage === 'summer' || hashPage === 'winter' ? hashPage : 'home'
+}
+
 function App() {
   const [language, setLanguage] = useState<Language>('no')
-  const [page, setPage] = useState<Page>('home')
+  const [page, setPage] = useState<Page>(() => getPageFromHash())
   const [isContactOpen, setIsContactOpen] = useState(false)
   const [scrollOpacity, setScrollOpacity] = useState(1)
   const [contactPosition, setContactPosition] = useState<ContactPosition>(null)
@@ -45,23 +50,25 @@ function App() {
     }
   }, [page]) // Re-bind når vi bytter side
 
-  // Synkroniser med nettleserens frem/tilbake-knapper
+  // Synkroniser med refresh, hash-lenker og nettleserens frem/tilbake-knapper
   useEffect(() => {
-    const handlePopState = (event: PopStateEvent) => {
-      if (event.state?.page) {
-        setPage(event.state.page)
-      } else {
-        setPage('home')
-      }
+    const syncPageFromLocation = () => {
+      setPage(getPageFromHash())
     }
 
-    window.addEventListener('popstate', handlePopState)
-    return () => window.removeEventListener('popstate', handlePopState)
+    window.addEventListener('hashchange', syncPageFromLocation)
+    window.addEventListener('popstate', syncPageFromLocation)
+
+    return () => {
+      window.removeEventListener('hashchange', syncPageFromLocation)
+      window.removeEventListener('popstate', syncPageFromLocation)
+    }
   }, [])
 
   const navigateTo = (newPage: Page) => {
     setPage(newPage)
-    window.history.pushState({ page: newPage }, '', newPage === 'home' ? '/' : `#${newPage}`)
+    const nextUrl = newPage === 'home' ? window.location.pathname : `${window.location.pathname}#${newPage}`
+    window.history.pushState(null, '', nextUrl)
   }
 
   const clampContactPosition = (x: number, y: number, width: number, height: number) => {

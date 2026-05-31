@@ -569,8 +569,8 @@ button {
 .contact-link--floating {
   position: fixed;
   right: clamp(16px, 3vw, 42px);
-  bottom: clamp(42px, 5vw, 64px);
-  z-index: 10;
+  bottom: max(clamp(42px, 5vw, 64px), calc(env(safe-area-inset-bottom) + 18px));
+  z-index: 30;
   touch-action: none;
 }
 
@@ -598,7 +598,7 @@ button {
 .contact-modal {
   position: fixed;
   inset: 0;
-  z-index: 20;
+  z-index: 50;
   display: grid;
   place-items: center;
   padding: 20px;
@@ -793,8 +793,10 @@ button {
   }
 
   .contact-link--floating {
-    right: 16px;
-    bottom: 24px;
+    right: auto;
+    bottom: calc(env(safe-area-inset-bottom) + 16px);
+    left: 16px;
+    max-width: calc(100vw - 32px);
   }
 
   .image-notice {
