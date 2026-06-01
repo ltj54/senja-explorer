@@ -61,6 +61,8 @@ const winterGalleryPages = Array.from(
   (_, pageIndex) => winterGalleryImages.slice(pageIndex * 9, pageIndex * 9 + 9),
 )
 
+const publicAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`
+
 const getPageFromHash = (): Page => {
   const hashPage = window.location.hash.replace('#', '')
   return hashPage === 'summer' || hashPage === 'winter' ? hashPage : 'home'
@@ -402,7 +404,7 @@ function App() {
                       onClick={() => setActiveWinterImage(galleryIndex)}
                     >
                       <img
-                        src={`/images/web/winter/${imageName}.webp`}
+                        src={publicAssetPath(`images/web/winter/${imageName}.webp`)}
                         alt=""
                       />
                     </button>
@@ -524,7 +526,7 @@ function App() {
               ‹
             </button>
             <img
-              src={`/images/web/winter/${activeWinterImageName}.webp`}
+              src={publicAssetPath(`images/web/winter/${activeWinterImageName}.webp`)}
               alt=""
             />
             <button
