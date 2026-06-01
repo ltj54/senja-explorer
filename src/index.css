@@ -77,52 +77,57 @@ button {
   inset: 0;
   z-index: 0;
   background-size: cover;
-  background-position: 50% 49%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   opacity: 0;
-  animation: home-crossfade 28s ease-in-out infinite;
+  animation: home-crossfade 50s ease-in-out infinite;
 }
 
-.home-background--spring {
+.home-background--season-1 {
   background-image:
-    linear-gradient(rgba(8, 15, 12, 0.20), rgba(8, 15, 12, 0.50)),
-    url('./assets/spring.png');
-  background-position: 50% 49%;
+    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.50)),
+    url('./assets/season_1.png');
   transform: scale(1);
   animation-delay: 0s;
 }
 
-.home-background--summer {
+.home-background--season-2 {
   background-image:
-    linear-gradient(rgba(8, 15, 12, 0.22), rgba(8, 15, 12, 0.52)),
-    url('./assets/summer.png');
-  background-position: 50% 49%;
+    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.50)),
+    url('./assets/season_2.png');
   transform: scale(1);
-  animation-delay: 7s;
+  animation-delay: 10s;
 }
 
-.home-background--autumn {
+.home-background--season-3 {
   background-image:
-    linear-gradient(rgba(8, 15, 12, 0.20), rgba(8, 15, 12, 0.54)),
-    url('./assets/atumn.png');
-  background-position: 50% 49%;
+    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.50)),
+    url('./assets/season_3.png');
   transform: scale(1);
-  animation-delay: 14s;
+  animation-delay: 20s;
 }
 
-.home-background--winter {
+.home-background--season-4 {
   background-image:
-    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.56)),
-    url('./assets/winter.png');
-  background-position: 49.5% 47%;
+    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.50)),
+    url('./assets/season_4.png');
   transform: scale(1);
-  animation-delay: 21s;
+  animation-delay: 30s;
+}
+
+.home-background--season-5 {
+  background-image:
+    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.50)),
+    url('./assets/season_5.png');
+  transform: scale(1);
+  animation-delay: 40s;
 }
 
 @keyframes home-crossfade {
   0% { opacity: 0; }
-  14% { opacity: 1; }
-  32% { opacity: 1; }
-  46% { opacity: 0; }
+  12% { opacity: 1; }
+  24% { opacity: 1; }
+  36% { opacity: 0; }
   100% { opacity: 0; }
 }
 
@@ -397,13 +402,13 @@ button {
 }
 
 .season-page--summer .season-page-background {
-  background-image: url('./assets/summer.png');
+  background-image: url('./assets/roland/summer/1000016037.jpg');
   filter: saturate(0.88) brightness(0.82) contrast(0.96);
   transform: scale(1);
 }
 
 .season-page--winter .season-page-background {
-  background-image: url('./assets/winter.png');
+  background-image: url('./assets/roland/winter/1000020473.jpg');
   filter: saturate(0.42) brightness(0.78) contrast(1.02);
   transform: scale(1); /* Nå helt lik sommersiden */
 }

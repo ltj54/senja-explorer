@@ -155,10 +155,11 @@ function App() {
 
       {page === 'home' && (
         <>
-          <div className="home-background home-background--spring" aria-hidden="true" />
-          <div className="home-background home-background--summer" aria-hidden="true" />
-          <div className="home-background home-background--autumn" aria-hidden="true" />
-          <div className="home-background home-background--winter" aria-hidden="true" />
+          <div className="home-background home-background--season-1" aria-hidden="true" />
+          <div className="home-background home-background--season-2" aria-hidden="true" />
+          <div className="home-background home-background--season-3" aria-hidden="true" />
+          <div className="home-background home-background--season-4" aria-hidden="true" />
+          <div className="home-background home-background--season-5" aria-hidden="true" />
         </>
       )}
 
