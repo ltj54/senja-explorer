@@ -185,6 +185,46 @@ Disse bildene var listet i e-posten fra Roland, men kunne ikke lastes ned fordi 
 * `1000019862.jpg`
 * `1000019854.jpg`
 
+## Kontroll mot filer som ble meldt som vanskelige å laste ned
+
+Brukers kontrolliste ble gjennomgått mot sorteringen. Duplikater i kontrollisten er ignorert i punktene under.
+
+### Bekreftet tilgjengelige i sorteringen
+
+* `1000020233.jpg` - finnes som `winter/1000020233.jpg`
+* `1000020232.jpg` - finnes som `winter/1000020232.jpg`
+* `1000020203.jpg` - finnes som `winter/1000020203.jpg`
+* `1000019884.jpg` - finnes som `winter/1000019884.jpg`
+* `1000001200.jpg` - finnes som `winter/1000001200.jpg`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1220.jpg` - finnes som `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1220.jpg`
+* `1000021458.jpg` - finnes som `summer/1000021458.jpg`
+
+### Bekreftet ikke tilgjengelige fra e-post
+
+* `1000020229.jpg`
+* `1000020207.jpg`
+* `1000020208.jpg`
+* `1000020210.jpg`
+* `1000020209.jpg`
+* `1000020206.jpg`
+* `1000019891.jpg`
+* `1000019885.jpg`
+* `1000019886.jpg`
+* `1000019862.jpg`
+* `1000019854.jpg`
+* `1000002194.jpg`
+
+### Bekreftet video i innboks
+
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4` - finnes som `inbox/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4`
+
+### Ikke funnet i sorteringslisten
+
+Disse står verken i sorterte mapper eller i listen over filer som ikke var tilgjengelige fra e-post. De bør sjekkes mot original e-post/Google-lenke eller lokal bildemappe.
+
+* `1000001475.jpg`
+* `1000001476.jpg`
+
 ## Video til senere vurdering
 
 * `inbox/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4` - filmsnutt, ikke sortert ennå
@@ -196,3 +236,4 @@ Disse bildene var listet i e-posten fra Roland, men kunne ikke lastes ned fordi 
 * Vinterbildene på 4000x3000 er sterke, men bør skaleres ned og komprimeres før produksjonsbruk.
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608.jpg` ga JPEG-varsel ved forhåndsvisning og bør kontrolleres visuelt før bruk.
 * Et midlertidig kontaktark er generert her: `src/assets/roland/contact-sheet.jpg` for gjennomgang.
+* Kontrollisten fra bruker inneholdt duplikater av `1000001475.jpg`, `1000001476.jpg`, `1000002194.jpg` og `1000021458.jpg`.
