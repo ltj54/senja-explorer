@@ -1,6 +1,6 @@
 # Roland bildesortering
 
-Fysisk sortering etter gjennomgang. Opprinnelig innboks er nå tom.
+Fysisk sortering etter gjennomgang. Innboksen inneholder nå kun en filmsnutt som skal vurderes senere.
 
 ## Vinter
 
@@ -11,6 +11,7 @@ Brukes til vinterside, randonee, toppturer på ski, isfiske, snø, fjelltopper o
 * `winter/1000015795.jpg` - person i vinterlys, 528x960, 12 KB
 * `winter/1000015976.jpg` - vinterfjord / båt i snø, 2048x1536, 79 KB
 * `winter/1000015982.jpg` - snødekte fjell speilet i vann, 1280x960, 38 KB
+* `winter/1000001200.jpg` - åpen snøbakke / topptur, 4000x3000, 4014 KB
 * `winter/1000019867.jpg` - skibakke / sol, 1536x2048, 113 KB
 * `winter/1000019868.jpg` - skispor / åpent snølandskap, 2048x1536, 100 KB
 * `winter/1000019870.jpg` - snødekt fjellpanorama / skispor, 2048x1536, 232 KB
@@ -66,6 +67,7 @@ Brukes til generell Senja-stemning, om-/profilseksjoner eller bakgrunner som ikk
 * `shared/1000015925.jpg` - blå fjordstemning
 * `shared/1000015987.jpg` - rolig kveldsstemning
 * `shared/1000016022.jpg` - fjord-/værstemning
+* `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1220.jpg` - campingvogn / praktisk base, 4000x3000, 4364 KB
 
 ## Bilder som ikke er tilgjengelige fra e-post
 
@@ -157,6 +159,10 @@ Disse bildene var listet i e-posten fra Roland, men kunne ikke lastes ned fordi 
 * `1000019886.jpg`
 * `1000019862.jpg`
 * `1000019854.jpg`
+
+## Video til senere vurdering
+
+* `inbox/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4` - filmsnutt, ikke sortert ennå
 
 ## Notater
 
