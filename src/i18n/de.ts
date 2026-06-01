@@ -7,8 +7,8 @@ const de = {
   contactRoland: 'Roland kontaktieren',
   contactRolandContext: 'Ihr lokaler Guide auf Senja',
   homeIntro: {
-    kicker: 'Persönliche Touren und praktische Organisation',
-    tagline: 'Bootstouren, Bergtouren und lokale Erlebnisse, angepasst an Wetter, Saison und Wünsche.',
+    kicker: 'Persönliche Touren und lokale Organisation',
+    tagline: 'Ruhige, persönliche Erlebnisse auf Senja – im Sommer wie im Winter.',
   },
   imageNotice: '',
   privacyNotice:
@@ -19,8 +19,8 @@ const de = {
     de: 'Deutsch',
   },
   seasons: {
-    summer: 'Sommer',
     winter: 'Winter',
+    summer: 'Sommer',
   },
   about: {
     kicker: '',
@@ -28,31 +28,50 @@ const de = {
     description:
       'Breathe Senja & Services Henriksen wird von Roland Henriksen betrieben. Mit lokaler Kenntnis der Natur, des Wetters und der Akteure auf Senja kann er zu persönlichen Erlebnissen und praktischer Organisation beitragen.',
   },
+  yearRoundTitle: 'Praktische Hilfe das ganze Jahr',
   yearRound:
-    'Ganzjährig kann Roland Transport, Unterkunft, Sightseeing mit Auto und Guide, Erlebnisfahrten mit dem Auto und die Zusammenarbeit mit lokalen Anbietern vermitteln.',
+    'Roland kann auch bei Transport, Unterkunft, Sightseeing und Kontakt zu lokalen Anbietern auf Senja helfen.',
   summerPage: {
     kicker: 'Sommer auf Senja',
-    title: 'Boot, Strand und Angeln auf dem Fjord',
+    title: 'Bootstouren, Badestopps\nund Angeln auf dem Fjord',
     description:
-      'Im Sommer bietet Roland Bootstouren, Sonnen- und Badetouren zu schönen Stränden sowie Angeltouren auf dem Fjord oder weiter draußen auf dem Meer an. Die Touren können mit einem kleinen Boot oder einem größeren Kabinenboot durchgeführt werden.',
+      'Im Sommer bietet Roland Bootstouren, Strandtouren und Angeltouren auf dem Fjord oder weiter draußen auf dem Meer an. Die Touren werden mit einem kleinen Boot oder einem größeren Kabinenboot durchgeführt.',
     comingSoon: '',
     practical:
-      'Die Sommertouren sind für maximal 2 Personen. Ein einfacher Lunch mit Getränken, geeignetes Schuhwerk und Rettungswesten werden angeboten. Angelruten können gemietet werden, und Roland kann den Fisch ausnehmen und auf Wunsch filetieren, wenn die Gäste ihn mitnehmen möchten.',
+      'Maximal 2 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
     network:
       'Gipfeltouren auf schöne Berge können über andere lokale Anbieter vermittelt werden. Dies ist getrennt von den Touren, die Roland selbst anbietet.',
+    experiences: {
+      title: 'Sommererlebnisse auf Senja',
+      items: [
+        {
+          title: 'Bootstouren und Badestopps',
+          description: 'Ruhige Touren zu schönen Stränden und geschützten Orten entlang der Küste.',
+        },
+        {
+          title: 'Angeln auf dem Fjord und auf See',
+          description:
+            'Angeltouren mit der Möglichkeit, eine Angelrute zu mieten. Roland kann den Fisch ausnehmen und filetieren, wenn die Gäste ihn mitnehmen möchten.',
+        },
+        {
+          title: 'Praktisch inklusive',
+          description: 'Maximal 2 Personen. Ein einfacher Lunch mit Getränken, geeignetes Schuhwerk und Rettungswesten werden angeboten.',
+        },
+      ],
+    },
   },
   winterPage: {
     kicker: 'Winter auf Senja',
-    title: 'Skitouren, Eisangeln und Winterruhe',
+    title: 'Skitouren, Eisangeln\nund Winterruhe',
     description:
-      'Die Wintertouren umfassen Skitouren auf Berggipfel und Eisangeln auf dem Fjord. Die Touren werden von Roland Henriksen durchgeführt und eignen sich für kleine Gruppen mit bis zu 6 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
+      'Roland bietet Wintertouren in den Bergen und Eisangeln auf dem Fjord an. Die Touren eignen sich für kleine Gruppen und werden an Wetter, Schneeverhältnisse und Niveau angepasst.',
     comingSoon: '',
     practical:
-      'Direkt mit Roland, mit Fokus auf Ruhe, lokales Wissen und ein persönliches Wintererlebnis nah an der Natur.',
+      'Maximal 6 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
     network:
-      'Über lokale Kontakte kann die Tour mit Transport, Unterkunft, Verpflegung und weiterer praktischer Organisation kombiniert werden.',
+      '',
     experiences: {
-      title: 'Wintererlebnisse auf Senja',
+      title: 'Wintererlebnisse mit lokalem Guide',
       items: [
         {
           title: 'Skitouren auf Berggipfel',

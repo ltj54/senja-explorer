@@ -209,6 +209,11 @@ function App() {
               <span>{text.seasons.summer}</span>
             </button>
           </section>
+
+          <aside className="home-year-round" aria-label={text.yearRoundTitle}>
+            <h3>{text.yearRoundTitle}</h3>
+            <p>{text.yearRound}</p>
+          </aside>
         </>
       )}
 
@@ -224,6 +229,7 @@ function App() {
               <p className="season-kicker">{text.summerPage.kicker}</p>
               <h2>{text.summerPage.title}</h2>
               <p>{text.summerPage.description}</p>
+              <p className="season-practical">{text.summerPage.practical}</p>
               
               <button
                 className="continue-button"
@@ -242,16 +248,18 @@ function App() {
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
             {text.summerPage.comingSoon && <p className="season-coming-soon">{text.summerPage.comingSoon}</p>}
-            <div className="season-details">
-              <p className="season-network">{text.summerPage.practical}</p>
-              <p className="season-network">{text.summerPage.network}</p>
-              <p className="season-network">{text.yearRound}</p>
-            </div>
-            <aside className="season-about" aria-label={text.about.title}>
-              {text.about.kicker && <p>{text.about.kicker}</p>}
-              <h3>{text.about.title}</h3>
-              <p>{text.about.description}</p>
-            </aside>
+            <section className="season-experiences" aria-label={text.summerPage.experiences.title}>
+              <h3>{text.summerPage.experiences.title}</h3>
+              {text.summerPage.experiences.items.map((item) => (
+                <article key={item.title}>
+                  <h4>{item.title}</h4>
+                  <p>{item.description}</p>
+                </article>
+              ))}
+              <aside className="season-guide-note">
+                <p>{text.summerPage.network}</p>
+              </aside>
+            </section>
 
           </div>
         </section>
@@ -269,6 +277,7 @@ function App() {
               <p className="season-kicker">{text.winterPage.kicker}</p>
               <h2>{text.winterPage.title}</h2>
               <p>{text.winterPage.description}</p>
+              <p className="season-practical">{text.winterPage.practical}</p>
               
               <button
                 className="continue-button"
@@ -295,7 +304,9 @@ function App() {
                   <p>{item.description}</p>
                 </article>
               ))}
-              <p className="season-experiences__footer">{text.winterPage.footer}</p>
+              <aside className="season-guide-note">
+                <p>{text.winterPage.footer}</p>
+              </aside>
             </section>
 
           </div>

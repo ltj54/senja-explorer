@@ -7,8 +7,8 @@ const en = {
   contactRoland: 'Contact Roland',
   contactRolandContext: 'Your local guide on Senja',
   homeIntro: {
-    kicker: 'Personal trips and practical arrangements',
-    tagline: 'Boat trips, mountain walks and local experiences adapted to weather, season and wishes.',
+    kicker: 'Personal trips and local arrangements',
+    tagline: 'Calm, personal experiences on Senja – summer and winter.',
   },
   imageNotice: '',
   privacyNotice:
@@ -19,8 +19,8 @@ const en = {
     de: 'Deutsch',
   },
   seasons: {
-    summer: 'Summer',
     winter: 'Winter',
+    summer: 'Summer',
   },
   about: {
     kicker: '',
@@ -28,31 +28,50 @@ const en = {
     description:
       'Breathe Senja & Services Henriksen is run by Roland Henriksen. With local knowledge of the nature, weather and partners on Senja, he can contribute with personal experiences and practical arrangements.',
   },
+  yearRoundTitle: 'Practical help year round',
   yearRound:
-    'Year round, Roland can help arrange transport, accommodation, guided sightseeing by car, experience trips by car and collaboration with local partners.',
+    'Roland can also help with transport, accommodation, sightseeing and contact with local partners on Senja.',
   summerPage: {
     kicker: 'Summer on Senja',
-    title: 'Boat, beach and fishing on the fjord',
+    title: 'Boat trips, swim stops\nand fishing on the fjord',
     description:
-      'In summer, Roland offers boat trips, sun and swimming trips to beautiful beaches, and fishing trips on the fjord or further out at sea. Trips can be done with a small boat or a larger cabin boat.',
+      'In summer, Roland offers boat trips, beach trips and fishing trips on the fjord or further out at sea. Trips are done with a small boat or a larger cabin boat.',
     comingSoon: '',
     practical:
-      'Summer trips are for up to 2 people. A simple lunch with drinks, suitable footwear and life jackets are provided. Fishing rods can be rented, and Roland can gut and, if wanted, fillet the fish if guests would like to take it with them.',
+      'Maximum 2 people. A simple lunch with drinks is included.',
     network:
       'Mountain hikes to beautiful summits can be arranged through other local partners. This is separate from the trips Roland offers himself.',
+    experiences: {
+      title: 'Summer experiences on Senja',
+      items: [
+        {
+          title: 'Boat trips and swim stops',
+          description: 'Calm trips to beautiful beaches and sheltered places along the coast.',
+        },
+        {
+          title: 'Fishing on the fjord and offshore',
+          description:
+            'Fishing trips with the option to rent a fishing rod. Roland can gut and fillet the fish if guests want to take it with them.',
+        },
+        {
+          title: 'Practical details included',
+          description: 'Maximum 2 people. A simple lunch with drinks, suitable footwear and life jackets are provided.',
+        },
+      ],
+    },
   },
   winterPage: {
     kicker: 'Winter on Senja',
-    title: 'Ski touring, ice fishing and winter calm',
+    title: 'Ski touring, ice fishing\nand winter calm',
     description:
-      'The winter trips include ski touring (randonee) to mountain summits and ice fishing on the fjord. The trips are run by Roland Henriksen and are suitable for small groups of up to 6 people. A simple lunch with drinks is included.',
+      'Roland offers winter trips in the mountains and ice fishing on the fjord. The trips are suited for small groups and adapted to weather, snow conditions and level.',
     comingSoon: '',
     practical:
-      'Directly with Roland, with a focus on calm, local knowledge and a personal winter experience close to nature.',
+      'Maximum 6 people. A simple lunch with drinks is included.',
     network:
-      'Through local contacts, the trip can be combined with transport, accommodation, food and other practical arrangements.',
+      '',
     experiences: {
-      title: 'Winter experiences on Senja',
+      title: 'Winter experiences with a local guide',
       items: [
         {
           title: 'Ski touring to mountain summits',

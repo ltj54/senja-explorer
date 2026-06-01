@@ -53,6 +53,7 @@ button {
 
 .site-page--home {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: clamp(18px, 4vw, 56px);
@@ -248,6 +249,46 @@ button {
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.76);
 }
 
+.home-year-round {
+  position: absolute;
+  left: clamp(18px, 4vw, 56px);
+  bottom: max(clamp(42px, 5vw, 64px), calc(env(safe-area-inset-bottom) + 18px));
+  z-index: 2;
+  width: min(360px, calc(50vw - 64px));
+  padding-left: 16px;
+  border-left: 1px solid rgba(247, 241, 231, 0.22);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: season-page-in 900ms ease forwards;
+  animation-delay: 950ms;
+  pointer-events: none;
+}
+
+.home-year-round h3,
+.home-year-round p {
+  margin: 0;
+}
+
+.home-year-round h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1.35;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 250, 240, 0.66);
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.72);
+}
+
+.home-year-round p {
+  max-width: 340px;
+  margin-top: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(12px, 1.1vw, 14px);
+  line-height: 1.55;
+  color: rgba(255, 250, 240, 0.70);
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.76);
+}
+
 .season-choices {
   position: absolute;
   inset: 0;
@@ -264,7 +305,7 @@ button {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  padding: 0 clamp(22px, 4vw, 56px) clamp(96px, 13vh, 150px);
+  padding: 0 clamp(22px, 4vw, 56px) clamp(128px, 16vh, 190px);
   border: 0;
   color: inherit;
   background: transparent;
@@ -386,10 +427,11 @@ button {
 }
 
 .season-page-panel--about {
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
   text-align: right;
-  padding-bottom: clamp(60px, 10vh, 120px);
+  padding-top: clamp(76px, 11vh, 130px);
+  padding-bottom: clamp(52px, 8vh, 96px);
 }
 
 .season-page-background {
@@ -454,6 +496,7 @@ button {
   letter-spacing: -0.045em;
   color: rgba(255, 250, 240, 0.94);
   text-wrap: balance;
+  white-space: pre-line;
 }
 
 .season-page-panel p:not(.season-kicker) {
@@ -463,6 +506,13 @@ button {
   font-size: clamp(15px, 1.8vw, 18px);
   line-height: 1.65;
   color: rgba(247, 241, 231, 0.70);
+}
+
+.season-page-panel .season-practical {
+  margin-top: 14px;
+  font-size: clamp(13px, 1.35vw, 15px);
+  line-height: 1.5;
+  color: rgba(247, 241, 231, 0.78);
 }
 
 .season-network {
@@ -525,10 +575,14 @@ button {
 
 .season-experiences {
   display: grid;
-  gap: 20px;
-  max-width: 560px;
-  padding-right: 18px;
-  border-right: 1px solid rgba(247, 241, 231, 0.22);
+  gap: 18px;
+  max-width: 520px;
+  padding-right: 14px;
+  border-right: 1px solid rgba(247, 241, 231, 0.12);
+}
+
+.season-page-panel--about .season-experiences {
+  transform: translateY(-4vh);
 }
 
 .season-experiences h3,
@@ -571,6 +625,24 @@ button {
   font-size: clamp(11px, 1.05vw, 13px);
   line-height: 1.45;
   color: rgba(247, 241, 231, 0.54);
+}
+
+.season-guide-note {
+  justify-self: end;
+  max-width: 440px;
+  margin-top: 10px;
+  padding: 16px 18px;
+  border: 1px solid rgba(247, 241, 231, 0.16);
+  background: rgba(7, 13, 11, 0.34);
+  backdrop-filter: blur(8px);
+}
+
+.season-guide-note p {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(12px, 1.15vw, 14px);
+  line-height: 1.55;
+  color: rgba(247, 241, 231, 0.62);
 }
 
 .continue-button {
@@ -819,8 +891,22 @@ button {
     margin-left: 0;
   }
 
+  .home-year-round {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    align-self: flex-start;
+    width: min(100%, 420px);
+    margin-top: 22px;
+    padding-left: 14px;
+  }
+
+  .home-year-round p {
+    max-width: 100%;
+  }
+
   .season-choices {
-    inset: auto 20px 116px;
+    inset: auto 20px 138px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
     z-index: 3;
@@ -854,6 +940,10 @@ button {
 
   .season-page {
     padding: 80px 20px 100px;
+  }
+
+  .season-page-panel--about .season-experiences {
+    transform: none;
   }
 
   .season-page h2 {
