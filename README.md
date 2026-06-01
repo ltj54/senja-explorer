@@ -1,4 +1,35 @@
-# React + TypeScript + Vite
+# Senja Explorer
+
+## Image optimization
+
+Original Roland images live under `src/assets/roland` and should stay untouched.
+
+Run this after adding or sorting new JPG images:
+
+```sh
+npm run images:optimize
+```
+
+The script requires ImageMagick on `PATH` and writes:
+
+- `public/images/web/<season>/*.webp` for website use
+- `public/images/thumbs/<season>/*.webp` for previews and galleries
+- `public/images/web/<season>/*.mp4` for video files
+
+Defaults:
+
+- web images: max `1920x1920`, WebP quality `82`
+- thumbnails: max `480x480`, WebP quality `82`
+
+MP4 files are copied into `public/images/web/<season>`. Poster thumbnails for video require `ffmpeg` on `PATH`.
+
+You can override values directly:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/optimize-images.ps1 -WebMax 1600 -ThumbMax 400 -Quality 80
+```
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

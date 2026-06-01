@@ -1,6 +1,6 @@
 # Roland bildesortering
 
-Fysisk sortering etter gjennomgang. Innboksen inneholder nå kun en filmsnutt som skal vurderes senere.
+Fysisk sortering etter gjennomgang. Innboksen er nå tom.
 
 ## Vinter
 
@@ -214,9 +214,9 @@ Brukers kontrolliste ble gjennomgått mot sorteringen. Duplikater i kontrolliste
 * `1000019854.jpg`
 * `1000002194.jpg`
 
-### Bekreftet video i innboks
+### Bekreftet video i sorteringen
 
-* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4` - finnes som `inbox/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4` - finnes som `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4`
 
 ### Ikke funnet i sorteringslisten
 
@@ -227,7 +227,7 @@ Disse står verken i sorterte mapper eller i listen over filer som ikke var tilg
 
 ## Video til senere vurdering
 
-* `inbox/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4` - filmsnutt, ikke sortert ennå
+* `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4` - filmsnutt, ikke vurdert for bruk ennå
 
 ## Notater
 

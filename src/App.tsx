@@ -14,6 +14,53 @@ type ContactDragState = {
   width: number
 }
 
+const winterGalleryImages = [
+  '1000001184',
+  '1000001192',
+  '1000001200',
+  '1000001206',
+  '1000001234',
+  '1000001280',
+  '1000013116',
+  '1000013165',
+  '1000013166',
+  '1000013169',
+  '1000013170',
+  '1000013488',
+  '1000013490',
+  '1000013590',
+  '1000015795',
+  '1000015976',
+  '1000015982',
+  '1000019867',
+  '1000019868',
+  '1000019870',
+  '1000019883',
+  '1000019884',
+  '1000019890',
+  '1000020203',
+  '1000020232',
+  '1000020233',
+  '1000020234',
+  '1000020236',
+  '1000020241',
+  '1000020242',
+  '1000020274',
+  '1000020473',
+  '1000020485',
+  '1000020488',
+  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1037',
+  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1273',
+  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446',
+  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1510',
+  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608',
+]
+
+const winterGalleryPages = Array.from(
+  { length: Math.ceil(winterGalleryImages.length / 9) },
+  (_, pageIndex) => winterGalleryImages.slice(pageIndex * 9, pageIndex * 9 + 9),
+)
+
 const getPageFromHash = (): Page => {
   const hashPage = window.location.hash.replace('#', '')
   return hashPage === 'summer' || hashPage === 'winter' ? hashPage : 'home'
@@ -26,9 +73,11 @@ function App() {
   const [scrollOpacity, setScrollOpacity] = useState(1)
   const [contactPosition, setContactPosition] = useState<ContactPosition>(null)
   const [isContactDragging, setIsContactDragging] = useState(false)
+  const [activeWinterImage, setActiveWinterImage] = useState<number | null>(null)
   const contactDrag = useRef<ContactDragState | null>(null)
   const suppressContactClick = useRef(false)
   const text = translations[language]
+  const activeWinterImageName = activeWinterImage === null ? null : winterGalleryImages[activeWinterImage]
 
   // Håndter bakgrunns-fade ved scrolling
   useEffect(() => {
@@ -65,10 +114,50 @@ function App() {
       window.removeEventListener('hashchange', syncPageFromLocation)
       window.removeEventListener('popstate', syncPageFromLocation)
     }
-  }, [])
+  }, []) 
+
+  useEffect(() => {
+    if (activeWinterImage === null) {
+      return
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setActiveWinterImage(null)
+      }
+
+      if (event.key === 'ArrowLeft') {
+        setActiveWinterImage((current) =>
+          current === null ? current : (current - 1 + winterGalleryImages.length) % winterGalleryImages.length,
+        )
+      }
+
+      if (event.key === 'ArrowRight') {
+        setActiveWinterImage((current) =>
+          current === null ? current : (current + 1) % winterGalleryImages.length,
+        )
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [activeWinterImage])
+
+  const showPreviousWinterImage = () => {
+    setActiveWinterImage((current) =>
+      current === null ? current : (current - 1 + winterGalleryImages.length) % winterGalleryImages.length,
+    )
+  }
+
+  const showNextWinterImage = () => {
+    setActiveWinterImage((current) =>
+      current === null ? current : (current + 1) % winterGalleryImages.length,
+    )
+  }
 
   const navigateTo = (newPage: Page) => {
     setPage(newPage)
+    setActiveWinterImage(null)
     const nextUrl = newPage === 'home' ? window.location.pathname : `${window.location.pathname}#${newPage}`
     window.history.pushState(null, '', nextUrl)
   }
@@ -283,7 +372,7 @@ function App() {
                 className="continue-button"
                 type="button"
                 onClick={() => {
-                  document.getElementById('about-panel')?.scrollIntoView({ behavior: 'smooth' })
+                  document.getElementById('winter-image-panel')?.scrollIntoView({ behavior: 'smooth' })
                 }}
               >
                 <span>{text.continue}</span>
@@ -293,6 +382,35 @@ function App() {
               </button>
             </div>
           </div>
+
+          {winterGalleryPages.map((galleryPage, pageIndex) => (
+            <div
+              key={pageIndex}
+              id={pageIndex === 0 ? 'winter-image-panel' : undefined}
+              className="season-page-panel season-page-panel--image"
+            >
+              <div className="season-image-grid">
+                {galleryPage.map((imageName, imageIndex) => {
+                  const galleryIndex = pageIndex * 9 + imageIndex
+
+                  return (
+                    <button
+                      key={imageName}
+                      className="season-image-grid__item"
+                      type="button"
+                      aria-label={`Vis vinterbilde ${galleryIndex + 1}`}
+                      onClick={() => setActiveWinterImage(galleryIndex)}
+                    >
+                      <img
+                        src={`/images/web/winter/${imageName}.webp`}
+                        alt=""
+                      />
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          ))}
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
             {text.winterPage.comingSoon && <p className="season-coming-soon">{text.winterPage.comingSoon}</p>}
@@ -376,6 +494,48 @@ function App() {
 
             <p className="contact-form__privacy">{text.privacyNotice}</p>
           </form>
+        </div>
+      )}
+
+      {activeWinterImageName && (
+        <div className="image-lightbox" role="dialog" aria-modal="true" aria-label="Vinterbilde">
+          <button
+            className="image-lightbox__backdrop"
+            type="button"
+            aria-label="Lukk bilde"
+            onClick={() => setActiveWinterImage(null)}
+          />
+
+          <div className="image-lightbox__content">
+            <button
+              className="image-lightbox__close"
+              type="button"
+              aria-label="Lukk bilde"
+              onClick={() => setActiveWinterImage(null)}
+            >
+              ×
+            </button>
+            <button
+              className="image-lightbox__nav image-lightbox__nav--prev"
+              type="button"
+              aria-label="Forrige bilde"
+              onClick={showPreviousWinterImage}
+            >
+              ‹
+            </button>
+            <img
+              src={`/images/web/winter/${activeWinterImageName}.webp`}
+              alt=""
+            />
+            <button
+              className="image-lightbox__nav image-lightbox__nav--next"
+              type="button"
+              aria-label="Neste bilde"
+              onClick={showNextWinterImage}
+            >
+              ›
+            </button>
+          </div>
         </div>
       )}
 

@@ -434,6 +434,50 @@ button {
   padding-bottom: clamp(52px, 8vh, 96px);
 }
 
+.season-page-panel--image {
+  justify-content: center;
+  align-items: center;
+  padding: clamp(28px, 5vw, 72px);
+}
+
+.season-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 1.4vw, 18px);
+  width: min(100%, 1500px);
+}
+
+.season-image-grid__item {
+  display: block;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.season-image-grid__item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+  transition: transform 240ms ease, box-shadow 240ms ease, filter 240ms ease;
+}
+
+.season-image-grid__item:hover img,
+.season-image-grid__item:focus-visible img {
+  filter: brightness(1.06);
+  transform: translateY(-3px);
+  box-shadow: 0 24px 58px rgba(0, 0, 0, 0.44);
+}
+
+.season-image-grid__item:focus-visible {
+  outline: 2px solid rgba(247, 241, 231, 0.86);
+  outline-offset: 5px;
+}
+
 .season-page-background {
   position: fixed;
   inset: 0;
@@ -744,6 +788,89 @@ button {
   padding: 20px;
 }
 
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 4vw, 54px);
+}
+
+.image-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border: 0;
+  background: rgba(3, 7, 6, 0.88);
+  backdrop-filter: blur(8px);
+  cursor: zoom-out;
+}
+
+.image-lightbox__content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1600px);
+  display: grid;
+  place-items: center;
+}
+
+.image-lightbox__content img {
+  display: block;
+  width: min(100%, 1600px);
+  max-height: min(86vh, 920px);
+  object-fit: contain;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.58);
+}
+
+.image-lightbox__close,
+.image-lightbox__nav {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(247, 241, 231, 0.38);
+  background: rgba(7, 13, 11, 0.58);
+  color: rgba(255, 250, 240, 0.92);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: background 220ms ease, border-color 220ms ease, transform 220ms ease;
+}
+
+.image-lightbox__close {
+  top: clamp(10px, 2vw, 22px);
+  right: clamp(10px, 2vw, 22px);
+  width: 44px;
+  height: 44px;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.image-lightbox__nav {
+  top: 50%;
+  width: clamp(42px, 5vw, 58px);
+  height: clamp(58px, 8vw, 82px);
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.image-lightbox__nav--prev {
+  left: clamp(8px, 2vw, 24px);
+}
+
+.image-lightbox__nav--next {
+  right: clamp(8px, 2vw, 24px);
+}
+
+.image-lightbox__close:hover,
+.image-lightbox__close:focus-visible,
+.image-lightbox__nav:hover,
+.image-lightbox__nav:focus-visible {
+  border-color: rgba(247, 241, 231, 0.78);
+  background: rgba(7, 13, 11, 0.82);
+}
+
 .contact-modal__backdrop {
   position: absolute;
   inset: 0;
@@ -940,6 +1067,17 @@ button {
 
   .season-page {
     padding: 80px 20px 100px;
+  }
+
+  .season-page-panel--image {
+    padding: 20px;
+  }
+
+  .season-image-grid {
+    grid-template-columns: 1fr;
+    max-height: 78vh;
+    overflow-y: auto;
+    padding-right: 4px;
   }
 
   .season-page-panel--about .season-experiences {
