@@ -4,6 +4,10 @@ import { languageLabels, languages, translations, type Language } from './i18n'
 type Page = 'home' | 'summer' | 'winter'
 type ContactPosition = { x: number; y: number } | null
 type GalleryType = 'summer' | 'winter'
+type GalleryItem = {
+  kind: 'image' | 'video'
+  name: string
+}
 type ActiveGalleryImage = {
   index: number
   type: GalleryType
@@ -19,25 +23,34 @@ type ContactDragState = {
   width: number
 }
 
-const summerGalleryImages = [
+const imageItem = (name: string): GalleryItem => ({ kind: 'image', name })
+
+const summerGalleryItems: GalleryItem[] = [
+  '1000000148',
   '1000000191',
   '1000000599',
+  '1000001037',
   '1000001400',
   '1000001424',
   '1000001425',
   '1000001432',
   '1000001449',
   '1000001481',
+  '1000013646',
+  '1000015925',
   '1000015931',
   '1000015985',
+  '1000016022',
   '1000016037',
   '1000021458',
+  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_390',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3921',
+  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4217',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4243',
-]
+].map(imageItem)
 
-const winterGalleryImages = [
+const winterGalleryItems: GalleryItem[] = [
   '1000001184',
   '1000001192',
   '1000001200',
@@ -52,9 +65,11 @@ const winterGalleryImages = [
   '1000013488',
   '1000013490',
   '1000013590',
+  '1000015792',
   '1000015795',
   '1000015976',
   '1000015982',
+  '1000015987',
   '1000019867',
   '1000019868',
   '1000019870',
@@ -73,31 +88,34 @@ const winterGalleryImages = [
   '1000020485',
   '1000020488',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1037',
+  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1220',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1273',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1510',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608',
-]
+].map(imageItem)
 
-const chunkGalleryImages = (images: string[]) =>
+winterGalleryItems.splice(winterGalleryItems.length - 1, 0, {
+  kind: 'video',
+  name: 'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583',
+})
+
+const chunkGalleryItems = (items: GalleryItem[]) =>
   Array.from(
-    { length: Math.ceil(images.length / 9) },
-    (_, pageIndex) => images.slice(pageIndex * 9, pageIndex * 9 + 9),
+    { length: Math.ceil(items.length / 9) },
+    (_, pageIndex) => items.slice(pageIndex * 9, pageIndex * 9 + 9),
   )
 
-const summerGalleryPages = chunkGalleryImages(summerGalleryImages)
+const summerGalleryPages = chunkGalleryItems(summerGalleryItems)
 
-const winterGalleryPages = Array.from(
-  { length: Math.ceil(winterGalleryImages.length / 9) },
-  (_, pageIndex) => winterGalleryImages.slice(pageIndex * 9, pageIndex * 9 + 9),
-)
+const winterGalleryPages = chunkGalleryItems(winterGalleryItems)
 
-const galleryImagesByType = {
-  summer: summerGalleryImages,
-  winter: winterGalleryImages,
+const galleryItemsByType = {
+  summer: summerGalleryItems,
+  winter: winterGalleryItems,
 }
 
-const publicAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`
+const publicAssetPath = (path: string) => `${import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}${path}`
 
 const getPageFromHash = (): Page => {
   const hashPage = window.location.hash.replace('#', '')
@@ -115,8 +133,8 @@ function App() {
   const contactDrag = useRef<ContactDragState | null>(null)
   const suppressContactClick = useRef(false)
   const text = translations[language]
-  const activeGalleryImages = activeGalleryImage ? galleryImagesByType[activeGalleryImage.type] : []
-  const activeGalleryImageName = activeGalleryImage ? activeGalleryImages[activeGalleryImage.index] : null
+  const activeGalleryItems = activeGalleryImage ? galleryItemsByType[activeGalleryImage.type] : []
+  const activeGalleryItem = activeGalleryImage ? activeGalleryItems[activeGalleryImage.index] : null
 
   // Håndter bakgrunns-fade ved scrolling
   useEffect(() => {
@@ -172,8 +190,8 @@ function App() {
             : {
                 ...current,
                 index:
-                  (current.index - 1 + galleryImagesByType[current.type].length) %
-                  galleryImagesByType[current.type].length,
+                  (current.index - 1 + galleryItemsByType[current.type].length) %
+                  galleryItemsByType[current.type].length,
               },
         )
       }
@@ -184,7 +202,7 @@ function App() {
             ? current
             : {
                 ...current,
-                index: (current.index + 1) % galleryImagesByType[current.type].length,
+                index: (current.index + 1) % galleryItemsByType[current.type].length,
               },
         )
       }
@@ -201,8 +219,8 @@ function App() {
         : {
             ...current,
             index:
-              (current.index - 1 + galleryImagesByType[current.type].length) %
-              galleryImagesByType[current.type].length,
+              (current.index - 1 + galleryItemsByType[current.type].length) %
+              galleryItemsByType[current.type].length,
           },
     )
   }
@@ -213,7 +231,7 @@ function App() {
         ? current
         : {
             ...current,
-            index: (current.index + 1) % galleryImagesByType[current.type].length,
+            index: (current.index + 1) % galleryItemsByType[current.type].length,
           },
     )
   }
@@ -405,19 +423,19 @@ function App() {
               className="season-page-panel season-page-panel--image"
             >
               <div className="season-image-grid">
-                {galleryPage.map((imageName, imageIndex) => {
+                {galleryPage.map((galleryItem, imageIndex) => {
                   const galleryIndex = pageIndex * 9 + imageIndex
 
                   return (
                     <button
-                      key={imageName}
+                      key={galleryItem.name}
                       className="season-image-grid__item"
                       type="button"
                       aria-label={`Vis sommerbilde ${galleryIndex + 1}`}
                       onClick={() => setActiveGalleryImage({ type: 'summer', index: galleryIndex })}
                     >
                       <img
-                        src={publicAssetPath(`images/web/summer/${imageName}.webp`)}
+                        src={publicAssetPath(`images/web/summer/${galleryItem.name}.webp`)}
                         alt=""
                       />
                     </button>
@@ -482,21 +500,33 @@ function App() {
               className="season-page-panel season-page-panel--image"
             >
               <div className="season-image-grid">
-                {galleryPage.map((imageName, imageIndex) => {
+                {galleryPage.map((galleryItem, imageIndex) => {
                   const galleryIndex = pageIndex * 9 + imageIndex
 
                   return (
                     <button
-                      key={imageName}
-                      className="season-image-grid__item"
+                      key={galleryItem.name}
+                      className={`season-image-grid__item${galleryItem.kind === 'video' ? ' season-image-grid__item--video' : ''}`}
                       type="button"
-                      aria-label={`Vis vinterbilde ${galleryIndex + 1}`}
+                      aria-label={`Vis ${galleryItem.kind === 'video' ? 'vintervideo' : 'vinterbilde'} ${galleryIndex + 1}`}
                       onClick={() => setActiveGalleryImage({ type: 'winter', index: galleryIndex })}
                     >
-                      <img
-                        src={publicAssetPath(`images/web/winter/${imageName}.webp`)}
-                        alt=""
-                      />
+                      {galleryItem.kind === 'video' ? (
+                        <>
+                          <video
+                            src={publicAssetPath(`images/web/winter/${galleryItem.name}.mp4`)}
+                            muted
+                            playsInline
+                            preload="metadata"
+                          />
+                          <span className="season-image-grid__badge">Video</span>
+                        </>
+                      ) : (
+                        <img
+                          src={publicAssetPath(`images/web/winter/${galleryItem.name}.webp`)}
+                          alt=""
+                        />
+                      )}
                     </button>
                   )
                 })}
@@ -589,12 +619,12 @@ function App() {
         </div>
       )}
 
-      {activeGalleryImage && activeGalleryImageName && (
-        <div className="image-lightbox" role="dialog" aria-modal="true" aria-label="Bilde">
+      {activeGalleryImage && activeGalleryItem && (
+        <div className="image-lightbox" role="dialog" aria-modal="true" aria-label={activeGalleryItem.kind === 'video' ? 'Video' : 'Bilde'}>
           <button
             className="image-lightbox__backdrop"
             type="button"
-            aria-label="Lukk bilde"
+            aria-label={activeGalleryItem.kind === 'video' ? 'Lukk video' : 'Lukk bilde'}
             onClick={() => setActiveGalleryImage(null)}
           />
 
@@ -602,7 +632,7 @@ function App() {
             <button
               className="image-lightbox__close"
               type="button"
-              aria-label="Lukk bilde"
+              aria-label={activeGalleryItem.kind === 'video' ? 'Lukk video' : 'Lukk bilde'}
               onClick={() => setActiveGalleryImage(null)}
             >
               ×
@@ -615,10 +645,19 @@ function App() {
             >
               ‹
             </button>
-            <img
-              src={publicAssetPath(`images/web/${activeGalleryImage.type}/${activeGalleryImageName}.webp`)}
-              alt=""
-            />
+            {activeGalleryItem.kind === 'video' ? (
+              <video
+                src={publicAssetPath(`images/web/${activeGalleryImage.type}/${activeGalleryItem.name}.mp4`)}
+                controls
+                autoPlay
+                playsInline
+              />
+            ) : (
+              <img
+                src={publicAssetPath(`images/web/${activeGalleryImage.type}/${activeGalleryItem.name}.webp`)}
+                alt=""
+              />
+            )}
             <button
               className="image-lightbox__nav image-lightbox__nav--next"
               type="button"

@@ -448,6 +448,7 @@ button {
 }
 
 .season-image-grid__item {
+  position: relative;
   display: block;
   min-width: 0;
   padding: 0;
@@ -456,7 +457,8 @@ button {
   cursor: zoom-in;
 }
 
-.season-image-grid__item img {
+.season-image-grid__item img,
+.season-image-grid__item video {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -467,10 +469,26 @@ button {
 }
 
 .season-image-grid__item:hover img,
-.season-image-grid__item:focus-visible img {
+.season-image-grid__item:focus-visible img,
+.season-image-grid__item:hover video,
+.season-image-grid__item:focus-visible video {
   filter: brightness(1.06);
   transform: translateY(-3px);
   box-shadow: 0 24px 58px rgba(0, 0, 0, 0.44);
+}
+
+.season-image-grid__badge {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  background: rgba(7, 13, 11, 0.68);
+  color: rgba(255, 250, 240, 0.92);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
 }
 
 .season-image-grid__item:focus-visible {
@@ -815,7 +833,8 @@ button {
   place-items: center;
 }
 
-.image-lightbox__content img {
+.image-lightbox__content img,
+.image-lightbox__content video {
   display: block;
   width: min(100%, 1600px);
   max-height: min(86vh, 920px);
