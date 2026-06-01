@@ -43,7 +43,6 @@ const summerGalleryItems: GalleryItem[] = [
   '1000016022',
   '1000016037',
   '1000021458',
-  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_390',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3921',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4217',
