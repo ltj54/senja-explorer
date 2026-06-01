@@ -18,7 +18,7 @@
 - Configure the Formspree form ID before publishing.
 - Run `npm run build` before deployment.
 
-## Bilder vi har
+## Bilder som kan lastes ned
 
 1000020488.jpg
 1000015982.jpg
@@ -46,7 +46,7 @@
 1000020236.jpg
 1000019883.jpg
 
-## Bilder vi ikke har
+## Bilder som ikke kan lastes ned
 
 1000019890.jpg
 1000019884.jpg
@@ -123,3 +123,18 @@
 1000001678.jpg
 1000001672.jpg
 1000001652.jpg
+1000020233.jpg
+1000020229.jpg
+1000020232.jpg
+1000020207.jpg
+1000020203.jpg
+1000020208.jpg
+1000020210.jpg
+1000020209.jpg
+1000020206.jpg
+1000019891.jpg
+1000019884.jpg
+1000019885.jpg
+1000019886.jpg
+1000019862.jpg
+1000019854.jpg

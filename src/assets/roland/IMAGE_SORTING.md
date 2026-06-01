@@ -13,11 +13,14 @@ Use for winter page, randonee, ski touring, ice fishing, snow, summit and cold-w
 - `winter/1000015982.jpg` - snowy mountains reflected in water, 1280x960, 38 KB
 - `winter/1000019867.jpg` - ski slope / sun, 1536x2048, 113 KB
 - `winter/1000019868.jpg` - ski tracks / open snow, 2048x1536, 100 KB
+- `winter/1000019870.jpg` - snowy mountain panorama / ski tracks, 2048x1536, 232 KB
 - `winter/1000019883.jpg` - winter mountain and fjord view, 4000x3000, 1479 KB
 - `winter/1000020203.jpg` - snow slope / mountain view, 4000x3000, 3526 KB
 - `winter/1000020232.jpg` - winter landscape / fjord, 4000x3000, 3716 KB
 - `winter/1000020233.jpg` - snowy coastal mountain, 4000x3000, 3765 KB
+- `winter/1000020234.jpg` - snowy coastal mountain / sea view, 4000x3000, 3467 KB
 - `winter/1000020236.jpg` - wide winter mountain view, 4000x3000, 3842 KB
+- `winter/1000020241.jpg` - ski tracks on open snow slope, 4000x3000, 3464 KB
 - `winter/1000020242.jpg` - open snow landscape with person, 4000x3000, 3502 KB
 - `winter/1000020274.jpg` - skier resting / gear detail, 1536x2048, 197 KB
 - `winter/1000020473.jpg` - summit / mountain panorama, 4000x3000, 3696 KB
