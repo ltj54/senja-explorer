@@ -11,17 +11,23 @@ Brukes til vinterside, randonee, toppturer på ski, isfiske, snø, fjelltopper o
 * `winter/1000001206.jpg` - topptur i snø / fjellutsikt, 960x720, 68 KB
 * `winter/1000001234.jpg` - skispor / snøside, 960x720, 64 KB
 * `winter/1000001280.jpg` - vinterfjord / fjellutsikt, 960x720, 39 KB
+* `winter/1000001282.jpg` - høy vinterutsikt over fjord og snøfjell, 720x960, 38 KB
+* `winter/1000001650.jpg` - Roland med ski / vinterpause, 1536x2048, 347 KB
+* `winter/1000001700.jpg` - vinterpanorama fra fjellet, 1024x768, 84 KB
 * `winter/1000013116.jpg` - islagt fjord / vinterlandskap, 4000x3000, 4013 KB
 * `winter/1000013165.jpg` - isfiske på fjord, 4000x3000, 4105 KB
 * `winter/1000013166.jpg` - islagt fjord / fiskeplass, 4000x3000, 4053 KB
 * `winter/1000013169.jpg` - fisk på is, 4000x3000, 3834 KB
 * `winter/1000013170.jpg` - isfiske / fangst, 4000x3000, 3923 KB
+* `winter/1000013372.jpg` - skispor / personer i vinterlys, 4000x3000, 3089 KB
+* `winter/1000013487.jpg` - ski og vinterfjell, 960x720, 53 KB
 * `winter/1000013590.jpg` - isfiskeutstyr i snø, 4000x3000, 3435 KB
 * `winter/1000013488.jpg` - ski / vinterfjell, 1080x810, 68 KB
 * `winter/1000013490.jpg` - ski i snø / fjellforhold, 960x720, 46 KB
 * `winter/1000015795.jpg` - person i vinterlys, 528x960, 12 KB
 * `winter/1000015976.jpg` - vinterfjord / båt i snø, 2048x1536, 79 KB
 * `winter/1000015982.jpg` - snødekte fjell speilet i vann, 1280x960, 38 KB
+* `winter/1000016003.jpg` - vinterfjord og snødekte fjell, 960x720, 33 KB
 * `winter/1000001200.jpg` - åpen snøbakke / topptur, 4000x3000, 4014 KB
 * `winter/1000019867.jpg` - skibakke / sol, 1536x2048, 113 KB
 * `winter/1000019868.jpg` - skispor / åpent snølandskap, 2048x1536, 100 KB
@@ -30,6 +36,7 @@ Brukes til vinterside, randonee, toppturer på ski, isfiske, snø, fjelltopper o
 * `winter/1000019884.jpg` - vinterfjell / snødekt panorama, 4000x3000, 3613 KB
 * `winter/1000019890.jpg` - vinterlandskap / fjelltopper, 4000x3000, 3571 KB
 * `winter/1000020203.jpg` - snødekt fjellside / fjellutsikt, 4000x3000, 3526 KB
+* `winter/1000020229.jpg` - snøfjell og havutsikt, 4000x3000, 3420 KB
 * `winter/1000020232.jpg` - vinterlandskap / fjord, 4000x3000, 3716 KB
 * `winter/1000020233.jpg` - snødekt kystfjell, 4000x3000, 3765 KB
 * `winter/1000020234.jpg` - snødekt kystfjell / havutsikt, 4000x3000, 3467 KB
@@ -38,6 +45,7 @@ Brukes til vinterside, randonee, toppturer på ski, isfiske, snø, fjelltopper o
 * `winter/1000020242.jpg` - åpent snølandskap med person, 4000x3000, 3502 KB
 * `winter/1000020274.jpg` - skiløper i pause / utstyrsdetalj, 1536x2048, 197 KB
 * `winter/1000020473.jpg` - fjelltopp / fjellpanorama, 4000x3000, 3696 KB
+* `winter/1000020484.jpg` - Roland med ski på fjellet, 1536x2048, 175 KB
 * `winter/1000020485.jpg` - Roland med ski, 1536x2048, 209 KB
 * `winter/1000020488.jpg` - vinterdetalj / votter, 1536x2048, 133 KB
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1037.jpg` - topptur på snøside, 960x720, 40 KB
@@ -56,6 +64,7 @@ Beste kandidater til vinter-hero:
 Beste kandidater til person-/detaljbilder vinter:
 
 * `winter/1000020485.jpg`
+* `winter/1000020484.jpg`
 * `winter/1000020274.jpg`
 * `winter/1000020488.jpg`
 
@@ -112,8 +121,6 @@ Disse bildene var listet i e-posten fra Roland, men kunne ikke lastes ned fordi 
 * `1000015014.jpg`
 * `1000013638.jpg`
 * `1000013591.jpg`
-* `1000013487.jpg`
-* `1000013372.jpg`
 * `1000013213.jpg`
 * `1000013212.jpg`
 * `1000013175.jpg`
@@ -173,7 +180,6 @@ Disse bildene var listet i e-posten fra Roland, men kunne ikke lastes ned fordi 
 * `1000001678.jpg`
 * `1000001672.jpg`
 * `1000001652.jpg`
-* `1000020229.jpg`
 * `1000020207.jpg`
 * `1000020208.jpg`
 * `1000020210.jpg`
@@ -193,15 +199,17 @@ Brukers kontrolliste ble gjennomgått mot sorteringen. Duplikater i kontrolliste
 
 * `1000020233.jpg` - finnes som `winter/1000020233.jpg`
 * `1000020232.jpg` - finnes som `winter/1000020232.jpg`
+* `1000020229.jpg` - finnes som `winter/1000020229.jpg`
 * `1000020203.jpg` - finnes som `winter/1000020203.jpg`
 * `1000019884.jpg` - finnes som `winter/1000019884.jpg`
+* `1000013487.jpg` - finnes som `winter/1000013487.jpg`
+* `1000013372.jpg` - finnes som `winter/1000013372.jpg`
 * `1000001200.jpg` - finnes som `winter/1000001200.jpg`
 * `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1220.jpg` - finnes som `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1220.jpg`
 * `1000021458.jpg` - finnes som `summer/1000021458.jpg`
 
 ### Bekreftet ikke tilgjengelige fra e-post
 
-* `1000020229.jpg`
 * `1000020207.jpg`
 * `1000020208.jpg`
 * `1000020210.jpg`
