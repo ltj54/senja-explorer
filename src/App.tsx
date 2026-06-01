@@ -3,6 +3,11 @@ import { languageLabels, languages, translations, type Language } from './i18n'
 
 type Page = 'home' | 'summer' | 'winter'
 type ContactPosition = { x: number; y: number } | null
+type GalleryType = 'summer' | 'winter'
+type ActiveGalleryImage = {
+  index: number
+  type: GalleryType
+} | null
 type ContactDragState = {
   hasMoved: boolean
   height: number
@@ -13,6 +18,24 @@ type ContactDragState = {
   startY: number
   width: number
 }
+
+const summerGalleryImages = [
+  '1000000191',
+  '1000000599',
+  '1000001400',
+  '1000001424',
+  '1000001425',
+  '1000001432',
+  '1000001449',
+  '1000001481',
+  '1000015931',
+  '1000015985',
+  '1000016037',
+  '1000021458',
+  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3921',
+  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4217',
+  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4243',
+]
 
 const winterGalleryImages = [
   '1000001184',
@@ -56,10 +79,23 @@ const winterGalleryImages = [
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608',
 ]
 
+const chunkGalleryImages = (images: string[]) =>
+  Array.from(
+    { length: Math.ceil(images.length / 9) },
+    (_, pageIndex) => images.slice(pageIndex * 9, pageIndex * 9 + 9),
+  )
+
+const summerGalleryPages = chunkGalleryImages(summerGalleryImages)
+
 const winterGalleryPages = Array.from(
   { length: Math.ceil(winterGalleryImages.length / 9) },
   (_, pageIndex) => winterGalleryImages.slice(pageIndex * 9, pageIndex * 9 + 9),
 )
+
+const galleryImagesByType = {
+  summer: summerGalleryImages,
+  winter: winterGalleryImages,
+}
 
 const publicAssetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
@@ -75,11 +111,12 @@ function App() {
   const [scrollOpacity, setScrollOpacity] = useState(1)
   const [contactPosition, setContactPosition] = useState<ContactPosition>(null)
   const [isContactDragging, setIsContactDragging] = useState(false)
-  const [activeWinterImage, setActiveWinterImage] = useState<number | null>(null)
+  const [activeGalleryImage, setActiveGalleryImage] = useState<ActiveGalleryImage>(null)
   const contactDrag = useRef<ContactDragState | null>(null)
   const suppressContactClick = useRef(false)
   const text = translations[language]
-  const activeWinterImageName = activeWinterImage === null ? null : winterGalleryImages[activeWinterImage]
+  const activeGalleryImages = activeGalleryImage ? galleryImagesByType[activeGalleryImage.type] : []
+  const activeGalleryImageName = activeGalleryImage ? activeGalleryImages[activeGalleryImage.index] : null
 
   // Håndter bakgrunns-fade ved scrolling
   useEffect(() => {
@@ -119,47 +156,71 @@ function App() {
   }, []) 
 
   useEffect(() => {
-    if (activeWinterImage === null) {
+    if (activeGalleryImage === null) {
       return
     }
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setActiveWinterImage(null)
+        setActiveGalleryImage(null)
       }
 
       if (event.key === 'ArrowLeft') {
-        setActiveWinterImage((current) =>
-          current === null ? current : (current - 1 + winterGalleryImages.length) % winterGalleryImages.length,
+        setActiveGalleryImage((current) =>
+          current === null
+            ? current
+            : {
+                ...current,
+                index:
+                  (current.index - 1 + galleryImagesByType[current.type].length) %
+                  galleryImagesByType[current.type].length,
+              },
         )
       }
 
       if (event.key === 'ArrowRight') {
-        setActiveWinterImage((current) =>
-          current === null ? current : (current + 1) % winterGalleryImages.length,
+        setActiveGalleryImage((current) =>
+          current === null
+            ? current
+            : {
+                ...current,
+                index: (current.index + 1) % galleryImagesByType[current.type].length,
+              },
         )
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [activeWinterImage])
+  }, [activeGalleryImage])
 
-  const showPreviousWinterImage = () => {
-    setActiveWinterImage((current) =>
-      current === null ? current : (current - 1 + winterGalleryImages.length) % winterGalleryImages.length,
+  const showPreviousGalleryImage = () => {
+    setActiveGalleryImage((current) =>
+      current === null
+        ? current
+        : {
+            ...current,
+            index:
+              (current.index - 1 + galleryImagesByType[current.type].length) %
+              galleryImagesByType[current.type].length,
+          },
     )
   }
 
-  const showNextWinterImage = () => {
-    setActiveWinterImage((current) =>
-      current === null ? current : (current + 1) % winterGalleryImages.length,
+  const showNextGalleryImage = () => {
+    setActiveGalleryImage((current) =>
+      current === null
+        ? current
+        : {
+            ...current,
+            index: (current.index + 1) % galleryImagesByType[current.type].length,
+          },
     )
   }
 
   const navigateTo = (newPage: Page) => {
     setPage(newPage)
-    setActiveWinterImage(null)
+    setActiveGalleryImage(null)
     const nextUrl = newPage === 'home' ? window.location.pathname : `${window.location.pathname}#${newPage}`
     window.history.pushState(null, '', nextUrl)
   }
@@ -326,7 +387,7 @@ function App() {
                 className="continue-button"
                 type="button"
                 onClick={() => {
-                  document.getElementById('about-panel')?.scrollIntoView({ behavior: 'smooth' })
+                  document.getElementById('summer-image-panel')?.scrollIntoView({ behavior: 'smooth' })
                 }}
               >
                 <span>{text.continue}</span>
@@ -336,6 +397,35 @@ function App() {
               </button>
             </div>
           </div>
+
+          {summerGalleryPages.map((galleryPage, pageIndex) => (
+            <div
+              key={pageIndex}
+              id={pageIndex === 0 ? 'summer-image-panel' : undefined}
+              className="season-page-panel season-page-panel--image"
+            >
+              <div className="season-image-grid">
+                {galleryPage.map((imageName, imageIndex) => {
+                  const galleryIndex = pageIndex * 9 + imageIndex
+
+                  return (
+                    <button
+                      key={imageName}
+                      className="season-image-grid__item"
+                      type="button"
+                      aria-label={`Vis sommerbilde ${galleryIndex + 1}`}
+                      onClick={() => setActiveGalleryImage({ type: 'summer', index: galleryIndex })}
+                    >
+                      <img
+                        src={publicAssetPath(`images/web/summer/${imageName}.webp`)}
+                        alt=""
+                      />
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          ))}
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
             {text.summerPage.comingSoon && <p className="season-coming-soon">{text.summerPage.comingSoon}</p>}
@@ -401,7 +491,7 @@ function App() {
                       className="season-image-grid__item"
                       type="button"
                       aria-label={`Vis vinterbilde ${galleryIndex + 1}`}
-                      onClick={() => setActiveWinterImage(galleryIndex)}
+                      onClick={() => setActiveGalleryImage({ type: 'winter', index: galleryIndex })}
                     >
                       <img
                         src={publicAssetPath(`images/web/winter/${imageName}.webp`)}
@@ -499,13 +589,13 @@ function App() {
         </div>
       )}
 
-      {activeWinterImageName && (
-        <div className="image-lightbox" role="dialog" aria-modal="true" aria-label="Vinterbilde">
+      {activeGalleryImage && activeGalleryImageName && (
+        <div className="image-lightbox" role="dialog" aria-modal="true" aria-label="Bilde">
           <button
             className="image-lightbox__backdrop"
             type="button"
             aria-label="Lukk bilde"
-            onClick={() => setActiveWinterImage(null)}
+            onClick={() => setActiveGalleryImage(null)}
           />
 
           <div className="image-lightbox__content">
@@ -513,7 +603,7 @@ function App() {
               className="image-lightbox__close"
               type="button"
               aria-label="Lukk bilde"
-              onClick={() => setActiveWinterImage(null)}
+              onClick={() => setActiveGalleryImage(null)}
             >
               ×
             </button>
@@ -521,19 +611,19 @@ function App() {
               className="image-lightbox__nav image-lightbox__nav--prev"
               type="button"
               aria-label="Forrige bilde"
-              onClick={showPreviousWinterImage}
+              onClick={showPreviousGalleryImage}
             >
               ‹
             </button>
             <img
-              src={publicAssetPath(`images/web/winter/${activeWinterImageName}.webp`)}
+              src={publicAssetPath(`images/web/${activeGalleryImage.type}/${activeGalleryImageName}.webp`)}
               alt=""
             />
             <button
               className="image-lightbox__nav image-lightbox__nav--next"
               type="button"
               aria-label="Neste bilde"
-              onClick={showNextWinterImage}
+              onClick={showNextGalleryImage}
             >
               ›
             </button>
