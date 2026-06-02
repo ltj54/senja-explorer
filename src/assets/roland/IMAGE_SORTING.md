@@ -1,6 +1,32 @@
 # Roland bildesortering
 
-Fysisk sortering etter gjennomgang. Innboksen er nå tom.
+Fysisk sortering etter gjennomgang. Innboksen er tom.
+
+## Forside-sekvens
+
+Sesongbildene brukes som bakgrunnssekvens på hovedsiden. Originalene er beholdt urørt som PNG:
+
+* `home/originals/01_tidlig_var.png`
+* `home/originals/02_sen_var.png`
+* `home/originals/03_sommer.png`
+* `home/originals/04_sensommer.png`
+* `home/originals/05_host.png`
+* `home/originals/06_senhost.png`
+* `home/originals/07_vinter.png`
+* `home/originals/08_dypvinter.png`
+
+Web-varianter for bruk i appen ligger i `home/`:
+
+* `home/01_tidlig_var.webp`
+* `home/02_sen_var.webp`
+* `home/03_sommer.webp`
+* `home/04_sensommer.webp`
+* `home/05_host.webp`
+* `home/06_senhost.webp`
+* `home/07_vinter.webp`
+* `home/08_dypvinter.webp`
+
+Disse er laget manuelt med ImageMagick som høy-kvalitets WebP uten nedskalering. `scripts/optimize-images.ps1` behandler per nå bare `summer/`, `winter/` og `shared/`, og tar bare JPG/JPEG-bilder til `public/images`.
 
 ## Vinter
 
