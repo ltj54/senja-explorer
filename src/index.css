@@ -77,58 +77,62 @@ button {
   position: fixed;
   inset: 0;
   z-index: 0;
+  background-image:
+    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.50)),
+    var(--home-background-image);
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   opacity: 0;
-  animation: home-crossfade 50s ease-in-out infinite;
+  transform: scale(1);
+  animation: home-crossfade 80s ease-in-out infinite;
 }
 
-.home-background--season-1 {
-  background-image:
-    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.50)),
-    url('./assets/season_1.png');
-  transform: scale(1);
+.home-background--tidlig-var {
+  --home-background-image: url('./assets/roland/home/01_tidlig_var.webp');
   animation-delay: 0s;
 }
 
-.home-background--season-2 {
-  background-image:
-    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.50)),
-    url('./assets/season_2.png');
-  transform: scale(1);
+.home-background--sen-var {
+  --home-background-image: url('./assets/roland/home/02_sen_var.webp');
   animation-delay: 10s;
 }
 
-.home-background--season-3 {
-  background-image:
-    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.50)),
-    url('./assets/season_3.png');
-  transform: scale(1);
+.home-background--sommer {
+  --home-background-image: url('./assets/roland/home/03_sommer.webp');
   animation-delay: 20s;
 }
 
-.home-background--season-4 {
-  background-image:
-    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.50)),
-    url('./assets/season_4.png');
-  transform: scale(1);
+.home-background--sensommer {
+  --home-background-image: url('./assets/roland/home/04_sensommer.webp');
   animation-delay: 30s;
 }
 
-.home-background--season-5 {
-  background-image:
-    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.50)),
-    url('./assets/season_5.png');
-  transform: scale(1);
+.home-background--host {
+  --home-background-image: url('./assets/roland/home/05_host.webp');
   animation-delay: 40s;
+}
+
+.home-background--senhost {
+  --home-background-image: url('./assets/roland/home/06_senhost.webp');
+  animation-delay: 50s;
+}
+
+.home-background--vinter {
+  --home-background-image: url('./assets/roland/home/07_vinter.webp');
+  animation-delay: 60s;
+}
+
+.home-background--dypvinter {
+  --home-background-image: url('./assets/roland/home/08_dypvinter.webp');
+  animation-delay: 70s;
 }
 
 @keyframes home-crossfade {
   0% { opacity: 0; }
-  12% { opacity: 1; }
-  24% { opacity: 1; }
-  36% { opacity: 0; }
+  7.5% { opacity: 1; }
+  14% { opacity: 1; }
+  21.5% { opacity: 0; }
   100% { opacity: 0; }
 }
 
