@@ -1,6 +1,6 @@
 # Roland bildesortering
 
-Fysisk sortering etter gjennomgang. Innboksen er tom.
+Fysisk sortering etter gjennomgang. Innboksen er tom etter ny gjennomgang 2026-06-03.
 
 ## Forside-sekvens
 
@@ -27,6 +27,49 @@ Web-varianter for bruk i appen ligger i `home/`:
 * `home/08_dypvinter.webp`
 
 Disse er laget manuelt med ImageMagick som høy-kvalitets WebP uten nedskalering. `scripts/optimize-images.ps1` behandler per nå bare `summer/`, `winter/` og `shared/`, og tar bare JPG/JPEG-bilder til `public/images`.
+
+## Inbox-gjennomgang 2026-06-03
+
+`src/assets/roland/inbox/` inneholdt 22 filer fra Roland. Mappen ble gjennomgått, sammenlignet mot eksisterende sorterte filer og deretter tømt.
+
+Eksakte duplikater av eksisterende sorterte filer:
+
+* `1000001200.jpg` - finnes som `winter/1000001200.jpg`
+* `1000019867.jpg` - finnes som `winter/1000019867.jpg`
+* `1000019868.jpg` - finnes som `winter/1000019868.jpg`
+* `1000019870.jpg` - finnes som `winter/1000019870.jpg`
+* `1000019883.jpg` - finnes som `winter/1000019883.jpg`
+* `1000020234.jpg` - finnes som `winter/1000020234.jpg`
+* `1000020236.jpg` - finnes som `winter/1000020236.jpg`
+* `1000020241.jpg` - finnes som `winter/1000020241.jpg`
+* `1000020242.jpg` - finnes som `winter/1000020242.jpg`
+* `1000020473.jpg` - finnes som `winter/1000020473.jpg`
+* `1000020488.jpg` - finnes som `winter/1000020488.jpg`
+* `1000021458.jpg` - finnes som `summer/1000021458.jpg`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4` - finnes som `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4`
+
+Nesten-duplikat:
+
+* `1000020485.jpg` - visuelt samme bilde som `winter/1000020485.jpg`, men ikke byte-identisk.
+
+Nye kandidater som ble sett i inbox, men ikke importert til sorterte mapper:
+
+* `1000001475.jpg` - sommer / båt på strand
+* `1000001476.jpg` - sommer / båt på strand
+* `1000002194.jpg` - sommer / kveldsstemning ved vann
+* `1000013114.jpg` - vinter / islagt fjord
+* `1000013115.jpg` - vinter / islagt fjord
+* `1000020489.jpg` - vinter / Roland på topptur
+
+Nye videoer som ble sett i inbox, men ikke importert til sorterte mapper:
+
+* `1000020230.mp4`
+* `1000020468.mp4`
+
+`scripts/optimize-images.ps1` ble kjørt etter gjennomgangen. Scriptet behandler ikke `inbox/`, bare `summer/`, `winter/` og `shared/`. Kjøringen fullførte, men rapporterte:
+
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608.jpg` gir JPEG-varsel om prematur filslutt / korrupt JPEG-data.
+* `ffmpeg` manglet på PATH, så video ble kopiert, men video-thumbnail ble ikke generert.
 
 ## Vinter
 
@@ -159,8 +202,6 @@ Disse bildene var listet i e-posten fra Roland, men kunne ikke lastes ned fordi 
 * `1000013121.jpg`
 * `1000013118.jpg`
 * `1000013117.jpg`
-* `1000013114.jpg`
-* `1000013115.jpg`
 * `1000013113.jpg`
 * `1000013110.jpg`
 * `1000013108.jpg`
@@ -201,7 +242,6 @@ Disse bildene var listet i e-posten fra Roland, men kunne ikke lastes ned fordi 
 * `1000002450.jpg`
 * `1000002445.jpg`
 * `1000002440.jpg`
-* `1000002194.jpg`
 * `1000001933.jpg`
 * `1000001678.jpg`
 * `1000001672.jpg`
@@ -246,18 +286,21 @@ Brukers kontrolliste ble gjennomgått mot sorteringen. Duplikater i kontrolliste
 * `1000019886.jpg`
 * `1000019862.jpg`
 * `1000019854.jpg`
-* `1000002194.jpg`
 
 ### Bekreftet video i sorteringen
 
 * `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4` - finnes som `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4`
 
-### Ikke funnet i sorteringslisten
+### Senere funnet i inbox, men ikke importert
 
-Disse står verken i sorterte mapper eller i listen over filer som ikke var tilgjengelige fra e-post. De bør sjekkes mot original e-post/Google-lenke eller lokal bildemappe.
+Disse ble funnet ved inbox-gjennomgangen 2026-06-03, men ble ikke flyttet inn i sorterte mapper før inbox ble tømt.
 
 * `1000001475.jpg`
 * `1000001476.jpg`
+* `1000002194.jpg`
+* `1000013114.jpg`
+* `1000013115.jpg`
+* `1000020489.jpg`
 
 ## Video til senere vurdering
 

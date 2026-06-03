@@ -69,8 +69,8 @@ button {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% 46%, rgba(4, 8, 7, 0.08), rgba(4, 8, 7, 0.34) 68%),
-    linear-gradient(180deg, rgba(4, 8, 7, 0.04), rgba(4, 8, 7, 0.56));
+    radial-gradient(circle at 50% 46%, rgba(4, 8, 7, 0.05), rgba(4, 8, 7, 0.24) 68%),
+    linear-gradient(180deg, rgba(4, 8, 7, 0.02), rgba(4, 8, 7, 0.42));
 }
 
 .home-background {
@@ -78,7 +78,7 @@ button {
   inset: 0;
   z-index: 0;
   background-image:
-    linear-gradient(rgba(8, 15, 12, 0.18), rgba(8, 15, 12, 0.50)),
+    linear-gradient(rgba(8, 15, 12, 0.10), rgba(8, 15, 12, 0.36)),
     var(--home-background-image);
   background-size: cover;
   background-position: 50% 50%;
