@@ -26,21 +26,22 @@ const de = {
     kicker: '',
     title: 'Persönliche Erlebnisse auf Senja',
     description:
-      'Breathe Senja & Services Henriksen wird von Roland Henriksen betrieben. Mit lokaler Kenntnis der Natur, des Wetters und der Akteure auf Senja kann er zu persönlichen Erlebnissen und praktischer Organisation beitragen.',
+      'Breathe Senja & Services Henriksen wird von Roland Henriksen betrieben. Mit lokaler Kenntnis von Natur, Wetter und lokalen Akteuren auf Senja kann er persönliche Erlebnisse, Roadtrips, Unterkunft und praktische Organisation anbieten.',
   },
   yearRoundTitle: 'Praktische Hilfe das ganze Jahr',
   yearRound:
-    'Roland kann auch bei Transport, Unterkunft, Sightseeing und Kontakt zu lokalen Anbietern auf Senja helfen.',
+    'Roland kann bei lokalen Erlebnissen, Roadtrips, Unterkunft und Kontakt zu lokalen Akteuren auf Senja helfen. Er hat auch eigene Mieteinheiten, die Gäste auf Anfrage näher ansehen können.',
   summerPage: {
     kicker: 'Sommer auf Senja',
     title: 'Bootstouren, Badestopps\nund Angeln auf dem Fjord',
     description:
-      'Im Sommer bietet Roland Bootstouren, Strandtouren und Angeltouren auf dem Fjord oder weiter draußen auf dem Meer an. Die Touren werden mit einem kleinen Boot oder einem größeren Kabinenboot durchgeführt.',
+      'Im Sommer bietet Roland Bootstouren, Strandtouren und Angeltouren auf dem Fjord oder weiter draußen auf dem Meer an. Die Touren werden mit einem kleinen Boot durchgeführt und an Wetter, Bedingungen und Wünsche angepasst.',
     comingSoon: '',
     practical:
       'Maximal 2 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
     network:
-      'Gipfeltouren auf schöne Berge können über andere lokale Anbieter vermittelt werden. Dies ist getrennt von den Touren, die Roland selbst anbietet.',
+      'Roland kann über sein Netzwerk auf Senja auch Skitouren, Roadtrips, Unterkunft und andere lokale Erlebnisse vermitteln.',
+    galleryTitle: 'Sommerbilder von Senja',
     experiences: {
       title: 'Sommererlebnisse auf Senja',
       items: [
@@ -57,6 +58,11 @@ const de = {
           title: 'Praktisch inklusive',
           description: 'Maximal 2 Personen. Ein einfacher Lunch mit Getränken, geeignetes Schuhwerk und Rettungswesten werden angeboten.',
         },
+        {
+          title: 'Roadtrips und Unterkunft',
+          description:
+            'Roland kann bei Roadtrips, Unterkunft und lokalen Kontakten helfen. Er hat auch eigene Mieteinheiten, die Gästen auf Anfrage gezeigt werden können.',
+        },
       ],
     },
   },
@@ -69,7 +75,8 @@ const de = {
     practical:
       'Maximal 6 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
     network:
-      '',
+      'Roland kann auch bei praktischer Organisation, Unterkunft und lokalen Erlebnissen auf Senja helfen.',
+    galleryTitle: 'Winterbilder von Senja',
     experiences: {
       title: 'Wintererlebnisse mit lokalem Guide',
       items: [
@@ -83,7 +90,12 @@ const de = {
         },
         {
           title: 'Praktisch inklusive',
-          description: 'Maximal 6 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
+          description: 'Die Touren eignen sich für kleine Gruppen mit bis zu 6 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
+        },
+        {
+          title: 'Unterkunft und lokale Hilfe',
+          description:
+            'Roland kann bei Unterkunft und anderen praktischen Bedürfnissen helfen. Eigene Mieteinheiten können Gästen auf Anfrage gezeigt werden.',
         },
       ],
     },

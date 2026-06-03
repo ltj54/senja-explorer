@@ -444,6 +444,21 @@ button {
   padding: clamp(28px, 5vw, 72px);
 }
 
+.season-gallery-title {
+  position: absolute;
+  top: clamp(28px, 5vw, 72px);
+  left: clamp(28px, 5vw, 72px);
+  width: min(calc(100% - clamp(56px, 10vw, 144px)), 1500px);
+  margin: 0;
+  color: rgba(255, 250, 240, 0.92);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(28px, 4vw, 56px);
+  font-weight: 600;
+  line-height: 1;
+  text-align: left;
+  text-shadow: 0 16px 44px rgba(0, 0, 0, 0.45);
+}
+
 .season-image-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

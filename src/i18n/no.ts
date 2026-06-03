@@ -26,21 +26,22 @@ const no = {
     kicker: '',
     title: 'Personlige opplevelser på Senja',
     description:
-        'Breathe Senja & Services Henriksen drives av Roland Henriksen. Med lokal kjennskap til naturen, været og aktører på Senja kan han bidra med personlige opplevelser og praktisk tilrettelegging.',
+        'Breathe Senja & Services Henriksen drives av Roland Henriksen. Med lokal kjennskap til naturen, været og lokale aktører på Senja kan han bidra med personlige opplevelser, roadtrip, overnatting og praktisk tilrettelegging.',
   },
   yearRoundTitle: 'Praktisk hjelp hele året',
   yearRound:
-      'Roland kan også hjelpe med transport, overnatting, sightseeing og kontakt med lokale aktører på Senja.',
+      'Roland kan hjelpe med lokale opplevelser, roadtrip, overnatting og kontakt med lokale aktører på Senja. Han har også egne utleieenheter som gjester kan få se nærmere på ved forespørsel.',
   summerPage: {
     kicker: 'Sommer på Senja',
     title: 'Båtturer, badestopp\nog fiske på fjorden',
     description:
-        'Om sommeren tilbyr Roland båtturer, strandturer og fisketurer på fjorden eller utaskjærs. Turene gjøres med liten båt eller større båt med hus.',
+        'Om sommeren tilbyr Roland båtturer, strandturer og fisketurer på fjorden eller utaskjærs. Turene gjøres med liten båt og tilpasses vær, forhold og ønsker.',
     comingSoon: '',
     practical:
         'Maks 2 personer. Enkel lunch med drikke er inkludert.',
     network:
-        'Roland kan også formidle toppturer med andre lokale aktører.',
+        'Roland kan også formidle toppturer, roadtrip, overnatting og andre lokale opplevelser gjennom sitt nettverk på Senja.',
+    galleryTitle: 'Sommerbilder fra Senja',
     experiences: {
       title: 'Sommeropplevelser på Senja',
       items: [
@@ -57,6 +58,11 @@ const no = {
           title: 'Praktisk inkludert',
           description: 'Maks 2 personer. Enkel lunch med drikke, egnet fottøy og redningsvester tilbys.',
         },
+        {
+          title: 'Roadtrip og overnatting',
+          description:
+              'Roland kan hjelpe med roadtrip, overnatting og lokale kontakter. Han har også egne utleieenheter som kan vises til gjester ved forespørsel.',
+        },
       ],
     },
   },
@@ -69,7 +75,8 @@ const no = {
     practical:
         'Maks 6 personer. Enkel lunch med drikke er inkludert.',
     network:
-        '',
+        'Roland kan også hjelpe med praktisk tilrettelegging, overnatting og lokale opplevelser på Senja.',
+    galleryTitle: 'Vinterbilder fra Senja',
     experiences: {
       title: 'Vinteropplevelser med lokal guide',
       items: [
@@ -84,6 +91,11 @@ const no = {
         {
           title: 'Praktisk inkludert',
           description: 'Turene passer for små grupper på inntil 6 personer. Enkel lunch med drikke er inkludert.',
+        },
+        {
+          title: 'Overnatting og lokal hjelp',
+          description:
+              'Roland kan hjelpe med overnatting og andre praktiske behov. Egne utleieenheter kan vises til gjester ved forespørsel.',
         },
       ],
     },

@@ -26,21 +26,22 @@ const en = {
     kicker: '',
     title: 'Personal experiences on Senja',
     description:
-      'Breathe Senja & Services Henriksen is run by Roland Henriksen. With local knowledge of the nature, weather and partners on Senja, he can contribute with personal experiences and practical arrangements.',
+      'Breathe Senja & Services Henriksen is run by Roland Henriksen. With local knowledge of nature, weather and local partners on Senja, he can contribute with personal experiences, road trips, accommodation and practical arrangements.',
   },
   yearRoundTitle: 'Practical help year round',
   yearRound:
-    'Roland can also help with transport, accommodation, sightseeing and contact with local partners on Senja.',
+    'Roland can help with local experiences, road trips, accommodation and contact with local partners on Senja. He also has his own rental units that guests can see more closely on request.',
   summerPage: {
     kicker: 'Summer on Senja',
     title: 'Boat trips, swim stops\nand fishing on the fjord',
     description:
-      'In summer, Roland offers boat trips, beach trips and fishing trips on the fjord or further out at sea. Trips are done with a small boat or a larger cabin boat.',
+      'In summer, Roland offers boat trips, beach trips and fishing trips on the fjord or further out at sea. Trips are done with a small boat and adapted to weather, conditions and wishes.',
     comingSoon: '',
     practical:
       'Maximum 2 people. A simple lunch with drinks is included.',
     network:
-      'Mountain hikes to beautiful summits can be arranged through other local partners. This is separate from the trips Roland offers himself.',
+      'Roland can also arrange ski touring, road trips, accommodation and other local experiences through his network on Senja.',
+    galleryTitle: 'Summer images from Senja',
     experiences: {
       title: 'Summer experiences on Senja',
       items: [
@@ -57,6 +58,11 @@ const en = {
           title: 'Practical details included',
           description: 'Maximum 2 people. A simple lunch with drinks, suitable footwear and life jackets are provided.',
         },
+        {
+          title: 'Road trips and accommodation',
+          description:
+            'Roland can help with road trips, accommodation and local contacts. He also has his own rental units that can be shown to guests on request.',
+        },
       ],
     },
   },
@@ -69,7 +75,8 @@ const en = {
     practical:
       'Maximum 6 people. A simple lunch with drinks is included.',
     network:
-      '',
+      'Roland can also help with practical arrangements, accommodation and local experiences on Senja.',
+    galleryTitle: 'Winter images from Senja',
     experiences: {
       title: 'Winter experiences with a local guide',
       items: [
@@ -83,7 +90,12 @@ const en = {
         },
         {
           title: 'Practical details included',
-          description: 'Maximum 6 people. A simple lunch with drinks is included.',
+          description: 'The trips are suited for small groups of up to 6 people. A simple lunch with drinks is included.',
+        },
+        {
+          title: 'Accommodation and local help',
+          description:
+            'Roland can help with accommodation and other practical needs. His own rental units can be shown to guests on request.',
         },
       ],
     },

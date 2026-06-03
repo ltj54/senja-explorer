@@ -93,7 +93,6 @@ const winterGalleryItems: GalleryItem[] = [
   '1000020485',
   '1000020488',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1037',
-  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1220',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1273',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446',
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1510',
@@ -440,6 +439,9 @@ function App() {
               id={pageIndex === 0 ? 'summer-image-panel' : undefined}
               className="season-page-panel season-page-panel--image"
             >
+              {pageIndex === 0 && (
+                <h3 className="season-gallery-title">{text.summerPage.galleryTitle}</h3>
+              )}
               <div className="season-image-grid">
                 {galleryPage.map((galleryItem, imageIndex) => {
                   const galleryIndex = pageIndex * 9 + imageIndex
@@ -517,6 +519,9 @@ function App() {
               id={pageIndex === 0 ? 'winter-image-panel' : undefined}
               className="season-page-panel season-page-panel--image"
             >
+              {pageIndex === 0 && (
+                <h3 className="season-gallery-title">{text.winterPage.galleryTitle}</h3>
+              )}
               <div className="season-image-grid">
                 {galleryPage.map((galleryItem, imageIndex) => {
                   const galleryIndex = pageIndex * 9 + imageIndex
