@@ -8,6 +8,10 @@ type GalleryItem = {
   kind: 'image' | 'video'
   name: string
 }
+type WinterGalleryGroup = {
+  key: 'randonee' | 'iceFishing' | 'winterCalm'
+  items: GalleryItem[]
+}
 type ActiveGalleryImage = {
   index: number
   type: GalleryType
@@ -49,60 +53,73 @@ const summerGalleryItems: GalleryItem[] = [
   'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4243',
 ].map(imageItem)
 
-const winterGalleryItems: GalleryItem[] = [
-  '1000001184',
-  '1000001192',
-  '1000001200',
-  '1000001206',
-  '1000001234',
-  '1000001280',
-  '1000001282',
-  '1000001650',
-  '1000001700',
-  '1000013116',
-  '1000013165',
-  '1000013166',
-  '1000013169',
-  '1000013170',
-  '1000013372',
-  '1000013488',
-  '1000013490',
-  '1000013590',
-  '1000015792',
-  '1000015795',
-  '1000015976',
-  '1000015982',
-  '1000015987',
-  '1000019867',
-  '1000019868',
-  '1000019870',
-  '1000019883',
-  '1000019884',
-  '1000019890',
-  '1000020203',
-  '1000020229',
-  '1000020232',
-  '1000020233',
-  '1000020234',
-  '1000020236',
-  '1000020241',
-  '1000020242',
-  '1000020274',
-  '1000020473',
-  '1000020484',
-  '1000020485',
-  '1000020488',
-  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1037',
-  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1273',
-  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446',
-  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1510',
-  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608',
-].map(imageItem)
-
-winterGalleryItems.splice(winterGalleryItems.length - 1, 0, {
-  kind: 'video',
-  name: 'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583',
-})
+const winterGalleryGroups: WinterGalleryGroup[] = [
+  {
+    key: 'randonee',
+    items: [
+      '1000001184',
+      '1000001192',
+      '1000001200',
+      '1000001206',
+      '1000001234',
+      '1000001650',
+      '1000001700',
+      '1000013372',
+      '1000013488',
+      '1000013490',
+      '1000019867',
+      '1000019868',
+      '1000019870',
+      '1000019883',
+      '1000019884',
+      '1000019890',
+      '1000020203',
+      '1000020229',
+      '1000020232',
+      '1000020233',
+      '1000020234',
+      '1000020236',
+      '1000020241',
+      '1000020242',
+      '1000020274',
+      '1000020473',
+      '1000020484',
+      '1000020485',
+      '1000020488',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1037',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1273',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446',
+    ].map(imageItem).concat({
+      kind: 'video',
+      name: 'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583',
+    }),
+  },
+  {
+    key: 'iceFishing',
+    items: [
+      '1000013116',
+      '1000013165',
+      '1000013166',
+      '1000013169',
+      '1000013170',
+      '1000013590',
+    ].map(imageItem),
+  },
+  {
+    key: 'winterCalm',
+    items: [
+      '1000001280',
+      '1000001282',
+      '1000015792',
+      '1000015795',
+      '1000015976',
+      '1000015982',
+      '1000015987',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1510',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608',
+    ].map(imageItem),
+  },
+]
 
 const chunkGalleryItems = (items: GalleryItem[]) =>
   Array.from(
@@ -112,7 +129,7 @@ const chunkGalleryItems = (items: GalleryItem[]) =>
 
 const summerGalleryPages = chunkGalleryItems(summerGalleryItems)
 
-const winterGalleryPages = chunkGalleryItems(winterGalleryItems)
+const winterGalleryItems = winterGalleryGroups.flatMap((group) => group.items)
 
 const galleryItemsByType = {
   summer: summerGalleryItems,
@@ -576,49 +593,59 @@ function App() {
             </div>
           </div>
 
-          {winterGalleryPages.map((galleryPage, pageIndex) => (
-            <div
-              key={pageIndex}
-              id={pageIndex === 0 ? 'winter-image-panel' : undefined}
-              className="season-page-panel season-page-panel--image"
-            >
-              {pageIndex === 0 && (
-                <h3 className="season-gallery-title">{text.winterPage.galleryTitle}</h3>
-              )}
-              <div className="season-image-grid">
-                {galleryPage.map((galleryItem, imageIndex) => {
-                  const galleryIndex = pageIndex * 9 + imageIndex
+          {winterGalleryGroups.flatMap((group, groupIndex) =>
+            chunkGalleryItems(group.items).map((galleryPage, pageIndex) => {
+              const isFirstWinterPanel = groupIndex === 0 && pageIndex === 0
+              const showGroupTitle = pageIndex === 0
 
-                  return (
-                    <button
-                      key={galleryItem.name}
-                      className={`season-image-grid__item${galleryItem.kind === 'video' ? ' season-image-grid__item--video' : ''}`}
-                      type="button"
-                      aria-label={`Vis ${galleryItem.kind === 'video' ? 'vintervideo' : 'vinterbilde'} ${galleryIndex + 1}`}
-                      onClick={() => setActiveGalleryImage({ type: 'winter', index: galleryIndex })}
-                    >
-                      {galleryItem.kind === 'video' ? (
-                        <>
-                          <video
-                            src={publicAssetPath(`images/web/winter/${galleryItem.name}.mp4`)}
-                            muted
-                            playsInline
-                            preload="metadata"
-                          />
-                          <span className="season-image-grid__badge">Video</span>
-                        </>
-                      ) : (
-                        <img
-                          src={publicAssetPath(`images/web/winter/${galleryItem.name}.webp`)}
-                          alt=""
-                        />
-                      )}
-                    </button>
-                  )
-                })}
-              </div>
-            </div>
-          ))}
+              return (
+                <div
+                  key={`${group.key}-${pageIndex}`}
+                  id={isFirstWinterPanel ? 'winter-image-panel' : undefined}
+                  className="season-page-panel season-page-panel--image"
+                >
+                  {isFirstWinterPanel && (
+                    <h3 className="season-gallery-title">{text.winterPage.galleryTitle}</h3>
+                  )}
+                  {showGroupTitle && (
+                    <h4 className="season-gallery-group-title">{text.winterPage.galleryGroups[group.key]}</h4>
+                  )}
+                  <div className="season-image-grid">
+                    {galleryPage.map((galleryItem) => {
+                      const galleryIndex = winterGalleryItems.findIndex((item) => item.name === galleryItem.name)
+
+                      return (
+                        <button
+                          key={galleryItem.name}
+                          className={`season-image-grid__item${galleryItem.kind === 'video' ? ' season-image-grid__item--video' : ''}`}
+                          type="button"
+                          aria-label={`Vis ${galleryItem.kind === 'video' ? 'vintervideo' : 'vinterbilde'} ${galleryIndex + 1}`}
+                          onClick={() => setActiveGalleryImage({ type: 'winter', index: galleryIndex })}
+                        >
+                          {galleryItem.kind === 'video' ? (
+                            <>
+                              <video
+                                src={publicAssetPath(`images/web/winter/${galleryItem.name}.mp4`)}
+                                muted
+                                playsInline
+                                preload="metadata"
+                              />
+                              <span className="season-image-grid__badge">Video</span>
+                            </>
+                          ) : (
+                            <img
+                              src={publicAssetPath(`images/web/winter/${galleryItem.name}.webp`)}
+                              alt=""
+                            />
+                          )}
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+              )
+            }),
+          )}
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
             {text.winterPage.comingSoon && <p className="season-coming-soon">{text.winterPage.comingSoon}</p>}

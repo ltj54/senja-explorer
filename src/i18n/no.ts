@@ -105,6 +105,11 @@ const no = {
     network:
         'Roland kan også hjelpe med praktisk tilrettelegging, overnatting og lokale opplevelser på Senja.',
     galleryTitle: 'Vinterbilder fra Senja',
+    galleryGroups: {
+      randonee: 'Randonee',
+      iceFishing: 'Isfiske',
+      winterCalm: 'Vinterro',
+    },
     experiences: {
       title: 'Vinteropplevelser med lokal guide',
       items: [

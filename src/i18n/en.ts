@@ -105,6 +105,11 @@ const en = {
     network:
       'Roland can also help with practical arrangements, accommodation and local experiences on Senja.',
     galleryTitle: 'Winter images from Senja',
+    galleryGroups: {
+      randonee: 'Ski touring',
+      iceFishing: 'Ice fishing',
+      winterCalm: 'Winter calm',
+    },
     experiences: {
       title: 'Winter experiences with a local guide',
       items: [

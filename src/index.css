@@ -572,11 +572,24 @@ button {
   text-shadow: 0 16px 44px rgba(0, 0, 0, 0.45);
 }
 
+.season-gallery-group-title {
+  width: min(calc(100% - clamp(56px, 10vw, 144px)), 1500px);
+  margin: 0;
+  color: rgba(247, 241, 231, 0.74);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(12px, 1.15vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-align: left;
+  text-transform: uppercase;
+}
+
 .season-image-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(10px, 1.4vw, 18px);
-  width: min(100%, 1500px);
+  width: min(100%, 1500px, calc((100vh - 190px) * 1.7));
 }
 
 .season-image-grid__item {
@@ -1362,6 +1375,12 @@ button {
 
   .season-page-panel--image {
     padding: 20px;
+    gap: 14px;
+  }
+
+  .season-gallery-title,
+  .season-gallery-group-title {
+    width: 100%;
   }
 
   .season-image-grid {
