@@ -65,6 +65,12 @@ const de = {
     network:
       'Roland kann über sein Netzwerk auf Senja auch Skitouren, Roadtrips, Unterkunft und andere lokale Erlebnisse vermitteln.',
     galleryTitle: 'Sommerbilder von Senja',
+    galleryGroups: {
+      boatTrips: 'Bootstouren',
+      beachTrips: 'Strandtouren',
+      fishingTrips: 'Angeltouren',
+      fjordCalm: 'Stille auf dem Fjord',
+    },
     experiences: {
       title: 'Sommererlebnisse auf Senja',
       items: [

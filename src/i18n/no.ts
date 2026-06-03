@@ -65,6 +65,12 @@ const no = {
     network:
         'Roland kan også hjelpe med toppturer til fots, roadtrip, overnatting og andre lokale opplevelser gjennom sitt nettverk på Senja.',
     galleryTitle: 'Sommerbilder fra Senja',
+    galleryGroups: {
+      boatTrips: 'Båtturer',
+      beachTrips: 'Strandturer',
+      fishingTrips: 'Fisketurer',
+      fjordCalm: 'Stillhet på fjorden',
+    },
     experiences: {
       title: 'Sommeropplevelser på Senja',
       items: [

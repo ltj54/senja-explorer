@@ -65,6 +65,12 @@ const en = {
     network:
       'Roland can also arrange ski touring, road trips, accommodation and other local experiences through his network on Senja.',
     galleryTitle: 'Summer images from Senja',
+    galleryGroups: {
+      boatTrips: 'Boat trips',
+      beachTrips: 'Beach trips',
+      fishingTrips: 'Fishing trips',
+      fjordCalm: 'Silence on the fjord',
+    },
     experiences: {
       title: 'Summer experiences on Senja',
       items: [

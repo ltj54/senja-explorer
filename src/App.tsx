@@ -8,8 +8,10 @@ type GalleryItem = {
   kind: 'image' | 'video'
   name: string
 }
-type WinterGalleryGroup = {
-  key: 'randonee' | 'iceFishing' | 'winterCalm'
+type SummerGalleryGroupKey = 'boatTrips' | 'beachTrips' | 'fishingTrips' | 'fjordCalm'
+type WinterGalleryGroupKey = 'randonee' | 'iceFishing' | 'winterCalm'
+type GalleryGroup<TKey extends string> = {
+  key: TKey
   items: GalleryItem[]
 }
 type ActiveGalleryImage = {
@@ -29,31 +31,51 @@ type ContactDragState = {
 
 const imageItem = (name: string): GalleryItem => ({ kind: 'image', name })
 
-const summerGalleryItems: GalleryItem[] = [
-  '1000000148',
-  '1000000191',
-  '1000000599',
-  '1000001037',
-  '1000001400',
-  '1000001424',
-  '1000001425',
-  '1000001432',
-  '1000001449',
-  '1000001481',
-  '1000013646',
-  '1000015925',
-  '1000015931',
-  '1000015985',
-  '1000016022',
-  '1000016037',
-  '1000021458',
-  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3921',
-  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171',
-  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4217',
-  'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4243',
-].map(imageItem)
+const summerGalleryGroups: GalleryGroup<SummerGalleryGroupKey>[] = [
+  {
+    key: 'boatTrips',
+    items: [
+      '1000001425',
+      '1000015985',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3921',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4243',
+    ].map(imageItem),
+  },
+  {
+    key: 'beachTrips',
+    items: [
+      '1000000191',
+      '1000001432',
+      '1000001481',
+      '1000016037',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4217',
+    ].map(imageItem),
+  },
+  {
+    key: 'fishingTrips',
+    items: [
+      '1000000599',
+      '1000001424',
+      '1000001449',
+      '1000021458',
+    ].map(imageItem),
+  },
+  {
+    key: 'fjordCalm',
+    items: [
+      '1000000148',
+      '1000001037',
+      '1000001400',
+      '1000013646',
+      '1000015925',
+      '1000015931',
+      '1000016022',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171',
+    ].map(imageItem),
+  },
+]
 
-const winterGalleryGroups: WinterGalleryGroup[] = [
+const winterGalleryGroups: GalleryGroup<WinterGalleryGroupKey>[] = [
   {
     key: 'randonee',
     items: [
@@ -127,8 +149,7 @@ const chunkGalleryItems = (items: GalleryItem[]) =>
     (_, pageIndex) => items.slice(pageIndex * 9, pageIndex * 9 + 9),
   )
 
-const summerGalleryPages = chunkGalleryItems(summerGalleryItems)
-
+const summerGalleryItems = summerGalleryGroups.flatMap((group) => group.items)
 const winterGalleryItems = winterGalleryGroups.flatMap((group) => group.items)
 
 const galleryItemsByType = {
@@ -513,37 +534,47 @@ function App() {
             </div>
           </div>
 
-          {summerGalleryPages.map((galleryPage, pageIndex) => (
-            <div
-              key={pageIndex}
-              id={pageIndex === 0 ? 'summer-image-panel' : undefined}
-              className="season-page-panel season-page-panel--image"
-            >
-              {pageIndex === 0 && (
-                <h3 className="season-gallery-title">{text.summerPage.galleryTitle}</h3>
-              )}
-              <div className="season-image-grid">
-                {galleryPage.map((galleryItem, imageIndex) => {
-                  const galleryIndex = pageIndex * 9 + imageIndex
+          {summerGalleryGroups.flatMap((group, groupIndex) =>
+            chunkGalleryItems(group.items).map((galleryPage, pageIndex) => {
+              const isFirstSummerPanel = groupIndex === 0 && pageIndex === 0
+              const showGroupTitle = pageIndex === 0
 
-                  return (
-                    <button
-                      key={galleryItem.name}
-                      className="season-image-grid__item"
-                      type="button"
-                      aria-label={`Vis sommerbilde ${galleryIndex + 1}`}
-                      onClick={() => setActiveGalleryImage({ type: 'summer', index: galleryIndex })}
-                    >
-                      <img
-                        src={publicAssetPath(`images/web/summer/${galleryItem.name}.webp`)}
-                        alt=""
-                      />
-                    </button>
-                  )
-                })}
-              </div>
-            </div>
-          ))}
+              return (
+                <div
+                  key={`${group.key}-${pageIndex}`}
+                  id={isFirstSummerPanel ? 'summer-image-panel' : undefined}
+                  className="season-page-panel season-page-panel--image"
+                >
+                  {isFirstSummerPanel && (
+                    <h3 className="season-gallery-title">{text.summerPage.galleryTitle}</h3>
+                  )}
+                  {showGroupTitle && (
+                    <h4 className="season-gallery-group-title">{text.summerPage.galleryGroups[group.key]}</h4>
+                  )}
+                  <div className="season-image-grid">
+                    {galleryPage.map((galleryItem) => {
+                      const galleryIndex = summerGalleryItems.findIndex((item) => item.name === galleryItem.name)
+
+                      return (
+                        <button
+                          key={galleryItem.name}
+                          className="season-image-grid__item"
+                          type="button"
+                          aria-label={`Vis sommerbilde ${galleryIndex + 1}`}
+                          onClick={() => setActiveGalleryImage({ type: 'summer', index: galleryIndex })}
+                        >
+                          <img
+                            src={publicAssetPath(`images/web/summer/${galleryItem.name}.webp`)}
+                            alt=""
+                          />
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+              )
+            }),
+          )}
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
             {text.summerPage.comingSoon && <p className="season-coming-soon">{text.summerPage.comingSoon}</p>}
