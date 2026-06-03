@@ -52,106 +52,148 @@ button {
 }
 
 .site-page--home {
+  display: block;
+  overflow-x: hidden;
+  isolation: isolate;
+  background: #101612;
+}
+
+.home-hero {
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: clamp(18px, 4vw, 56px);
   overflow: hidden;
+  position: relative;
   isolation: isolate;
   background: #101612;
 }
 
-.site-page--home::after {
+.home-hero::after {
   content: '';
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% 46%, rgba(4, 8, 7, 0.05), rgba(4, 8, 7, 0.24) 68%),
-    linear-gradient(180deg, rgba(4, 8, 7, 0.02), rgba(4, 8, 7, 0.42));
+    radial-gradient(circle at 50% 46%, rgba(4, 8, 7, 0.02), rgba(4, 8, 7, 0.16) 68%),
+    linear-gradient(180deg, rgba(4, 8, 7, 0), rgba(4, 8, 7, 0.28));
 }
 
 .home-background {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   background-image:
-    linear-gradient(rgba(8, 15, 12, 0.10), rgba(8, 15, 12, 0.36)),
+    linear-gradient(rgba(8, 15, 12, 0.04), rgba(8, 15, 12, 0.24)),
     var(--home-background-image);
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   opacity: 0;
   transform: scale(1);
-  animation: home-crossfade 80s ease-in-out infinite;
+  animation: home-crossfade 56s ease-in-out infinite;
 }
 
 .home-background--tidlig-var {
   --home-background-image: url('./assets/roland/home/01_tidlig_var.webp');
-  animation-delay: 0s;
+  animation-delay: -3.5s;
 }
 
 .home-background--sen-var {
   --home-background-image: url('./assets/roland/home/02_sen_var.webp');
-  animation-delay: 10s;
+  animation-delay: 7s;
 }
 
 .home-background--sommer {
   --home-background-image: url('./assets/roland/home/03_sommer.webp');
-  animation-delay: 20s;
+  animation-delay: 14s;
 }
 
 .home-background--sensommer {
   --home-background-image: url('./assets/roland/home/04_sensommer.webp');
-  animation-delay: 30s;
+  animation-delay: 21s;
 }
 
 .home-background--host {
   --home-background-image: url('./assets/roland/home/05_host.webp');
-  animation-delay: 40s;
+  animation-delay: 28s;
 }
 
 .home-background--senhost {
   --home-background-image: url('./assets/roland/home/06_senhost.webp');
-  animation-delay: 50s;
+  animation-delay: 35s;
 }
 
 .home-background--vinter {
   --home-background-image: url('./assets/roland/home/07_vinter.webp');
-  animation-delay: 60s;
+  animation-delay: 42s;
 }
 
 .home-background--dypvinter {
   --home-background-image: url('./assets/roland/home/08_dypvinter.webp');
-  animation-delay: 70s;
+  animation-delay: 49s;
 }
 
 @keyframes home-crossfade {
   0% { opacity: 0; }
-  7.5% { opacity: 1; }
-  14% { opacity: 1; }
-  21.5% { opacity: 0; }
+  6.25% { opacity: 1; }
+  15% { opacity: 1; }
+  25% { opacity: 0; }
   100% { opacity: 0; }
 }
 
-.language-switcher {
+.top-controls {
   position: fixed;
   top: clamp(16px, 3vw, 34px);
   right: clamp(16px, 3vw, 42px);
   z-index: 10;
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
-  padding: 10px 14px;
-  border: 1px solid rgba(247, 241, 231, 0.4);
-  background: rgba(7, 13, 11, 0.65);
-  backdrop-filter: blur(8px);
   opacity: 0;
   transform: translateY(-12px);
   animation: language-appear 850ms ease forwards;
   animation-delay: 1250ms;
+}
+
+.about-trigger,
+.language-switcher {
+  border: 1px solid rgba(247, 241, 231, 0.4);
+  background: rgba(7, 13, 11, 0.65);
+  backdrop-filter: blur(8px);
+}
+
+.about-trigger {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 42px;
+  padding: 0;
+  color: rgba(247, 241, 231, 0.84);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.language-switcher {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 14px;
+}
+
+.about-trigger:hover,
+.about-trigger:focus-visible {
+  color: #fffaf0;
+  border-color: rgba(247, 241, 231, 0.8);
+  background: rgba(7, 13, 11, 0.85);
 }
 
 .language-switcher button {
@@ -253,44 +295,117 @@ button {
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.76);
 }
 
-.home-year-round {
+.contact-link--home {
+  position: absolute;
+  top: 59vh;
+  left: 50%;
+  right: auto;
+  z-index: 3;
+  align-items: center;
+  text-align: center;
+  touch-action: none;
+  opacity: 0;
+  transform: translate(-50%, 12px);
+  animation: contact-home-in 900ms ease forwards;
+  animation-delay: 760ms;
+}
+
+.home-season-info {
   position: absolute;
   left: clamp(18px, 4vw, 56px);
+  right: clamp(18px, 4vw, 56px);
   bottom: max(clamp(42px, 5vw, 64px), calc(env(safe-area-inset-bottom) + 18px));
   z-index: 2;
-  width: min(360px, calc(50vw - 64px));
-  padding-left: 16px;
-  border-left: 1px solid rgba(247, 241, 231, 0.22);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 360px));
+  justify-content: space-between;
+  gap: clamp(16px, 4vw, 56px);
+  pointer-events: none;
+}
+
+.home-season-card {
+  display: flex;
+  min-height: 142px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px 18px 17px;
+  border: 1px solid rgba(247, 241, 231, 0.22);
+  border-left-color: rgba(247, 241, 231, 0.48);
+  background: rgba(7, 13, 11, 0.34);
+  color: inherit;
+  text-align: left;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
   opacity: 0;
   transform: translateY(12px);
   animation: season-page-in 900ms ease forwards;
   animation-delay: 950ms;
-  pointer-events: none;
+  pointer-events: auto;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    transform 220ms ease;
 }
 
-.home-year-round h3,
-.home-year-round p {
-  margin: 0;
+.home-season-card--summer {
+  animation-delay: 1050ms;
 }
 
-.home-year-round h3 {
+.home-season-card:hover,
+.home-season-card:focus-visible {
+  border-color: rgba(247, 241, 231, 0.62);
+  background: rgba(7, 13, 11, 0.58);
+  transform: translateY(-4px);
+}
+
+.home-season-card:focus-visible {
+  outline: 2px solid rgba(247, 241, 231, 0.9);
+  outline-offset: 5px;
+}
+
+.home-season-card__kicker {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 11px;
   line-height: 1.35;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255, 250, 240, 0.66);
+  color: rgba(255, 250, 240, 0.68);
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.72);
 }
 
-.home-year-round p {
-  max-width: 340px;
-  margin-top: 8px;
+.home-season-card__title {
+  margin-top: 9px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(22px, 2.2vw, 31px);
+  line-height: 1.05;
+  color: rgba(255, 250, 240, 0.96);
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.72);
+}
+
+.home-season-card__description {
+  margin-top: 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(12px, 1.1vw, 14px);
   line-height: 1.55;
-  color: rgba(255, 250, 240, 0.70);
+  color: rgba(255, 250, 240, 0.76);
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.76);
+}
+
+.site-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  justify-content: space-between;
+  padding: 22px clamp(22px, 7vw, 96px);
+  border-top: 1px solid rgba(247, 241, 231, 0.12);
+  background: #070d0b;
+  color: rgba(247, 241, 231, 0.56);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
 }
 
 .season-choices {
@@ -309,7 +424,7 @@ button {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  padding: 0 clamp(22px, 4vw, 56px) clamp(128px, 16vh, 190px);
+  padding: 0 clamp(22px, 4vw, 56px) clamp(250px, 29vh, 340px);
   border: 0;
   color: inherit;
   background: transparent;
@@ -795,6 +910,7 @@ button {
   touch-action: none;
 }
 
+.contact-link--home.is-dragging,
 .contact-link--floating.is-dragging {
   cursor: grabbing;
   transition: none;
@@ -816,6 +932,7 @@ button {
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
 
+.about-modal,
 .contact-modal {
   position: fixed;
   inset: 0;
@@ -823,6 +940,73 @@ button {
   display: grid;
   place-items: center;
   padding: 20px;
+}
+
+.about-popover {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 560px);
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid rgba(247, 241, 231, 0.18);
+  background:
+    linear-gradient(145deg, rgba(20, 28, 23, 0.94), rgba(8, 13, 11, 0.96));
+  color: #f7f1e7;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+  animation: contact-form-in 320ms ease forwards;
+}
+
+.about-popover__kicker {
+  margin: 0 0 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(247, 241, 231, 0.58);
+}
+
+.about-popover h2 {
+  margin: 0 0 20px;
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.about-popover p:not(.about-popover__kicker) {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(247, 241, 231, 0.78);
+}
+
+.about-popover__details {
+  display: grid;
+  gap: 12px;
+  margin: 26px 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.about-popover__details div {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.about-popover__details dt,
+.about-popover__details dd {
+  margin: 0;
+}
+
+.about-popover__details dt {
+  min-width: 68px;
+  color: rgba(247, 241, 231, 0.58);
+  font-size: 13px;
+}
+
+.about-popover__details dd {
+  color: rgba(255, 250, 240, 0.92);
+  font-size: 15px;
 }
 
 .image-lightbox {
@@ -1042,46 +1226,111 @@ button {
 }
 
 @media (max-width: 760px) {
+  .top-controls {
+    gap: 6px;
+  }
+
+  .about-trigger {
+    width: 40px;
+    height: 42px;
+  }
+
   .site-page--home {
-    padding: 20px;
+    overflow-x: hidden;
+  }
+
+  .home-hero {
+    min-height: 100svh;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 18px 20px 112px;
   }
 
   .home-intro {
     align-self: flex-start;
-    margin-top: min(18vh, 116px);
+    width: 100%;
+    margin-top: min(10vh, 78px);
     text-align: left;
+  }
+
+  .home-intro p:first-child {
+    margin-bottom: 12px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .home-intro h2 {
+    font-size: clamp(40px, 12vw, 56px);
+    line-height: 0.96;
   }
 
   .home-intro p:last-child {
     margin-left: 0;
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.5;
   }
 
-  .home-year-round {
+  .contact-link--home {
+    position: relative;
+    top: 0;
+    left: auto;
+    right: auto;
+    align-self: flex-start;
+    align-items: flex-start;
+    margin-top: 14px;
+    text-align: left;
+    transform: translateY(12px);
+    animation-name: season-page-in;
+  }
+
+  .home-season-info {
     position: relative;
     left: auto;
+    right: auto;
     bottom: auto;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
     align-self: flex-start;
     width: min(100%, 420px);
-    margin-top: 22px;
-    padding-left: 14px;
+    margin-top: 16px;
   }
 
-  .home-year-round p {
-    max-width: 100%;
+  .home-season-card {
+    min-height: 0;
+    padding: 11px 13px 12px;
+  }
+
+  .home-season-card__kicker {
+    font-size: 10px;
+    letter-spacing: 0.13em;
+  }
+
+  .home-season-card__title {
+    margin-top: 5px;
+    font-size: 20px;
+  }
+
+  .home-season-card__description {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 1.36;
   }
 
   .season-choices {
-    inset: auto 20px 138px;
+    inset: auto 20px 20px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
     z-index: 3;
   }
 
   .season-choice {
-    min-height: 76px;
+    min-height: 66px;
     align-items: center;
     justify-content: center;
-    padding: 14px 10px;
+    padding: 12px 10px;
     border: 1px solid rgba(247, 241, 231, 0.42);
     background: rgba(7, 13, 11, 0.48);
     backdrop-filter: blur(8px);
@@ -1095,6 +1344,12 @@ button {
   .season-choice span {
     font-size: 16px;
     letter-spacing: 0.11em;
+  }
+
+  .site-footer {
+    display: grid;
+    justify-content: stretch;
+    padding: 20px;
   }
 
   .season-choice:hover,
@@ -1179,6 +1434,13 @@ button {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes contact-home-in {
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 }
 

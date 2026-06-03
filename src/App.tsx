@@ -140,6 +140,7 @@ const getPageFromHash = (): Page => {
 function App() {
   const [language, setLanguage] = useState<Language>('no')
   const [page, setPage] = useState<Page>(() => getPageFromHash())
+  const [isAboutOpen, setIsAboutOpen] = useState(false)
   const [isContactOpen, setIsContactOpen] = useState(false)
   const [scrollOpacity, setScrollOpacity] = useState(1)
   const [contactPosition, setContactPosition] = useState<ContactPosition>(null)
@@ -338,20 +339,18 @@ function App() {
     <main className={`site-page site-page--${page}`} aria-label={text.siteName}>
       <h1 className="sr-only">{text.siteName}</h1>
 
-      {page === 'home' && (
-        <>
-          {homeBackgrounds.map((background) => (
-            <div
-              key={background}
-              className={`home-background home-background--${background}`}
-              aria-hidden="true"
-            />
-          ))}
-        </>
-      )}
+      <div className="top-controls">
+        <button
+          className="about-trigger"
+          type="button"
+          aria-label={text.about.kicker}
+          onClick={() => setIsAboutOpen(true)}
+        >
+          ?
+        </button>
 
-      <nav className="language-switcher" aria-label={text.chooseLanguage}>
-        {languages.map((languageCode) => (
+        <nav className="language-switcher" aria-label={text.chooseLanguage}>
+          {languages.map((languageCode) => (
           <button
             key={languageCode}
             className={languageCode === language ? 'is-active' : undefined}
@@ -362,8 +361,9 @@ function App() {
           >
             {languageLabels[languageCode]}
           </button>
-        ))}
-      </nav>
+          ))}
+        </nav>
+      </div>
 
       {page !== 'home' && (
         <button className="back-button" type="button" onClick={() => navigateTo('home')}>
@@ -373,34 +373,97 @@ function App() {
 
       {page === 'home' && (
         <>
-          <section className="home-intro" aria-label={text.siteName}>
-            <p>{text.homeIntro.kicker}</p>
-            <h2>{text.siteName}</h2>
-            <p>{text.homeIntro.tagline}</p>
-          </section>
+          <section className="home-hero" aria-label={text.siteName}>
+            {homeBackgrounds.map((background) => (
+              <div
+                key={background}
+                className={`home-background home-background--${background}`}
+                aria-hidden="true"
+              />
+            ))}
 
-          <section className="season-choices" aria-label={text.chooseSeason}>
+            <section className="home-intro" aria-label={text.siteName}>
+              <p>{text.homeIntro.kicker}</p>
+              <h2>{text.siteName}</h2>
+              <p>{text.homeIntro.tagline}</p>
+            </section>
+
             <button
-              className="season-choice season-choice--winter"
+              className={`contact-link contact-link--home${isContactDragging ? ' is-dragging' : ''}`}
               type="button"
-              onClick={() => navigateTo('winter')}
+              style={
+                contactPosition
+                  ? {
+                      animation: 'none',
+                      bottom: 'auto',
+                      left: contactPosition.x,
+                      opacity: 1,
+                      position: 'fixed',
+                      right: 'auto',
+                      top: contactPosition.y,
+                      transform: 'none',
+                    }
+                  : undefined
+              }
+              onClick={handleContactClick}
+              onPointerDown={handleContactPointerDown}
+              onPointerMove={handleContactPointerMove}
+              onPointerUp={handleContactPointerUp}
+              onPointerCancel={() => {
+                contactDrag.current = null
+                setIsContactDragging(false)
+              }}
             >
-              <span>{text.seasons.winter}</span>
+              <span>{text.contactRoland}</span>
+              <small>{text.contactRolandContext}</small>
             </button>
 
-            <button
-              className="season-choice season-choice--summer"
-              type="button"
-              onClick={() => navigateTo('summer')}
-            >
-              <span>{text.seasons.summer}</span>
-            </button>
+            <section className="season-choices" aria-label={text.chooseSeason}>
+              <button
+                className="season-choice season-choice--winter"
+                type="button"
+                onClick={() => navigateTo('winter')}
+              >
+                <span>{text.seasons.winter}</span>
+              </button>
+
+              <button
+                className="season-choice season-choice--summer"
+                type="button"
+                onClick={() => navigateTo('summer')}
+              >
+                <span>{text.seasons.summer}</span>
+              </button>
+            </section>
+
+            <section className="home-season-info" aria-label={text.chooseSeason}>
+              <button
+                className="home-season-card home-season-card--winter"
+                type="button"
+                onClick={() => navigateTo('winter')}
+              >
+                <span className="home-season-card__kicker">{text.homeSeasonBoxes.winter.kicker}</span>
+                <span className="home-season-card__title">{text.homeSeasonBoxes.winter.title}</span>
+                <span className="home-season-card__description">{text.homeSeasonBoxes.winter.description}</span>
+              </button>
+
+              <button
+                className="home-season-card home-season-card--summer"
+                type="button"
+                onClick={() => navigateTo('summer')}
+              >
+                <span className="home-season-card__kicker">{text.homeSeasonBoxes.summer.kicker}</span>
+                <span className="home-season-card__title">{text.homeSeasonBoxes.summer.title}</span>
+                <span className="home-season-card__description">{text.homeSeasonBoxes.summer.description}</span>
+              </button>
+            </section>
           </section>
 
-          <aside className="home-year-round" aria-label={text.yearRoundTitle}>
-            <h3>{text.yearRoundTitle}</h3>
-            <p>{text.yearRound}</p>
-          </aside>
+          <footer className="site-footer">
+            <span>{text.footer.company}</span>
+            <span>{text.footer.orgNumber}</span>
+            <span>{text.footer.phone}</span>
+          </footer>
         </>
       )}
 
@@ -576,22 +639,63 @@ function App() {
         </section>
       )}
 
-      <button
-        className={`contact-link contact-link--floating${isContactDragging ? ' is-dragging' : ''}`}
-        type="button"
-        style={contactPosition ? { bottom: 'auto', left: contactPosition.x, right: 'auto', top: contactPosition.y } : undefined}
-        onClick={handleContactClick}
-        onPointerDown={handleContactPointerDown}
-        onPointerMove={handleContactPointerMove}
-        onPointerUp={handleContactPointerUp}
-        onPointerCancel={() => {
-          contactDrag.current = null
-          setIsContactDragging(false)
-        }}
-      >
-        <span>{text.contactRoland}</span>
-        <small>{text.contactRolandContext}</small>
-      </button>
+      {page !== 'home' && (
+        <button
+          className={`contact-link contact-link--floating${isContactDragging ? ' is-dragging' : ''}`}
+          type="button"
+          style={
+            contactPosition
+              ? {
+                  bottom: 'auto',
+                  left: contactPosition.x,
+                  position: 'fixed',
+                  right: 'auto',
+                  top: contactPosition.y,
+                }
+              : undefined
+          }
+          onClick={handleContactClick}
+          onPointerDown={handleContactPointerDown}
+          onPointerMove={handleContactPointerMove}
+          onPointerUp={handleContactPointerUp}
+          onPointerCancel={() => {
+            contactDrag.current = null
+            setIsContactDragging(false)
+          }}
+        >
+          <span>{text.contactRoland}</span>
+          <small>{text.contactRolandContext}</small>
+        </button>
+      )}
+
+      {isAboutOpen && (
+        <div className="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-modal-title">
+          <div className="contact-modal__backdrop" onClick={() => setIsAboutOpen(false)} />
+
+          <section className="about-popover">
+            <button
+              className="contact-form__close"
+              type="button"
+              aria-label={text.contactForm.close}
+              onClick={() => setIsAboutOpen(false)}
+            >
+              ×
+            </button>
+            <h2 id="about-modal-title">{text.about.kicker}</h2>
+            <p>{text.about.description}</p>
+            <dl className="about-popover__details">
+              <div>
+                <dt>{text.about.phoneLabel}</dt>
+                <dd>{text.about.phone}</dd>
+              </div>
+              <div>
+                <dt>{text.about.orgNumberLabel}</dt>
+                <dd>{text.about.orgNumber}</dd>
+              </div>
+            </dl>
+          </section>
+        </div>
+      )}
 
       {isContactOpen && (
         <div className="contact-modal" role="dialog" aria-modal="true" aria-label={text.contactForm.title}>

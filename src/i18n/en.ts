@@ -23,14 +23,37 @@ const en = {
     summer: 'Summer',
   },
   about: {
-    kicker: '',
-    title: 'Personal experiences on Senja',
+    kicker: 'About Breathe Senja',
+    title: 'Breathe Senja & Services Henriksen',
     description:
-      'Breathe Senja & Services Henriksen is run by Roland Henriksen. With local knowledge of nature, weather and local partners on Senja, he can contribute with personal experiences, road trips, accommodation and practical arrangements.',
+      'Breathe Senja & Services Henriksen is run by Roland Henriksen. Roland offers and arranges personal experiences on Senja, with local knowledge of nature, weather, conditions and local partners.',
+    phoneLabel: 'Phone',
+    phone: '+47 46 54 45 10',
+    orgNumberLabel: 'Org. no.',
+    orgNumber: '937 296 355',
+  },
+  homeSeasonBoxes: {
+    winter: {
+      kicker: 'Ski touring and ice fishing',
+      title: 'Winter on Senja',
+      description:
+        'In winter, Roland offers ski touring with randonee skis and ice fishing on the fjord. Trips are suited for small groups and adapted to weather, snow conditions and level.',
+    },
+    summer: {
+      kicker: 'Boat trips, fishing and hikes',
+      title: 'Summer on Senja',
+      description:
+        'In summer, Roland offers boat trips, beach trips, fishing trips and summit hikes on foot. He can also help arrange other local experiences on Senja.',
+    },
   },
   yearRoundTitle: 'Practical help year round',
   yearRound:
     'Roland can help with local experiences, road trips, accommodation and contact with local partners on Senja. He also has his own rental units that guests can see more closely on request.',
+  footer: {
+    company: 'Breathe Senja & Services Henriksen',
+    orgNumber: 'Org. no. 937 296 355',
+    phone: 'Phone +47 46 54 45 10',
+  },
   summerPage: {
     kicker: 'Summer on Senja',
     title: 'Boat trips, swim stops\nand fishing on the fjord',
@@ -55,6 +78,11 @@ const en = {
             'Fishing trips with the option to rent a fishing rod. Roland can gut and fillet the fish if guests want to take it with them.',
         },
         {
+          title: 'Summit hikes on foot',
+          description:
+            'Roland offers summit hikes on foot and adapts the trips to weather, conditions and level.',
+        },
+        {
           title: 'Practical details included',
           description: 'Maximum 2 people. A simple lunch with drinks, suitable footwear and life jackets are provided.',
         },
@@ -70,7 +98,7 @@ const en = {
     kicker: 'Winter on Senja',
     title: 'Ski touring, ice fishing\nand winter calm',
     description:
-      'Roland offers winter trips in the mountains and ice fishing on the fjord. The trips are suited for small groups and adapted to weather, snow conditions and level.',
+      'In winter, Roland offers ski touring with randonee skis and ice fishing on the fjord. The trips are suited for small groups and adapted to weather, snow conditions and level.',
     comingSoon: '',
     practical:
       'Maximum 6 people. A simple lunch with drinks is included.',

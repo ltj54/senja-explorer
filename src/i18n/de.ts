@@ -23,14 +23,37 @@ const de = {
     summer: 'Sommer',
   },
   about: {
-    kicker: '',
-    title: 'Persönliche Erlebnisse auf Senja',
+    kicker: 'Über Breathe Senja',
+    title: 'Breathe Senja & Services Henriksen',
     description:
-      'Breathe Senja & Services Henriksen wird von Roland Henriksen betrieben. Mit lokaler Kenntnis von Natur, Wetter und lokalen Akteuren auf Senja kann er persönliche Erlebnisse, Roadtrips, Unterkunft und praktische Organisation anbieten.',
+      'Breathe Senja & Services Henriksen wird von Roland Henriksen betrieben. Roland bietet persönliche Erlebnisse auf Senja an und vermittelt sie, mit lokaler Kenntnis von Natur, Wetter, Bedingungen und lokalen Akteuren.',
+    phoneLabel: 'Telefon',
+    phone: '+47 46 54 45 10',
+    orgNumberLabel: 'Org.nr.',
+    orgNumber: '937 296 355',
+  },
+  homeSeasonBoxes: {
+    winter: {
+      kicker: 'Skitouren und Eisangeln',
+      title: 'Winter auf Senja',
+      description:
+        'Im Winter bietet Roland Gipfeltouren mit Randonnée-Ski und Eisangeln auf dem Fjord an. Die Touren eignen sich für kleine Gruppen und werden an Wetter, Schneeverhältnisse und Niveau angepasst.',
+    },
+    summer: {
+      kicker: 'Bootstouren, Angeln und Gipfeltouren',
+      title: 'Sommer auf Senja',
+      description:
+        'Im Sommer bietet Roland Bootstouren, Strandtouren, Angeltouren und Gipfeltouren zu Fuß an. Er kann auch helfen, andere lokale Erlebnisse auf Senja zu vermitteln.',
+    },
   },
   yearRoundTitle: 'Praktische Hilfe das ganze Jahr',
   yearRound:
     'Roland kann bei lokalen Erlebnissen, Roadtrips, Unterkunft und Kontakt zu lokalen Akteuren auf Senja helfen. Er hat auch eigene Mieteinheiten, die Gäste auf Anfrage näher ansehen können.',
+  footer: {
+    company: 'Breathe Senja & Services Henriksen',
+    orgNumber: 'Org.nr. 937 296 355',
+    phone: 'Telefon +47 46 54 45 10',
+  },
   summerPage: {
     kicker: 'Sommer auf Senja',
     title: 'Bootstouren, Badestopps\nund Angeln auf dem Fjord',
@@ -55,6 +78,11 @@ const de = {
             'Angeltouren mit der Möglichkeit, eine Angelrute zu mieten. Roland kann den Fisch ausnehmen und filetieren, wenn die Gäste ihn mitnehmen möchten.',
         },
         {
+          title: 'Gipfeltouren zu Fuß',
+          description:
+            'Roland bietet Gipfeltouren zu Fuß an und passt die Touren an Wetter, Bedingungen und Niveau an.',
+        },
+        {
           title: 'Praktisch inklusive',
           description: 'Maximal 2 Personen. Ein einfacher Lunch mit Getränken, geeignetes Schuhwerk und Rettungswesten werden angeboten.',
         },
@@ -70,7 +98,7 @@ const de = {
     kicker: 'Winter auf Senja',
     title: 'Skitouren, Eisangeln\nund Winterruhe',
     description:
-      'Roland bietet Wintertouren in den Bergen und Eisangeln auf dem Fjord an. Die Touren eignen sich für kleine Gruppen und werden an Wetter, Schneeverhältnisse und Niveau angepasst.',
+      'Im Winter bietet Roland Gipfeltouren mit Randonnée-Ski und Eisangeln auf dem Fjord an. Die Touren eignen sich für kleine Gruppen und werden an Wetter, Schneeverhältnisse und Niveau angepasst.',
     comingSoon: '',
     practical:
       'Maximal 6 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
@@ -81,7 +109,7 @@ const de = {
       title: 'Wintererlebnisse mit lokalem Guide',
       items: [
         {
-          title: 'Skitouren auf Berggipfel',
+          title: 'Gipfeltouren mit Randonnée-Ski',
           description: 'Ruhige Gipfeltouren mit lokalem Guide, angepasst an Wetter, Schneeverhältnisse und Niveau.',
         },
         {
