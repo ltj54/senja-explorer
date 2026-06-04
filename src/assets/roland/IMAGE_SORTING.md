@@ -35,22 +35,15 @@ Disse er laget manuelt med ImageMagick som høy-kvalitets WebP uten nedskalering
 Eksakte duplikater av eksisterende sorterte filer:
 
 * `1000001200.jpg` - finnes som `winter/1000001200.jpg`
-* `1000019867.jpg` - finnes som `winter/1000019867.jpg`
-* `1000019868.jpg` - finnes som `winter/1000019868.jpg`
 * `1000019870.jpg` - finnes som `winter/1000019870.jpg`
 * `1000019883.jpg` - finnes som `winter/1000019883.jpg`
 * `1000020234.jpg` - finnes som `winter/1000020234.jpg`
 * `1000020236.jpg` - finnes som `winter/1000020236.jpg`
-* `1000020241.jpg` - finnes som `winter/1000020241.jpg`
 * `1000020242.jpg` - finnes som `winter/1000020242.jpg`
 * `1000020473.jpg` - finnes som `winter/1000020473.jpg`
 * `1000020488.jpg` - finnes som `winter/1000020488.jpg`
 * `1000021458.jpg` - finnes som `summer/1000021458.jpg`
 * `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4` - finnes som `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4`
-
-Nesten-duplikat:
-
-* `1000020485.jpg` - visuelt samme bilde som `winter/1000020485.jpg`, men ikke byte-identisk.
 
 Nye kandidater som ble sett i inbox, men ikke importert til sorterte mapper:
 
@@ -71,91 +64,137 @@ Nye videoer som ble sett i inbox, men ikke importert til sorterte mapper:
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608.jpg` gir JPEG-varsel om prematur filslutt / korrupt JPEG-data.
 * `ffmpeg` manglet på PATH, så video ble kopiert, men video-thumbnail ble ikke generert.
 
-## Vinter
+## Gallerigjennomgang 2026-06-04
+
+Bildene som faktisk brukes i `src/App.tsx` ble kontrollert med ImageMagick og visuell kontaktark-gjennomgang.
+
+Metode:
+
+* Skarphet ble målt med Laplacian-basert kantmåling på nedskalert gråtonevariant.
+* Nesten-duplikater ble funnet med enkle perceptuelle hashes og deretter kontrollert visuelt.
+* WebP-bilder i `public/images/web`, thumbnails i `public/images/thumbs` og originaler i `src/assets/roland` ble slettet for bilder som ble tatt ut av galleriet.
+
+Fjernet som eksakt duplikat eller tydelig svakt bilde:
+
+* `summer/1000015931.jpg` - eksakt duplikat av `summer/1000013646.jpg`.
+* `winter/1000013488.jpg` - nesten identisk med `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446.jpg`, men svakere.
+* `winter/1000015795.jpg` - svært lav oppløsning og uskarpt motlysbilde.
+
+Fjernet for å stramme inn vintergalleriet:
+
+* `winter/1000001282.jpg`
+* `winter/1000001700.jpg`
+* `winter/1000013166.jpg`
+* `winter/1000013372.jpg`
+* `winter/1000013490.jpg`
+* `winter/1000019867.jpg`
+* `winter/1000019868.jpg`
+* `winter/1000020203.jpg`
+* `winter/1000020229.jpg`
+* `winter/1000020233.jpg`
+* `winter/1000020241.jpg`
+* `winter/1000020485.jpg`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1037.jpg`
+
+Resultat:
+
+* Sommergalleriet gikk fra 21 til 20 bilder.
+* Vintergalleriet gikk fra 45 til 32 bilder, pluss én video.
+* `npm run build` passerte etter oppryddingen.
+
+## Aktivt vintergalleri
 
 Brukes til vinterside, randonee, toppturer på ski, isfiske, snø, fjelltopper og vinterstemning.
 
-* `winter/1000001184.jpg` - skiløper / snøbakke, 4000x3000, 4490 KB
-* `winter/1000001192.jpg` - snødekt fjellside / fjordutsikt, 4000x3000, 3343 KB
-* `winter/1000001206.jpg` - topptur i snø / fjellutsikt, 960x720, 68 KB
-* `winter/1000001234.jpg` - skispor / snøside, 960x720, 64 KB
-* `winter/1000001280.jpg` - vinterfjord / fjellutsikt, 960x720, 39 KB
-* `winter/1000001282.jpg` - høy vinterutsikt over fjord og snøfjell, 720x960, 38 KB
-* `winter/1000001650.jpg` - Roland med ski / vinterpause, 1536x2048, 347 KB
-* `winter/1000001700.jpg` - vinterpanorama fra fjellet, 1024x768, 84 KB
-* `winter/1000013116.jpg` - islagt fjord / vinterlandskap, 4000x3000, 4013 KB
-* `winter/1000013165.jpg` - isfiske på fjord, 4000x3000, 4105 KB
-* `winter/1000013166.jpg` - islagt fjord / fiskeplass, 4000x3000, 4053 KB
-* `winter/1000013169.jpg` - fisk på is, 4000x3000, 3834 KB
-* `winter/1000013170.jpg` - isfiske / fangst, 4000x3000, 3923 KB
-* `winter/1000013372.jpg` - skispor / personer i vinterlys, 4000x3000, 3089 KB
-* `winter/1000013487.jpg` - ski og vinterfjell, 960x720, 53 KB
-* `winter/1000013590.jpg` - isfiskeutstyr i snø, 4000x3000, 3435 KB
-* `winter/1000013488.jpg` - ski / vinterfjell, 1080x810, 68 KB
-* `winter/1000013490.jpg` - ski i snø / fjellforhold, 960x720, 46 KB
-* `winter/1000015795.jpg` - person i vinterlys, 528x960, 12 KB
-* `winter/1000015976.jpg` - vinterfjord / båt i snø, 2048x1536, 79 KB
-* `winter/1000015982.jpg` - snødekte fjell speilet i vann, 1280x960, 38 KB
-* `winter/1000016003.jpg` - vinterfjord og snødekte fjell, 960x720, 33 KB
-* `winter/1000001200.jpg` - åpen snøbakke / topptur, 4000x3000, 4014 KB
-* `winter/1000019867.jpg` - skibakke / sol, 1536x2048, 113 KB
-* `winter/1000019868.jpg` - skispor / åpent snølandskap, 2048x1536, 100 KB
-* `winter/1000019870.jpg` - snødekt fjellpanorama / skispor, 2048x1536, 232 KB
-* `winter/1000019883.jpg` - vinterfjell og fjordutsikt, 4000x3000, 1479 KB
-* `winter/1000019884.jpg` - vinterfjell / snødekt panorama, 4000x3000, 3613 KB
-* `winter/1000019890.jpg` - vinterlandskap / fjelltopper, 4000x3000, 3571 KB
-* `winter/1000020203.jpg` - snødekt fjellside / fjellutsikt, 4000x3000, 3526 KB
-* `winter/1000020229.jpg` - snøfjell og havutsikt, 4000x3000, 3420 KB
-* `winter/1000020232.jpg` - vinterlandskap / fjord, 4000x3000, 3716 KB
-* `winter/1000020233.jpg` - snødekt kystfjell, 4000x3000, 3765 KB
-* `winter/1000020234.jpg` - snødekt kystfjell / havutsikt, 4000x3000, 3467 KB
-* `winter/1000020236.jpg` - bred vinterutsikt mot fjell, 4000x3000, 3842 KB
-* `winter/1000020241.jpg` - skispor i åpen snøbakke, 4000x3000, 3464 KB
-* `winter/1000020242.jpg` - åpent snølandskap med person, 4000x3000, 3502 KB
-* `winter/1000020274.jpg` - skiløper i pause / utstyrsdetalj, 1536x2048, 197 KB
-* `winter/1000020473.jpg` - fjelltopp / fjellpanorama, 4000x3000, 3696 KB
-* `winter/1000020484.jpg` - Roland med ski på fjellet, 1536x2048, 175 KB
-* `winter/1000020485.jpg` - Roland med ski, 1536x2048, 209 KB
-* `winter/1000020488.jpg` - vinterdetalj / votter, 1536x2048, 133 KB
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1037.jpg` - topptur på snøside, 960x720, 40 KB
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1273.jpg` - ski / fjellpause, 960x720, 65 KB
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446.jpg` - ski på fjelltopp, 1080x810, 92 KB
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1510.jpg` - vinterlandskap / lav sol, 4000x3000, 3110 KB
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608.jpg` - vinterfjell / solnedgang, 4000x3000, 1226 KB
+### Randonee
+
+* `winter/1000001184.webp`
+* `winter/1000001192.webp`
+* `winter/1000001200.webp`
+* `winter/1000001206.webp`
+* `winter/1000001234.webp`
+* `winter/1000001650.webp`
+* `winter/1000019870.webp`
+* `winter/1000019883.webp`
+* `winter/1000019884.webp`
+* `winter/1000019890.webp`
+* `winter/1000020232.webp`
+* `winter/1000020234.webp`
+* `winter/1000020236.webp`
+* `winter/1000020242.webp`
+* `winter/1000020274.webp`
+* `winter/1000020473.webp`
+* `winter/1000020484.webp`
+* `winter/1000020488.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1273.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4`
+
+### Isfiske
+
+* `winter/1000013116.webp`
+* `winter/1000013165.webp`
+* `winter/1000013169.webp`
+* `winter/1000013170.webp`
+* `winter/1000013590.webp`
+
+### Vinterro
+
+* `winter/1000001280.webp`
+* `winter/1000015792.webp`
+* `winter/1000015976.webp`
+* `winter/1000015982.webp`
+* `winter/1000015987.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1510.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608.webp`
 
 Beste kandidater til vinter-hero:
 
 * `winter/1000020473.jpg`
 * `winter/1000020236.jpg`
 * `winter/1000019883.jpg`
-* `winter/1000019868.jpg`
 
 Beste kandidater til person-/detaljbilder vinter:
 
-* `winter/1000020485.jpg`
 * `winter/1000020484.jpg`
 * `winter/1000020274.jpg`
 * `winter/1000020488.jpg`
 
-## Sommer
+## Aktivt sommergalleri
 
 Brukes til sommerside, båtturer, strender, fjord, fiske, bading og varmere årstidsstemning.
 
-* `summer/1000000191.jpg` - båt på strand, 2048x1536, 271 KB
-* `summer/1000000599.jpg` - jolle / fiskeutstyr, 1008x756, 219 KB
-* `summer/1000001400.jpg` - solnedgang over fjord, 4000x3000, 2949 KB
-* `summer/1000001424.jpg` - person med redningsvest / båtliv, 1179x1572, 125 KB
-* `summer/1000001425.jpg` - solnedgang over sjø, 1179x884, 152 KB
-* `summer/1000001432.jpg` - strand / solnedgang, 4000x3000, 3661 KB
-* `summer/1000001449.jpg` - båt ved bøye, 4000x3000, 3205 KB
-* `summer/1000001481.jpg` - båt på strand / grunt vann, 4000x3000, 3393 KB
-* `summer/1000015931.jpg` - rolig fjord / speiling, 2048x1152, 94 KB
-* `summer/1000015985.jpg` - båtkjølvann / solnedgang, 2048x1536, 176 KB
-* `summer/1000016037.jpg` - strand med båt, 2048x1536, 225 KB
-* `summer/1000021458.jpg` - båt / aktivitet på vannet, 4000x3000, 8107 KB
-* `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3921.jpg` - båt / solnedgang på fjord, 4032x3024, 503 KB
-* `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4217.jpg` - strand / sommerfjord, 4032x3024, 2517 KB
-* `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4243.jpg` - sjø / solnedgang, 4032x3024, 1560 KB
+### Båtturer
+
+* `summer/1000001425.webp`
+* `summer/1000015985.webp`
+* `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3921.webp`
+* `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4243.webp`
+
+### Strandturer
+
+* `summer/1000000191.webp`
+* `summer/1000001432.webp`
+* `summer/1000001481.webp`
+* `summer/1000016037.webp`
+* `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4217.webp`
+
+### Fisketurer
+
+* `summer/1000000599.webp`
+* `summer/1000001424.webp`
+* `summer/1000001449.webp`
+* `summer/1000021458.webp`
+
+### Stillhet på fjorden
+
+* `summer/1000000148.webp`
+* `summer/1000001037.webp`
+* `summer/1000001400.webp`
+* `summer/1000013646.webp`
+* `summer/1000015925.webp`
+* `summer/1000016022.webp`
+* `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171.webp`
 
 Beste kandidater til sommer-hero:
 
@@ -163,7 +202,6 @@ Beste kandidater til sommer-hero:
 * `summer/1000015985.jpg`
 * `shared/1000016022.jpg`
 * `shared/1000013646.jpg`
-* `summer/1000015931.jpg`
 
 ## Felles
 
@@ -263,13 +301,9 @@ Brukers kontrolliste ble gjennomgått mot sorteringen. Duplikater i kontrolliste
 
 ### Bekreftet tilgjengelige i sorteringen
 
-* `1000020233.jpg` - finnes som `winter/1000020233.jpg`
 * `1000020232.jpg` - finnes som `winter/1000020232.jpg`
-* `1000020229.jpg` - finnes som `winter/1000020229.jpg`
-* `1000020203.jpg` - finnes som `winter/1000020203.jpg`
 * `1000019884.jpg` - finnes som `winter/1000019884.jpg`
 * `1000013487.jpg` - finnes som `winter/1000013487.jpg`
-* `1000013372.jpg` - finnes som `winter/1000013372.jpg`
 * `1000001200.jpg` - finnes som `winter/1000001200.jpg`
 * `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1220.jpg` - finnes som `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1220.jpg`
 * `1000021458.jpg` - finnes som `summer/1000021458.jpg`
@@ -308,7 +342,7 @@ Disse ble funnet ved inbox-gjennomgangen 2026-06-03, men ble ikke flyttet inn i 
 
 ## Notater
 
-* `1000013646.jpg` og `1000015931.jpg` ser veldig like ut og kan være duplikater eller nesten-duplikater.
+* Se `Gallerigjennomgang 2026-06-04` for komplett logg over bilder som er fjernet fra aktivt galleri og filsystem.
 * `1000021458.jpg` er den største filen og bør sannsynligvis optimaliseres før bruk.
 * Vinterbildene på 4000x3000 er sterke, men bør skaleres ned og komprimeres før produksjonsbruk.
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608.jpg` ga JPEG-varsel ved forhåndsvisning og bør kontrolleres visuelt før bruk.
