@@ -496,12 +496,6 @@ function App() {
               </button>
             </section>
           </section>
-
-          <footer className="site-footer">
-            <span>{text.footer.company}</span>
-            <span>{text.footer.orgNumber}</span>
-            <span>{text.footer.phone}</span>
-          </footer>
         </>
       )}
 

@@ -300,7 +300,7 @@ button {
   top: 59vh;
   left: 50%;
   right: auto;
-  z-index: 3;
+  z-index: 45;
   align-items: center;
   text-align: center;
   touch-action: none;
@@ -917,12 +917,13 @@ button {
   position: fixed;
   right: clamp(16px, 3vw, 42px);
   bottom: max(clamp(42px, 5vw, 64px), calc(env(safe-area-inset-bottom) + 18px));
-  z-index: 30;
+  z-index: 45;
   touch-action: none;
 }
 
 .contact-link--home.is-dragging,
 .contact-link--floating.is-dragging {
+  z-index: 49;
   cursor: grabbing;
   transition: none;
 }
