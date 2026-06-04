@@ -24,6 +24,8 @@ const no = {
   },
   about: {
     kicker: 'Om Breathe Senja',
+    triggerAriaLabel: 'Om Breathe Senja & Services Henriksen',
+    triggerTitle: 'Om Breathe Senja',
     title: 'Breathe Senja & Services Henriksen',
     description:
         'Breathe Senja & Services Henriksen drives av Roland Henriksen. Roland tilbyr og formidler personlige opplevelser på Senja, med lokal kjennskap til natur, vær, forhold og lokale aktører.',
@@ -61,7 +63,7 @@ const no = {
         'Om sommeren tilbyr Roland båtturer, strandturer og fisketurer på fjorden eller utaskjærs. Turene gjøres med liten båt og tilpasses vær, forhold og ønsker.',
     comingSoon: '',
     practical:
-        'Maks 2 personer. Enkel lunch med drikke er inkludert.',
+        'Maks 2 personer. Enkel lunsj med drikke er inkludert.',
     network:
         'Roland kan også hjelpe med toppturer til fots, roadtrip, overnatting og andre lokale opplevelser gjennom sitt nettverk på Senja.',
     galleryTitle: 'Sommerbilder fra Senja',
@@ -90,7 +92,7 @@ const no = {
         },
         {
           title: 'Praktisk inkludert',
-          description: 'Maks 2 personer. Enkel lunch med drikke, egnet fottøy og redningsvester tilbys.',
+          description: 'Maks 2 personer. Enkel lunsj med drikke, egnet fottøy og redningsvester tilbys.',
         },
         {
           title: 'Roadtrip og overnatting',
@@ -107,7 +109,7 @@ const no = {
         'Om vinteren tilbyr Roland toppturer med randoneeski og isfiske på fjorden. Turene passer for små grupper og tilpasses vær, føre og nivå.',
     comingSoon: '',
     practical:
-        'Maks 6 personer. Enkel lunch med drikke er inkludert.',
+        'Maks 6 personer. Enkel lunsj med drikke er inkludert.',
     network:
         'Roland kan også hjelpe med praktisk tilrettelegging, overnatting og lokale opplevelser på Senja.',
     galleryTitle: 'Vinterbilder fra Senja',
@@ -117,7 +119,7 @@ const no = {
       winterCalm: 'Vinterro',
     },
     experiences: {
-      title: 'Vinteropplevelser med lokal guide',
+      title: 'Vinteropplevelser på Senja',
       items: [
         {
           title: 'Toppturer med randoneeski',
@@ -129,7 +131,7 @@ const no = {
         },
         {
           title: 'Praktisk inkludert',
-          description: 'Turene passer for små grupper på inntil 6 personer. Enkel lunch med drikke er inkludert.',
+          description: 'Turene passer for små grupper på inntil 6 personer. Enkel lunsj med drikke er inkludert.',
         },
         {
           title: 'Overnatting og lokal hjelp',

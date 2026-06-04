@@ -24,6 +24,8 @@ const de = {
   },
   about: {
     kicker: 'Über Breathe Senja',
+    triggerAriaLabel: 'Über Breathe Senja & Services Henriksen',
+    triggerTitle: 'Über Breathe Senja',
     title: 'Breathe Senja & Services Henriksen',
     description:
       'Breathe Senja & Services Henriksen wird von Roland Henriksen betrieben. Roland bietet persönliche Erlebnisse auf Senja an und vermittelt sie, mit lokaler Kenntnis von Natur, Wetter, Bedingungen und lokalen Akteuren.',

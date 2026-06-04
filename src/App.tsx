@@ -381,7 +381,8 @@ function App() {
         <button
           className="about-trigger"
           type="button"
-          aria-label={text.about.kicker}
+          aria-label={text.about.triggerAriaLabel}
+          title={text.about.triggerTitle}
           onClick={() => setIsAboutOpen(true)}
         >
           ?
@@ -394,6 +395,7 @@ function App() {
             className={languageCode === language ? 'is-active' : undefined}
             type="button"
             aria-label={text.languages[languageCode]}
+            title={text.languages[languageCode]}
             aria-pressed={languageCode === language}
             onClick={() => setLanguage(languageCode)}
           >
