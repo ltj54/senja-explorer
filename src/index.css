@@ -950,7 +950,7 @@ button {
 
 .about-popover h2 {
   margin: 0 0 20px;
-  font-size: clamp(30px, 5vw, 46px);
+  font-size: clamp(28px, 4.4vw, 42px);
   line-height: 1;
   font-weight: 400;
   letter-spacing: -0.04em;
@@ -967,7 +967,7 @@ button {
 .about-popover__details {
   display: grid;
   gap: 12px;
-  margin: 26px 0 0;
+  margin: 34px 0 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -991,6 +991,27 @@ button {
 .about-popover__details dd {
   color: rgba(255, 250, 240, 0.92);
   font-size: 15px;
+}
+
+.about-popover__map-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 24px;
+  border-bottom: 1px solid rgba(247, 241, 231, 0.34);
+  color: rgba(255, 250, 240, 0.84);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.about-popover__map-link:hover,
+.about-popover__map-link:focus-visible {
+  border-color: rgba(255, 250, 240, 0.88);
+  color: #fffaf0;
 }
 
 .image-lightbox {
@@ -1108,6 +1129,13 @@ button {
   font-size: 28px;
   line-height: 1;
   cursor: pointer;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.contact-form__close:hover,
+.contact-form__close:focus-visible {
+  color: #fffaf0;
+  transform: scale(1.08);
 }
 
 .contact-form__kicker {
@@ -1309,6 +1337,14 @@ button {
     margin-top: 16px;
     font-size: 16px;
     line-height: 1.5;
+  }
+
+  .about-popover h2 {
+    font-size: clamp(26px, 8vw, 34px);
+  }
+
+  .about-popover__details {
+    margin-top: 32px;
   }
 
   .contact-link--home {

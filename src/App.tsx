@@ -731,6 +731,14 @@ function App() {
                 <dd>{text.about.orgNumber}</dd>
               </div>
             </dl>
+            <a
+              className="about-popover__map-link"
+              href={text.about.mapUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {text.about.mapLabel}
+            </a>
           </section>
         </div>
       )}

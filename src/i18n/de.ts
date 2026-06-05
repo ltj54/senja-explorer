@@ -33,6 +33,8 @@ const de = {
     phone: '+47 46 54 45 10',
     orgNumberLabel: 'Org.nr.',
     orgNumber: '937 296 355',
+    mapLabel: 'Senja auf der Karte ansehen',
+    mapUrl: 'https://www.google.com/maps/place/Senja',
   },
   homeSeasonBoxes: {
     winter: {

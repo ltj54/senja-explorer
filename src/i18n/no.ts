@@ -28,11 +28,13 @@ const no = {
     triggerTitle: 'Om Breathe Senja',
     title: 'Breathe Senja & Services Henriksen',
     description:
-        'Breathe Senja & Services Henriksen drives av Roland Henriksen. Roland tilbyr og formidler personlige opplevelser på Senja, med lokal kjennskap til natur, vær, forhold og lokale aktører.',
+        'Breathe Senja & Services Henriksen drives av Roland Henriksen. Med lokal kjennskap til Senja tilbyr Roland personlige opplevelser året rundt – tilpasset vær, forhold og ønsker.',
     phoneLabel: 'Telefon',
     phone: '+47 46 54 45 10',
     orgNumberLabel: 'Org.nr.',
     orgNumber: '937 296 355',
+    mapLabel: 'Se Senja på kart',
+    mapUrl: 'https://www.google.com/maps/place/Senja',
   },
   homeSeasonBoxes: {
     winter: {
