@@ -83,6 +83,10 @@ button {
     linear-gradient(180deg, rgba(4, 8, 7, 0), rgba(4, 8, 7, 0.28));
 }
 
+.home-background {
+  display: none;
+}
+
 .top-controls {
   position: fixed;
   top: clamp(16px, 3vw, 34px);
@@ -1226,6 +1230,62 @@ button {
     padding: 18px 20px 112px;
   }
 
+  .home-background {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      linear-gradient(rgba(8, 15, 12, 0.04), rgba(8, 15, 12, 0.24)),
+      var(--home-background-image);
+    background-size: cover;
+    background-position: 50% 64%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1);
+    animation: home-crossfade 56s ease-in-out infinite;
+  }
+
+  .home-background--tidlig-var {
+    --home-background-image: url('./assets/roland/home/01_tidlig_var.webp');
+    animation-delay: -3.5s;
+  }
+
+  .home-background--sen-var {
+    --home-background-image: url('./assets/roland/home/02_sen_var.webp');
+    animation-delay: 7s;
+  }
+
+  .home-background--sommer {
+    --home-background-image: url('./assets/roland/home/03_sommer.webp');
+    animation-delay: 14s;
+  }
+
+  .home-background--sensommer {
+    --home-background-image: url('./assets/roland/home/04_sensommer.webp');
+    animation-delay: 21s;
+  }
+
+  .home-background--host {
+    --home-background-image: url('./assets/roland/home/05_host.webp');
+    animation-delay: 28s;
+  }
+
+  .home-background--senhost {
+    --home-background-image: url('./assets/roland/home/06_senhost.webp');
+    animation-delay: 35s;
+  }
+
+  .home-background--vinter {
+    --home-background-image: url('./assets/roland/home/07_vinter.webp');
+    animation-delay: 42s;
+  }
+
+  .home-background--dypvinter {
+    --home-background-image: url('./assets/roland/home/08_dypvinter.webp');
+    animation-delay: 49s;
+  }
+
   .home-intro {
     align-self: flex-start;
     width: 100%;
@@ -1300,15 +1360,6 @@ button {
   }
 
   .season-choices {
-    display: grid;
-  }
-
-  .season-choice {
-    min-height: 100svh;
-    padding: 0 10px max(34px, env(safe-area-inset-bottom));
-  }
-
-  .season-choice span {
     display: none;
   }
 
@@ -1370,6 +1421,14 @@ button {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes home-crossfade {
+  0% { opacity: 0; }
+  6.25% { opacity: 1; }
+  15% { opacity: 1; }
+  25% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 @keyframes notice-appear {

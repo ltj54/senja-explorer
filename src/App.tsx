@@ -141,6 +141,17 @@ const galleryItemsByType = {
   winter: winterGalleryItems,
 }
 
+const homeBackgrounds = [
+  'tidlig-var',
+  'sen-var',
+  'sommer',
+  'sensommer',
+  'host',
+  'senhost',
+  'vinter',
+  'dypvinter',
+]
+
 const publicAssetPath = (path: string) => `${import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}${path}`
 
 const getPageFromHash = (): Page => {
@@ -387,6 +398,14 @@ function App() {
       {page === 'home' && (
         <>
           <section className="home-hero" aria-label={text.siteName}>
+            {homeBackgrounds.map((background) => (
+              <div
+                key={background}
+                className={`home-background home-background--${background}`}
+                aria-hidden="true"
+              />
+            ))}
+
             <section className="home-intro" aria-label={text.siteName}>
               <p>{text.homeIntro.kicker}</p>
               <h2>{text.siteName}</h2>
