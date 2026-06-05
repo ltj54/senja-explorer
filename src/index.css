@@ -83,69 +83,6 @@ button {
     linear-gradient(180deg, rgba(4, 8, 7, 0), rgba(4, 8, 7, 0.28));
 }
 
-.home-background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image:
-    linear-gradient(rgba(8, 15, 12, 0.04), rgba(8, 15, 12, 0.24)),
-    var(--home-background-image);
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transform: scale(1);
-  animation: home-crossfade 56s ease-in-out infinite;
-}
-
-.home-background--tidlig-var {
-  --home-background-image: url('./assets/roland/home/01_tidlig_var.webp');
-  animation-delay: -3.5s;
-}
-
-.home-background--sen-var {
-  --home-background-image: url('./assets/roland/home/02_sen_var.webp');
-  animation-delay: 7s;
-}
-
-.home-background--sommer {
-  --home-background-image: url('./assets/roland/home/03_sommer.webp');
-  animation-delay: 14s;
-}
-
-.home-background--sensommer {
-  --home-background-image: url('./assets/roland/home/04_sensommer.webp');
-  animation-delay: 21s;
-}
-
-.home-background--host {
-  --home-background-image: url('./assets/roland/home/05_host.webp');
-  animation-delay: 28s;
-}
-
-.home-background--senhost {
-  --home-background-image: url('./assets/roland/home/06_senhost.webp');
-  animation-delay: 35s;
-}
-
-.home-background--vinter {
-  --home-background-image: url('./assets/roland/home/07_vinter.webp');
-  animation-delay: 42s;
-}
-
-.home-background--dypvinter {
-  --home-background-image: url('./assets/roland/home/08_dypvinter.webp');
-  animation-delay: 49s;
-}
-
-@keyframes home-crossfade {
-  0% { opacity: 0; }
-  6.25% { opacity: 1; }
-  15% { opacity: 1; }
-  25% { opacity: 0; }
-  100% { opacity: 0; }
-}
-
 .top-controls {
   position: fixed;
   top: clamp(16px, 3vw, 34px);
@@ -416,6 +353,19 @@ button {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.season-choices::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 2;
+  width: 1px;
+  background: rgba(247, 241, 231, 0.32);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.48);
+  pointer-events: none;
+}
+
 .season-choice {
   min-height: 100vh;
   display: flex;
@@ -427,7 +377,12 @@ button {
   padding: 0 clamp(22px, 4vw, 56px) clamp(250px, 29vh, 340px);
   border: 0;
   color: inherit;
-  background: transparent;
+  background-image:
+    var(--season-choice-light, linear-gradient(rgba(5, 10, 8, 0.06), rgba(5, 10, 8, 0.2))),
+    var(--season-choice-image);
+  background-position: var(--season-choice-position, center);
+  background-repeat: no-repeat;
+  background-size: cover;
   backdrop-filter: none;
   box-shadow: none;
   cursor: pointer;
@@ -437,22 +392,30 @@ button {
 }
 
 .season-choice--winter {
+  --season-choice-image: url('./assets/roland/home/07_vinter.webp');
+  --season-choice-position: 50% 78%;
   animation-delay: 180ms;
+}
+
+.season-choice--summer {
+  --season-choice-image: url('./assets/roland/home/03_sommer.webp');
+  --season-choice-light: linear-gradient(rgba(255, 250, 240, 0.08), rgba(5, 10, 8, 0.08));
+  --season-choice-position: 50% 96%;
 }
 
 .season-choice::before {
   content: '';
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
   transition: opacity 420ms ease;
-  opacity: 0;
+  opacity: 0.78;
 }
 
 .season-choice--summer::before {
   background:
-    linear-gradient(90deg, rgba(204, 180, 104, 0.16), transparent 72%),
-    linear-gradient(180deg, transparent 28%, rgba(10, 18, 13, 0.34));
+    linear-gradient(90deg, rgba(230, 205, 124, 0.14), transparent 72%),
+    linear-gradient(180deg, transparent 28%, rgba(10, 18, 13, 0.2));
 }
 
 .season-choice--winter::before {
@@ -465,9 +428,11 @@ button {
   content: '';
   position: absolute;
   inset: 0;
-  z-index: -1;
-  background: linear-gradient(180deg, transparent 52%, rgba(3, 7, 6, 0.52));
-  opacity: 0.72;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(3, 7, 6, 0), rgba(3, 7, 6, 0.18) 68%),
+    linear-gradient(180deg, rgba(3, 7, 6, 0.02), rgba(3, 7, 6, 0.62));
+  opacity: 0.86;
   transition: opacity 420ms ease;
 }
 
@@ -475,6 +440,8 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
   min-width: 0;
   padding: 0;
   border: 0;
@@ -493,12 +460,14 @@ button {
 
 .season-choice:hover,
 .season-choice:focus-visible {
-  background: rgba(255, 250, 240, 0.025);
+  background-image:
+    linear-gradient(rgba(255, 250, 240, 0.035), rgba(5, 10, 8, 0.16)),
+    var(--season-choice-image);
 }
 
 .season-choice:hover::before,
 .season-choice:focus-visible::before {
-  opacity: 1;
+  opacity: 0.94;
 }
 
 .season-choice:hover::after,
@@ -1331,6 +1300,15 @@ button {
   }
 
   .season-choices {
+    display: grid;
+  }
+
+  .season-choice {
+    min-height: 100svh;
+    padding: 0 10px max(34px, env(safe-area-inset-bottom));
+  }
+
+  .season-choice span {
     display: none;
   }
 
