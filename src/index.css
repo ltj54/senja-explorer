@@ -1346,13 +1346,18 @@ button {
   }
 
   .about-popover__logo {
-    top: 18px;
-    right: 38px;
+    top: auto;
+    right: 18px;
+    bottom: 18px;
     width: 82px;
   }
 
   .about-popover p:not(.about-popover__kicker) {
-    padding-right: 72px;
+    padding-right: 0;
+  }
+
+  .about-popover__map-link {
+    margin-right: 88px;
   }
 
   .home-intro p:first-child {
