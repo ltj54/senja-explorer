@@ -374,17 +374,17 @@ function App() {
 
         <nav className="language-switcher" aria-label={text.chooseLanguage}>
           {languages.map((languageCode) => (
-          <button
-            key={languageCode}
-            className={languageCode === language ? 'is-active' : undefined}
-            type="button"
-            aria-label={text.languages[languageCode]}
-            title={text.languages[languageCode]}
-            aria-pressed={languageCode === language}
-            onClick={() => setLanguage(languageCode)}
-          >
-            {languageLabels[languageCode]}
-          </button>
+            <button
+              key={languageCode}
+              className={languageCode === language ? 'is-active' : undefined}
+              type="button"
+              aria-label={text.languages[languageCode]}
+              title={text.languages[languageCode]}
+              aria-pressed={languageCode === language}
+              onClick={() => setLanguage(languageCode)}
+            >
+              {languageLabels[languageCode]}
+            </button>
           ))}
         </nav>
       </div>
@@ -711,6 +711,14 @@ function App() {
           <div className="contact-modal__backdrop" onClick={() => setIsAboutOpen(false)} />
 
           <section className="about-popover">
+            <img
+              className="about-popover__logo"
+              src="./images/breathe-senja-logo.webp"
+              alt=""
+              aria-hidden="true"
+              width="640"
+              height="640"
+            />
             <button
               className="contact-form__close"
               type="button"

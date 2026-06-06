@@ -937,6 +937,28 @@ button {
   color: #f7f1e7;
   box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
   animation: contact-form-in 320ms ease forwards;
+  overflow: hidden;
+}
+
+.about-popover__logo {
+  position: absolute;
+  top: 14px;
+  right: 42px;
+  z-index: 0;
+  width: clamp(76px, 18vw, 108px);
+  height: auto;
+  opacity: 0.32;
+  filter: contrast(1.12) saturate(1.08);
+  pointer-events: none;
+}
+
+.about-popover > :not(.about-popover__logo):not(.contact-form__close) {
+  position: relative;
+  z-index: 1;
+}
+
+.about-popover .contact-form__close {
+  z-index: 2;
 }
 
 .about-popover__kicker {
@@ -958,6 +980,7 @@ button {
 
 .about-popover p:not(.about-popover__kicker) {
   margin: 0;
+  padding-right: clamp(90px, 21vw, 122px);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.65;
@@ -1239,6 +1262,7 @@ button {
 
 @media (max-width: 760px) {
   .top-controls {
+    position: absolute;
     gap: 6px;
   }
 
@@ -1317,8 +1341,18 @@ button {
   .home-intro {
     align-self: flex-start;
     width: 100%;
-    margin-top: min(10vh, 78px);
+    margin-top: min(13vh, 96px);
     text-align: left;
+  }
+
+  .about-popover__logo {
+    top: 18px;
+    right: 38px;
+    width: 82px;
+  }
+
+  .about-popover p:not(.about-popover__kicker) {
+    padding-right: 72px;
   }
 
   .home-intro p:first-child {
