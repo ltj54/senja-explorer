@@ -148,9 +148,9 @@ const en = {
   contactForm: {
     kicker: 'Send a message',
     title: 'Contact Roland',
-    name: 'Name',
-    email: 'Email',
-    message: 'Message',
+    name: 'Your name',
+    email: 'Your email',
+    message: 'Your message to Roland',
     submit: 'Send message',
     sending: 'Sending…',
     success: 'Your message has been sent. Thank you!',

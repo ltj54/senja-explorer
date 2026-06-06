@@ -148,9 +148,9 @@ const no = {
   contactForm: {
     kicker: 'Send en melding',
     title: 'Kontakt Roland',
-    name: 'Navn',
-    email: 'E-post',
-    message: 'Melding',
+    name: 'Ditt navn',
+    email: 'Din e-post',
+    message: 'Din melding til Roland',
     submit: 'Send melding',
     sending: 'Sender…',
     success: 'Meldingen er sendt. Takk for henvendelsen!',
