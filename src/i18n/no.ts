@@ -152,6 +152,9 @@ const no = {
     email: 'E-post',
     message: 'Melding',
     submit: 'Send melding',
+    sending: 'Sender…',
+    success: 'Meldingen er sendt. Takk for henvendelsen!',
+    error: 'Meldingen kunne ikke sendes. Prøv igjen om litt.',
     close: 'Lukk',
   },
 }

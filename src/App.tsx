@@ -1,8 +1,9 @@
-import { type PointerEvent, useEffect, useRef, useState } from 'react'
+import { type FormEvent, type PointerEvent, useEffect, useRef, useState } from 'react'
 import { languageLabels, languages, translations, type Language } from './i18n'
 
 type Page = 'home' | 'summer' | 'winter'
 type ContactPosition = { x: number; y: number } | null
+type ContactFormStatus = 'idle' | 'sending' | 'success' | 'error'
 type GalleryType = 'summer' | 'winter'
 type GalleryItem = {
   kind: 'image' | 'video'
@@ -164,6 +165,7 @@ function App() {
   const [page, setPage] = useState<Page>(() => getPageFromHash())
   const [isAboutOpen, setIsAboutOpen] = useState(false)
   const [isContactOpen, setIsContactOpen] = useState(false)
+  const [contactFormStatus, setContactFormStatus] = useState<ContactFormStatus>('idle')
   const [scrollOpacity, setScrollOpacity] = useState(1)
   const [contactPosition, setContactPosition] = useState<ContactPosition>(null)
   const [isContactDragging, setIsContactDragging] = useState(false)
@@ -354,7 +356,34 @@ function App() {
       return
     }
 
+    setContactFormStatus('idle')
     setIsContactOpen(true)
+  }
+
+  const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setContactFormStatus('sending')
+
+    const form = event.currentTarget
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          Accept: 'application/json',
+        },
+      })
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`)
+      }
+
+      form.reset()
+      setContactFormStatus('success')
+    } catch {
+      setContactFormStatus('error')
+    }
   }
 
   return (
@@ -757,8 +786,9 @@ function App() {
 
           <form
             className="contact-form"
-            action="https://formspree.io/f/SETT-INN-DIN-FORMSPREE-ID"
+            action="https://formspree.io/f/xvznzpvd"
             method="POST"
+            onSubmit={handleContactSubmit}
           >
             <input type="hidden" name="_subject" value="Ny melding fra Breathe Senja" />
             <input type="hidden" name="language" value={language} />
@@ -791,11 +821,25 @@ function App() {
               <textarea name="message" rows={5} required />
             </label>
 
-            <button className="contact-form__submit" type="submit">
-              {text.contactForm.submit}
+            <button
+              className="contact-form__submit"
+              type="submit"
+              disabled={contactFormStatus === 'sending'}
+            >
+              {contactFormStatus === 'sending' ? text.contactForm.sending : text.contactForm.submit}
             </button>
 
             <p className="contact-form__privacy">{text.privacyNotice}</p>
+            {contactFormStatus === 'success' && (
+              <p className="contact-form__status contact-form__status--success" role="status" aria-live="polite">
+                {text.contactForm.success}
+              </p>
+            )}
+            {contactFormStatus === 'error' && (
+              <p className="contact-form__status contact-form__status--error" role="alert">
+                {text.contactForm.error}
+              </p>
+            )}
           </form>
         </div>
       )}

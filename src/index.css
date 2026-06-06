@@ -1230,12 +1230,38 @@ button {
   border-color: rgba(247, 241, 231, 0.52);
 }
 
+.contact-form__submit:disabled {
+  opacity: 0.58;
+  cursor: wait;
+}
+
 .contact-form__privacy {
   margin: 14px 0 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 11px;
   line-height: 1.45;
   color: rgba(247, 241, 231, 0.48);
+}
+
+.contact-form__status {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(247, 241, 231, 0.2);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.contact-form__status--success {
+  border-color: rgba(143, 205, 159, 0.42);
+  background: rgba(70, 130, 84, 0.16);
+  color: rgba(222, 248, 228, 0.92);
+}
+
+.contact-form__status--error {
+  border-color: rgba(221, 135, 122, 0.44);
+  background: rgba(145, 63, 52, 0.16);
+  color: rgba(255, 225, 220, 0.92);
 }
 
 .image-notice {

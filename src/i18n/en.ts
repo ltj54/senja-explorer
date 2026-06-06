@@ -152,6 +152,9 @@ const en = {
     email: 'Email',
     message: 'Message',
     submit: 'Send message',
+    sending: 'Sending…',
+    success: 'Your message has been sent. Thank you!',
+    error: 'The message could not be sent. Please try again shortly.',
     close: 'Close',
   },
 }

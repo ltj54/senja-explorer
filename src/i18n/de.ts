@@ -152,6 +152,9 @@ const de = {
     email: 'E-Mail',
     message: 'Nachricht',
     submit: 'Nachricht senden',
+    sending: 'Wird gesendet…',
+    success: 'Ihre Nachricht wurde gesendet. Vielen Dank!',
+    error: 'Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut.',
     close: 'Schließen',
   },
 }
