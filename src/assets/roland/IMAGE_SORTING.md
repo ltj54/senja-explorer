@@ -1,6 +1,6 @@
 # Roland bildesortering
 
-Fysisk sortering etter gjennomgang. Innboksen er tom etter ny gjennomgang 2026-06-03.
+Fysisk sortering etter gjennomgang. Innboksen er tom etter ny gjennomgang 2026-06-10.
 
 ## Forside-sekvens
 
@@ -63,6 +63,21 @@ Nye videoer som ble sett i inbox, men ikke importert til sorterte mapper:
 
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608.jpg` gir JPEG-varsel om prematur filslutt / korrupt JPEG-data.
 * `ffmpeg` manglet på PATH, så video ble kopiert, men video-thumbnail ble ikke generert.
+
+## Inbox-gjennomgang 2026-06-10
+
+`src/assets/roland/inbox/` inneholdt åtte nye filer. Alle ble flyttet til `shared/`, og innboksen ble tømt.
+
+Flyttet:
+
+* `1000021710.jpg`
+* `1000021712.jpg`
+* `1000021713.jpg`
+* `1000021729.jpg`
+* `logo_1.png`
+* `logo_2.png`
+* `logo_3.png`
+* `logo_11.png`
 
 ## Gallerigjennomgang 2026-06-04
 
@@ -214,9 +229,17 @@ Brukes til generell Senja-stemning, om-/profilseksjoner eller bakgrunner som ikk
 * `shared/1000015925.jpg` - blå fjordstemning
 * `shared/1000015987.jpg` - rolig kveldsstemning
 * `shared/1000016022.jpg` - fjord-/værstemning
+* `shared/1000021710.jpg`
+* `shared/1000021712.jpg`
+* `shared/1000021713.jpg`
+* `shared/1000021729.jpg`
 * `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1220.jpg` - campingvogn / praktisk base, 4000x3000, 4364 KB
 * `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_390.jpg` - regnbue over fjord, 4000x3000, 3513 KB
 * `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171.jpg` - kveldsfjord / silhuett, 4032x3024, 265 KB
+* `shared/logo_1.png`
+* `shared/logo_2.png`
+* `shared/logo_3.png`
+* `shared/logo_11.png`
 
 ## Bilder som ikke er tilgjengelige fra e-post
 
