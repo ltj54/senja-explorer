@@ -396,15 +396,15 @@ button {
 }
 
 .season-choice--winter {
-  --season-choice-image: url('./assets/roland/home/07_vinter.webp');
-  --season-choice-position: 50% 78%;
+  --season-choice-image: url('./assets/roland/winter/1000020236.jpg');
+  --season-choice-position: 52% 50%;
   animation-delay: 180ms;
 }
 
 .season-choice--summer {
-  --season-choice-image: url('./assets/roland/home/03_sommer.webp');
+  --season-choice-image: url('./assets/roland/summer/1000016037.jpg');
   --season-choice-light: linear-gradient(rgba(255, 250, 240, 0.08), rgba(5, 10, 8, 0.08));
-  --season-choice-position: 50% 96%;
+  --season-choice-position: 50% 50%;
 }
 
 .season-choice::before {
@@ -550,9 +550,9 @@ button {
   margin: 0;
   color: rgba(247, 241, 231, 0.74);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(12px, 1.15vw, 15px);
+  font-size: clamp(16px, 1.55vw, 22px);
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   line-height: 1.2;
   text-align: left;
   text-transform: uppercase;
@@ -764,6 +764,84 @@ button {
   transform: translateY(-4vh);
 }
 
+.season-accommodation {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 520px);
+  margin-top: clamp(28px, 5vh, 52px);
+  padding-top: clamp(24px, 4vh, 38px);
+  border-top: 1px solid rgba(247, 241, 231, 0.18);
+  text-align: left;
+}
+
+.season-accommodation h3,
+.season-accommodation p {
+  margin: 0;
+}
+
+.season-accommodation h3 {
+  color: rgba(255, 250, 240, 0.88);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.season-accommodation p {
+  color: rgba(247, 241, 231, 0.62);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(13px, 1.35vw, 15px);
+  line-height: 1.55;
+}
+
+.season-accommodation__links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.season-accommodation__links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 62px;
+  padding: 17px 19px;
+  border: 1px solid rgba(247, 241, 231, 0.22);
+  color: rgba(255, 250, 240, 0.88);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.35;
+  text-decoration: none;
+  background: rgba(7, 13, 11, 0.34);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.season-accommodation__links a:hover,
+.season-accommodation__links a:focus-visible {
+  border-color: rgba(255, 250, 240, 0.72);
+  color: #fffaf0;
+  background: rgba(247, 241, 231, 0.17);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
+  transform: translateY(-3px);
+}
+
+.season-accommodation__links a span {
+  font-size: 17px;
+  transition: transform 180ms ease;
+}
+
+.season-accommodation__links a:hover span,
+.season-accommodation__links a:focus-visible span {
+  transform: translate(2px, -2px);
+}
+
+.season-accommodation__links a:focus-visible {
+  outline: 2px solid rgba(247, 241, 231, 0.8);
+  outline-offset: 3px;
+}
+
 .season-experiences h3,
 .season-experiences h4,
 .season-experiences p {
@@ -893,6 +971,63 @@ button {
   touch-action: none;
 }
 
+.season-gallery-index {
+  position: fixed;
+  right: clamp(16px, 3vw, 42px);
+  bottom: max(clamp(126px, 12vw, 148px), calc(env(safe-area-inset-bottom) + 104px));
+  z-index: 44;
+  display: grid;
+  justify-items: end;
+  gap: 7px;
+  text-align: right;
+}
+
+.season-gallery-index button {
+  position: relative;
+  padding: 2px 0 2px 22px;
+  border: 0;
+  background: transparent;
+  color: rgba(247, 241, 231, 0.58);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.13em;
+  text-align: right;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.season-gallery-index button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transform: translate(12px, -50%);
+  transition: width 180ms ease;
+}
+
+.season-gallery-index button:hover,
+.season-gallery-index button:focus-visible {
+  color: #fffaf0;
+  transform: translateX(-10px);
+}
+
+.season-gallery-index button:hover::after,
+.season-gallery-index button:focus-visible::after {
+  width: 18px;
+}
+
+.season-gallery-index button:focus-visible {
+  outline: 1px solid rgba(247, 241, 231, 0.72);
+  outline-offset: 5px;
+}
+
 .contact-link--home.is-dragging,
 .contact-link--floating.is-dragging {
   z-index: 49;
@@ -944,12 +1079,50 @@ button {
   position: absolute;
   top: 14px;
   right: 42px;
-  z-index: 0;
+  z-index: 2;
+  display: block;
   width: clamp(76px, 18vw, 108px);
+  padding: 0;
+  border: 1px solid rgba(100, 203, 75, 0.24);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  opacity: 0.7;
+  cursor: pointer;
+  transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease, opacity 200ms ease, transform 200ms ease;
+}
+
+.about-popover__logo img {
+  display: block;
+  width: 100%;
   height: auto;
-  opacity: 0.32;
-  filter: contrast(1.12) saturate(1.08);
-  pointer-events: none;
+  border-radius: 50%;
+  filter: saturate(1.08) contrast(1.03) brightness(0.94);
+  transition: filter 200ms ease, transform 200ms ease;
+}
+
+.about-popover__logo:hover,
+.about-popover__logo:focus-visible {
+  border-color: rgba(100, 203, 75, 0.68);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 32px rgba(0, 122, 190, 0.28), 0 0 0 4px rgba(100, 203, 75, 0.08);
+  opacity: 1;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.about-popover__logo:hover img,
+.about-popover__logo:focus-visible img {
+  filter: saturate(1.24) contrast(1.06) brightness(1.1);
+  transform: scale(1.015);
+}
+
+.about-popover__logo:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.about-popover__logo:focus-visible {
+  outline: 2px solid rgba(255, 250, 240, 0.9);
+  outline-offset: 4px;
 }
 
 .about-popover > :not(.about-popover__logo):not(.contact-form__close) {
@@ -958,7 +1131,7 @@ button {
 }
 
 .about-popover .contact-form__close {
-  z-index: 2;
+  z-index: 3;
 }
 
 .about-popover__kicker {
@@ -1016,18 +1189,22 @@ button {
   font-size: 15px;
 }
 
-.about-popover__map-link {
-  display: inline-flex;
-  width: fit-content;
-  margin-top: 24px;
-  border-bottom: 1px solid rgba(247, 241, 231, 0.34);
+.about-popover__map-link,
+.about-popover__airbnb > span {
   color: rgba(255, 250, 240, 0.84);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.35;
   letter-spacing: 0.08em;
-  text-decoration: none;
   text-transform: uppercase;
+}
+
+.about-popover__map-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 24px;
+  border-bottom: 1px solid rgba(247, 241, 231, 0.34);
+  text-decoration: none;
   transition: border-color 180ms ease, color 180ms ease;
 }
 
@@ -1035,6 +1212,37 @@ button {
 .about-popover__map-link:focus-visible {
   border-color: rgba(255, 250, 240, 0.88);
   color: #fffaf0;
+}
+
+.about-popover__airbnb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  margin-top: 16px;
+}
+
+.about-popover__airbnb > div {
+  display: flex;
+  gap: 7px;
+}
+
+.about-popover__airbnb a {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(247, 241, 231, 0.3);
+  color: rgba(255, 250, 240, 0.9);
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.about-popover__airbnb a:hover,
+.about-popover__airbnb a:focus-visible {
+  border-color: rgba(255, 250, 240, 0.8);
+  background: rgba(247, 241, 231, 0.12);
+  transform: translateY(-2px);
 }
 
 .image-lightbox {
@@ -1386,6 +1594,12 @@ button {
     margin-right: 88px;
   }
 
+  .about-popover__airbnb {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-right: 88px;
+  }
+
   .home-intro p:first-child {
     margin-bottom: 12px;
     font-size: 11px;
@@ -1495,6 +1709,10 @@ button {
     transform: none;
   }
 
+  .season-accommodation__links {
+    grid-template-columns: 1fr;
+  }
+
   .season-page h2 {
     font-size: clamp(32px, 10vw, 48px);
   }
@@ -1504,6 +1722,10 @@ button {
     bottom: calc(env(safe-area-inset-bottom) + 16px);
     left: 16px;
     max-width: calc(100vw - 32px);
+  }
+
+  .season-gallery-index {
+    display: none;
   }
 
   .image-notice {

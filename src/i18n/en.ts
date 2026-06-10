@@ -33,41 +33,45 @@ const en = {
     phone: '+47 46 54 45 10',
     orgNumberLabel: 'Org. no.',
     orgNumber: '937 296 355',
-    mapLabel: 'See Senja on the map',
-    mapUrl: 'https://www.google.com/maps/place/Senja',
+    mapLabel: 'View the address on the map',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=St%C3%B8nesbotnveien%20583%2C%209373%20Botnhamn',
+    airbnbLabel: 'View rental properties 1 and 2 on Airbnb',
   },
   homeSeasonBoxes: {
     winter: {
       kicker: 'Ski touring and ice fishing',
       title: 'Winter on Senja',
       description:
-        'In winter, Roland offers ski touring with randonee skis and ice fishing on the fjord. Trips are suited for small groups and adapted to weather, snow conditions and level.',
+        'In winter, Roland offers ski touring with randonee skis and ice fishing on the fjord, where guests often catch fish. Trips are suited for small groups and adapted to weather, snow conditions and level.',
     },
     summer: {
-      kicker: 'Boat trips, fishing and hikes',
+      kicker: 'Boat trips, fishing and sightseeing',
       title: 'Summer on Senja',
       description:
-        'In summer, Roland offers boat trips, beach trips, fishing trips and summit hikes on foot. He can also help arrange other local experiences on Senja.',
+        'In summer, Roland offers boat trips, beach trips, fishing trips, transportation and sightseeing by car. He can also connect guests with local guides for summit hikes.',
     },
   },
   yearRoundTitle: 'Practical help year round',
   yearRound:
-    'Roland can help with local experiences, road trips, accommodation and contact with local partners on Senja. He also has his own rental units that guests can see more closely on request.',
+    'Roland offers transportation, road trips and sightseeing by car, and can help with accommodation and local contacts on Senja. He also has his own rental units that guests can see more closely on request.',
   footer: {
     company: 'Breathe Senja & Services Henriksen',
     orgNumber: 'Org. no. 937 296 355',
     phone: 'Phone +47 46 54 45 10',
   },
+  accommodation: {
+    title: 'Accommodation on Senja',
+    description: 'Roland also has two rental properties on Senja that pair well with the trips.',
+    links: ['View rental 1 on Airbnb', 'View rental 2 on Airbnb'],
+  },
   summerPage: {
     kicker: 'Summer on Senja',
     title: 'Boat trips, swim stops\nand fishing on the fjord',
     description:
-      'In summer, Roland offers boat trips, beach trips and fishing trips on the fjord or further out at sea. Trips are done with a small boat and adapted to weather, conditions and wishes.',
+      'In summer, Roland offers boat trips, beach trips and fishing trips on the fjord or further out at sea. He has two boats, and trips are adapted to weather, conditions and wishes.',
     comingSoon: '',
     practical:
-      'Maximum 2 people. A simple lunch with drinks is included.',
-    network:
-      'Roland can also arrange ski touring, road trips, accommodation and other local experiences through his network on Senja.',
+      'The larger boat has room for 2–3 people, while the smaller boat has room for 2. A simple lunch with drinks is included.',
     galleryTitle: 'Summer images from Senja',
     galleryGroups: {
       boatTrips: 'Boat trips',
@@ -88,18 +92,18 @@ const en = {
             'Fishing trips with the option to rent a fishing rod. Roland can gut and fillet the fish if guests want to take it with them.',
         },
         {
-          title: 'Summit hikes on foot',
+          title: 'Transportation and sightseeing by car',
           description:
-            'Roland offers summit hikes on foot and adapts the trips to weather, conditions and level.',
+            'Roland offers transportation and sightseeing by car to places guests would like to experience on Senja.',
         },
         {
           title: 'Practical details included',
-          description: 'Maximum 2 people. A simple lunch with drinks, suitable footwear and life jackets are provided.',
+          description: 'The larger boat has room for 2–3 people, while the smaller boat has room for 2. A simple lunch with drinks, suitable footwear and life jackets are provided.',
         },
         {
-          title: 'Road trips and accommodation',
+          title: 'Summit hikes, accommodation and local contacts',
           description:
-            'Roland can help with road trips, accommodation and local contacts. He also has his own rental units that can be shown to guests on request.',
+            'Roland can connect guests with local guides for summit hikes and help with accommodation and local contacts. He also has his own rental units that can be shown to guests on request.',
         },
       ],
     },
@@ -108,7 +112,7 @@ const en = {
     kicker: 'Winter on Senja',
     title: 'Ski touring, ice fishing\nand winter calm',
     description:
-      'In winter, Roland offers ski touring with randonee skis and ice fishing on the fjord. The trips are suited for small groups and adapted to weather, snow conditions and level.',
+      'In winter, Roland offers ski touring with randonee skis and ice fishing on the fjord, where guests often catch fish. The trips are suited for small groups and adapted to weather, snow conditions and level.',
     comingSoon: '',
     practical:
       'Maximum 6 people. A simple lunch with drinks is included.',
@@ -129,7 +133,7 @@ const en = {
         },
         {
           title: 'Ice fishing on the fjord',
-          description: 'A simple and close experience on the fjord, with time to settle in and local knowledge.',
+          description: 'A simple and close experience on the fjord, with time to settle in, local knowledge and often a catch.',
         },
         {
           title: 'Practical details included',
@@ -142,8 +146,6 @@ const en = {
         },
       ],
     },
-    footer:
-      'Breathe Senja & Services Henriksen is run by Roland Henriksen. With local knowledge of nature, weather and conditions on Senja, he offers calm and personal winter experiences close to nature.',
   },
   contactForm: {
     kicker: 'Send a message',

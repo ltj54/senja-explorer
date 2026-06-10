@@ -32,6 +32,11 @@ type ContactDragState = {
 
 const imageItem = (name: string): GalleryItem => ({ kind: 'image', name })
 
+const airbnbListings = [
+  'https://www.airbnb.no/rooms/31561817',
+  'https://www.airbnb.no/rooms/40201913',
+]
+
 const summerGalleryGroups: GalleryGroup<SummerGalleryGroupKey>[] = [
   {
     key: 'boatTrips',
@@ -551,7 +556,7 @@ function App() {
                 className="continue-button"
                 type="button"
                 onClick={() => {
-                  document.getElementById('summer-image-panel')?.scrollIntoView({ behavior: 'smooth' })
+                  document.getElementById('summer-gallery-boatTrips')?.scrollIntoView({ behavior: 'smooth' })
                 }}
               >
                 <span>{text.continue}</span>
@@ -570,7 +575,7 @@ function App() {
               return (
                 <div
                   key={`${group.key}-${pageIndex}`}
-                  id={isFirstSummerPanel ? 'summer-image-panel' : undefined}
+                  id={pageIndex === 0 ? `summer-gallery-${group.key}` : undefined}
                   className="season-page-panel season-page-panel--image"
                 >
                   {isFirstSummerPanel && (
@@ -614,9 +619,19 @@ function App() {
                   <p>{item.description}</p>
                 </article>
               ))}
-              <aside className="season-guide-note">
-                <p>{text.summerPage.network}</p>
-              </aside>
+            </section>
+
+            <section className="season-accommodation" aria-label={text.accommodation.title}>
+              <h3>{text.accommodation.title}</h3>
+              <p>{text.accommodation.description}</p>
+              <div className="season-accommodation__links">
+                {airbnbListings.map((url, index) => (
+                  <a key={url} href={url} target="_blank" rel="noreferrer">
+                    {text.accommodation.links[index]}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                ))}
+              </div>
             </section>
 
           </div>
@@ -641,7 +656,7 @@ function App() {
                 className="continue-button"
                 type="button"
                 onClick={() => {
-                  document.getElementById('winter-image-panel')?.scrollIntoView({ behavior: 'smooth' })
+                  document.getElementById('winter-gallery-randonee')?.scrollIntoView({ behavior: 'smooth' })
                 }}
               >
                 <span>{text.continue}</span>
@@ -660,7 +675,7 @@ function App() {
               return (
                 <div
                   key={`${group.key}-${pageIndex}`}
-                  id={isFirstWinterPanel ? 'winter-image-panel' : undefined}
+                  id={pageIndex === 0 ? `winter-gallery-${group.key}` : undefined}
                   className="season-page-panel season-page-panel--image"
                 >
                   {isFirstWinterPanel && (
@@ -716,13 +731,41 @@ function App() {
                   <p>{item.description}</p>
                 </article>
               ))}
-              <aside className="season-guide-note">
-                <p>{text.winterPage.footer}</p>
-              </aside>
+            </section>
+
+            <section className="season-accommodation" aria-label={text.accommodation.title}>
+              <h3>{text.accommodation.title}</h3>
+              <p>{text.accommodation.description}</p>
+              <div className="season-accommodation__links">
+                {airbnbListings.map((url, index) => (
+                  <a key={url} href={url} target="_blank" rel="noreferrer">
+                    {text.accommodation.links[index]}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                ))}
+              </div>
             </section>
 
           </div>
         </section>
+      )}
+
+      {page !== 'home' && (
+        <nav className="season-gallery-index" aria-label={page === 'summer' ? text.summerPage.galleryTitle : text.winterPage.galleryTitle}>
+          {(page === 'summer' ? summerGalleryGroups : winterGalleryGroups).map((group) => (
+            <button
+              key={group.key}
+              type="button"
+              onClick={() => {
+                document.getElementById(`${page}-gallery-${group.key}`)?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              {page === 'summer'
+                ? text.summerPage.galleryGroups[group.key as SummerGalleryGroupKey]
+                : text.winterPage.galleryGroups[group.key as WinterGalleryGroupKey]}
+            </button>
+          ))}
+        </nav>
       )}
 
       {page !== 'home' && (
@@ -759,14 +802,20 @@ function App() {
           <div className="contact-modal__backdrop" onClick={() => setIsAboutOpen(false)} />
 
           <section className="about-popover">
-            <img
+            <a
               className="about-popover__logo"
-              src="./images/breathe-senja-logo.webp"
-              alt=""
-              aria-hidden="true"
-              width="640"
-              height="640"
-            />
+              href="https://breathesenja.com"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="breathesenja.com"
+            >
+              <img
+                src={publicAssetPath('images/breathe-senja-logo.webp')}
+                alt="Breathe Senja"
+                width="640"
+                height="640"
+              />
+            </a>
             <button
               className="contact-form__close"
               type="button"
@@ -795,6 +844,17 @@ function App() {
             >
               {text.about.mapLabel}
             </a>
+            <div className="about-popover__airbnb">
+              <span>{text.about.airbnbLabel}</span>
+              <div>
+                {airbnbListings.map((url, index) => (
+                  <a key={url} href={url} target="_blank" rel="noreferrer">
+                    {index + 1}
+                    <span className="sr-only">: {text.accommodation.links[index]}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </section>
         </div>
       )}

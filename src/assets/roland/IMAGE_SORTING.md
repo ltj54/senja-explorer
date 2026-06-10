@@ -116,6 +116,70 @@ Fem filer var byteidentiske duplikater av filer som allerede lå i `winter/`, og
 
 Innboksen er tom etter gjennomgangen.
 
+## Ny bildeleveranse 2026-06-10
+
+`src/assets/roland/inbox/` inneholdt 43 JPG-filer. Motivene ble kontrollert visuelt og sammenlignet med eksisterende sortering ved hjelp av SHA-256.
+
+Åtte filer var byteidentiske duplikater og ble ikke importert på nytt:
+
+* `1000004018.jpg` - finnes som `winter/1000004018.jpg`
+* `1000013165.jpg` - finnes som `winter/1000013165.jpg`
+* `1000013170.jpg` - finnes som `winter/1000013170.jpg`
+* `1000013590.jpg` - finnes som `winter/1000013590.jpg`
+* `1000015792.jpg` - finnes som `shared/1000015792.jpg`
+* `1000015976.jpg` - finnes som `winter/1000015976.jpg`
+* `1000015982.jpg` - finnes som `winter/1000015982.jpg`
+* `1000021458.jpg` - finnes som `summer/1000021458.jpg`
+
+Seks nye sommerbilder ble flyttet til `summer/`:
+
+* `1000010373.jpg` - båt og brygge
+* `1000010374.jpg` - båt ved flytebrygge
+* `1000021448.jpg` - liten båt på sjøen
+* `1000021801.jpg` - brygge ved stille vann
+* `1000021808.jpg` - fangst ved vannkanten
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3939.jpg` - utsikt fra båt
+
+29 nye vinterbilder ble flyttet til `winter/`:
+
+* `1000004017.jpg`
+* `1000010930.jpg`
+* `1000010934.jpg`
+* `1000010937.jpg`
+* `1000012751.jpg`
+* `1000013130.jpg`
+* `1000013156.jpg`
+* `1000013160.jpg`
+* `1000013162.jpg`
+* `1000013175.jpg`
+* `1000013212.jpg`
+* `1000013213.jpg`
+* `1000013371.jpg`
+* `1000013484.jpg`
+* `1000013488.jpg`
+* `1000013520.jpg`
+* `1000013591.jpg`
+* `1000013651.jpg`
+* `1000015014.jpg`
+* `1000015787.jpg`
+* `1000015791.jpg`
+* `1000015793.jpg`
+* `1000015794.jpg`
+* `1000015795.jpg`
+* `1000015917.jpg`
+* `1000016265.jpg`
+* `1000016266.jpg`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3749.jpg`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5192.jpg`
+
+Vinterleveransen inneholder nordlys, isfiske, vinterlandskap og enkelte mobilskjermbilder. `1000013488.jpg` og `1000015795.jpg` hadde tidligere blitt tatt ut ved gallerikuratering, men er nå importert igjen som sorterte arkivkandidater. De nye bildene er ikke automatisk lagt til i det aktive galleriet.
+
+`scripts/optimize-images.ps1 -ImagesOnly` ble kjørt etter sorteringen. Alle nye bilder fikk WebP-varianter i `public/images/web/` og `public/images/thumbs/`. Den eneste advarselen var den allerede kjente avkortede JPEG-filen `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608.jpg`.
+
+Følgende bilder fra listen over tidligere utilgjengelige e-postfiler ble funnet i denne leveransen: `1000015014.jpg`, `1000013591.jpg`, `1000013213.jpg`, `1000013212.jpg`, `1000013175.jpg`, `1000013162.jpg`, `1000013156.jpg`, `1000013160.jpg`, `1000012751.jpg` og `1000010937.jpg`.
+
+Innboksen er tom etter gjennomgangen.
+
 ## Gallerigjennomgang 2026-06-04
 
 Bildene som faktisk brukes i `src/App.tsx` ble kontrollert med ImageMagick og visuell kontaktark-gjennomgang.
@@ -304,17 +368,9 @@ Disse bildene var listet i e-posten fra Roland, men kunne ikke lastes ned fordi 
 * `1000019861.jpg`
 * `1000019801.jpg`
 * `1000019852.jpg`
-* `1000015014.jpg`
 * `1000013638.jpg`
-* `1000013591.jpg`
-* `1000013213.jpg`
-* `1000013212.jpg`
-* `1000013175.jpg`
 * `1000013168.jpg`
 * `1000013167.jpg`
-* `1000013162.jpg`
-* `1000013156.jpg`
-* `1000013160.jpg`
 * `1000013120.jpg`
 * `1000013121.jpg`
 * `1000013118.jpg`
@@ -323,8 +379,6 @@ Disse bildene var listet i e-posten fra Roland, men kunne ikke lastes ned fordi 
 * `1000013110.jpg`
 * `1000013108.jpg`
 * `1000013112.jpg`
-* `1000012751.jpg`
-* `1000010937.jpg`
 * `1000010090.jpg`
 * `1000010087.jpg`
 * `1000010088.jpg`

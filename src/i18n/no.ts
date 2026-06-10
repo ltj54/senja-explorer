@@ -33,41 +33,45 @@ const no = {
     phone: '+47 46 54 45 10',
     orgNumberLabel: 'Org.nr.',
     orgNumber: '937 296 355',
-    mapLabel: 'Se Senja på kart',
-    mapUrl: 'https://www.google.com/maps/place/Senja',
+    mapLabel: 'Se adressen på kart',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=St%C3%B8nesbotnveien%20583%2C%209373%20Botnhamn',
+    airbnbLabel: 'Se utleieboliger 1 og 2 på Airbnb',
   },
   homeSeasonBoxes: {
     winter: {
       kicker: 'Randonee og isfiske',
       title: 'Vinter på Senja',
       description:
-          'Om vinteren tilbyr Roland toppturer med randoneeski og isfiske på fjorden. Turene passer for små grupper og tilpasses vær, føre og nivå.',
+          'Om vinteren tilbyr Roland toppturer med randoneeski og isfiske på fjorden, hvor det ofte blir fangst. Turene passer for små grupper og tilpasses vær, føre og nivå.',
     },
     summer: {
-      kicker: 'Båtturer, fiske og toppturer',
+      kicker: 'Båtturer, fiske og sightseeing',
       title: 'Sommer på Senja',
       description:
-          'Om sommeren tilbyr Roland båtturer, strandturer, fisketurer og toppturer til fots. Han kan også hjelpe med å formidle andre lokale opplevelser på Senja.',
+          'Om sommeren tilbyr Roland båtturer, strandturer, fisketurer, transport og sightseeing med bil. Han kan også formidle toppturer til fots med lokale guider.',
     },
   },
   yearRoundTitle: 'Praktisk hjelp hele året',
   yearRound:
-      'Roland kan hjelpe med lokale opplevelser, roadtrip, overnatting og kontakt med lokale aktører på Senja. Han har også egne utleieenheter som gjester kan få se nærmere på ved forespørsel.',
+      'Roland tilbyr transport, roadtrip og sightseeing med bil, og kan hjelpe med overnatting og kontakt med lokale aktører på Senja. Han har også egne utleieenheter som gjester kan få se nærmere på ved forespørsel.',
   footer: {
     company: 'Breathe Senja & Services Henriksen',
     orgNumber: 'Org.nr. 937 296 355',
     phone: 'Telefon +47 46 54 45 10',
   },
+  accommodation: {
+    title: 'Overnatting på Senja',
+    description: 'Roland har også to utleieboliger på Senja som kan passe godt sammen med turene.',
+    links: ['Se utleiebolig 1 på Airbnb', 'Se utleiebolig 2 på Airbnb'],
+  },
   summerPage: {
     kicker: 'Sommer på Senja',
     title: 'Båtturer, badestopp\nog fiske på fjorden',
     description:
-        'Om sommeren tilbyr Roland båtturer, strandturer og fisketurer på fjorden eller utaskjærs. Turene gjøres med liten båt og tilpasses vær, forhold og ønsker.',
+        'Om sommeren tilbyr Roland båtturer, strandturer og fisketurer på fjorden eller utaskjærs. Han har to båter, og turene tilpasses vær, forhold og ønsker.',
     comingSoon: '',
     practical:
-        'Maks 2 personer. Enkel lunsj med drikke er inkludert.',
-    network:
-        'Roland kan også hjelpe med toppturer til fots, roadtrip, overnatting og andre lokale opplevelser gjennom sitt nettverk på Senja.',
+        'Den større båten har plass til 2–3 personer, og den mindre har plass til 2 personer. Enkel lunsj med drikke er inkludert.',
     galleryTitle: 'Sommerbilder fra Senja',
     galleryGroups: {
       boatTrips: 'Båtturer',
@@ -88,18 +92,18 @@ const no = {
               'Fisketurer med mulighet for leie av fiskestang. Roland kan sløye og filetere fisken dersom gjestene ønsker å ta den med.',
         },
         {
-          title: 'Toppturer til fots',
+          title: 'Transport og sightseeing med bil',
           description:
-              'Roland tilbyr toppturer til fots og tilpasser turene etter vær, forhold og nivå.',
+              'Roland tilbyr transport og sightseeing med bil til steder gjestene ønsker å oppleve på Senja.',
         },
         {
           title: 'Praktisk inkludert',
-          description: 'Maks 2 personer. Enkel lunsj med drikke, egnet fottøy og redningsvester tilbys.',
+          description: 'Den større båten har plass til 2–3 personer, og den mindre har plass til 2 personer. Enkel lunsj med drikke, egnet fottøy og redningsvester tilbys.',
         },
         {
-          title: 'Roadtrip og overnatting',
+          title: 'Toppturer, overnatting og lokale kontakter',
           description:
-              'Roland kan hjelpe med roadtrip, overnatting og lokale kontakter. Han har også egne utleieenheter som kan vises til gjester ved forespørsel.',
+              'Roland kan formidle toppturer til fots med lokale guider og hjelpe med overnatting og lokale kontakter. Han har også egne utleieenheter som kan vises til gjester ved forespørsel.',
         },
       ],
     },
@@ -108,7 +112,7 @@ const no = {
     kicker: 'Vinter på Senja',
     title: 'Randonee, isfiske\nog vinterro',
     description:
-        'Om vinteren tilbyr Roland toppturer med randoneeski og isfiske på fjorden. Turene passer for små grupper og tilpasses vær, føre og nivå.',
+        'Om vinteren tilbyr Roland toppturer med randoneeski og isfiske på fjorden, hvor det ofte blir fangst. Turene passer for små grupper og tilpasses vær, føre og nivå.',
     comingSoon: '',
     practical:
         'Maks 6 personer. Enkel lunsj med drikke er inkludert.',
@@ -129,7 +133,7 @@ const no = {
         },
         {
           title: 'Isfiske på fjorden',
-          description: 'En enkel og nær opplevelse på fjorden, med god tid og lokal kunnskap.',
+          description: 'En enkel og nær opplevelse på fjorden, med god tid, lokal kunnskap og ofte fangst.',
         },
         {
           title: 'Praktisk inkludert',
@@ -142,8 +146,6 @@ const no = {
         },
       ],
     },
-    footer:
-        'Breathe Senja & Services Henriksen drives av Roland Henriksen. Med lokal kjennskap til natur, vær og forhold på Senja tilbyr han rolige og personlige vinteropplevelser tett på naturen.',
   },
   contactForm: {
     kicker: 'Send en melding',
