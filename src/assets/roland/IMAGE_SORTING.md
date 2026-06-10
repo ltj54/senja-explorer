@@ -79,6 +79,43 @@ Flyttet:
 * `logo_3.png`
 * `logo_11.png`
 
+## Topptur/randonee-bilder 2026-06-10
+
+Roland oppga at sendingen inneholdt 25 bilder. Det var 23 JPG-filer i `src/assets/roland/inbox/`. Alle motivene hører til vinter / topptur / randonee.
+
+Fem filer var byteidentiske duplikater av filer som allerede lå i `winter/`, og ble derfor ikke importert på nytt:
+
+* `1000001184.jpg`
+* `1000001234.jpg`
+* `1000013487.jpg`
+* `1000020232.jpg`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608.jpg`
+
+18 nye bilder ble flyttet til `winter/` og optimalisert til WebP i `public/images/web/winter/` og `public/images/thumbs/winter/`:
+
+* `1000001017.jpg`
+* `1000001019.jpg`
+* `1000001049.jpg`
+* `1000001116.jpg`
+* `1000001131.jpg`
+* `1000001202.jpg`
+* `1000001233.jpg`
+* `1000001282.jpg`
+* `1000001700.jpg`
+* `1000003991.jpg`
+* `1000003998.jpg`
+* `1000004018.jpg`
+* `1000019862.jpg`
+* `1000020480.jpg`
+* `1000021591.jpg`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1037.jpg`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1271.jpg`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1455.jpg`
+
+`1000001282.jpg`, `1000001700.jpg` og `...all_1037.jpg` hadde tidligere blitt fjernet da det aktive vintergalleriet ble strammet inn. Alle de 23 bildene fra denne sendingen er nå med i det aktive vintergalleriet. `...all_1608.jpg` ligger fortsatt under Vinterro; de øvrige ligger under Randonee.
+
+Innboksen er tom etter gjennomgangen.
+
 ## Gallerigjennomgang 2026-06-04
 
 Bildene som faktisk brukes i `src/App.tsx` ble kontrollert med ImageMagick og visuell kontaktark-gjennomgang.
@@ -123,12 +160,26 @@ Brukes til vinterside, randonee, toppturer på ski, isfiske, snø, fjelltopper o
 
 ### Randonee
 
+* `winter/1000001017.webp`
+* `winter/1000001019.webp`
+* `winter/1000001049.webp`
+* `winter/1000001116.webp`
+* `winter/1000001131.webp`
 * `winter/1000001184.webp`
 * `winter/1000001192.webp`
 * `winter/1000001200.webp`
+* `winter/1000001202.webp`
 * `winter/1000001206.webp`
+* `winter/1000001233.webp`
 * `winter/1000001234.webp`
+* `winter/1000001282.webp`
 * `winter/1000001650.webp`
+* `winter/1000001700.webp`
+* `winter/1000003991.webp`
+* `winter/1000003998.webp`
+* `winter/1000004018.webp`
+* `winter/1000013487.webp`
+* `winter/1000019862.webp`
 * `winter/1000019870.webp`
 * `winter/1000019883.webp`
 * `winter/1000019884.webp`
@@ -139,10 +190,15 @@ Brukes til vinterside, randonee, toppturer på ski, isfiske, snø, fjelltopper o
 * `winter/1000020242.webp`
 * `winter/1000020274.webp`
 * `winter/1000020473.webp`
+* `winter/1000020480.webp`
 * `winter/1000020484.webp`
 * `winter/1000020488.webp`
+* `winter/1000021591.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1037.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1271.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1273.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1455.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4`
 
 ### Isfiske
@@ -315,7 +371,6 @@ Disse bildene var listet i e-posten fra Roland, men kunne ikke lastes ned fordi 
 * `1000019891.jpg`
 * `1000019885.jpg`
 * `1000019886.jpg`
-* `1000019862.jpg`
 * `1000019854.jpg`
 
 ## Kontroll mot filer som ble meldt som vanskelige å laste ned
@@ -341,7 +396,6 @@ Brukers kontrolliste ble gjennomgått mot sorteringen. Duplikater i kontrolliste
 * `1000019891.jpg`
 * `1000019885.jpg`
 * `1000019886.jpg`
-* `1000019862.jpg`
 * `1000019854.jpg`
 
 ### Bekreftet video i sorteringen
