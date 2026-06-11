@@ -830,7 +830,7 @@ function App() {
           <section className="about-popover">
             <div className="about-popover__logo">
               <img
-                src={publicAssetPath('images/breathe-senja-logo.webp')}
+                src={publicAssetPath('images/breathe-senja-logo.png')}
                 alt="Breathe Senja"
                 width="1024"
                 height="1024"
