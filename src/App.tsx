@@ -828,20 +828,14 @@ function App() {
           <div className="contact-modal__backdrop" onClick={() => setIsAboutOpen(false)} />
 
           <section className="about-popover">
-            <a
-              className="about-popover__logo"
-              href="https://breathesenja.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="breathesenja.com"
-            >
+            <div className="about-popover__logo">
               <img
                 src={publicAssetPath('images/breathe-senja-logo.webp')}
                 alt="Breathe Senja"
-                width="640"
-                height="640"
+                width="1024"
+                height="1024"
               />
-            </a>
+            </div>
             <button
               className="contact-form__close"
               type="button"

@@ -434,6 +434,7 @@ Brukes til generell Senja-stemning, om-/profilseksjoner eller bakgrunner som ikk
 * `shared/logo_2.png`
 * `shared/logo_3.png`
 * `shared/logo_11.png`
+* `shared/breathe-senja-logo-source.jpg` - originalfoto brukt direkte til beskåret logo med transparent bakgrunn; ingen nytegning
 
 ## Bilder som ikke er tilgjengelige fra e-post
 
