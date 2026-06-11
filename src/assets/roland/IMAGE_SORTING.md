@@ -1,6 +1,6 @@
 # Roland bildesortering
 
-Fysisk sortering etter gjennomgang. Innboksen er tom etter ny gjennomgang 2026-06-10.
+Fysisk sortering etter gjennomgang. Innboksen er tom etter ny gjennomgang 2026-06-11.
 
 ## Forside-sekvens
 
@@ -116,6 +116,53 @@ Fem filer var byteidentiske duplikater av filer som allerede lå i `winter/`, og
 
 Innboksen er tom etter gjennomgangen.
 
+## Ny bildeleveranse 2026-06-11
+
+`src/assets/roland/inbox/` inneholdt 74 JPG-filer. Alle filer ble kontrollert visuelt og sammenlignet med eksisterende sorterte originaler ved hjelp av SHA-256.
+
+Ni filer var byteidentiske duplikater og ble droppet:
+
+* `1000001017.jpg` - finnes som `winter/1000001017.jpg`
+* `1000001049.jpg` - finnes som `winter/1000001049.jpg`
+* `1000001116.jpg` - finnes som `winter/1000001116.jpg`
+* `1000013646.jpg` - finnes som `shared/1000013646.jpg`
+* `1000015925.jpg` - finnes som `shared/1000015925.jpg`
+* `1000015931.jpg` - samme innhold som `shared/1000013646.jpg`
+* `1000015985.jpg` - finnes som `summer/1000015985.jpg`
+* `1000015987.jpg` - finnes som `shared/1000015987.jpg`
+* `1000016022.jpg` - finnes som `shared/1000016022.jpg`
+
+Tre mobilskjermbilder ble ikke importert fordi de har store grensesnittflater og svært liten brukbar bildeflate:
+
+* `1000000839.jpg`
+* `1000002870.jpg`
+* `1000002872.jpg`
+
+28 nye vinterbilder ble flyttet til `winter/`. Leveransen inneholder nordlys, vinterfjorder, snølandskap og toppturmotiv:
+
+* `1000000411.jpg`, `1000000760.jpg`, `1000000855.jpg`, `1000000866.jpg`, `1000000867.jpg`, `1000000868.jpg`, `1000000870.jpg`, `1000000898.jpg`
+* `1000000991.jpg`, `1000000992.jpg`, `1000000993.jpg`, `1000000994.jpg`, `1000001012.jpg`, `1000001018.jpg`, `1000001021.jpg`, `1000001047.jpg`
+* `1000001051.jpg`, `1000001052.jpg`, `1000001118.jpg`, `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1587.jpg`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1980.jpg`, `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_2041.jpg`, `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_2924.jpg`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3473.jpg`, `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3724.jpg`, `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3756.jpg`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5298.jpg`, `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5319.jpg`
+
+33 nye sommerbilder ble flyttet til `summer/`. Leveransen inneholder båter, strender, klart vann, fjordlandskap og solnedganger:
+
+* `1000002459.jpg`, `1000002628.jpg`, `1000004115.jpg`, `1000004619.jpg`, `1000004659.jpg`, `1000004665.jpg`, `1000004676.jpg`, `1000004702.jpg`
+* `1000004704.jpg`, `1000004706.jpg`, `1000004707.jpg`, `1000004710.jpg`, `1000004731.jpg`, `1000004740.jpg`, `1000004815.jpg`, `1000004817.jpg`
+* `1000004818.jpg`, `1000004820.jpg`, `1000004824.jpg`, `1000004825.jpg`, `1000004826.jpg`, `1000004828.jpg`, `1000005629.jpg`, `1000009873.jpg`
+* `1000010085.jpg`, `1000010087.jpg`, `1000010088.jpg`, `1000010089.jpg`, `1000013423.jpg`, `1000013491.jpg`, `1000016044.jpg`, `1000016048.jpg`
+* `1000021466.jpg`
+
+`1000004112.jpg`, et regnbuemotiv over fjorden, ble flyttet til `shared/`.
+
+Det aktive sommergalleriet fikk 14 nye bilder fordelt på Båtturer, Strandturer og Stillhet på fjorden. Det aktive vintergalleriet fikk fem nye toppturbilder og sju nye bilder under Vinterro. Nesten-like varianter og svakere bilder er fortsatt bevart i de sorterte originalmappene, men er ikke lagt på siden.
+
+`scripts/optimize-images.ps1 -ImagesOnly` ble kjørt etter sorteringen. WebP-filer ble generert i `public/images/web/` og `public/images/thumbs/`. Den eneste advarselen var den allerede kjente avkortede JPEG-filen `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608.jpg`.
+
+Innboksen er tom etter gjennomgangen.
+
 ## Ny bildeleveranse 2026-06-10
 
 `src/assets/roland/inbox/` inneholdt 43 JPG-filer. Motivene ble kontrollert visuelt og sammenlignet med eksisterende sortering ved hjelp av SHA-256.
@@ -225,8 +272,11 @@ Brukes til vinterside, randonee, toppturer på ski, isfiske, snø, fjelltopper o
 ### Randonee
 
 * `winter/1000001017.webp`
+* `winter/1000001018.webp`
 * `winter/1000001019.webp`
+* `winter/1000001021.webp`
 * `winter/1000001049.webp`
+* `winter/1000001051.webp`
 * `winter/1000001116.webp`
 * `winter/1000001131.webp`
 * `winter/1000001184.webp`
@@ -263,6 +313,8 @@ Brukes til vinterside, randonee, toppturer på ski, isfiske, snø, fjelltopper o
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1273.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1455.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5298.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5319.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4`
 
 ### Isfiske
@@ -276,12 +328,19 @@ Brukes til vinterside, randonee, toppturer på ski, isfiske, snø, fjelltopper o
 ### Vinterro
 
 * `winter/1000001280.webp`
+* `winter/1000000411.webp`
+* `winter/1000000760.webp`
+* `winter/1000000868.webp`
+* `winter/1000000870.webp`
+* `winter/1000000898.webp`
 * `winter/1000015792.webp`
 * `winter/1000015976.webp`
 * `winter/1000015982.webp`
 * `winter/1000015987.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1510.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_2924.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3756.webp`
 
 Beste kandidater til vinter-hero:
 
@@ -302,6 +361,11 @@ Brukes til sommerside, båtturer, strender, fjord, fiske, bading og varmere års
 ### Båtturer
 
 * `summer/1000001425.webp`
+* `summer/1000004704.webp`
+* `summer/1000004707.webp`
+* `summer/1000004825.webp`
+* `summer/1000004826.webp`
+* `summer/1000004828.webp`
 * `summer/1000015985.webp`
 * `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3921.webp`
 * `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4243.webp`
@@ -309,9 +373,13 @@ Brukes til sommerside, båtturer, strender, fjord, fiske, bading og varmere års
 ### Strandturer
 
 * `summer/1000000191.webp`
+* `summer/1000002628.webp`
 * `summer/1000001432.webp`
 * `summer/1000001481.webp`
+* `summer/1000004815.webp`
+* `summer/1000004820.webp`
 * `summer/1000016037.webp`
+* `summer/1000021466.webp`
 * `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4217.webp`
 
 ### Fisketurer
@@ -326,8 +394,13 @@ Brukes til sommerside, båtturer, strender, fjord, fiske, bading og varmere års
 * `summer/1000000148.webp`
 * `summer/1000001037.webp`
 * `summer/1000001400.webp`
+* `summer/1000004665.webp`
+* `summer/1000004676.webp`
+* `summer/1000004731.webp`
 * `summer/1000013646.webp`
+* `summer/1000010089.webp`
 * `summer/1000015925.webp`
+* `summer/1000016044.webp`
 * `summer/1000016022.webp`
 * `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171.webp`
 
@@ -353,6 +426,7 @@ Brukes til generell Senja-stemning, om-/profilseksjoner eller bakgrunner som ikk
 * `shared/1000021712.jpg`
 * `shared/1000021713.jpg`
 * `shared/1000021729.jpg`
+* `shared/1000004112.jpg` - regnbue over fjorden
 * `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1220.jpg` - campingvogn / praktisk base, 4000x3000, 4364 KB
 * `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_390.jpg` - regnbue over fjord, 4000x3000, 3513 KB
 * `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171.jpg` - kveldsfjord / silhuett, 4032x3024, 265 KB
@@ -380,33 +454,17 @@ Disse bildene var listet i e-posten fra Roland, men kunne ikke lastes ned fordi 
 * `1000013108.jpg`
 * `1000013112.jpg`
 * `1000010090.jpg`
-* `1000010087.jpg`
-* `1000010088.jpg`
-* `1000010089.jpg`
-* `1000009873.jpg`
 * `1000009863.jpg`
 * `1000005625.jpg`
-* `1000004825.jpg`
-* `1000004824.jpg`
-* `1000004826.jpg`
-* `1000004828.jpg`
-* `1000004820.jpg`
 * `1000004819.jpg`
-* `1000004817.jpg`
-* `1000004815.jpg`
-* `1000004740.jpg`
 * `1000004739.jpg`
 * `1000004716.jpg`
 * `1000004712.jpg`
 * `1000004709.jpg`
-* `1000004707.jpg`
-* `1000004706.jpg`
 * `1000004705.jpg`
-* `1000004704.jpg`
 * `1000004587.jpg`
 * `1000004540.jpg`
 * `1000002629.jpg`
-* `1000002628.jpg`
 * `1000002627.jpg`
 * `1000002582.jpg`
 * `1000002554.jpg`
