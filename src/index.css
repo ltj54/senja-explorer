@@ -402,7 +402,7 @@ button {
 }
 
 .season-choice--summer {
-  --season-choice-image: url('./assets/roland/summer/1000016037.jpg');
+  --season-choice-image: url('./assets/roland/summer/1000001425.jpg');
   --season-choice-light: linear-gradient(rgba(255, 250, 240, 0.08), rgba(5, 10, 8, 0.08));
   --season-choice-position: 50% 50%;
 }
@@ -624,7 +624,7 @@ button {
 }
 
 .season-page--summer .season-page-background {
-  background-image: url('./assets/roland/summer/1000016037.jpg');
+  background-image: url('./assets/roland/summer/1000001425.jpg');
   filter: saturate(0.88) brightness(0.82) contrast(0.96);
   transform: scale(1);
 }
