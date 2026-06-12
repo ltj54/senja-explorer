@@ -42,13 +42,13 @@ const en = {
       kicker: 'Ski touring and ice fishing',
       title: 'Winter on Senja',
       description:
-        'In winter, Roland offers ski touring with randonee skis and ice fishing on the fjord, where guests often catch fish. Trips are suited for small groups and adapted to weather, snow conditions and level.',
+        'Roland offers safe, invigorating and exciting ski touring with beautiful descents all the way back to the car. He also offers ice fishing on the fjord, where there is often a catch. Trips are suited for small groups and adapted to the weather, snow conditions, wishes and skill level.',
     },
     summer: {
       kicker: 'Boat trips, fishing and sightseeing',
       title: 'Summer on Senja',
       description:
-        'In summer, Roland offers boat trips, beach trips, fishing trips, transportation and sightseeing by car. He can also connect guests with local guides for summit hikes.',
+        'Roland offers boat trips and fishing trips on the fjord or offshore. Trips are adapted to guests’ wishes and the weather. He can also provide accommodation and arrange other services, such as summit hikes, sightseeing by car and transportation.',
     },
   },
   yearRoundTitle: 'Practical help year round',
@@ -68,7 +68,7 @@ const en = {
     kicker: 'Summer on Senja',
     title: 'Boat trips, swim stops\nand fishing on the fjord',
     description:
-      'In summer, Roland offers boat trips, beach trips and fishing trips on the fjord or further out at sea. He has two boats, and trips are adapted to weather, conditions and wishes.',
+      'Roland offers boat trips and fishing trips on the fjord or offshore. Trips are adapted to guests’ wishes and the weather. He can also provide accommodation and arrange other services, such as summit hikes, sightseeing by car and transportation.',
     comingSoon: '',
     practical:
       'The larger boat has room for 2–3 people, while the smaller boat has room for 2. A simple lunch with drinks is included.',
@@ -112,7 +112,7 @@ const en = {
     kicker: 'Winter on Senja',
     title: 'Ski touring, ice fishing\nand winter calm',
     description:
-      'In winter, Roland offers ski touring with randonee skis and ice fishing on the fjord, where guests often catch fish. The trips are suited for small groups and adapted to weather, snow conditions and level.',
+      'Roland offers safe, invigorating and exciting ski touring with beautiful descents all the way back to the car. He also offers ice fishing on the fjord, where there is often a catch. Trips are suited for small groups and adapted to the weather, snow conditions, wishes and skill level.',
     comingSoon: '',
     practical:
       'Maximum 6 people. A simple lunch with drinks is included.',
@@ -129,7 +129,7 @@ const en = {
       items: [
         {
           title: 'Ski touring to mountain summits',
-          description: 'Calm summit trips with a local guide, adapted to weather, snow conditions and level.',
+          description: 'Safe, invigorating and exciting summit trips with beautiful descents all the way back to the car, adapted to the weather, snow conditions, wishes and skill level.',
         },
         {
           title: 'Ice fishing on the fjord',

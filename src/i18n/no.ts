@@ -42,13 +42,13 @@ const no = {
       kicker: 'Randonee og isfiske',
       title: 'Vinter på Senja',
       description:
-          'Om vinteren tilbyr Roland toppturer med randoneeski og isfiske på fjorden, hvor det ofte blir fangst. Turene passer for små grupper og tilpasses vær, føre og nivå.',
+          'Roland tilbyr trygge, friske og spennende toppturer med flotte nedkjøringer helt til bilen. Han tilbyr også isfiske på fjorden, hvor det ofte blir fangst. Turene passer for små grupper og tilpasses vær, føre, ønsker og nivå.',
     },
     summer: {
       kicker: 'Båtturer, fiske og sightseeing',
       title: 'Sommer på Senja',
       description:
-          'Om sommeren tilbyr Roland båtturer, strandturer, fisketurer, transport og sightseeing med bil. Han kan også formidle toppturer til fots med lokale guider.',
+          'Roland tilbyr båtturer og fisketurer på fjorden eller utaskjærs. Turene tilpasses ønsker og værforhold. Han kan også tilby overnatting og formidle andre tjenester, som toppturer, sightseeing med bil og transport.',
     },
   },
   yearRoundTitle: 'Praktisk hjelp hele året',
@@ -68,7 +68,7 @@ const no = {
     kicker: 'Sommer på Senja',
     title: 'Båtturer, badestopp\nog fiske på fjorden',
     description:
-        'Om sommeren tilbyr Roland båtturer, strandturer og fisketurer på fjorden eller utaskjærs. Han har to båter, og turene tilpasses vær, forhold og ønsker.',
+        'Roland tilbyr båtturer og fisketurer på fjorden eller utaskjærs. Turene tilpasses ønsker og værforhold. Han kan også tilby overnatting og formidle andre tjenester, som toppturer, sightseeing med bil og transport.',
     comingSoon: '',
     practical:
         'Den større båten har plass til 2–3 personer, og den mindre har plass til 2 personer. Enkel lunsj med drikke er inkludert.',
@@ -112,7 +112,7 @@ const no = {
     kicker: 'Vinter på Senja',
     title: 'Randonee, isfiske\nog vinterro',
     description:
-        'Om vinteren tilbyr Roland toppturer med randoneeski og isfiske på fjorden, hvor det ofte blir fangst. Turene passer for små grupper og tilpasses vær, føre og nivå.',
+        'Roland tilbyr trygge, friske og spennende toppturer med flotte nedkjøringer helt til bilen. Han tilbyr også isfiske på fjorden, hvor det ofte blir fangst. Turene passer for små grupper og tilpasses vær, føre, ønsker og nivå.',
     comingSoon: '',
     practical:
         'Maks 6 personer. Enkel lunsj med drikke er inkludert.',
@@ -129,7 +129,7 @@ const no = {
       items: [
         {
           title: 'Toppturer med randoneeski',
-          description: 'Rolige toppturer med lokal guide, tilpasset vær, føre og nivå.',
+          description: 'Trygge, friske og spennende toppturer med flotte nedkjøringer helt til bilen, tilpasset vær, føre, ønsker og nivå.',
         },
         {
           title: 'Isfiske på fjorden',

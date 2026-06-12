@@ -42,13 +42,13 @@ const de = {
       kicker: 'Skitouren und Eisangeln',
       title: 'Winter auf Senja',
       description:
-        'Im Winter bietet Roland Gipfeltouren mit Randonnée-Ski und Eisangeln auf dem Fjord an, wobei häufig Fische gefangen werden. Die Touren eignen sich für kleine Gruppen und werden an Wetter, Schneeverhältnisse und Niveau angepasst.',
+        'Roland bietet sichere, belebende und spannende Skitouren mit schönen Abfahrten bis zurück zum Auto an. Außerdem bietet er Eisangeln auf dem Fjord an, wobei häufig Fische gefangen werden. Die Touren eignen sich für kleine Gruppen und werden an Wetter, Schneeverhältnisse, Wünsche und Niveau angepasst.',
     },
     summer: {
       kicker: 'Bootstouren, Angeln und Sightseeing',
       title: 'Sommer auf Senja',
       description:
-        'Im Sommer bietet Roland Bootstouren, Strandtouren, Angeltouren, Transport und Sightseeing mit dem Auto an. Außerdem kann er Gipfeltouren mit lokalen Guides vermitteln.',
+        'Roland bietet Boots- und Angeltouren auf dem Fjord oder auf See an. Die Touren werden an die Wünsche der Gäste und die Wetterverhältnisse angepasst. Außerdem kann er Unterkünfte anbieten und weitere Leistungen wie Gipfeltouren, Sightseeing mit dem Auto und Transport vermitteln.',
     },
   },
   yearRoundTitle: 'Praktische Hilfe das ganze Jahr',
@@ -68,7 +68,7 @@ const de = {
     kicker: 'Sommer auf Senja',
     title: 'Bootstouren, Badestopps\nund Angeln auf dem Fjord',
     description:
-      'Im Sommer bietet Roland Bootstouren, Strandtouren und Angeltouren auf dem Fjord oder weiter draußen auf dem Meer an. Er hat zwei Boote, und die Touren werden an Wetter, Bedingungen und Wünsche angepasst.',
+      'Roland bietet Boots- und Angeltouren auf dem Fjord oder auf See an. Die Touren werden an die Wünsche der Gäste und die Wetterverhältnisse angepasst. Außerdem kann er Unterkünfte anbieten und weitere Leistungen wie Gipfeltouren, Sightseeing mit dem Auto und Transport vermitteln.',
     comingSoon: '',
     practical:
       'Das größere Boot bietet Platz für 2–3 Personen, das kleinere für 2 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
@@ -112,7 +112,7 @@ const de = {
     kicker: 'Winter auf Senja',
     title: 'Skitouren, Eisangeln\nund Winterruhe',
     description:
-      'Im Winter bietet Roland Gipfeltouren mit Randonnée-Ski und Eisangeln auf dem Fjord an, wobei häufig Fische gefangen werden. Die Touren eignen sich für kleine Gruppen und werden an Wetter, Schneeverhältnisse und Niveau angepasst.',
+      'Roland bietet sichere, belebende und spannende Skitouren mit schönen Abfahrten bis zurück zum Auto an. Außerdem bietet er Eisangeln auf dem Fjord an, wobei häufig Fische gefangen werden. Die Touren eignen sich für kleine Gruppen und werden an Wetter, Schneeverhältnisse, Wünsche und Niveau angepasst.',
     comingSoon: '',
     practical:
       'Maximal 6 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
@@ -129,7 +129,7 @@ const de = {
       items: [
         {
           title: 'Gipfeltouren mit Randonnée-Ski',
-          description: 'Ruhige Gipfeltouren mit lokalem Guide, angepasst an Wetter, Schneeverhältnisse und Niveau.',
+          description: 'Sichere, belebende und spannende Gipfeltouren mit schönen Abfahrten bis zurück zum Auto, angepasst an Wetter, Schneeverhältnisse, Wünsche und Niveau.',
         },
         {
           title: 'Eisangeln auf dem Fjord',
