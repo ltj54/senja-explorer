@@ -137,7 +137,11 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `winterG
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1455.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5298.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5319.webp`
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4`
+* `winter/1000019898.mp4`
+* `winter/1000020204.mp4`
+* `winter/1000020211.mp4`
+* `winter/1000020230.mp4`
+* `winter/1000020308.mp4`
 
 ### Isfiske
 
@@ -166,13 +170,13 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `winterG
 
 Originalene til `1000015792` og `1000015987` ligger i `shared/`. Publiserte kopier ligger i `public/images/web/winter/` fordi de brukes av vintergalleriet.
 
-Videooriginalen ligger i `shared/...all_1583.mp4`. Appen bruker den publiserte kopien i `public/images/web/winter/`.
+Randonee-videoene er publisert uten lyd og vises etter bildene i gruppen.
 
 Vinter-hero bruker `winter/1000020473.jpg` direkte fra `src/assets/roland/` via CSS.
 
 ## Fellesfiler
 
-`shared/` inneholder generelle Senja-motiv, enkelte originaler som publiseres under en sesong, logoarkiv og videooriginalen.
+`shared/` inneholder generelle Senja-motiv, enkelte originaler som publiseres under en sesong og logoarkiv.
 
 Logo:
 

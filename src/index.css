@@ -59,7 +59,6 @@ button {
 }
 
 .home-hero {
-  min-height: 100vh;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -1320,8 +1319,8 @@ button {
 .contact-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(3, 7, 6, 0.68);
-  backdrop-filter: blur(8px);
+  background: rgba(3, 7, 6, 0.42);
+  backdrop-filter: blur(3px);
   animation: contact-fade-in 220ms ease forwards;
 }
 
@@ -1330,12 +1329,22 @@ button {
   z-index: 1;
   width: min(100%, 460px);
   padding: clamp(24px, 4vw, 38px);
-  border: 1px solid rgba(247, 241, 231, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.58);
   background:
-    linear-gradient(145deg, rgba(20, 28, 23, 0.92), rgba(8, 13, 11, 0.94));
-  color: #f7f1e7;
+    linear-gradient(145deg, rgba(255, 252, 245, 0.92), rgba(231, 237, 225, 0.88));
+  backdrop-filter: blur(14px);
+  color: #17221c;
   box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
   animation: contact-form-in 320ms ease forwards;
+}
+
+.contact-form > .contact-form__close {
+  color: rgba(23, 34, 28, 0.58);
+}
+
+.contact-form > .contact-form__close:hover,
+.contact-form > .contact-form__close:focus-visible {
+  color: #17221c;
 }
 
 .contact-form__close {
@@ -1363,7 +1372,7 @@ button {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(247, 241, 231, 0.54);
+  color: rgba(23, 34, 28, 0.58);
 }
 
 .contact-form h2 {
@@ -1382,15 +1391,15 @@ button {
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(247, 241, 231, 0.64);
+  color: rgba(23, 34, 28, 0.7);
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  border: 1px solid rgba(247, 241, 231, 0.18);
-  background: rgba(255, 255, 255, 0.055);
-  color: #fffaf0;
+  border: 1px solid rgba(23, 34, 28, 0.2);
+  background: rgba(255, 255, 255, 0.62);
+  color: #17221c;
   padding: 11px 12px;
   font: inherit;
   font-size: 15px;
@@ -1402,16 +1411,16 @@ button {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: rgba(247, 241, 231, 0.42);
-  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(39, 91, 62, 0.58);
+  background: rgba(255, 255, 255, 0.86);
 }
 
 .contact-form__submit {
   width: 100%;
   margin-top: 22px;
   padding: 12px 14px;
-  border: 1px solid rgba(247, 241, 231, 0.32);
-  background: rgba(247, 241, 231, 0.12);
+  border: 1px solid rgba(23, 34, 28, 0.7);
+  background: #243d30;
   color: #fffaf0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -1422,8 +1431,8 @@ button {
 
 .contact-form__submit:hover,
 .contact-form__submit:focus-visible {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(247, 241, 231, 0.52);
+  background: #315340;
+  border-color: #17221c;
 }
 
 .contact-form__submit:disabled {
@@ -1436,28 +1445,28 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 11px;
   line-height: 1.45;
-  color: rgba(247, 241, 231, 0.48);
+  color: rgba(23, 34, 28, 0.6);
 }
 
 .contact-form__status {
   margin: 12px 0 0;
   padding: 10px 12px;
-  border: 1px solid rgba(247, 241, 231, 0.2);
+  border: 1px solid rgba(23, 34, 28, 0.2);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.45;
 }
 
 .contact-form__status--success {
-  border-color: rgba(143, 205, 159, 0.42);
-  background: rgba(70, 130, 84, 0.16);
-  color: rgba(222, 248, 228, 0.92);
+  border-color: rgba(49, 104, 65, 0.38);
+  background: rgba(116, 174, 128, 0.2);
+  color: #244d2f;
 }
 
 .contact-form__status--error {
-  border-color: rgba(221, 135, 122, 0.44);
-  background: rgba(145, 63, 52, 0.16);
-  color: rgba(255, 225, 220, 0.92);
+  border-color: rgba(145, 63, 52, 0.38);
+  background: rgba(197, 110, 96, 0.16);
+  color: #7c3027;
 }
 
 .image-notice {

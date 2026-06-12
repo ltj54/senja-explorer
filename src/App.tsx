@@ -142,10 +142,15 @@ const winterGalleryGroups: GalleryGroup<WinterGalleryGroupKey>[] = [
       'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1455',
       'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5298',
       'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5319',
-    ].map(imageItem).concat({
-      kind: 'video',
-      name: 'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583',
-    }),
+    ].map(imageItem).concat(
+      [
+        '1000019898',
+        '1000020204',
+        '1000020211',
+        '1000020230',
+        '1000020308',
+      ].map((name): GalleryItem => ({ kind: 'video', name })),
+    ),
   },
   {
     key: 'iceFishing',
@@ -425,12 +430,12 @@ function App() {
         },
       })
 
-      if (!response.ok) {
-        throw new Error(`Form submission failed with status ${response.status}`)
+      if (response.ok) {
+        form.reset()
+        setContactFormStatus('success')
+      } else {
+        setContactFormStatus('error')
       }
-
-      form.reset()
-      setContactFormStatus('success')
     } catch {
       setContactFormStatus('error')
     }

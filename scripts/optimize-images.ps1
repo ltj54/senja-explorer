@@ -2,6 +2,9 @@ param(
   [int]$WebMax = 1920,
   [int]$ThumbMax = 480,
   [int]$Quality = 82,
+  [int]$VideoMax = 1280,
+  [int]$VideoCrf = 28,
+  [string[]]$Groups = @('summer', 'winter', 'shared', 'inbox'),
   [switch]$ImagesOnly,
   [switch]$VideosOnly
 )
@@ -11,15 +14,13 @@ $ErrorActionPreference = 'Stop'
 $repoRoot = Resolve-Path (Join-Path $PSScriptRoot '..')
 $sourceRoot = Join-Path $repoRoot 'src\assets\roland'
 $targetRoot = Join-Path $repoRoot 'public\images'
-$groups = @('summer', 'winter', 'shared')
-
 if (-not (Get-Command magick -ErrorAction SilentlyContinue)) {
   throw 'ImageMagick CLI was not found. Install ImageMagick and make sure magick is available on PATH.'
 }
 
 $ffmpeg = Get-Command ffmpeg -ErrorAction SilentlyContinue
 
-foreach ($group in $groups) {
+foreach ($group in $Groups) {
   $sourceDir = Join-Path $sourceRoot $group
   if (-not (Test-Path $sourceDir)) {
     Write-Warning "Skipping missing source folder: $sourceDir"
@@ -56,12 +57,12 @@ foreach ($group in $groups) {
       $webOut = Join-Path $webDir $video.Name
       $thumbOut = Join-Path $thumbDir "$baseName.webp"
 
-      Copy-Item -LiteralPath $video.FullName -Destination $webOut -Force
-
       if ($ffmpeg) {
-        & $ffmpeg.Source -y -i $video.FullName -vf "thumbnail,scale='min($ThumbMax,iw)':-2" -frames:v 1 $thumbOut | Out-Null
+        & $ffmpeg.Source -hide_banner -loglevel error -y -i $video.FullName -map 0:v:0 -vf "scale='min($VideoMax,iw)':-2" -c:v libx264 -preset slow -crf $VideoCrf -pix_fmt yuv420p -an -movflags +faststart $webOut | Out-Null
+        & $ffmpeg.Source -hide_banner -loglevel error -y -i $video.FullName -vf "thumbnail,scale='min($ThumbMax,iw)':-2" -frames:v 1 $thumbOut | Out-Null
       } else {
-        Write-Warning "Copied video $group/$($video.Name), but thumbnail generation requires ffmpeg on PATH."
+        Copy-Item -LiteralPath $video.FullName -Destination $webOut -Force
+        Write-Warning "Copied video $group/$($video.Name) with its original audio because ffmpeg is not available. Thumbnail generation also requires ffmpeg on PATH."
       }
 
       Write-Host "Processed video $group/$($video.Name)"
