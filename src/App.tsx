@@ -8,9 +8,10 @@ type GalleryType = 'summer' | 'winter'
 type GalleryItem = {
   kind: 'image' | 'video'
   name: string
+  source?: GalleryType | 'shared'
 }
-type SummerGalleryGroupKey = 'boatTrips' | 'beachTrips' | 'fishingTrips' | 'fjordCalm'
-type WinterGalleryGroupKey = 'randonee' | 'iceFishing' | 'winterCalm'
+type SummerGalleryGroupKey = 'boatTrips' | 'beachTrips' | 'fishingTrips' | 'fjordCalm' | 'moreImages'
+type WinterGalleryGroupKey = 'randonee' | 'iceFishing' | 'winterCalm' | 'moreImages'
 type GalleryGroup<TKey extends string> = {
   key: TKey
   items: GalleryItem[]
@@ -31,6 +32,7 @@ type ContactDragState = {
 }
 
 const imageItem = (name: string): GalleryItem => ({ kind: 'image', name })
+const sharedImageItem = (name: string): GalleryItem => ({ kind: 'image', name, source: 'shared' })
 
 const airbnbListings = [
   'https://www.airbnb.no/rooms/31561817',
@@ -91,6 +93,41 @@ const summerGalleryGroups: GalleryGroup<SummerGalleryGroupKey>[] = [
       '1000016022',
       'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171',
     ].map(imageItem),
+  },
+  {
+    key: 'moreImages',
+    items: [
+      '1000002459',
+      '1000004115',
+      '1000004619',
+      '1000004659',
+      '1000004702',
+      '1000004706',
+      '1000004710',
+      '1000004740',
+      '1000004817',
+      '1000004818',
+      '1000004824',
+      '1000005629',
+      '1000009873',
+      '1000010085',
+      '1000010087',
+      '1000010088',
+      '1000010373',
+      '1000010374',
+      '1000013423',
+      '1000013491',
+      '1000016048',
+      '1000021448',
+      '1000021801',
+      '1000021808',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3939',
+    ].map(imageItem).concat(
+      [
+        '1000004112',
+        'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_390',
+      ].map(sharedImageItem),
+    ),
   },
 ]
 
@@ -179,6 +216,57 @@ const winterGalleryGroups: GalleryGroup<WinterGalleryGroupKey>[] = [
       'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608',
       'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_2924',
       'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3756',
+    ].map(imageItem),
+  },
+  {
+    key: 'moreImages',
+    items: [
+      '1000000855',
+      '1000000866',
+      '1000000867',
+      '1000000991',
+      '1000000992',
+      '1000000993',
+      '1000000994',
+      '1000001012',
+      '1000001047',
+      '1000001052',
+      '1000001118',
+      '1000004017',
+      '1000010930',
+      '1000010934',
+      '1000010937',
+      '1000012751',
+      '1000013130',
+      '1000013156',
+      '1000013160',
+      '1000013162',
+      '1000013175',
+      '1000013212',
+      '1000013213',
+      '1000013371',
+      '1000013484',
+      '1000013488',
+      '1000013520',
+      '1000013591',
+      '1000013651',
+      '1000015014',
+      '1000015787',
+      '1000015791',
+      '1000015793',
+      '1000015794',
+      '1000015795',
+      '1000015917',
+      '1000016003',
+      '1000016265',
+      '1000016266',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1587',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1980',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_2041',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3473',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3724',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3749',
+      'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5192',
     ].map(imageItem),
   },
 ]
@@ -628,9 +716,15 @@ function App() {
                           onClick={() => setActiveGalleryImage({ type: 'summer', index: galleryIndex })}
                         >
                           <img
-                            src={publicAssetPath(`images/web/summer/${galleryItem.name}.webp`)}
+                            src={publicAssetPath(`images/web/${galleryItem.source ?? 'summer'}/${galleryItem.name}.webp`)}
                             alt=""
                           />
+                          <span
+                            className="season-image-grid__filename"
+                            onClick={(event) => event.stopPropagation()}
+                          >
+                            {galleryItem.name}
+                          </span>
                         </button>
                       )
                     })}
@@ -739,10 +833,16 @@ function App() {
                             </>
                           ) : (
                             <img
-                              src={publicAssetPath(`images/web/winter/${galleryItem.name}.webp`)}
+                              src={publicAssetPath(`images/web/${galleryItem.source ?? 'winter'}/${galleryItem.name}.webp`)}
                               alt=""
                             />
                           )}
+                          <span
+                            className="season-image-grid__filename"
+                            onClick={(event) => event.stopPropagation()}
+                          >
+                            {galleryItem.name}
+                          </span>
                         </button>
                       )
                     })}
@@ -983,7 +1083,7 @@ function App() {
               />
             ) : (
               <img
-                src={publicAssetPath(`images/web/${activeGalleryImage.type}/${activeGalleryItem.name}.webp`)}
+                src={publicAssetPath(`images/web/${activeGalleryItem.source ?? activeGalleryImage.type}/${activeGalleryItem.name}.webp`)}
                 alt=""
               />
             )}

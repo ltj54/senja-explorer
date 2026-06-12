@@ -78,6 +78,7 @@ const de = {
       beachTrips: 'Strandtouren',
       fishingTrips: 'Angeltouren',
       fjordCalm: 'Stille auf dem Fjord',
+      moreImages: 'Weitere Sommerbilder',
     },
     experiences: {
       title: 'Sommererlebnisse auf Senja',
@@ -123,6 +124,7 @@ const de = {
       randonee: 'Skitouren',
       iceFishing: 'Eisangeln',
       winterCalm: 'Winterruhe',
+      moreImages: 'Weitere Winterbilder',
     },
     experiences: {
       title: 'Wintererlebnisse mit lokalem Guide',

@@ -78,6 +78,7 @@ const en = {
       beachTrips: 'Beach trips',
       fishingTrips: 'Fishing trips',
       fjordCalm: 'Silence on the fjord',
+      moreImages: 'More summer images',
     },
     experiences: {
       title: 'Summer experiences on Senja',
@@ -123,6 +124,7 @@ const en = {
       randonee: 'Ski touring',
       iceFishing: 'Ice fishing',
       winterCalm: 'Winter calm',
+      moreImages: 'More winter images',
     },
     experiences: {
       title: 'Winter experiences with a local guide',

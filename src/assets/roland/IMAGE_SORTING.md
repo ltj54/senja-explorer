@@ -1,18 +1,30 @@
 # Roland bildesortering
 
-Sist kontrollert mot filsystemet og `src/App.tsx`: 2026-06-11.
+Sist kontrollert mot filsystemet og `src/App.tsx`: 2026-06-12.
 
 ## Nåtilstand
 
 * `inbox/`: 0 filer
 * `summer/`: 53 originalfiler
 * `winter/`: 107 originalfiler
-* `shared/`: 22 originalfiler
+* `shared/`: 21 originalfiler
 * `public/images/web/summer/`: 59 publiserte filer
-* `public/images/web/winter/`: 110 publiserte filer
-* `public/images/web/shared/`: 16 publiserte filer
+* `public/images/web/winter/`: 114 publiserte filer
+* `public/images/web/shared/`: 15 publiserte filer
 
-`scripts/optimize-images.ps1` behandler JPG/JPEG og MP4 i `summer/`, `winter/` og `shared/`. Bilder skrives til `public/images/web/<gruppe>/` og `public/images/thumbs/<gruppe>/`.
+`scripts/optimize-images.ps1` behandler JPG/JPEG og MP4 i valgte grupper. Standardgruppene er `summer/`, `winter/`, `shared/` og `inbox/`, og `-Groups` kan brukes for å begrense kjøringen. Bilder skrives til `public/images/web/<gruppe>/` og `public/images/thumbs/<gruppe>/`.
+
+Videoer transkodes med FFmpeg til lydløs H.264 i maksimalt 1280 piksler bredde, CRF 28 og `faststart`. Videominiatyrer skrives som WebP. MP4-filer spores med Git LFS via `.gitattributes`.
+
+## Midlertidig filnavnvisning
+
+Alle aktive galleriinnslag viser midlertidig fil-ID direkte under bildet eller videoen. Bare filnavnet vises, uten mappe og filtype, for eksempel `1000020232`.
+
+Teksten kan markeres og kopieres med vanlig tekstmarkør. Klikk på filnavnet åpner ikke bildevisningen. Dette er lagt inn for at Roland skal kunne oppgi eksakte filer og ønsket rekkefølge uten å bruke plassnummer som kan endre seg.
+
+Ingen bilder er flyttet, slettet eller omorganisert som del av denne identifikasjonsløsningen.
+
+Alle publiserte sesongbilder vises nå: 59 sommerbilder og 109 vinterbilder. I tillegg vises alle fem Randonee-videoene og to unike bilder fra `shared/`. Tidligere utvalgte bilder beholder gruppene og rekkefølgen sin; øvrige filer ligger i «Flere sommerbilder» eller «Flere vinterbilder».
 
 Kjent advarsel:
 
@@ -82,6 +94,44 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `summerG
 * `summer/1000016044.webp`
 * `summer/1000016022.webp`
 * `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171.webp`
+
+### Flere sommerbilder
+
+* `summer/1000002459.webp`
+* `summer/1000004115.webp`
+* `summer/1000004619.webp`
+* `summer/1000004659.webp`
+* `summer/1000004702.webp`
+* `summer/1000004706.webp`
+* `summer/1000004710.webp`
+* `summer/1000004740.webp`
+* `summer/1000004817.webp`
+* `summer/1000004818.webp`
+* `summer/1000004824.webp`
+* `summer/1000005629.webp`
+* `summer/1000009873.webp`
+* `summer/1000010085.webp`
+* `summer/1000010087.webp`
+* `summer/1000010088.webp`
+* `summer/1000010373.webp`
+* `summer/1000010374.webp`
+* `summer/1000013423.webp`
+* `summer/1000013491.webp`
+* `summer/1000016048.webp`
+* `summer/1000021448.webp`
+* `summer/1000021801.webp`
+* `summer/1000021808.webp`
+* `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3939.webp`
+* `shared/1000004112.webp`
+* `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_390.webp`
+
+Følgende publiserte `shared`-bilder er bevisst skjult fra sommersiden:
+
+* `1000021710`
+* `1000021712`
+* `1000021713`
+* `1000021729`
+* `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1220`
 
 Originalene til `1000000148`, `1000001037`, `1000013646`, `1000015925`, `1000016022` og `...all_4171` ligger i `shared/`. Publiserte kopier ligger i `public/images/web/summer/` fordi de brukes av sommergalleriet.
 
@@ -168,9 +218,66 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `winterG
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_2924.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3756.webp`
 
+### Flere vinterbilder
+
+* `winter/1000000855.webp`
+* `winter/1000000866.webp`
+* `winter/1000000867.webp`
+* `winter/1000000991.webp`
+* `winter/1000000992.webp`
+* `winter/1000000993.webp`
+* `winter/1000000994.webp`
+* `winter/1000001012.webp`
+* `winter/1000001047.webp`
+* `winter/1000001052.webp`
+* `winter/1000001118.webp`
+* `winter/1000004017.webp`
+* `winter/1000010930.webp`
+* `winter/1000010934.webp`
+* `winter/1000010937.webp`
+* `winter/1000012751.webp`
+* `winter/1000013130.webp`
+* `winter/1000013156.webp`
+* `winter/1000013160.webp`
+* `winter/1000013162.webp`
+* `winter/1000013175.webp`
+* `winter/1000013212.webp`
+* `winter/1000013213.webp`
+* `winter/1000013371.webp`
+* `winter/1000013484.webp`
+* `winter/1000013488.webp`
+* `winter/1000013520.webp`
+* `winter/1000013591.webp`
+* `winter/1000013651.webp`
+* `winter/1000015014.webp`
+* `winter/1000015787.webp`
+* `winter/1000015791.webp`
+* `winter/1000015793.webp`
+* `winter/1000015794.webp`
+* `winter/1000015795.webp`
+* `winter/1000015917.webp`
+* `winter/1000016003.webp`
+* `winter/1000016265.webp`
+* `winter/1000016266.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1587.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1980.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_2041.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3473.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3724.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3749.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5192.webp`
+
 Originalene til `1000015792` og `1000015987` ligger i `shared/`. Publiserte kopier ligger i `public/images/web/winter/` fordi de brukes av vintergalleriet.
 
-Randonee-videoene er publisert uten lyd og vises etter bildene i gruppen.
+Randonee-videoene er publisert uten lyd og vises etter bildene i gruppen. De fem webfilene ligger bare i `public/images/web/winter/`; store dublettoriginaler under `src/assets/roland/winter/` ble fjernet etter at webversjonene var kontrollert.
+
+Webvideoene er 720p H.264 og har følgende omtrentlige størrelser:
+
+* `1000019898.mp4`: 4,21 MB
+* `1000020204.mp4`: 3,58 MB
+* `1000020211.mp4`: 8,96 MB
+* `1000020230.mp4`: 3,49 MB
+* `1000020308.mp4`: 3,09 MB
 
 Vinter-hero bruker `winter/1000020473.jpg` direkte fra `src/assets/roland/` via CSS.
 
@@ -188,6 +295,24 @@ Logo:
 Eldre logoalternativer ligger som `shared/logo_1.png`, `logo_2.png`, `logo_3.png` og `logo_11.png`.
 
 ## Leveranser
+
+### 2026-06-12
+
+Fem Randonee-videoer ble behandlet og lagt etter bildene i Randonee-gruppen:
+
+* `1000019898.mp4`
+* `1000020204.mp4`
+* `1000020211.mp4`
+* `1000020230.mp4`
+* `1000020308.mp4`
+
+Lydsporene ble fjernet. Webversjonene ble komprimert fra totalt omtrent 276 MB til omtrent 23 MB og konvertert fra 1080p HEVC til 720p H.264. Videominiatyrer ble generert som WebP.
+
+Den tidligere videoen `cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1583.mp4` ble fjernet fra vintergalleriet, kildefilene og publiserte mapper.
+
+Git LFS ble aktivert for `*.mp4`. Den midlertidige, kopierbare filnavnvisningen ble lagt til under alle aktive galleriinnslag for avklaring av Rolands ønskede bildeutvalg og rekkefølge.
+
+Alle tidligere skjulte publiserte bilder ble gjort synlige i egne sluttgrupper, uten å flytte eller slette filer og uten å endre de eksisterende gruppenes rekkefølge.
 
 ### 2026-06-11
 
@@ -229,7 +354,7 @@ Filer som ble sett 2026-06-03, men ikke importert før innboksen ble tømt:
 
 * `1000001475.jpg`, `1000001476.jpg`, `1000002194.jpg`
 * `1000013114.jpg`, `1000013115.jpg`, `1000020489.jpg`
-* `1000020230.mp4`, `1000020468.mp4`
+* `1000020468.mp4`
 
 ## Kontrollrutine
 
@@ -239,6 +364,7 @@ Ved neste leveranse:
 2. Kontroller nye motiv visuelt.
 3. Flytt originalene til riktig mappe og tøm `inbox/`.
 4. Oppdater aktive grupper i `src/App.tsx` bare med de sterkeste og mest varierte bildene.
-5. Kjør `scripts/optimize-images.ps1 -ImagesOnly`.
+5. Kjør `scripts/optimize-images.ps1 -ImagesOnly` for bilder, eller `scripts/optimize-images.ps1 -Groups <gruppe> -VideosOnly` for videoer.
 6. Kontroller at alle aktive ID-er finnes under riktig `public/images/web/`-mappe.
-7. Oppdater denne filen og kjør `npm run build`.
+7. Kontroller med `ffprobe` at publiserte videoer bare inneholder videostrøm og er H.264.
+8. Oppdater denne filen og kjør `npm run build` og `npm run lint`.

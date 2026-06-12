@@ -78,6 +78,7 @@ const no = {
       beachTrips: 'Strandturer',
       fishingTrips: 'Fisketurer',
       fjordCalm: 'Stillhet på fjorden',
+      moreImages: 'Flere sommerbilder',
     },
     experiences: {
       title: 'Sommeropplevelser på Senja',
@@ -123,6 +124,7 @@ const no = {
       randonee: 'Randonee',
       iceFishing: 'Isfiske',
       winterCalm: 'Vinterro',
+      moreImages: 'Flere vinterbilder',
     },
     experiences: {
       title: 'Vinteropplevelser på Senja',
