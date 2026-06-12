@@ -8,7 +8,7 @@ const en = {
   contactRolandContext: 'Your local guide on Senja',
   homeIntro: {
     kicker: 'Personal trips and local arrangements',
-    tagline: 'Calm, personal experiences on Senja – summer and winter.',
+    tagline: 'From Summit to Sea',
   },
   imageNotice: '',
   privacyNotice:
@@ -28,14 +28,14 @@ const en = {
     triggerTitle: 'About Breathe Senja',
     title: 'Breathe Senja & Services Henriksen',
     description:
-      'Breathe Senja & Services Henriksen is run by Roland Henriksen. Roland offers and arranges personal experiences on Senja, with local knowledge of nature, weather, conditions and local partners.',
+      'Breathe Senja & Services Henriksen is run by Roland Henriksen. With his local knowledge of Senja, Roland offers exciting, personal experiences adapted to the weather, conditions, skill level and guests’ wishes.',
     phoneLabel: 'Phone',
     phone: '+47 46 54 45 10',
     orgNumberLabel: 'Org. no.',
     orgNumber: '937 296 355',
     mapLabel: 'View the address on the map',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=St%C3%B8nesbotnveien%20583%2C%209373%20Botnhamn',
-    airbnbLabel: 'View rental properties 1 and 2 on Airbnb',
+    airbnbLabel: 'View rental cabins 1 and 2 on Airbnb',
   },
   homeSeasonBoxes: {
     winter: {
@@ -53,7 +53,7 @@ const en = {
   },
   yearRoundTitle: 'Practical help year round',
   yearRound:
-    'Roland offers transportation, road trips and sightseeing by car, and can help with accommodation and local contacts on Senja. He also has his own rental units that guests can see more closely on request.',
+    'Roland offers transportation, road trips and sightseeing by car, and can help with accommodation and local contacts on Senja. He also has his own rental cabins that guests can see more closely on request.',
   footer: {
     company: 'Breathe Senja & Services Henriksen',
     orgNumber: 'Org. no. 937 296 355',
@@ -61,8 +61,8 @@ const en = {
   },
   accommodation: {
     title: 'Accommodation on Senja',
-    description: 'Roland also has two rental properties on Senja that pair well with the trips.',
-    links: ['View rental 1 on Airbnb', 'View rental 2 on Airbnb'],
+    description: 'Roland also has two rental cabins on Senja that pair well with the trips.',
+    links: ['View rental cabin 1 on Airbnb', 'View rental cabin 2 on Airbnb'],
   },
   summerPage: {
     kicker: 'Summer on Senja',
@@ -103,7 +103,7 @@ const en = {
         {
           title: 'Summit hikes, accommodation and local contacts',
           description:
-            'Roland can connect guests with local guides for summit hikes and help with accommodation and local contacts. He also has his own rental units that can be shown to guests on request.',
+            'Roland can connect guests with local guides for summit hikes and help with accommodation and local contacts. He also has his own rental cabins that can be shown to guests on request.',
         },
       ],
     },
@@ -142,7 +142,7 @@ const en = {
         {
           title: 'Accommodation and local help',
           description:
-            'Roland can help with accommodation and other practical needs. His own rental units can be shown to guests on request.',
+            'Roland can help with accommodation and other practical needs. His own rental cabins can be shown to guests on request.',
         },
       ],
     },

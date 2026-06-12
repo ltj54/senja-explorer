@@ -8,7 +8,7 @@ const de = {
   contactRolandContext: 'Ihr lokaler Guide auf Senja',
   homeIntro: {
     kicker: 'Persönliche Touren und lokale Organisation',
-    tagline: 'Ruhige, persönliche Erlebnisse auf Senja – im Sommer wie im Winter.',
+    tagline: 'From Summit to Sea',
   },
   imageNotice: '',
   privacyNotice:
@@ -28,14 +28,14 @@ const de = {
     triggerTitle: 'Über Breathe Senja',
     title: 'Breathe Senja & Services Henriksen',
     description:
-      'Breathe Senja & Services Henriksen wird von Roland Henriksen betrieben. Roland bietet persönliche Erlebnisse auf Senja an und vermittelt sie, mit lokaler Kenntnis von Natur, Wetter, Bedingungen und lokalen Akteuren.',
+      'Breathe Senja & Services Henriksen wird von Roland Henriksen betrieben. Mit seiner Ortskenntnis auf Senja bietet Roland spannende, persönliche Erlebnisse an, die an Wetter, Bedingungen, Niveau und Wünsche angepasst werden.',
     phoneLabel: 'Telefon',
     phone: '+47 46 54 45 10',
     orgNumberLabel: 'Org.nr.',
     orgNumber: '937 296 355',
     mapLabel: 'Adresse auf der Karte ansehen',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=St%C3%B8nesbotnveien%20583%2C%209373%20Botnhamn',
-    airbnbLabel: 'Unterkünfte 1 und 2 auf Airbnb ansehen',
+    airbnbLabel: 'Ferienhütten 1 und 2 auf Airbnb ansehen',
   },
   homeSeasonBoxes: {
     winter: {
@@ -53,7 +53,7 @@ const de = {
   },
   yearRoundTitle: 'Praktische Hilfe das ganze Jahr',
   yearRound:
-    'Roland bietet Transport, Roadtrips und Sightseeing mit dem Auto an und kann bei Unterkunft und lokalen Kontakten auf Senja helfen. Er hat auch eigene Mieteinheiten, die Gäste auf Anfrage näher ansehen können.',
+    'Roland bietet Transport, Roadtrips und Sightseeing mit dem Auto an und kann bei Unterkunft und lokalen Kontakten auf Senja helfen. Er hat auch eigene Ferienhütten, die Gäste auf Anfrage näher ansehen können.',
   footer: {
     company: 'Breathe Senja & Services Henriksen',
     orgNumber: 'Org.nr. 937 296 355',
@@ -61,8 +61,8 @@ const de = {
   },
   accommodation: {
     title: 'Unterkunft auf Senja',
-    description: 'Roland hat außerdem zwei Ferienunterkünfte auf Senja, die sich gut mit den Touren verbinden lassen.',
-    links: ['Unterkunft 1 auf Airbnb ansehen', 'Unterkunft 2 auf Airbnb ansehen'],
+    description: 'Roland hat außerdem zwei Ferienhütten auf Senja, die sich gut mit den Touren verbinden lassen.',
+    links: ['Ferienhütte 1 auf Airbnb ansehen', 'Ferienhütte 2 auf Airbnb ansehen'],
   },
   summerPage: {
     kicker: 'Sommer auf Senja',
@@ -103,7 +103,7 @@ const de = {
         {
           title: 'Gipfeltouren, Unterkunft und lokale Kontakte',
           description:
-            'Roland kann Gipfeltouren mit lokalen Guides vermitteln und bei Unterkunft und lokalen Kontakten helfen. Er hat auch eigene Mieteinheiten, die Gästen auf Anfrage gezeigt werden können.',
+            'Roland kann Gipfeltouren mit lokalen Guides vermitteln und bei Unterkunft und lokalen Kontakten helfen. Er hat auch eigene Ferienhütten, die Gästen auf Anfrage gezeigt werden können.',
         },
       ],
     },
@@ -142,7 +142,7 @@ const de = {
         {
           title: 'Unterkunft und lokale Hilfe',
           description:
-            'Roland kann bei Unterkunft und anderen praktischen Bedürfnissen helfen. Eigene Mieteinheiten können Gästen auf Anfrage gezeigt werden.',
+            'Roland kann bei Unterkunft und anderen praktischen Bedürfnissen helfen. Eigene Ferienhütten können Gästen auf Anfrage gezeigt werden.',
         },
       ],
     },

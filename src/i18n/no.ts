@@ -8,7 +8,7 @@ const no = {
   contactRolandContext: 'Din lokale guide på Senja',
   homeIntro: {
     kicker: 'Personlige turer og lokal tilrettelegging',
-    tagline: 'Rolige, personlige opplevelser på Senja – sommer som vinter.',
+    tagline: 'From Summit to Sea',
   },
   imageNotice: '',
   privacyNotice:
@@ -28,14 +28,14 @@ const no = {
     triggerTitle: 'Om Breathe Senja',
     title: 'Breathe Senja & Services Henriksen',
     description:
-        'Breathe Senja & Services Henriksen drives av Roland Henriksen. Med lokal kjennskap til Senja tilbyr Roland personlige opplevelser året rundt – tilpasset vær, forhold og ønsker.',
+        'Breathe Senja & Services Henriksen drives av Roland Henriksen. Med lokal kjennskap til Senja tilbyr Roland spennende og personlige opplevelser tilpasset vær, forhold, nivå og ønsker.',
     phoneLabel: 'Telefon',
     phone: '+47 46 54 45 10',
     orgNumberLabel: 'Org.nr.',
     orgNumber: '937 296 355',
     mapLabel: 'Se adressen på kart',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=St%C3%B8nesbotnveien%20583%2C%209373%20Botnhamn',
-    airbnbLabel: 'Se utleieboliger 1 og 2 på Airbnb',
+    airbnbLabel: 'Se utleiehytter 1 og 2 på Airbnb',
   },
   homeSeasonBoxes: {
     winter: {
@@ -53,7 +53,7 @@ const no = {
   },
   yearRoundTitle: 'Praktisk hjelp hele året',
   yearRound:
-      'Roland tilbyr transport, roadtrip og sightseeing med bil, og kan hjelpe med overnatting og kontakt med lokale aktører på Senja. Han har også egne utleieenheter som gjester kan få se nærmere på ved forespørsel.',
+      'Roland tilbyr transport, roadtrip og sightseeing med bil, og kan hjelpe med overnatting og kontakt med lokale aktører på Senja. Han har også egne utleiehytter som gjester kan få se nærmere på ved forespørsel.',
   footer: {
     company: 'Breathe Senja & Services Henriksen',
     orgNumber: 'Org.nr. 937 296 355',
@@ -61,8 +61,8 @@ const no = {
   },
   accommodation: {
     title: 'Overnatting på Senja',
-    description: 'Roland har også to utleieboliger på Senja som kan passe godt sammen med turene.',
-    links: ['Se utleiebolig 1 på Airbnb', 'Se utleiebolig 2 på Airbnb'],
+    description: 'Roland har også to utleiehytter på Senja som kan passe godt sammen med turene.',
+    links: ['Se utleiehytte 1 på Airbnb', 'Se utleiehytte 2 på Airbnb'],
   },
   summerPage: {
     kicker: 'Sommer på Senja',
@@ -103,7 +103,7 @@ const no = {
         {
           title: 'Toppturer, overnatting og lokale kontakter',
           description:
-              'Roland kan formidle toppturer til fots med lokale guider og hjelpe med overnatting og lokale kontakter. Han har også egne utleieenheter som kan vises til gjester ved forespørsel.',
+              'Roland kan formidle toppturer til fots med lokale guider og hjelpe med overnatting og lokale kontakter. Han har også egne utleiehytter som kan vises til gjester ved forespørsel.',
         },
       ],
     },
@@ -142,7 +142,7 @@ const no = {
         {
           title: 'Overnatting og lokal hjelp',
           description:
-              'Roland kan hjelpe med overnatting og andre praktiske behov. Egne utleieenheter kan vises til gjester ved forespørsel.',
+              'Roland kan hjelpe med overnatting og andre praktiske behov. Egne utleiehytter kan vises til gjester ved forespørsel.',
         },
       ],
     },
