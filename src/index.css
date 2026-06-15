@@ -107,6 +107,13 @@ button {
   border-left-width: 4px;
   background: rgba(7, 13, 11, 0.76);
   box-shadow: 0 0 0 1px rgba(100, 203, 75, 0.12), 0 5px 20px rgba(0, 0, 0, 0.24);
+  touch-action: none;
+}
+
+.contact-link--top.is-dragging {
+  z-index: 49;
+  cursor: grabbing;
+  transition: none;
 }
 
 .contact-link--top:hover,

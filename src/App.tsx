@@ -1,7 +1,8 @@
-import { type FormEvent, useEffect, useState } from 'react'
+import { type FormEvent, type PointerEvent, useEffect, useRef, useState } from 'react'
 import { languageLabels, languages, translations, type Language } from './i18n'
 
 type Page = 'home' | 'summer' | 'winter'
+type ContactPosition = { x: number; y: number }
 type ContactFormStatus = 'idle' | 'sending' | 'success' | 'error'
 type GalleryType = 'summer' | 'winter'
 type GalleryItem = {
@@ -19,6 +20,16 @@ type ActiveGalleryImage = {
   index: number
   type: GalleryType
 } | null
+type ContactDragState = {
+  hasMoved: boolean
+  height: number
+  offsetX: number
+  offsetY: number
+  pointerId: number
+  startX: number
+  startY: number
+  width: number
+}
 
 const imageItem = (name: string): GalleryItem => ({ kind: 'image', name })
 const sharedImageItem = (name: string): GalleryItem => ({ kind: 'image', name, source: 'shared' })
@@ -311,7 +322,11 @@ function App() {
   const [isContactOpen, setIsContactOpen] = useState(false)
   const [contactFormStatus, setContactFormStatus] = useState<ContactFormStatus>('idle')
   const [scrollOpacity, setScrollOpacity] = useState(1)
+  const [contactPositions, setContactPositions] = useState<Partial<Record<Page, ContactPosition>>>({})
+  const [isContactDragging, setIsContactDragging] = useState(false)
   const [activeGalleryImage, setActiveGalleryImage] = useState<ActiveGalleryImage>(null)
+  const contactDrag = useRef<ContactDragState | null>(null)
+  const suppressContactClick = useRef(false)
   const text = translations[language]
   const activeGalleryItems = activeGalleryImage ? galleryItemsByType[activeGalleryImage.type] : []
   const activeGalleryItem = activeGalleryImage ? activeGalleryItems[activeGalleryImage.index] : null
@@ -432,7 +447,80 @@ function App() {
     window.history.pushState(null, '', nextUrl)
   }
 
+  const clampContactPosition = (x: number, y: number, width: number, height: number) => {
+    const margin = 12
+
+    return {
+      x: Math.min(Math.max(margin, x), window.innerWidth - width - margin),
+      y: Math.min(Math.max(margin, y), window.innerHeight - height - margin),
+    }
+  }
+
+  const handleContactPointerDown = (event: PointerEvent<HTMLButtonElement>) => {
+    if (event.button !== 0) {
+      return
+    }
+
+    const rect = event.currentTarget.getBoundingClientRect()
+    event.currentTarget.setPointerCapture(event.pointerId)
+    contactDrag.current = {
+      hasMoved: false,
+      height: rect.height,
+      offsetX: event.clientX - rect.left,
+      offsetY: event.clientY - rect.top,
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      width: rect.width,
+    }
+    setIsContactDragging(true)
+  }
+
+  const handleContactPointerMove = (event: PointerEvent<HTMLButtonElement>) => {
+    const drag = contactDrag.current
+    if (!drag || drag.pointerId !== event.pointerId) {
+      return
+    }
+
+    const hasMovedPastTap = Math.hypot(
+      event.clientX - drag.startX,
+      event.clientY - drag.startY,
+    ) > 8
+
+    if (!drag.hasMoved && !hasMovedPastTap) {
+      return
+    }
+
+    const nextPosition = clampContactPosition(
+      event.clientX - drag.offsetX,
+      event.clientY - drag.offsetY,
+      drag.width,
+      drag.height,
+    )
+
+    contactDrag.current = { ...drag, hasMoved: true }
+    suppressContactClick.current = true
+    setContactPositions((current) => ({ ...current, [page]: nextPosition }))
+  }
+
+  const handleContactPointerUp = (event: PointerEvent<HTMLButtonElement>) => {
+    const drag = contactDrag.current
+    if (!drag || drag.pointerId !== event.pointerId) {
+      return
+    }
+
+    event.currentTarget.releasePointerCapture(event.pointerId)
+    suppressContactClick.current = drag.hasMoved
+    contactDrag.current = null
+    setIsContactDragging(false)
+  }
+
   const handleContactClick = () => {
+    if (suppressContactClick.current) {
+      suppressContactClick.current = false
+      return
+    }
+
     setContactFormStatus('idle')
     setIsContactOpen(true)
   }
@@ -468,7 +556,28 @@ function App() {
       <h1 className="sr-only">{text.siteName}</h1>
 
       <div className="top-controls">
-        <button className="contact-link contact-link--top" type="button" onClick={handleContactClick}>
+        <button
+          className={`contact-link contact-link--top${isContactDragging ? ' is-dragging' : ''}`}
+          type="button"
+          style={
+            contactPositions[page]
+              ? {
+                  left: contactPositions[page].x,
+                  position: 'fixed',
+                  right: 'auto',
+                  top: contactPositions[page].y,
+                }
+              : undefined
+          }
+          onClick={handleContactClick}
+          onPointerDown={handleContactPointerDown}
+          onPointerMove={handleContactPointerMove}
+          onPointerUp={handleContactPointerUp}
+          onPointerCancel={() => {
+            contactDrag.current = null
+            setIsContactDragging(false)
+          }}
+        >
           <span>{text.contactRoland}</span>
           <small>{text.contactRolandContext}</small>
         </button>
