@@ -300,6 +300,19 @@ const homeBackgrounds = [
 ]
 
 const publicAssetPath = (path: string) => `${import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}${path}`
+const seasonBackgrounds = {
+  summer: publicAssetPath('images/backgrounds/summer.webp'),
+  winter: publicAssetPath('images/backgrounds/winter.webp'),
+}
+const AirbnbLogo = () => (
+  <img
+    className="airbnb-logo"
+    src={publicAssetPath('images/airbnb.svg')}
+    alt="Airbnb"
+    width="320"
+    height="100"
+  />
+)
 
 const getPageFromHash = (): Page => {
   const hashPage = window.location.hash.replace('#', '')
@@ -322,6 +335,13 @@ function App() {
   const activeGalleryItems = activeGalleryImage ? galleryItemsByType[activeGalleryImage.type] : []
   const activeGalleryItem = activeGalleryImage ? activeGalleryItems[activeGalleryImage.index] : null
 
+  useEffect(() => {
+    Object.values(seasonBackgrounds).forEach((source) => {
+      const image = new Image()
+      image.src = source
+    })
+  }, [])
+
   // Håndter bakgrunns-fade ved scrolling
   useEffect(() => {
     const handleScroll = (e: Event) => {
@@ -330,7 +350,7 @@ function App() {
         const scrollTop = target.scrollTop
         const vh = window.innerHeight
         // Fader ut over en lengre distanse (1.5 x vh) for en mer langsom effekt
-        const opacity = Math.max(0, 1 - scrollTop / (vh * 1.5))
+        const opacity = Math.max(0.32, 1 - scrollTop / (vh * 2.25))
         setScrollOpacity(opacity)
       }
     }
@@ -348,6 +368,7 @@ function App() {
   useEffect(() => {
     const syncPageFromLocation = () => {
       setPage(getPageFromHash())
+      setScrollOpacity(1)
     }
 
     window.addEventListener('hashchange', syncPageFromLocation)
@@ -424,6 +445,7 @@ function App() {
 
   const navigateTo = (newPage: Page) => {
     setPage(newPage)
+    setScrollOpacity(1)
     setActiveGalleryImage(null)
     const nextUrl = newPage === 'home' ? window.location.pathname : `${window.location.pathname}#${newPage}`
     window.history.pushState(null, '', nextUrl)
@@ -581,6 +603,20 @@ function App() {
               />
             ))}
 
+            <section className="home-accommodation" aria-label={text.accommodation.title}>
+              <h2>{text.accommodation.title}</h2>
+              <p>{text.accommodation.description}</p>
+              <div className="home-accommodation__links">
+                {airbnbListings.map((url, index) => (
+                  <a key={url} href={url} target="_blank" rel="noreferrer">
+                    {text.accommodation.links[index]}
+                    <AirbnbLogo />
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                ))}
+              </div>
+            </section>
+
             <section className="home-intro" aria-label={text.siteName}>
               <p>{text.homeIntro.kicker}</p>
               <h2>{text.siteName}</h2>
@@ -664,7 +700,7 @@ function App() {
         <section className="season-page season-page--summer">
           <div 
             className="season-page-background" 
-            style={{ opacity: scrollOpacity }} 
+            style={{ backgroundImage: `url(${seasonBackgrounds.summer})`, opacity: scrollOpacity }}
             aria-hidden="true" 
           />
           <div className="season-page-panel season-page-panel--content">
@@ -756,6 +792,7 @@ function App() {
                 {airbnbListings.map((url, index) => (
                   <a key={url} href={url} target="_blank" rel="noreferrer">
                     {text.accommodation.links[index]}
+                    <AirbnbLogo />
                     <span aria-hidden="true">↗</span>
                   </a>
                 ))}
@@ -770,7 +807,7 @@ function App() {
         <section className="season-page season-page--winter">
           <div 
             className="season-page-background" 
-            style={{ opacity: scrollOpacity }} 
+            style={{ backgroundImage: `url(${seasonBackgrounds.winter})`, opacity: scrollOpacity }}
             aria-hidden="true" 
           />
           <div className="season-page-panel season-page-panel--content">
@@ -874,6 +911,7 @@ function App() {
                 {airbnbListings.map((url, index) => (
                   <a key={url} href={url} target="_blank" rel="noreferrer">
                     {text.accommodation.links[index]}
+                    <AirbnbLogo />
                     <span aria-hidden="true">↗</span>
                   </a>
                 ))}
@@ -974,14 +1012,16 @@ function App() {
             </a>
             <div className="about-popover__airbnb">
               <span>{text.about.airbnbLabel}</span>
-              <div>
-                {airbnbListings.map((url, index) => (
-                  <a key={url} href={url} target="_blank" rel="noreferrer">
-                    {index + 1}
-                    <span className="sr-only">: {text.accommodation.links[index]}</span>
-                  </a>
-                ))}
-              </div>
+              <a href={airbnbListings[0]} target="_blank" rel="noreferrer">
+                1
+                <span className="sr-only">: {text.accommodation.links[0]}</span>
+              </a>
+              <span>{text.about.airbnbConjunction}</span>
+              <a href={airbnbListings[1]} target="_blank" rel="noreferrer">
+                2
+                <span className="sr-only">: {text.accommodation.links[1]}</span>
+              </a>
+              <AirbnbLogo />
             </div>
           </section>
         </div>

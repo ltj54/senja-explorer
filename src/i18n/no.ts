@@ -35,7 +35,8 @@ const no = {
     orgNumber: '937 296 355',
     mapLabel: 'Se adressen på kart',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=St%C3%B8nesbotnveien%20583%2C%209373%20Botnhamn',
-    airbnbLabel: 'Se utleiehytter 1 og 2 på Airbnb',
+    airbnbLabel: 'Se utleiehytter',
+    airbnbConjunction: 'og',
   },
   homeSeasonBoxes: {
     winter: {
@@ -61,8 +62,8 @@ const no = {
   },
   accommodation: {
     title: 'Overnatting på Senja',
-    description: 'Roland har også to utleiehytter på Senja som kan passe godt sammen med turene.',
-    links: ['Se utleiehytte 1 på Airbnb', 'Se utleiehytte 2 på Airbnb'],
+    description: 'Roland har to utleiehytter på Senja som kan passe godt sammen med turene.',
+    links: ['Se utleiehytte 1', 'Se utleiehytte 2'],
   },
   summerPage: {
     kicker: 'Sommer på Senja',

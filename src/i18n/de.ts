@@ -35,7 +35,8 @@ const de = {
     orgNumber: '937 296 355',
     mapLabel: 'Adresse auf der Karte ansehen',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=St%C3%B8nesbotnveien%20583%2C%209373%20Botnhamn',
-    airbnbLabel: 'Ferienhütten 1 und 2 auf Airbnb ansehen',
+    airbnbLabel: 'Ferienhütten ansehen',
+    airbnbConjunction: 'und',
   },
   homeSeasonBoxes: {
     winter: {
@@ -62,7 +63,7 @@ const de = {
   accommodation: {
     title: 'Unterkunft auf Senja',
     description: 'Roland hat außerdem zwei Ferienhütten auf Senja, die sich gut mit den Touren verbinden lassen.',
-    links: ['Ferienhütte 1 auf Airbnb ansehen', 'Ferienhütte 2 auf Airbnb ansehen'],
+    links: ['Ferienhütte 1 ansehen', 'Ferienhütte 2 ansehen'],
   },
   summerPage: {
     kicker: 'Sommer auf Senja',

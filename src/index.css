@@ -192,6 +192,91 @@ button {
   transform: translateX(2px);
 }
 
+.home-accommodation {
+  position: absolute;
+  top: clamp(16px, 3vw, 34px);
+  left: clamp(16px, 3vw, 42px);
+  z-index: 4;
+  width: min(360px, calc(100% - 32px));
+  padding: 17px 18px 18px;
+  border: 1px solid rgba(247, 241, 231, 0.28);
+  border-left-color: rgba(247, 241, 231, 0.58);
+  background: rgba(7, 13, 11, 0.58);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(-12px);
+  animation: language-appear 850ms ease forwards;
+  animation-delay: 1050ms;
+}
+
+.home-accommodation h2 {
+  margin: 0;
+  color: rgba(255, 250, 240, 0.96);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.home-accommodation p {
+  margin: 9px 0 0;
+  color: rgba(247, 241, 231, 0.76);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.home-accommodation__links {
+  display: grid;
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.home-accommodation__links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(255, 250, 240, 0.92);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.airbnb-logo {
+  display: block;
+  flex: 0 0 auto;
+  width: 68px;
+  height: auto;
+}
+
+.home-accommodation__links .airbnb-logo {
+  margin-left: auto;
+}
+
+.home-accommodation__links a:hover,
+.home-accommodation__links a:focus-visible {
+  color: #fffaf0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.home-accommodation__links a:focus-visible {
+  outline: 2px solid rgba(247, 241, 231, 0.86);
+  outline-offset: 4px;
+}
+
+.home-accommodation__links span {
+  transition: transform 180ms ease;
+}
+
+.home-accommodation__links a:hover span,
+.home-accommodation__links a:focus-visible span {
+  transform: translate(2px, -2px);
+}
+
 .home-intro {
   position: relative;
   z-index: 2;
@@ -237,16 +322,16 @@ button {
 
 .contact-link--home {
   position: absolute;
-  top: 59vh;
-  left: 50%;
+  top: clamp(16px, 3vw, 34px);
+  left: calc(clamp(16px, 3vw, 42px) + 376px);
   right: auto;
   z-index: 45;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
   touch-action: none;
   opacity: 0;
-  transform: translate(-50%, 12px);
-  animation: contact-home-in 900ms ease forwards;
+  transform: translateY(-12px);
+  animation: language-appear 850ms ease forwards;
   animation-delay: 760ms;
 }
 
@@ -377,7 +462,7 @@ button {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  padding: 0 clamp(22px, 4vw, 56px) clamp(250px, 29vh, 340px);
+  padding: 0 clamp(22px, 4vw, 56px) clamp(295px, 34vh, 390px);
   border: 0;
   color: inherit;
   background-image:
@@ -633,21 +718,22 @@ button {
   position: fixed;
   inset: 0;
   z-index: -3;
+  background-color: #344238;
   background-size: cover;
   background-position: center;
-  transition: opacity 800ms ease-out; /* Lengre overgang for en mykere følelse */
+  transition: opacity 500ms ease-out;
 }
 
 .season-page--summer .season-page-background {
-  background-image: url('./assets/roland/summer/1000001425.jpg');
-  filter: saturate(0.88) brightness(0.82) contrast(0.96);
+  background-color: #52634c;
+  filter: saturate(0.94) brightness(0.98) contrast(0.94);
   transform: scale(1);
 }
 
 .season-page--winter .season-page-background {
-  background-image: url('./assets/roland/winter/1000020473.jpg');
-  filter: saturate(0.42) brightness(0.78) contrast(1.02);
-  transform: scale(1); /* Nå helt lik sommersiden */
+  background-color: #526370;
+  filter: saturate(0.68) brightness(0.96) contrast(0.98);
+  transform: scale(1);
 }
 
 .season-page::after {
@@ -658,10 +744,10 @@ button {
   pointer-events: none;
   background: linear-gradient(
     to bottom,
-    rgba(16, 22, 18, 0.4) 0%,
-    rgba(16, 22, 18, 0.7) 40%,
-    rgba(16, 22, 18, 0.95) 85%,
-    #101612 100%
+    rgba(16, 22, 18, 0.2) 0%,
+    rgba(16, 22, 18, 0.42) 40%,
+    rgba(16, 22, 18, 0.68) 85%,
+    rgba(16, 22, 18, 0.82) 100%
   );
 }
 
@@ -831,6 +917,11 @@ button {
   background: rgba(7, 13, 11, 0.34);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
   transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.season-accommodation__links .airbnb-logo {
+  width: 74px;
+  margin-left: auto;
 }
 
 .season-accommodation__links a:hover,
@@ -1081,11 +1172,11 @@ button {
   z-index: 1;
   width: min(100%, 560px);
   padding: clamp(24px, 4vw, 38px);
-  border: 2px solid rgba(247, 241, 231, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.76);
   background:
-    linear-gradient(145deg, rgba(35, 48, 40, 0.9), rgba(13, 21, 17, 0.93));
-  backdrop-filter: blur(12px);
-  color: #f7f1e7;
+    linear-gradient(145deg, rgba(255, 254, 250, 0.97), rgba(239, 244, 235, 0.95));
+  backdrop-filter: blur(14px);
+  color: #17221c;
   box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.08);
   animation: contact-form-in 320ms ease forwards;
   overflow: hidden;
@@ -1136,6 +1227,12 @@ button {
 
 .about-popover .contact-form__close {
   z-index: 3;
+  color: rgba(23, 34, 28, 0.58);
+}
+
+.about-popover .contact-form__close:hover,
+.about-popover .contact-form__close:focus-visible {
+  color: #17221c;
 }
 
 .about-popover__kicker {
@@ -1144,7 +1241,7 @@ button {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(247, 241, 231, 0.58);
+  color: rgba(23, 34, 28, 0.58);
 }
 
 .about-popover h2 {
@@ -1161,7 +1258,7 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.65;
-  color: rgba(247, 241, 231, 0.78);
+  color: rgba(23, 34, 28, 0.76);
 }
 
 .about-popover__details {
@@ -1184,18 +1281,18 @@ button {
 
 .about-popover__details dt {
   min-width: 68px;
-  color: rgba(247, 241, 231, 0.58);
+  color: rgba(23, 34, 28, 0.58);
   font-size: 13px;
 }
 
 .about-popover__details dd {
-  color: rgba(255, 250, 240, 0.92);
+  color: rgba(23, 34, 28, 0.94);
   font-size: 15px;
 }
 
 .about-popover__map-link,
 .about-popover__airbnb > span {
-  color: rgba(255, 250, 240, 0.84);
+  color: rgba(23, 34, 28, 0.84);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.35;
@@ -1203,32 +1300,33 @@ button {
   text-transform: uppercase;
 }
 
+.about-popover__airbnb .airbnb-logo {
+  width: 66px;
+  margin-left: 3px;
+}
+
 .about-popover__map-link {
   display: inline-flex;
   width: fit-content;
   margin-top: 24px;
-  border-bottom: 1px solid rgba(247, 241, 231, 0.34);
+  border-bottom: 1px solid rgba(23, 34, 28, 0.34);
   text-decoration: none;
   transition: border-color 180ms ease, color 180ms ease;
 }
 
 .about-popover__map-link:hover,
 .about-popover__map-link:focus-visible {
-  border-color: rgba(255, 250, 240, 0.88);
-  color: #fffaf0;
+  border-color: rgba(23, 34, 28, 0.88);
+  color: #17221c;
 }
 
 .about-popover__airbnb {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 7px;
+  flex-wrap: wrap;
   width: fit-content;
   margin-top: 16px;
-}
-
-.about-popover__airbnb > div {
-  display: flex;
-  gap: 7px;
 }
 
 .about-popover__airbnb a {
@@ -1236,16 +1334,16 @@ button {
   place-items: center;
   width: 30px;
   height: 30px;
-  border: 1px solid rgba(247, 241, 231, 0.3);
-  color: rgba(255, 250, 240, 0.9);
+  border: 1px solid rgba(23, 34, 28, 0.3);
+  color: rgba(23, 34, 28, 0.9);
   text-decoration: none;
   transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 .about-popover__airbnb a:hover,
 .about-popover__airbnb a:focus-visible {
-  border-color: rgba(255, 250, 240, 0.8);
-  background: rgba(247, 241, 231, 0.12);
+  border-color: rgba(23, 34, 28, 0.8);
+  background: rgba(23, 34, 28, 0.08);
   transform: translateY(-2px);
 }
 
@@ -1348,7 +1446,7 @@ button {
   padding: clamp(24px, 4vw, 38px);
   border: 1px solid rgba(255, 255, 255, 0.58);
   background:
-    linear-gradient(145deg, rgba(255, 252, 245, 0.92), rgba(231, 237, 225, 0.88));
+    linear-gradient(145deg, rgba(255, 254, 250, 0.97), rgba(239, 244, 235, 0.95));
   backdrop-filter: blur(14px);
   color: #17221c;
   box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
@@ -1508,6 +1606,13 @@ button {
   animation-delay: 1650ms;
 }
 
+@media (min-width: 761px) and (max-width: 1050px) {
+  .contact-link--home {
+    top: 205px;
+    left: clamp(16px, 3vw, 42px);
+  }
+}
+
 @media (max-width: 760px) {
   .top-controls {
     position: absolute;
@@ -1589,8 +1694,34 @@ button {
   .home-intro {
     align-self: flex-start;
     width: 100%;
-    margin-top: min(13vh, 96px);
+    margin-top: 300px;
     text-align: left;
+  }
+
+  .home-accommodation {
+    top: 72px;
+    left: 20px;
+    width: min(360px, calc(100% - 40px));
+    padding: 13px 14px 14px;
+  }
+
+  .home-accommodation h2 {
+    font-size: 21px;
+  }
+
+  .home-accommodation p {
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .home-accommodation__links {
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .home-accommodation__links a {
+    font-size: 11px;
   }
 
   .about-popover__logo {
@@ -1641,16 +1772,15 @@ button {
   }
 
   .contact-link--home {
-    position: relative;
-    top: 0;
-    left: auto;
+    position: absolute;
+    top: 235px;
+    left: 20px;
     right: auto;
-    align-self: flex-start;
     align-items: flex-start;
-    margin-top: 14px;
+    margin-top: 0;
     text-align: left;
-    transform: translateY(12px);
-    animation-name: season-page-in;
+    transform: translateY(-12px);
+    animation-name: language-appear;
   }
 
   .home-season-info {
