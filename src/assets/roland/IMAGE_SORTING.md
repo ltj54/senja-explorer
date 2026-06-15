@@ -24,7 +24,7 @@ Teksten kan markeres og kopieres med vanlig tekstmarkør. Klikk på filnavnet å
 
 Ingen bilder er flyttet, slettet eller omorganisert som del av denne identifikasjonsløsningen.
 
-Alle publiserte sesongbilder vises nå: 59 sommerbilder og 109 vinterbilder. I tillegg vises alle fem Randonee-videoene og to unike bilder fra `shared/`. Tidligere utvalgte bilder beholder gruppene og rekkefølgen sin; øvrige filer ligger i «Flere sommerbilder» eller «Flere vinterbilder».
+Alle publiserte sesongbilder vises nå: 59 sommerbilder og 109 vinterbilder. I tillegg vises fire Randonee-videoer og to unike bilder fra `shared/`. Tidligere utvalgte bilder beholder gruppene og rekkefølgen sin; øvrige filer ligger i «Flere sommerbilder» eller «Flere vinterbilder».
 
 Kjent advarsel:
 
@@ -143,13 +143,90 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `winterG
 
 ### Randonee
 
+* `winter/1000021591.webp`
+* `winter/1000020232.webp`
+* `winter/1000019862.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1455.webp`
+* `winter/1000001116.webp`
+* `winter/1000001049.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1510.webp`
+* `winter/1000019884.webp`
+* `winter/1000020480.webp`
+* `winter/1000000866.webp`
+* `winter/1000013371.webp`
+* `winter/1000001118.webp`
+* `winter/1000000991.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446.webp`
+* `winter/1000001052.webp`
+
+### Randonee videoer
+
+* `winter/1000020230.mp4`
+* `winter/1000020204.mp4`
+* `winter/1000020308.mp4`
+* `winter/1000020211.mp4`
+
+### Isfiske
+
+* `winter/1000013165.webp`
+* `winter/1000013170.webp`
+* `winter/1000013169.webp`
+* `winter/1000013156.webp`
+* `winter/1000013591.webp`
+* `winter/1000013160.webp`
+* `winter/1000013212.webp`
+* `winter/1000013175.webp`
+
+### Vinterro
+
+* `winter/1000015014.webp`
+* `winter/1000010937.webp`
+* `winter/1000000411.webp`
+* `winter/1000015791.webp`
+* `winter/1000013130.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3756.webp`
+* `winter/1000000760.webp`
+* `winter/1000000870.webp`
+* `winter/1000000994.webp`
+
+### Flere vinterbilder
+
+* `winter/1000000855.webp`
+* `winter/1000000867.webp`
+* `winter/1000000992.webp`
+* `winter/1000000993.webp`
+* `winter/1000001012.webp`
+* `winter/1000001047.webp`
+* `winter/1000004017.webp`
+* `winter/1000010930.webp`
+* `winter/1000010934.webp`
+* `winter/1000012751.webp`
+* `winter/1000013162.webp`
+* `winter/1000013213.webp`
+* `winter/1000013484.webp`
+* `winter/1000013488.webp`
+* `winter/1000013520.webp`
+* `winter/1000013651.webp`
+* `winter/1000015787.webp`
+* `winter/1000015793.webp`
+* `winter/1000015794.webp`
+* `winter/1000015795.webp`
+* `winter/1000015917.webp`
+* `winter/1000016003.webp`
+* `winter/1000016265.webp`
+* `winter/1000016266.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1587.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1980.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_2041.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3473.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3724.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3749.webp`
+* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5192.webp`
 * `winter/1000001017.webp`
 * `winter/1000001018.webp`
 * `winter/1000001019.webp`
 * `winter/1000001021.webp`
-* `winter/1000001049.webp`
 * `winter/1000001051.webp`
-* `winter/1000001116.webp`
 * `winter/1000001131.webp`
 * `winter/1000001184.webp`
 * `winter/1000001192.webp`
@@ -165,111 +242,36 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `winterG
 * `winter/1000003998.webp`
 * `winter/1000004018.webp`
 * `winter/1000013487.webp`
-* `winter/1000019862.webp`
 * `winter/1000019870.webp`
 * `winter/1000019883.webp`
-* `winter/1000019884.webp`
 * `winter/1000019890.webp`
-* `winter/1000020232.webp`
 * `winter/1000020234.webp`
 * `winter/1000020236.webp`
 * `winter/1000020242.webp`
 * `winter/1000020274.webp`
 * `winter/1000020473.webp`
-* `winter/1000020480.webp`
 * `winter/1000020484.webp`
 * `winter/1000020488.webp`
-* `winter/1000021591.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1037.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1271.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1273.webp`
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446.webp`
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1455.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5298.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5319.webp`
-* `winter/1000019898.mp4`
-* `winter/1000020204.mp4`
-* `winter/1000020211.mp4`
-* `winter/1000020230.mp4`
-* `winter/1000020308.mp4`
-
-### Isfiske
-
 * `winter/1000013116.webp`
-* `winter/1000013165.webp`
-* `winter/1000013169.webp`
-* `winter/1000013170.webp`
 * `winter/1000013590.webp`
-
-### Vinterro
-
 * `winter/1000001280.webp`
-* `winter/1000000411.webp`
-* `winter/1000000760.webp`
 * `winter/1000000868.webp`
-* `winter/1000000870.webp`
 * `winter/1000000898.webp`
 * `winter/1000015792.webp`
 * `winter/1000015976.webp`
 * `winter/1000015982.webp`
 * `winter/1000015987.webp`
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1510.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1608.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_2924.webp`
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3756.webp`
-
-### Flere vinterbilder
-
-* `winter/1000000855.webp`
-* `winter/1000000866.webp`
-* `winter/1000000867.webp`
-* `winter/1000000991.webp`
-* `winter/1000000992.webp`
-* `winter/1000000993.webp`
-* `winter/1000000994.webp`
-* `winter/1000001012.webp`
-* `winter/1000001047.webp`
-* `winter/1000001052.webp`
-* `winter/1000001118.webp`
-* `winter/1000004017.webp`
-* `winter/1000010930.webp`
-* `winter/1000010934.webp`
-* `winter/1000010937.webp`
-* `winter/1000012751.webp`
-* `winter/1000013130.webp`
-* `winter/1000013156.webp`
-* `winter/1000013160.webp`
-* `winter/1000013162.webp`
-* `winter/1000013175.webp`
-* `winter/1000013212.webp`
-* `winter/1000013213.webp`
-* `winter/1000013371.webp`
-* `winter/1000013484.webp`
-* `winter/1000013488.webp`
-* `winter/1000013520.webp`
-* `winter/1000013591.webp`
-* `winter/1000013651.webp`
-* `winter/1000015014.webp`
-* `winter/1000015787.webp`
-* `winter/1000015791.webp`
-* `winter/1000015793.webp`
-* `winter/1000015794.webp`
-* `winter/1000015795.webp`
-* `winter/1000015917.webp`
-* `winter/1000016003.webp`
-* `winter/1000016265.webp`
-* `winter/1000016266.webp`
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1587.webp`
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1980.webp`
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_2041.webp`
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3473.webp`
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3724.webp`
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3749.webp`
-* `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_5192.webp`
 
 Originalene til `1000015792` og `1000015987` ligger i `shared/`. Publiserte kopier ligger i `public/images/web/winter/` fordi de brukes av vintergalleriet.
 
-Randonee-videoene er publisert uten lyd og vises etter bildene i gruppen. De fem webfilene ligger bare i `public/images/web/winter/`; store dublettoriginaler under `src/assets/roland/winter/` ble fjernet etter at webversjonene var kontrollert.
+Fire Randonee-videoer vises uten lyd i en egen gruppe etter Randonee-bildene. Alle fem behandlede webfiler ligger fortsatt i `public/images/web/winter/`; store dublettoriginaler under `src/assets/roland/winter/` ble fjernet etter at webversjonene var kontrollert.
 
 Webvideoene er 720p H.264 og har følgende omtrentlige størrelser:
 

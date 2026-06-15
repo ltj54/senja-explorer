@@ -122,6 +122,7 @@ const no = {
     galleryTitle: 'Vinterbilder fra Senja',
     galleryGroups: {
       randonee: 'Randonee',
+      randoneeVideos: 'Randonee videoer',
       iceFishing: 'Isfiske',
       winterCalm: 'Vinterro',
       moreImages: 'Flere vinterbilder',

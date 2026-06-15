@@ -122,6 +122,7 @@ const de = {
     galleryTitle: 'Winterbilder von Senja',
     galleryGroups: {
       randonee: 'Skitouren',
+      randoneeVideos: 'Skitour-Videos',
       iceFishing: 'Eisangeln',
       winterCalm: 'Winterruhe',
       moreImages: 'Weitere Winterbilder',
