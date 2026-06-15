@@ -84,37 +84,31 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `summerG
 
 ### Stillhet på fjorden
 
-* `summer/1000000148.webp`
-* `summer/1000001037.webp`
-* `summer/1000001400.webp`
-* `summer/1000004665.webp`
-* `summer/1000004676.webp`
-* `summer/1000004731.webp`
-* `summer/1000013646.webp`
-* `summer/1000010089.webp`
 * `summer/1000015925.webp`
-* `summer/1000016044.webp`
-* `summer/1000016022.webp`
-* `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171.webp`
+* `summer/1000001037.webp`
+* `summer/1000004740.webp`
+* `summer/1000001400.webp`
+* `summer/1000013646.webp`
+* `summer/1000004115.webp`
+* `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_390.webp`
+* `shared/1000004112.webp`
+* `summer/1000009873.webp`
+* `summer/1000010085.webp`
+* `summer/1000010087.webp`
+* `summer/1000010088.webp`
 
 ### Flere sommerbilder
 
 * `summer/1000002459.webp`
-* `summer/1000004115.webp`
 * `summer/1000004619.webp`
 * `summer/1000004659.webp`
 * `summer/1000004702.webp`
 * `summer/1000004706.webp`
 * `summer/1000004710.webp`
-* `summer/1000004740.webp`
 * `summer/1000004817.webp`
 * `summer/1000004818.webp`
 * `summer/1000004824.webp`
 * `summer/1000005629.webp`
-* `summer/1000009873.webp`
-* `summer/1000010085.webp`
-* `summer/1000010087.webp`
-* `summer/1000010088.webp`
 * `summer/1000010373.webp`
 * `summer/1000010374.webp`
 * `summer/1000013423.webp`
@@ -124,8 +118,14 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `summerG
 * `summer/1000021801.webp`
 * `summer/1000021808.webp`
 * `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3939.webp`
-* `shared/1000004112.webp`
-* `shared/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_390.webp`
+* `summer/1000000148.webp`
+* `summer/1000004665.webp`
+* `summer/1000004676.webp`
+* `summer/1000004731.webp`
+* `summer/1000010089.webp`
+* `summer/1000016044.webp`
+* `summer/1000016022.webp`
+* `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171.webp`
 
 Følgende publiserte `shared`-bilder er bevisst skjult fra sommersiden:
 
