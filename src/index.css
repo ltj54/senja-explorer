@@ -263,8 +263,6 @@ button {
 .home-accommodation__links a:hover,
 .home-accommodation__links a:focus-visible {
   color: #fffaf0;
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
 
 .home-accommodation__links a:focus-visible {
@@ -1627,8 +1625,8 @@ button {
   .top-controls {
     position: absolute;
     gap: 6px;
-    left: 16px;
-    right: 16px;
+    left: 20px;
+    right: 20px;
     justify-content: flex-end;
   }
 
@@ -1643,6 +1641,13 @@ button {
 
   .contact-link--top small {
     font-size: 9px;
+  }
+
+  .site-page:not(.site-page--home) .contact-link--top {
+    position: fixed;
+    top: 72px;
+    right: 20px;
+    margin-right: 0;
   }
 
   .about-trigger {
