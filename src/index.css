@@ -100,6 +100,29 @@ button {
   animation-delay: 1250ms;
 }
 
+.top-controls__logo {
+  display: none;
+}
+
+.brand-logo {
+  border: 1px solid rgba(100, 203, 75, 0.34);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+  opacity: 0.72;
+  filter: saturate(1.08) contrast(1.03) brightness(0.94);
+  transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease, filter 200ms ease, opacity 200ms ease, transform 200ms ease;
+}
+
+.brand-logo:hover {
+  border-color: rgba(100, 203, 75, 0.78);
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 12px 32px rgba(0, 122, 190, 0.32), 0 0 0 4px rgba(100, 203, 75, 0.1);
+  filter: saturate(1.24) contrast(1.06) brightness(1.1);
+  opacity: 1;
+  transform: translateY(-2px) scale(1.04);
+}
+
 .contact-link--top {
   min-height: 42px;
   padding: 8px 13px;
@@ -275,6 +298,47 @@ button {
 .home-accommodation__links a:focus-visible {
   outline: 2px solid rgba(247, 241, 231, 0.86);
   outline-offset: 4px;
+}
+
+@media (min-width: 761px) {
+  .site-page--home .top-controls {
+    right: auto;
+    left: clamp(16px, 3vw, 42px);
+  }
+
+  .site-page--home .top-controls__logo {
+    display: block;
+    width: 58px;
+    height: 58px;
+    margin-right: 3px;
+    object-fit: contain;
+  }
+
+  .site-page--home .home-accommodation {
+    right: clamp(16px, 3vw, 42px);
+    left: auto;
+    width: min(300px, calc(100% - 32px));
+    padding: 11px 13px 12px;
+  }
+
+  .site-page--home .home-accommodation h2 {
+    font-size: 20px;
+  }
+
+  .site-page--home .home-accommodation p {
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .site-page--home .home-accommodation__links {
+    gap: 4px;
+    margin-top: 7px;
+  }
+
+  .site-page--home .home-accommodation__links a {
+    font-size: 11px;
+  }
 }
 
 .airbnb-link-text {
@@ -660,9 +724,7 @@ button {
 .season-gallery-heading img {
   width: clamp(42px, 4vw, 58px);
   height: clamp(42px, 4vw, 58px);
-  border-radius: 50%;
   object-fit: contain;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .season-image-grid {
@@ -708,6 +770,10 @@ button {
   border: 2px solid rgba(255, 255, 255, 0.78);
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.26);
   transition: transform 240ms ease, box-shadow 240ms ease, filter 240ms ease;
+}
+
+.season-image-grid__item .season-image-grid__media--focus-face {
+  object-position: center 24%;
 }
 
 .season-image-grid__item:hover img,
@@ -1471,8 +1537,6 @@ button {
   width: 84px;
   height: 84px;
   margin: -8px auto 16px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
 }
 
 .contact-form > .contact-form__close {

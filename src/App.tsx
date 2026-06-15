@@ -556,6 +556,14 @@ function App() {
       <h1 className="sr-only">{text.siteName}</h1>
 
       <div className="top-controls">
+        <img
+          className="brand-logo top-controls__logo"
+          src={publicAssetPath('images/breathe-senja-logo.png')}
+          alt="Breathe Senja"
+          width="1024"
+          height="1024"
+        />
+
         <button
           className={`contact-link contact-link--top${isContactDragging ? ' is-dragging' : ''}`}
           type="button"
@@ -733,7 +741,7 @@ function App() {
                   )}
                   {showGroupTitle && (
                     <div className="season-gallery-heading">
-                      <img src={publicAssetPath('images/breathe-senja-logo.png')} alt="" />
+                      <img className="brand-logo" src={publicAssetPath('images/breathe-senja-logo.png')} alt="" />
                       <h4 className="season-gallery-group-title">{text.summerPage.galleryGroups[group.key]}</h4>
                     </div>
                   )}
@@ -842,7 +850,7 @@ function App() {
                   )}
                   {showGroupTitle && (
                     <div className="season-gallery-heading">
-                      <img src={publicAssetPath('images/breathe-senja-logo.png')} alt="" />
+                      <img className="brand-logo" src={publicAssetPath('images/breathe-senja-logo.png')} alt="" />
                       <h4 className="season-gallery-group-title">{text.winterPage.galleryGroups[group.key]}</h4>
                     </div>
                   )}
@@ -870,6 +878,7 @@ function App() {
                             </>
                           ) : (
                             <img
+                              className={galleryItem.name === '1000013175' ? 'season-image-grid__media--focus-face' : undefined}
                               src={publicAssetPath(`images/web/${galleryItem.source ?? 'winter'}/${galleryItem.name}.webp`)}
                               alt=""
                             />
@@ -1001,7 +1010,7 @@ function App() {
             onSubmit={handleContactSubmit}
           >
             <img
-              className="contact-form__logo"
+              className="brand-logo contact-form__logo"
               src={publicAssetPath('images/breathe-senja-logo.png')}
               alt=""
             />
