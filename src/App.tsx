@@ -57,15 +57,15 @@ const summerGalleryGroups: GalleryGroup<SummerGalleryGroupKey>[] = [
   {
     key: 'beachTrips',
     items: [
-      '1000000191',
-      '1000002628',
-      '1000001432',
       '1000001481',
       '1000004815',
       '1000004820',
+      '1000002628',
       '1000016037',
       '1000021466',
       'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4217',
+      '1000001432',
+      '1000000191',
     ].map(imageItem),
   },
   {

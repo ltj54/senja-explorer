@@ -63,15 +63,15 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `summerG
 
 ### Strandturer
 
-* `summer/1000000191.webp`
-* `summer/1000002628.webp`
-* `summer/1000001432.webp`
 * `summer/1000001481.webp`
 * `summer/1000004815.webp`
 * `summer/1000004820.webp`
+* `summer/1000002628.webp`
 * `summer/1000016037.webp`
 * `summer/1000021466.webp`
 * `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4217.webp`
+* `summer/1000001432.webp`
+* `summer/1000000191.webp`
 
 ### Fisketurer
 
