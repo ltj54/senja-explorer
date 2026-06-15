@@ -777,6 +777,11 @@ function App() {
           )}
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
+            <img
+              className="brand-logo season-page-panel__logo"
+              src={publicAssetPath('images/breathe-senja-logo.png')}
+              alt="Breathe Senja"
+            />
             {text.summerPage.comingSoon && <p className="season-coming-soon">{text.summerPage.comingSoon}</p>}
             <section className="season-experiences" aria-label={text.summerPage.experiences.title}>
               <h3>{text.summerPage.experiences.title}</h3>
@@ -899,6 +904,11 @@ function App() {
           )}
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
+            <img
+              className="brand-logo season-page-panel__logo"
+              src={publicAssetPath('images/breathe-senja-logo.png')}
+              alt="Breathe Senja"
+            />
             {text.winterPage.comingSoon && <p className="season-coming-soon">{text.winterPage.comingSoon}</p>}
             <section className="season-experiences" aria-label={text.winterPage.experiences.title}>
               <h3>{text.winterPage.experiences.title}</h3>

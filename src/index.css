@@ -678,6 +678,15 @@ button {
   padding-bottom: clamp(52px, 8vh, 96px);
 }
 
+.season-page-panel__logo {
+  position: absolute;
+  top: clamp(82px, 10vh, 112px);
+  left: clamp(16px, 3vw, 42px);
+  width: clamp(58px, 6vw, 82px);
+  height: clamp(58px, 6vw, 82px);
+  object-fit: contain;
+}
+
 .season-page-panel--image {
   justify-content: center;
   align-items: center;
@@ -1951,6 +1960,13 @@ button {
 
   .season-page-panel--about .season-experiences {
     transform: none;
+  }
+
+  .season-page-panel__logo {
+    top: 72px;
+    left: 20px;
+    width: 54px;
+    height: 54px;
   }
 
   .season-accommodation__links {
