@@ -245,17 +245,6 @@ button {
   text-decoration: none;
 }
 
-.airbnb-logo {
-  display: block;
-  flex: 0 0 auto;
-  width: 68px;
-  height: auto;
-}
-
-.home-accommodation__links .airbnb-logo {
-  margin-left: auto;
-}
-
 .home-accommodation__links a:hover,
 .home-accommodation__links a:focus-visible {
   color: #fffaf0;
@@ -919,11 +908,6 @@ button {
   transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
-.season-accommodation__links .airbnb-logo {
-  width: 74px;
-  margin-left: auto;
-}
-
 .season-accommodation__links a:hover,
 .season-accommodation__links a:focus-visible {
   border-color: rgba(255, 250, 240, 0.72);
@@ -1291,7 +1275,7 @@ button {
 }
 
 .about-popover__map-link,
-.about-popover__airbnb > span {
+.about-popover__airbnb a {
   color: rgba(23, 34, 28, 0.84);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
@@ -1300,41 +1284,47 @@ button {
   text-transform: uppercase;
 }
 
-.about-popover__airbnb .airbnb-logo {
-  width: 66px;
-  margin-left: 3px;
-}
-
 .about-popover__map-link {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
   width: fit-content;
+  min-width: min(100%, 310px);
   margin-top: 24px;
-  border-bottom: 1px solid rgba(23, 34, 28, 0.34);
+  padding: 8px 10px;
+  border: 1px solid rgba(23, 34, 28, 0.24);
   text-decoration: none;
-  transition: border-color 180ms ease, color 180ms ease;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 .about-popover__map-link:hover,
 .about-popover__map-link:focus-visible {
-  border-color: rgba(23, 34, 28, 0.88);
-  color: #17221c;
+  border-color: rgba(23, 34, 28, 0.8);
+  background: rgba(23, 34, 28, 0.08);
+  transform: translateY(-2px);
+}
+
+.about-popover__map-link span {
+  font-size: 16px;
 }
 
 .about-popover__airbnb {
-  display: flex;
-  align-items: center;
+  display: grid;
   gap: 7px;
-  flex-wrap: wrap;
   width: fit-content;
   margin-top: 16px;
 }
 
 .about-popover__airbnb a {
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(23, 34, 28, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: fit-content;
+  min-width: min(100%, 310px);
+  padding: 8px 10px;
+  border: 1px solid rgba(23, 34, 28, 0.24);
   color: rgba(23, 34, 28, 0.9);
   text-decoration: none;
   transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
@@ -1345,6 +1335,10 @@ button {
   border-color: rgba(23, 34, 28, 0.8);
   background: rgba(23, 34, 28, 0.08);
   transform: translateY(-2px);
+}
+
+.about-popover__airbnb a span {
+  font-size: 16px;
 }
 
 .image-lightbox {

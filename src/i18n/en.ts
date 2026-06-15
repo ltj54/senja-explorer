@@ -35,8 +35,7 @@ const en = {
     orgNumber: '937 296 355',
     mapLabel: 'View the address on the map',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=St%C3%B8nesbotnveien%20583%2C%209373%20Botnhamn',
-    airbnbLabel: 'View rental cabins',
-    airbnbConjunction: 'and',
+    airbnbLinks: ['Cabin 1 – view listing on Airbnb', 'Cabin 2 – view listing on Airbnb'],
   },
   homeSeasonBoxes: {
     winter: {
@@ -63,7 +62,8 @@ const en = {
   accommodation: {
     title: 'Accommodation on Senja',
     description: 'Roland also has two rental cabins on Senja that pair well with the trips.',
-    links: ['View rental cabin 1', 'View rental cabin 2'],
+    homeLinks: ['Rental cabin 1 – view listing on Airbnb', 'Rental cabin 2 – view listing on Airbnb'],
+    links: ['View cabin 1 on Airbnb', 'View cabin 2 on Airbnb'],
   },
   summerPage: {
     kicker: 'Summer on Senja',

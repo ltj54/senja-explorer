@@ -301,16 +301,6 @@ const seasonBackgrounds = {
   summer: publicAssetPath('images/backgrounds/summer.webp'),
   winter: publicAssetPath('images/backgrounds/winter.webp'),
 }
-const AirbnbLogo = () => (
-  <img
-    className="airbnb-logo"
-    src={publicAssetPath('images/airbnb.svg')}
-    alt="Airbnb"
-    width="320"
-    height="100"
-  />
-)
-
 const getPageFromHash = (): Page => {
   const hashPage = window.location.hash.replace('#', '')
   return hashPage === 'summer' || hashPage === 'winter' ? hashPage : 'home'
@@ -606,8 +596,7 @@ function App() {
               <div className="home-accommodation__links">
                 {airbnbListings.map((url, index) => (
                   <a key={url} href={url} target="_blank" rel="noreferrer">
-                    {text.accommodation.links[index]}
-                    <AirbnbLogo />
+                    {text.accommodation.homeLinks[index]}
                     <span aria-hidden="true">↗</span>
                   </a>
                 ))}
@@ -789,7 +778,6 @@ function App() {
                 {airbnbListings.map((url, index) => (
                   <a key={url} href={url} target="_blank" rel="noreferrer">
                     {text.accommodation.links[index]}
-                    <AirbnbLogo />
                     <span aria-hidden="true">↗</span>
                   </a>
                 ))}
@@ -908,7 +896,6 @@ function App() {
                 {airbnbListings.map((url, index) => (
                   <a key={url} href={url} target="_blank" rel="noreferrer">
                     {text.accommodation.links[index]}
-                    <AirbnbLogo />
                     <span aria-hidden="true">↗</span>
                   </a>
                 ))}
@@ -1006,19 +993,15 @@ function App() {
               rel="noreferrer"
             >
               {text.about.mapLabel}
+              <span aria-hidden="true">↗</span>
             </a>
             <div className="about-popover__airbnb">
-              <span>{text.about.airbnbLabel}</span>
-              <a href={airbnbListings[0]} target="_blank" rel="noreferrer">
-                1
-                <span className="sr-only">: {text.accommodation.links[0]}</span>
-              </a>
-              <span>{text.about.airbnbConjunction}</span>
-              <a href={airbnbListings[1]} target="_blank" rel="noreferrer">
-                2
-                <span className="sr-only">: {text.accommodation.links[1]}</span>
-              </a>
-              <AirbnbLogo />
+              {airbnbListings.map((url, index) => (
+                <a key={url} href={url} target="_blank" rel="noreferrer">
+                  {text.about.airbnbLinks[index]}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ))}
             </div>
           </section>
         </div>
