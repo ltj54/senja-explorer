@@ -8,7 +8,7 @@ const en = {
   contactRolandContext: 'Your local guide on Senja',
   homeIntro: {
     kicker: 'Personal trips and local arrangements',
-    tagline: 'From Summit to Sea',
+    tagline: '– From Summit to Sea –',
   },
   imageNotice: '',
   privacyNotice:

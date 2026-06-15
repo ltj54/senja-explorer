@@ -301,6 +301,15 @@ const seasonBackgrounds = {
   summer: publicAssetPath('images/backgrounds/summer.webp'),
   winter: publicAssetPath('images/backgrounds/winter.webp'),
 }
+const AirbnbText = ({ children }: { children: string }) => {
+  const [before, after = ''] = children.split('Airbnb')
+
+  return (
+    <span className="airbnb-link-text">
+      {before}<span className="airbnb-text">Airbnb</span>{after}
+    </span>
+  )
+}
 const getPageFromHash = (): Page => {
   const hashPage = window.location.hash.replace('#', '')
   return hashPage === 'summer' || hashPage === 'winter' ? hashPage : 'home'
@@ -596,8 +605,8 @@ function App() {
               <div className="home-accommodation__links">
                 {airbnbListings.map((url, index) => (
                   <a key={url} href={url} target="_blank" rel="noreferrer">
-                    {text.accommodation.homeLinks[index]}
-                    <span aria-hidden="true">↗</span>
+                    <AirbnbText>{text.accommodation.homeLinks[index]}</AirbnbText>
+                    <span className="external-link-arrow" aria-hidden="true">↗</span>
                   </a>
                 ))}
               </div>
@@ -777,8 +786,8 @@ function App() {
               <div className="season-accommodation__links">
                 {airbnbListings.map((url, index) => (
                   <a key={url} href={url} target="_blank" rel="noreferrer">
-                    {text.accommodation.links[index]}
-                    <span aria-hidden="true">↗</span>
+                    <AirbnbText>{text.accommodation.links[index]}</AirbnbText>
+                    <span className="external-link-arrow" aria-hidden="true">↗</span>
                   </a>
                 ))}
               </div>
@@ -895,8 +904,8 @@ function App() {
               <div className="season-accommodation__links">
                 {airbnbListings.map((url, index) => (
                   <a key={url} href={url} target="_blank" rel="noreferrer">
-                    {text.accommodation.links[index]}
-                    <span aria-hidden="true">↗</span>
+                    <AirbnbText>{text.accommodation.links[index]}</AirbnbText>
+                    <span className="external-link-arrow" aria-hidden="true">↗</span>
                   </a>
                 ))}
               </div>
@@ -993,13 +1002,13 @@ function App() {
               rel="noreferrer"
             >
               {text.about.mapLabel}
-              <span aria-hidden="true">↗</span>
+              <span className="external-link-arrow" aria-hidden="true">↗</span>
             </a>
             <div className="about-popover__airbnb">
               {airbnbListings.map((url, index) => (
                 <a key={url} href={url} target="_blank" rel="noreferrer">
-                  {text.about.airbnbLinks[index]}
-                  <span aria-hidden="true">↗</span>
+                  <AirbnbText>{text.about.airbnbLinks[index]}</AirbnbText>
+                  <span className="external-link-arrow" aria-hidden="true">↗</span>
                 </a>
               ))}
             </div>

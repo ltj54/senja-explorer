@@ -235,8 +235,8 @@ button {
 .home-accommodation__links a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 5px;
   color: rgba(255, 250, 240, 0.92);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -257,12 +257,22 @@ button {
   outline-offset: 4px;
 }
 
-.home-accommodation__links span {
+.airbnb-link-text {
+  display: inline;
+}
+
+.airbnb-text {
+  color: #d65759;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.home-accommodation__links .external-link-arrow {
   transition: transform 180ms ease;
 }
 
-.home-accommodation__links a:hover span,
-.home-accommodation__links a:focus-visible span {
+.home-accommodation__links a:hover .external-link-arrow,
+.home-accommodation__links a:focus-visible .external-link-arrow {
   transform: translate(2px, -2px);
 }
 
@@ -893,8 +903,8 @@ button {
 .season-accommodation__links a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: flex-start;
+  gap: 6px;
   min-height: 62px;
   padding: 17px 19px;
   border: 1px solid rgba(247, 241, 231, 0.22);
@@ -917,13 +927,13 @@ button {
   transform: translateY(-3px);
 }
 
-.season-accommodation__links a span {
+.season-accommodation__links .external-link-arrow {
   font-size: 17px;
   transition: transform 180ms ease;
 }
 
-.season-accommodation__links a:hover span,
-.season-accommodation__links a:focus-visible span {
+.season-accommodation__links a:hover .external-link-arrow,
+.season-accommodation__links a:focus-visible .external-link-arrow {
   transform: translate(2px, -2px);
 }
 
@@ -1287,8 +1297,8 @@ button {
 .about-popover__map-link {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+  justify-content: flex-start;
+  gap: 5px;
   width: fit-content;
   min-width: min(100%, 310px);
   margin-top: 24px;
@@ -1305,7 +1315,7 @@ button {
   transform: translateY(-2px);
 }
 
-.about-popover__map-link span {
+.about-popover__map-link .external-link-arrow {
   font-size: 16px;
 }
 
@@ -1337,7 +1347,7 @@ button {
   transform: translateY(-2px);
 }
 
-.about-popover__airbnb a span {
+.about-popover__airbnb .external-link-arrow {
   font-size: 16px;
 }
 

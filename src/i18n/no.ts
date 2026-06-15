@@ -8,7 +8,7 @@ const no = {
   contactRolandContext: 'Din lokale guide på Senja',
   homeIntro: {
     kicker: 'Personlige turer og lokal tilrettelegging',
-    tagline: 'From Summit to Sea',
+    tagline: '– From Summit to Sea –',
   },
   imageNotice: '',
   privacyNotice:
