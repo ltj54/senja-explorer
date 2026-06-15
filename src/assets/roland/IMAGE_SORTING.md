@@ -75,12 +75,12 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `summerG
 
 ### Fisketurer
 
-* `summer/1000000599.webp`
-* `summer/1000001424.webp`
-* `summer/1000001449.webp`
-* `summer/1000021458.webp`
+* `summer/1000010373.webp`
 * `summer/1000021873.webp`
+* `summer/1000021808.webp`
 * `summer/1000021874.webp`
+* `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3939.webp`
+* `summer/1000001424.webp`
 
 ### Stillhet på fjorden
 
@@ -109,15 +109,12 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `summerG
 * `summer/1000004818.webp`
 * `summer/1000004824.webp`
 * `summer/1000005629.webp`
-* `summer/1000010373.webp`
 * `summer/1000010374.webp`
 * `summer/1000013423.webp`
 * `summer/1000013491.webp`
 * `summer/1000016048.webp`
 * `summer/1000021448.webp`
 * `summer/1000021801.webp`
-* `summer/1000021808.webp`
-* `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3939.webp`
 * `summer/1000000148.webp`
 * `summer/1000004665.webp`
 * `summer/1000004676.webp`
@@ -126,6 +123,9 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `summerG
 * `summer/1000016044.webp`
 * `summer/1000016022.webp`
 * `summer/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_4171.webp`
+* `summer/1000000599.webp`
+* `summer/1000001449.webp`
+* `summer/1000021458.webp`
 
 Følgende publiserte `shared`-bilder er bevisst skjult fra sommersiden:
 
