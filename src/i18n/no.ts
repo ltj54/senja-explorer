@@ -48,7 +48,7 @@ const no = {
       kicker: 'Båtturer, fiske og sightseeing',
       title: 'Sommer på Senja',
       description:
-          'Roland tilbyr båtturer og fisketurer på fjorden eller utaskjærs. Turene tilpasses ønsker og værforhold. Han kan også tilby overnatting og formidle andre tjenester, som toppturer, sightseeing med bil og transport.',
+          'Roland tilbyr båtturer og fisketurer på fjorden eller utaskjærs. Turene tilpasses ønsker og værforhold. Han kan også formidle andre tjenester, som toppturer, sightseeing med bil og transport.',
     },
   },
   yearRoundTitle: 'Praktisk hjelp hele året',
@@ -68,7 +68,7 @@ const no = {
     kicker: 'Sommer på Senja',
     title: 'Båtturer, badestopp\nog fiske på fjorden',
     description:
-        'Roland tilbyr båtturer og fisketurer på fjorden eller utaskjærs. Turene tilpasses ønsker og værforhold. Han kan også tilby overnatting og formidle andre tjenester, som toppturer, sightseeing med bil og transport.',
+        'Roland tilbyr båtturer og fisketurer på fjorden eller utaskjærs. Turene tilpasses ønsker og værforhold. Han kan også formidle andre tjenester, som toppturer, sightseeing med bil og transport.',
     comingSoon: '',
     practical:
         'Den større båten har plass til 2–3 personer, og den mindre har plass til 2 personer. Enkel lunsj med drikke er inkludert.',
