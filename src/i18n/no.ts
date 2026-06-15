@@ -35,7 +35,7 @@ const no = {
     orgNumber: '937 296 355',
     mapLabel: 'Se adressen på kart',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=St%C3%B8nesbotnveien%20583%2C%209373%20Botnhamn',
-    airbnbLinks: ['Hytte 1 – se annonse på Airbnb', 'Hytte 2 – se annonse på Airbnb'],
+    airbnbLinks: ['Utleieenhet 1 – se annonse på Airbnb', 'Utleieenhet 2 – se annonse på Airbnb'],
   },
   homeSeasonBoxes: {
     winter: {
@@ -53,7 +53,7 @@ const no = {
   },
   yearRoundTitle: 'Praktisk hjelp hele året',
   yearRound:
-      'Roland tilbyr transport, roadtrip og sightseeing med bil, og kan hjelpe med overnatting og kontakt med lokale aktører på Senja. Han har også egne utleiehytter som gjester kan få se nærmere på ved forespørsel.',
+      'Roland tilbyr transport, roadtrip og sightseeing med bil, og kan hjelpe med overnatting og kontakt med lokale aktører på Senja. Han har også egne utleieenheter som gjester kan få se nærmere på ved forespørsel.',
   footer: {
     company: 'Breathe Senja & Services Henriksen',
     orgNumber: 'Org.nr. 937 296 355',
@@ -61,9 +61,9 @@ const no = {
   },
   accommodation: {
     title: 'Overnatting på Senja',
-    description: 'Roland har to utleiehytter på Senja som kan passe godt sammen med turene.',
-    homeLinks: ['Utleiehytte 1 – se annonse på Airbnb', 'Utleiehytte 2 – se annonse på Airbnb'],
-    links: ['Se hytte 1 på Airbnb', 'Se hytte 2 på Airbnb'],
+    description: 'Roland har to utleieenheter på Senja som kan passe godt sammen med turene.',
+    homeLinks: ['Utleieenhet 1 – se annonse på Airbnb', 'Utleieenhet 2 – se annonse på Airbnb'],
+    links: ['Se utleieenhet 1 på Airbnb', 'Se utleieenhet 2 på Airbnb'],
   },
   summerPage: {
     kicker: 'Sommer på Senja',
@@ -105,7 +105,7 @@ const no = {
         {
           title: 'Toppturer, overnatting og lokale kontakter',
           description:
-              'Roland kan formidle toppturer til fots med lokale guider og hjelpe med overnatting og lokale kontakter. Han har også egne utleiehytter som kan vises til gjester ved forespørsel.',
+              'Roland kan formidle toppturer til fots med lokale guider og hjelpe med overnatting og lokale kontakter. Han har også egne utleieenheter som kan vises til gjester ved forespørsel.',
         },
       ],
     },
@@ -146,7 +146,7 @@ const no = {
         {
           title: 'Overnatting og lokal hjelp',
           description:
-              'Roland kan hjelpe med overnatting og andre praktiske behov. Egne utleiehytter kan vises til gjester ved forespørsel.',
+              'Roland kan hjelpe med overnatting og andre praktiske behov. Egne utleieenheter kan vises til gjester ved forespørsel.',
         },
       ],
     },

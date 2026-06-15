@@ -35,7 +35,7 @@ const de = {
     orgNumber: '937 296 355',
     mapLabel: 'Adresse auf der Karte ansehen',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=St%C3%B8nesbotnveien%20583%2C%209373%20Botnhamn',
-    airbnbLinks: ['Hütte 1 – Anzeige auf Airbnb ansehen', 'Hütte 2 – Anzeige auf Airbnb ansehen'],
+    airbnbLinks: ['Mieteinheit 1 – Anzeige auf Airbnb ansehen', 'Mieteinheit 2 – Anzeige auf Airbnb ansehen'],
   },
   homeSeasonBoxes: {
     winter: {
@@ -53,7 +53,7 @@ const de = {
   },
   yearRoundTitle: 'Praktische Hilfe das ganze Jahr',
   yearRound:
-    'Roland bietet Transport, Roadtrips und Sightseeing mit dem Auto an und kann bei Unterkunft und lokalen Kontakten auf Senja helfen. Er hat auch eigene Ferienhütten, die Gäste auf Anfrage näher ansehen können.',
+    'Roland bietet Transport, Roadtrips und Sightseeing mit dem Auto an und kann bei Unterkunft und lokalen Kontakten auf Senja helfen. Er hat auch eigene Mieteinheiten, die Gäste auf Anfrage näher ansehen können.',
   footer: {
     company: 'Breathe Senja & Services Henriksen',
     orgNumber: 'Org.nr. 937 296 355',
@@ -61,9 +61,9 @@ const de = {
   },
   accommodation: {
     title: 'Unterkunft auf Senja',
-    description: 'Roland hat außerdem zwei Ferienhütten auf Senja, die sich gut mit den Touren verbinden lassen.',
-    homeLinks: ['Ferienhütte 1 – Anzeige auf Airbnb ansehen', 'Ferienhütte 2 – Anzeige auf Airbnb ansehen'],
-    links: ['Hütte 1 auf Airbnb ansehen', 'Hütte 2 auf Airbnb ansehen'],
+    description: 'Roland hat außerdem zwei Mieteinheiten auf Senja, die sich gut mit den Touren verbinden lassen.',
+    homeLinks: ['Mieteinheit 1 – Anzeige auf Airbnb ansehen', 'Mieteinheit 2 – Anzeige auf Airbnb ansehen'],
+    links: ['Mieteinheit 1 auf Airbnb ansehen', 'Mieteinheit 2 auf Airbnb ansehen'],
   },
   summerPage: {
     kicker: 'Sommer auf Senja',
@@ -105,7 +105,7 @@ const de = {
         {
           title: 'Gipfeltouren, Unterkunft und lokale Kontakte',
           description:
-            'Roland kann Gipfeltouren mit lokalen Guides vermitteln und bei Unterkunft und lokalen Kontakten helfen. Er hat auch eigene Ferienhütten, die Gästen auf Anfrage gezeigt werden können.',
+            'Roland kann Gipfeltouren mit lokalen Guides vermitteln und bei Unterkunft und lokalen Kontakten helfen. Er hat auch eigene Mieteinheiten, die Gästen auf Anfrage gezeigt werden können.',
         },
       ],
     },
@@ -146,7 +146,7 @@ const de = {
         {
           title: 'Unterkunft und lokale Hilfe',
           description:
-            'Roland kann bei Unterkunft und anderen praktischen Bedürfnissen helfen. Eigene Ferienhütten können Gästen auf Anfrage gezeigt werden.',
+            'Roland kann bei Unterkunft und anderen praktischen Bedürfnissen helfen. Eigene Mieteinheiten können Gästen auf Anfrage gezeigt werden.',
         },
       ],
     },

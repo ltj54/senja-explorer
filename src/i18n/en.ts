@@ -35,7 +35,7 @@ const en = {
     orgNumber: '937 296 355',
     mapLabel: 'View the address on the map',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=St%C3%B8nesbotnveien%20583%2C%209373%20Botnhamn',
-    airbnbLinks: ['Cabin 1 – view listing on Airbnb', 'Cabin 2 – view listing on Airbnb'],
+    airbnbLinks: ['Rental unit 1 – view listing on Airbnb', 'Rental unit 2 – view listing on Airbnb'],
   },
   homeSeasonBoxes: {
     winter: {
@@ -53,7 +53,7 @@ const en = {
   },
   yearRoundTitle: 'Practical help year round',
   yearRound:
-    'Roland offers transportation, road trips and sightseeing by car, and can help with accommodation and local contacts on Senja. He also has his own rental cabins that guests can see more closely on request.',
+    'Roland offers transportation, road trips and sightseeing by car, and can help with accommodation and local contacts on Senja. He also has his own rental units that guests can see more closely on request.',
   footer: {
     company: 'Breathe Senja & Services Henriksen',
     orgNumber: 'Org. no. 937 296 355',
@@ -61,9 +61,9 @@ const en = {
   },
   accommodation: {
     title: 'Accommodation on Senja',
-    description: 'Roland also has two rental cabins on Senja that pair well with the trips.',
-    homeLinks: ['Rental cabin 1 – view listing on Airbnb', 'Rental cabin 2 – view listing on Airbnb'],
-    links: ['View cabin 1 on Airbnb', 'View cabin 2 on Airbnb'],
+    description: 'Roland also has two rental units on Senja that pair well with the trips.',
+    homeLinks: ['Rental unit 1 – view listing on Airbnb', 'Rental unit 2 – view listing on Airbnb'],
+    links: ['View rental unit 1 on Airbnb', 'View rental unit 2 on Airbnb'],
   },
   summerPage: {
     kicker: 'Summer on Senja',
@@ -105,7 +105,7 @@ const en = {
         {
           title: 'Summit hikes, accommodation and local contacts',
           description:
-            'Roland can connect guests with local guides for summit hikes and help with accommodation and local contacts. He also has his own rental cabins that can be shown to guests on request.',
+            'Roland can connect guests with local guides for summit hikes and help with accommodation and local contacts. He also has his own rental units that can be shown to guests on request.',
         },
       ],
     },
@@ -146,7 +146,7 @@ const en = {
         {
           title: 'Accommodation and local help',
           description:
-            'Roland can help with accommodation and other practical needs. His own rental cabins can be shown to guests on request.',
+            'Roland can help with accommodation and other practical needs. His own rental units can be shown to guests on request.',
         },
       ],
     },
