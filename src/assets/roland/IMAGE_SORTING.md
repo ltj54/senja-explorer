@@ -24,7 +24,7 @@ Teksten kan markeres og kopieres med vanlig tekstmarkør. Klikk på filnavnet å
 
 Ingen bilder er flyttet, slettet eller omorganisert som del av denne identifikasjonsløsningen.
 
-Alle publiserte sesongbilder vises nå: 61 sommerbilder og 109 vinterbilder. I tillegg vises fire Randonee-videoer og to unike bilder fra `shared/`. Tidligere utvalgte bilder beholder gruppene og rekkefølgen sin; øvrige filer ligger i «Flere sommerbilder» eller «Flere vinterbilder».
+De kuraterte sommer- og vintergruppene vises på nettsiden. Gruppene «Flere sommerbilder» og «Flere vinterbilder» er skjult, men filene er beholdt i prosjektet. Fire Randonee-videoer vises fortsatt.
 
 Kjent advarsel:
 
@@ -97,7 +97,7 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `summerG
 * `summer/1000010087.webp`
 * `summer/1000010088.webp`
 
-### Flere sommerbilder
+### Skjulte sommerbilder (tidligere «Flere sommerbilder»)
 
 * `summer/1000002459.webp`
 * `summer/1000004619.webp`
@@ -143,7 +143,7 @@ Sommer-hero bruker `summer/1000001425.jpg` direkte fra `src/assets/roland/` via 
 
 Stiene under er relative til `public/images/web/`. Listen samsvarer med `winterGalleryGroups` i `src/App.tsx`.
 
-### Randonee
+### Randonee bilder
 
 * `winter/1000021591.webp`
 * `winter/1000020232.webp`
@@ -159,7 +159,7 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `winterG
 * `winter/1000001118.webp`
 * `winter/1000000991.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446.webp`
-* `winter/1000001052.webp`
+* `winter/1000001234.webp`
 
 ### Randonee videoer
 
@@ -178,12 +178,13 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `winterG
 * `winter/1000013160.webp`
 * `winter/1000013212.webp`
 * `winter/1000013175.webp`
+* `winter/1000013162.webp`
 
-### Vinterro
+### Vinter-ro
 
-* `winter/1000015014.webp`
+* `winter/1000000993.webp`
 * `winter/1000010937.webp`
-* `winter/1000000411.webp`
+* `winter/1000015917.webp`
 * `winter/1000015791.webp`
 * `winter/1000013130.webp`
 * `winter/cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3756.webp`
@@ -191,19 +192,17 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `winterG
 * `winter/1000000870.webp`
 * `winter/1000000994.webp`
 
-### Flere vinterbilder
+### Skjulte vinterbilder (tidligere «Flere vinterbilder»)
 
 * `winter/1000000855.webp`
 * `winter/1000000867.webp`
 * `winter/1000000992.webp`
-* `winter/1000000993.webp`
 * `winter/1000001012.webp`
 * `winter/1000001047.webp`
 * `winter/1000004017.webp`
 * `winter/1000010930.webp`
 * `winter/1000010934.webp`
 * `winter/1000012751.webp`
-* `winter/1000013162.webp`
 * `winter/1000013213.webp`
 * `winter/1000013484.webp`
 * `winter/1000013488.webp`
@@ -213,7 +212,6 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `winterG
 * `winter/1000015793.webp`
 * `winter/1000015794.webp`
 * `winter/1000015795.webp`
-* `winter/1000015917.webp`
 * `winter/1000016003.webp`
 * `winter/1000016265.webp`
 * `winter/1000016266.webp`
@@ -236,7 +234,7 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `winterG
 * `winter/1000001202.webp`
 * `winter/1000001206.webp`
 * `winter/1000001233.webp`
-* `winter/1000001234.webp`
+* `winter/1000001052.webp`
 * `winter/1000001282.webp`
 * `winter/1000001650.webp`
 * `winter/1000001700.webp`

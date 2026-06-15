@@ -28,7 +28,7 @@ const de = {
     triggerTitle: 'Über Breathe Senja',
     title: 'Breathe Senja & Services Henriksen',
     description:
-      'Breathe Senja & Services Henriksen wird von Roland Henriksen betrieben. Mit seiner Ortskenntnis auf Senja bietet Roland spannende, persönliche Erlebnisse an, die an Wetter, Bedingungen, Niveau und Wünsche angepasst werden.',
+      'Breathe Senja & Services Henriksen wird von Roland Henriksen betrieben. Mit seiner Ortskenntnis auf Senja bietet er spannende, persönliche Erlebnisse an, die an Wetter, Bedingungen, Niveau und Wünsche angepasst werden.',
     phoneLabel: 'Telefon',
     phone: '+47 46 54 45 10',
     orgNumberLabel: 'Org.nr.',
@@ -61,7 +61,7 @@ const de = {
   },
   accommodation: {
     title: 'Unterkunft auf Senja',
-    description: 'Roland hat außerdem zwei Mieteinheiten auf Senja, die sich gut mit den Touren verbinden lassen.',
+    description: 'Roland hat zwei Mieteinheiten, die sich gut mit den Touren verbinden lassen.',
     homeLinks: ['Mieteinheit 1 – Anzeige auf Airbnb ansehen', 'Mieteinheit 2 – Anzeige auf Airbnb ansehen'],
     links: ['Mieteinheit 1 auf Airbnb ansehen', 'Mieteinheit 2 auf Airbnb ansehen'],
   },
@@ -122,7 +122,7 @@ const de = {
       'Roland kann auch bei praktischer Organisation, Unterkunft und lokalen Erlebnissen auf Senja helfen.',
     galleryTitle: 'Winterbilder von Senja',
     galleryGroups: {
-      randonee: 'Skitouren',
+      randonee: 'Skitour-Bilder',
       randoneeVideos: 'Skitour-Videos',
       iceFishing: 'Eisangeln',
       winterCalm: 'Winterruhe',

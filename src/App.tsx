@@ -1,8 +1,7 @@
-import { type FormEvent, type PointerEvent, useEffect, useRef, useState } from 'react'
+import { type FormEvent, useEffect, useState } from 'react'
 import { languageLabels, languages, translations, type Language } from './i18n'
 
 type Page = 'home' | 'summer' | 'winter'
-type ContactPosition = { x: number; y: number } | null
 type ContactFormStatus = 'idle' | 'sending' | 'success' | 'error'
 type GalleryType = 'summer' | 'winter'
 type GalleryItem = {
@@ -20,16 +19,6 @@ type ActiveGalleryImage = {
   index: number
   type: GalleryType
 } | null
-type ContactDragState = {
-  hasMoved: boolean
-  height: number
-  offsetX: number
-  offsetY: number
-  pointerId: number
-  startX: number
-  startY: number
-  width: number
-}
 
 const imageItem = (name: string): GalleryItem => ({ kind: 'image', name })
 const sharedImageItem = (name: string): GalleryItem => ({ kind: 'image', name, source: 'shared' })
@@ -148,7 +137,7 @@ const winterGalleryGroups: GalleryGroup<WinterGalleryGroupKey>[] = [
       '1000001118',
       '1000000991',
       'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_1446',
-      '1000001052',
+      '1000001234',
     ].map(imageItem),
   },
   {
@@ -171,14 +160,15 @@ const winterGalleryGroups: GalleryGroup<WinterGalleryGroupKey>[] = [
       '1000013160',
       '1000013212',
       '1000013175',
+      '1000013162',
     ].map(imageItem),
   },
   {
     key: 'winterCalm',
     items: [
-      '1000015014',
+      '1000000993',
       '1000010937',
-      '1000000411',
+      '1000015917',
       '1000015791',
       '1000013130',
       'cafed17a-6444-4dfc-82f5-f3e884c0afd8-1_all_3756',
@@ -193,14 +183,12 @@ const winterGalleryGroups: GalleryGroup<WinterGalleryGroupKey>[] = [
       '1000000855',
       '1000000867',
       '1000000992',
-      '1000000993',
       '1000001012',
       '1000001047',
       '1000004017',
       '1000010930',
       '1000010934',
       '1000012751',
-      '1000013162',
       '1000013213',
       '1000013484',
       '1000013488',
@@ -210,7 +198,6 @@ const winterGalleryGroups: GalleryGroup<WinterGalleryGroupKey>[] = [
       '1000015793',
       '1000015794',
       '1000015795',
-      '1000015917',
       '1000016003',
       '1000016265',
       '1000016266',
@@ -233,7 +220,7 @@ const winterGalleryGroups: GalleryGroup<WinterGalleryGroupKey>[] = [
       '1000001202',
       '1000001206',
       '1000001233',
-      '1000001234',
+      '1000001052',
       '1000001282',
       '1000001650',
       '1000001700',
@@ -277,8 +264,10 @@ const chunkGalleryItems = (items: GalleryItem[]) =>
     (_, pageIndex) => items.slice(pageIndex * 9, pageIndex * 9 + 9),
   )
 
-const summerGalleryItems = summerGalleryGroups.flatMap((group) => group.items)
-const winterGalleryItems = winterGalleryGroups.flatMap((group) => group.items)
+const summerVisibleGalleryGroups = summerGalleryGroups.filter((group) => group.key !== 'moreImages')
+const winterVisibleGalleryGroups = winterGalleryGroups.filter((group) => group.key !== 'moreImages')
+const summerGalleryItems = summerVisibleGalleryGroups.flatMap((group) => group.items)
+const winterGalleryItems = winterVisibleGalleryGroups.flatMap((group) => group.items)
 
 const galleryItemsByType = {
   summer: summerGalleryItems,
@@ -322,11 +311,7 @@ function App() {
   const [isContactOpen, setIsContactOpen] = useState(false)
   const [contactFormStatus, setContactFormStatus] = useState<ContactFormStatus>('idle')
   const [scrollOpacity, setScrollOpacity] = useState(1)
-  const [contactPosition, setContactPosition] = useState<ContactPosition>(null)
-  const [isContactDragging, setIsContactDragging] = useState(false)
   const [activeGalleryImage, setActiveGalleryImage] = useState<ActiveGalleryImage>(null)
-  const contactDrag = useRef<ContactDragState | null>(null)
-  const suppressContactClick = useRef(false)
   const text = translations[language]
   const activeGalleryItems = activeGalleryImage ? galleryItemsByType[activeGalleryImage.type] : []
   const activeGalleryItem = activeGalleryImage ? activeGalleryItems[activeGalleryImage.index] : null
@@ -447,79 +432,7 @@ function App() {
     window.history.pushState(null, '', nextUrl)
   }
 
-  const clampContactPosition = (x: number, y: number, width: number, height: number) => {
-    const margin = 12
-
-    return {
-      x: Math.min(Math.max(margin, x), window.innerWidth - width - margin),
-      y: Math.min(Math.max(margin, y), window.innerHeight - height - margin),
-    }
-  }
-
-  const handleContactPointerDown = (event: PointerEvent<HTMLButtonElement>) => {
-    if (event.button !== 0) {
-      return
-    }
-
-    const rect = event.currentTarget.getBoundingClientRect()
-    event.currentTarget.setPointerCapture(event.pointerId)
-    contactDrag.current = {
-      hasMoved: false,
-      height: rect.height,
-      offsetX: event.clientX - rect.left,
-      offsetY: event.clientY - rect.top,
-      pointerId: event.pointerId,
-      startX: event.clientX,
-      startY: event.clientY,
-      width: rect.width,
-    }
-    setIsContactDragging(true)
-  }
-
-  const handleContactPointerMove = (event: PointerEvent<HTMLButtonElement>) => {
-    const drag = contactDrag.current
-    if (!drag || drag.pointerId !== event.pointerId) {
-      return
-    }
-
-    const distanceX = event.clientX - drag.startX
-    const distanceY = event.clientY - drag.startY
-    const hasMovedPastTap = Math.hypot(distanceX, distanceY) > 8
-
-    if (!drag.hasMoved && !hasMovedPastTap) {
-      return
-    }
-
-    const nextPosition = clampContactPosition(
-      event.clientX - drag.offsetX,
-      event.clientY - drag.offsetY,
-      drag.width,
-      drag.height,
-    )
-
-    contactDrag.current = { ...drag, hasMoved: true }
-    suppressContactClick.current = true
-    setContactPosition(nextPosition)
-  }
-
-  const handleContactPointerUp = (event: PointerEvent<HTMLButtonElement>) => {
-    const drag = contactDrag.current
-    if (!drag || drag.pointerId !== event.pointerId) {
-      return
-    }
-
-    event.currentTarget.releasePointerCapture(event.pointerId)
-    suppressContactClick.current = drag.hasMoved
-    contactDrag.current = null
-    setIsContactDragging(false)
-  }
-
   const handleContactClick = () => {
-    if (suppressContactClick.current) {
-      suppressContactClick.current = false
-      return
-    }
-
     setContactFormStatus('idle')
     setIsContactOpen(true)
   }
@@ -555,6 +468,11 @@ function App() {
       <h1 className="sr-only">{text.siteName}</h1>
 
       <div className="top-controls">
+        <button className="contact-link contact-link--top" type="button" onClick={handleContactClick}>
+          <span>{text.contactRoland}</span>
+          <small>{text.contactRolandContext}</small>
+        </button>
+
         <button
           className="about-trigger"
           type="button"
@@ -604,7 +522,7 @@ function App() {
               <p>{text.accommodation.description}</p>
               <div className="home-accommodation__links">
                 {airbnbListings.map((url, index) => (
-                  <a key={url} href={url} target="_blank" rel="noreferrer">
+                  <a key={url} href={url}>
                     <AirbnbText>{text.accommodation.homeLinks[index]}</AirbnbText>
                     <span className="external-link-arrow" aria-hidden="true">↗</span>
                   </a>
@@ -617,36 +535,6 @@ function App() {
               <h2>{text.siteName}</h2>
               <p>{text.homeIntro.tagline}</p>
             </section>
-
-            <button
-              className={`contact-link contact-link--home${isContactDragging ? ' is-dragging' : ''}`}
-              type="button"
-              style={
-                contactPosition
-                  ? {
-                      animation: 'none',
-                      bottom: 'auto',
-                      left: contactPosition.x,
-                      opacity: 1,
-                      position: 'fixed',
-                      right: 'auto',
-                      top: contactPosition.y,
-                      transform: 'none',
-                    }
-                  : undefined
-              }
-              onClick={handleContactClick}
-              onPointerDown={handleContactPointerDown}
-              onPointerMove={handleContactPointerMove}
-              onPointerUp={handleContactPointerUp}
-              onPointerCancel={() => {
-                contactDrag.current = null
-                setIsContactDragging(false)
-              }}
-            >
-              <span>{text.contactRoland}</span>
-              <small>{text.contactRolandContext}</small>
-            </button>
 
             <section className="season-choices" aria-label={text.chooseSeason}>
               <button
@@ -720,7 +608,7 @@ function App() {
             </div>
           </div>
 
-          {summerGalleryGroups.flatMap((group, groupIndex) =>
+          {summerVisibleGalleryGroups.flatMap((group, groupIndex) =>
             chunkGalleryItems(group.items).map((galleryPage, pageIndex) => {
               const isFirstSummerPanel = groupIndex === 0 && pageIndex === 0
               const showGroupTitle = pageIndex === 0
@@ -735,7 +623,10 @@ function App() {
                     <h3 className="season-gallery-title">{text.summerPage.galleryTitle}</h3>
                   )}
                   {showGroupTitle && (
-                    <h4 className="season-gallery-group-title">{text.summerPage.galleryGroups[group.key]}</h4>
+                    <div className="season-gallery-heading">
+                      <img src={publicAssetPath('images/breathe-senja-logo.png')} alt="" />
+                      <h4 className="season-gallery-group-title">{text.summerPage.galleryGroups[group.key]}</h4>
+                    </div>
                   )}
                   <div className="season-image-grid">
                     {galleryPage.map((galleryItem) => {
@@ -785,7 +676,7 @@ function App() {
               <p>{text.accommodation.description}</p>
               <div className="season-accommodation__links">
                 {airbnbListings.map((url, index) => (
-                  <a key={url} href={url} target="_blank" rel="noreferrer">
+                  <a key={url} href={url}>
                     <AirbnbText>{text.accommodation.links[index]}</AirbnbText>
                     <span className="external-link-arrow" aria-hidden="true">↗</span>
                   </a>
@@ -826,7 +717,7 @@ function App() {
             </div>
           </div>
 
-          {winterGalleryGroups.flatMap((group, groupIndex) =>
+          {winterVisibleGalleryGroups.flatMap((group, groupIndex) =>
             chunkGalleryItems(group.items).map((galleryPage, pageIndex) => {
               const isFirstWinterPanel = groupIndex === 0 && pageIndex === 0
               const showGroupTitle = pageIndex === 0
@@ -841,7 +732,10 @@ function App() {
                     <h3 className="season-gallery-title">{text.winterPage.galleryTitle}</h3>
                   )}
                   {showGroupTitle && (
-                    <h4 className="season-gallery-group-title">{text.winterPage.galleryGroups[group.key]}</h4>
+                    <div className="season-gallery-heading">
+                      <img src={publicAssetPath('images/breathe-senja-logo.png')} alt="" />
+                      <h4 className="season-gallery-group-title">{text.winterPage.galleryGroups[group.key]}</h4>
+                    </div>
                   )}
                   <div className="season-image-grid">
                     {galleryPage.map((galleryItem) => {
@@ -903,7 +797,7 @@ function App() {
               <p>{text.accommodation.description}</p>
               <div className="season-accommodation__links">
                 {airbnbListings.map((url, index) => (
-                  <a key={url} href={url} target="_blank" rel="noreferrer">
+                  <a key={url} href={url}>
                     <AirbnbText>{text.accommodation.links[index]}</AirbnbText>
                     <span className="external-link-arrow" aria-hidden="true">↗</span>
                   </a>
@@ -917,7 +811,7 @@ function App() {
 
       {page !== 'home' && (
         <nav className="season-gallery-index" aria-label={page === 'summer' ? text.summerPage.galleryTitle : text.winterPage.galleryTitle}>
-          {(page === 'summer' ? summerGalleryGroups : winterGalleryGroups).map((group) => (
+          {(page === 'summer' ? summerVisibleGalleryGroups : winterVisibleGalleryGroups).map((group) => (
             <button
               key={group.key}
               type="button"
@@ -931,35 +825,6 @@ function App() {
             </button>
           ))}
         </nav>
-      )}
-
-      {page !== 'home' && (
-        <button
-          className={`contact-link contact-link--floating${isContactDragging ? ' is-dragging' : ''}`}
-          type="button"
-          style={
-            contactPosition
-              ? {
-                  bottom: 'auto',
-                  left: contactPosition.x,
-                  position: 'fixed',
-                  right: 'auto',
-                  top: contactPosition.y,
-                }
-              : undefined
-          }
-          onClick={handleContactClick}
-          onPointerDown={handleContactPointerDown}
-          onPointerMove={handleContactPointerMove}
-          onPointerUp={handleContactPointerUp}
-          onPointerCancel={() => {
-            contactDrag.current = null
-            setIsContactDragging(false)
-          }}
-        >
-          <span>{text.contactRoland}</span>
-          <small>{text.contactRolandContext}</small>
-        </button>
       )}
 
       {isAboutOpen && (
@@ -1006,7 +871,7 @@ function App() {
             </a>
             <div className="about-popover__airbnb">
               {airbnbListings.map((url, index) => (
-                <a key={url} href={url} target="_blank" rel="noreferrer">
+                <a key={url} href={url}>
                   <AirbnbText>{text.about.airbnbLinks[index]}</AirbnbText>
                   <span className="external-link-arrow" aria-hidden="true">↗</span>
                 </a>
@@ -1026,6 +891,11 @@ function App() {
             method="POST"
             onSubmit={handleContactSubmit}
           >
+            <img
+              className="contact-form__logo"
+              src={publicAssetPath('images/breathe-senja-logo.png')}
+              alt=""
+            />
             <input type="hidden" name="_subject" value="Ny melding fra Breathe Senja" />
             <input type="hidden" name="language" value={language} />
             <input type="hidden" name="page" value={page} />

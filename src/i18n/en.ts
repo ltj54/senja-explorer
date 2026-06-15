@@ -28,7 +28,7 @@ const en = {
     triggerTitle: 'About Breathe Senja',
     title: 'Breathe Senja & Services Henriksen',
     description:
-      'Breathe Senja & Services Henriksen is run by Roland Henriksen. With his local knowledge of Senja, Roland offers exciting, personal experiences adapted to the weather, conditions, skill level and guests’ wishes.',
+      'Breathe Senja & Services Henriksen is run by Roland Henriksen. With his local knowledge of Senja, he offers exciting, personal experiences adapted to the weather, conditions, skill level and guests’ wishes.',
     phoneLabel: 'Phone',
     phone: '+47 46 54 45 10',
     orgNumberLabel: 'Org. no.',
@@ -61,7 +61,7 @@ const en = {
   },
   accommodation: {
     title: 'Accommodation on Senja',
-    description: 'Roland also has two rental units on Senja that pair well with the trips.',
+    description: 'Roland has two rental units that pair well with the trips.',
     homeLinks: ['Rental unit 1 – view listing on Airbnb', 'Rental unit 2 – view listing on Airbnb'],
     links: ['View rental unit 1 on Airbnb', 'View rental unit 2 on Airbnb'],
   },
@@ -122,7 +122,7 @@ const en = {
       'Roland can also help with practical arrangements, accommodation and local experiences on Senja.',
     galleryTitle: 'Winter images from Senja',
     galleryGroups: {
-      randonee: 'Ski touring',
+      randonee: 'Ski touring images',
       randoneeVideos: 'Ski touring videos',
       iceFishing: 'Ice fishing',
       winterCalm: 'Winter calm',

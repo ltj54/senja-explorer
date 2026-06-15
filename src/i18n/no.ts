@@ -28,7 +28,7 @@ const no = {
     triggerTitle: 'Om Breathe Senja',
     title: 'Breathe Senja & Services Henriksen',
     description:
-        'Breathe Senja & Services Henriksen drives av Roland Henriksen. Med lokal kjennskap til Senja tilbyr Roland spennende og personlige opplevelser tilpasset vær, forhold, nivå og ønsker.',
+        'Breathe Senja & Services Henriksen drives av Roland Henriksen. Med lokalkjennskap til Senja tilbyr han spennende og personlige opplevelser tilpasset vær, forhold, nivå og ønsker.',
     phoneLabel: 'Telefon',
     phone: '+47 46 54 45 10',
     orgNumberLabel: 'Org.nr.',
@@ -61,7 +61,7 @@ const no = {
   },
   accommodation: {
     title: 'Overnatting på Senja',
-    description: 'Roland har to utleieenheter på Senja som kan passe godt sammen med turene.',
+    description: 'Roland har to utleie-enheter som kan passe til turene.',
     homeLinks: ['Utleieenhet 1 – se annonse på Airbnb', 'Utleieenhet 2 – se annonse på Airbnb'],
     links: ['Se utleieenhet 1 på Airbnb', 'Se utleieenhet 2 på Airbnb'],
   },
@@ -122,10 +122,10 @@ const no = {
         'Roland kan også hjelpe med praktisk tilrettelegging, overnatting og lokale opplevelser på Senja.',
     galleryTitle: 'Vinterbilder fra Senja',
     galleryGroups: {
-      randonee: 'Randonee',
+      randonee: 'Randonee bilder',
       randoneeVideos: 'Randonee videoer',
       iceFishing: 'Isfiske',
-      winterCalm: 'Vinterro',
+      winterCalm: 'Vinter-ro',
       moreImages: 'Flere vinterbilder',
     },
     experiences: {
