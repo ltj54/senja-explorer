@@ -5,10 +5,10 @@ Sist kontrollert mot filsystemet og `src/App.tsx`: 2026-06-12.
 ## Nåtilstand
 
 * `inbox/`: 0 filer
-* `summer/`: 53 originalfiler
+* `summer/`: 55 originalfiler
 * `winter/`: 107 originalfiler
 * `shared/`: 21 originalfiler
-* `public/images/web/summer/`: 59 publiserte filer
+* `public/images/web/summer/`: 61 publiserte filer
 * `public/images/web/winter/`: 114 publiserte filer
 * `public/images/web/shared/`: 15 publiserte filer
 
@@ -24,7 +24,7 @@ Teksten kan markeres og kopieres med vanlig tekstmarkør. Klikk på filnavnet å
 
 Ingen bilder er flyttet, slettet eller omorganisert som del av denne identifikasjonsløsningen.
 
-Alle publiserte sesongbilder vises nå: 59 sommerbilder og 109 vinterbilder. I tillegg vises fire Randonee-videoer og to unike bilder fra `shared/`. Tidligere utvalgte bilder beholder gruppene og rekkefølgen sin; øvrige filer ligger i «Flere sommerbilder» eller «Flere vinterbilder».
+Alle publiserte sesongbilder vises nå: 61 sommerbilder og 109 vinterbilder. I tillegg vises fire Randonee-videoer og to unike bilder fra `shared/`. Tidligere utvalgte bilder beholder gruppene og rekkefølgen sin; øvrige filer ligger i «Flere sommerbilder» eller «Flere vinterbilder».
 
 Kjent advarsel:
 
@@ -79,6 +79,8 @@ Stiene under er relative til `public/images/web/`. Listen samsvarer med `summerG
 * `summer/1000001424.webp`
 * `summer/1000001449.webp`
 * `summer/1000021458.webp`
+* `summer/1000021873.webp`
+* `summer/1000021874.webp`
 
 ### Stillhet på fjorden
 

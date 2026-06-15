@@ -75,6 +75,8 @@ const summerGalleryGroups: GalleryGroup<SummerGalleryGroupKey>[] = [
       '1000001424',
       '1000001449',
       '1000021458',
+      '1000021873',
+      '1000021874',
     ].map(imageItem),
   },
   {
