@@ -2086,6 +2086,17 @@ button {
     animation-delay: 49s;
   }
 
+  .home-background:not(.home-background--vinter) {
+    display: none;
+  }
+
+  .home-background--vinter {
+    --home-background-image: url('./assets/roland/winter/1000021591.jpg');
+    background-position: 50% 50%;
+    opacity: 1;
+    animation: none;
+  }
+
   .home-intro {
     align-self: flex-start;
     width: 100%;
