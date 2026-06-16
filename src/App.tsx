@@ -449,11 +449,30 @@ function App() {
 
   const clampContactPosition = (x: number, y: number, width: number, height: number) => {
     const margin = 12
+    const maxX = Math.max(margin, window.innerWidth - width - margin)
+    const maxY = Math.max(margin, window.innerHeight - height - margin)
 
     return {
-      x: Math.min(Math.max(margin, x), window.innerWidth - width - margin),
-      y: Math.min(Math.max(margin, y), window.innerHeight - height - margin),
+      x: Math.min(Math.max(margin, x), maxX),
+      y: Math.min(Math.max(margin, y), maxY),
     }
+  }
+
+  const getContactHomePosition = (button: HTMLButtonElement): ContactPosition => {
+    const parentRect = button.parentElement?.getBoundingClientRect()
+    const rect = button.getBoundingClientRect()
+
+    return {
+      x: Math.round(parentRect?.left ?? rect.left),
+      y: Math.round(parentRect?.top ?? rect.top),
+    }
+  }
+
+  const isNearContactHome = (position: ContactPosition, button: HTMLButtonElement) => {
+    const homePosition = getContactHomePosition(button)
+    const snapDistance = 44
+
+    return Math.hypot(position.x - homePosition.x, position.y - homePosition.y) <= snapDistance
   }
 
   const handleContactPointerDown = (event: PointerEvent<HTMLButtonElement>) => {
@@ -509,7 +528,27 @@ function App() {
       return
     }
 
-    event.currentTarget.releasePointerCapture(event.pointerId)
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId)
+    }
+
+    if (drag.hasMoved) {
+      const finalPosition = clampContactPosition(
+        event.clientX - drag.offsetX,
+        event.clientY - drag.offsetY,
+        drag.width,
+        drag.height,
+      )
+
+      if (isNearContactHome(finalPosition, event.currentTarget)) {
+        setContactPositions((current) => {
+          const next = { ...current }
+          delete next[page]
+          return next
+        })
+      }
+    }
+
     suppressContactClick.current = drag.hasMoved
     contactDrag.current = null
     setIsContactDragging(false)
@@ -581,7 +620,10 @@ function App() {
           onPointerDown={handleContactPointerDown}
           onPointerMove={handleContactPointerMove}
           onPointerUp={handleContactPointerUp}
-          onPointerCancel={() => {
+          onPointerCancel={(event) => {
+            if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+              event.currentTarget.releasePointerCapture(event.pointerId)
+            }
             contactDrag.current = null
             setIsContactDragging(false)
           }}
