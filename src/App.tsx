@@ -552,7 +552,7 @@ function App() {
   }
 
   return (
-    <main className={`site-page site-page--${page}`} aria-label={text.siteName}>
+    <main className={`site-page site-page--${page} site-page--language-${language}`} aria-label={text.siteName}>
       <h1 className="sr-only">{text.siteName}</h1>
 
       <div className="top-controls">
