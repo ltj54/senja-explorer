@@ -1,4 +1,4 @@
-import { type FormEvent, type PointerEvent, useEffect, useRef, useState } from 'react'
+import { type PointerEvent, useEffect, useRef, useState } from 'react'
 import { languageLabels, languages, translations, type Language } from './i18n'
 
 type Page = 'home' | 'summer' | 'winter'
@@ -29,6 +29,10 @@ type ContactDragState = {
   startX: number
   startY: number
   width: number
+}
+type ContactSubmitEvent = {
+  preventDefault: () => void
+  currentTarget: HTMLFormElement
 }
 
 const imageItem = (name: string): GalleryItem => ({ kind: 'image', name })
@@ -564,7 +568,7 @@ function App() {
     setIsContactOpen(true)
   }
 
-  const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleContactSubmit = async (event: ContactSubmitEvent) => {
     event.preventDefault()
     setContactFormStatus('sending')
 
@@ -803,10 +807,7 @@ function App() {
                             src={publicAssetPath(`images/web/${galleryItem.source ?? 'summer'}/${galleryItem.name}.webp`)}
                             alt=""
                           />
-                          <span
-                            className="season-image-grid__filename"
-                            onClick={(event) => event.stopPropagation()}
-                          >
+                          <span className="season-image-grid__filename">
                             {galleryItem.name}
                           </span>
                         </button>
@@ -930,10 +931,7 @@ function App() {
                               alt=""
                             />
                           )}
-                          <span
-                            className="season-image-grid__filename"
-                            onClick={(event) => event.stopPropagation()}
-                          >
+                          <span className="season-image-grid__filename">
                             {galleryItem.name}
                           </span>
                         </button>
@@ -998,8 +996,13 @@ function App() {
       )}
 
       {isAboutOpen && (
-        <div className="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-modal-title">
-          <div className="contact-modal__backdrop" onClick={() => setIsAboutOpen(false)} />
+        <dialog className="about-modal" aria-labelledby="about-modal-title" open>
+          <button
+            className="contact-modal__backdrop"
+            type="button"
+            aria-label={text.contactForm.close}
+            onClick={() => setIsAboutOpen(false)}
+          />
 
           <section className="about-popover">
             <div className="about-popover__logo">
@@ -1048,12 +1051,17 @@ function App() {
               ))}
             </div>
           </section>
-        </div>
+        </dialog>
       )}
 
       {isContactOpen && (
-        <div className="contact-modal" role="dialog" aria-modal="true" aria-label={text.contactForm.title}>
-          <div className="contact-modal__backdrop" onClick={() => setIsContactOpen(false)} />
+        <dialog className="contact-modal" aria-label={text.contactForm.title} open>
+          <button
+            className="contact-modal__backdrop"
+            type="button"
+            aria-label={text.contactForm.close}
+            onClick={() => setIsContactOpen(false)}
+          />
 
           <form
             className="contact-form"
@@ -1117,11 +1125,11 @@ function App() {
               </p>
             )}
           </form>
-        </div>
+        </dialog>
       )}
 
       {activeGalleryImage && activeGalleryItem && (
-        <div className="image-lightbox" role="dialog" aria-modal="true" aria-label={activeGalleryItem.kind === 'video' ? 'Video' : 'Bilde'}>
+        <dialog className="image-lightbox" aria-label={activeGalleryItem.kind === 'video' ? 'Video' : 'Bilde'} open>
           <button
             className="image-lightbox__backdrop"
             type="button"
@@ -1168,7 +1176,7 @@ function App() {
               ›
             </button>
           </div>
-        </div>
+        </dialog>
       )}
 
       {text.imageNotice && <p className="image-notice">{text.imageNotice}</p>}

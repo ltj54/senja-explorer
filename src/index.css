@@ -577,7 +577,7 @@ button {
   padding: 22px clamp(22px, 7vw, 96px);
   border-top: 1px solid rgba(247, 241, 231, 0.12);
   background: #070d0b;
-  color: rgba(247, 241, 231, 0.56);
+  color: rgba(247, 241, 231, 0.74);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   line-height: 1.45;
@@ -1150,7 +1150,7 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(15px, 1.8vw, 18px);
   line-height: 1.65;
-  color: rgba(247, 241, 231, 0.70);
+  color: rgba(247, 241, 231, 0.82);
 }
 
 .season-page-panel .season-practical {
@@ -1163,7 +1163,7 @@ button {
 .season-network {
   max-width: 520px;
   margin-top: 18px;
-  color: rgba(247, 241, 231, 0.58);
+  color: rgba(247, 241, 231, 0.76);
 }
 
 .season-details {
@@ -1197,7 +1197,7 @@ button {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(247, 241, 231, 0.48);
+  color: rgba(247, 241, 231, 0.70);
 }
 
 .season-about h3 {
@@ -1215,7 +1215,7 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(13px, 1.5vw, 15px);
   line-height: 1.6;
-  color: rgba(247, 241, 231, 0.58);
+  color: rgba(247, 241, 231, 0.76);
 }
 
 .season-experiences {
@@ -1252,7 +1252,7 @@ button {
 }
 
 .season-accommodation p {
-  color: rgba(247, 241, 231, 0.62);
+  color: rgba(247, 241, 231, 0.78);
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(13px, 1.35vw, 15px);
   line-height: 1.55;
@@ -1339,14 +1339,14 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(13px, 1.35vw, 15px);
   line-height: 1.55;
-  color: rgba(247, 241, 231, 0.62);
+  color: rgba(247, 241, 231, 0.78);
 }
 
 .season-experiences .season-experiences__footer {
   margin-top: 4px;
   font-size: clamp(11px, 1.05vw, 13px);
   line-height: 1.45;
-  color: rgba(247, 241, 231, 0.54);
+  color: rgba(247, 241, 231, 0.72);
 }
 
 .season-guide-note {
@@ -1364,7 +1364,7 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(12px, 1.15vw, 14px);
   line-height: 1.55;
-  color: rgba(247, 241, 231, 0.62);
+  color: rgba(247, 241, 231, 0.78);
 }
 
 .continue-button {
@@ -1421,7 +1421,7 @@ button {
 
 .contact-link small {
   display: block;
-  color: rgba(247, 241, 231, 0.68);
+  color: rgba(247, 241, 231, 0.82);
   font-size: 11px;
   line-height: 1.2;
   letter-spacing: 0.04em;
@@ -1508,7 +1508,15 @@ button {
   z-index: 50;
   display: grid;
   place-items: center;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
   padding: 20px;
+  border: 0;
+  background: transparent;
+  color: inherit;
 }
 
 .about-popover {
@@ -1707,7 +1715,15 @@ button {
   z-index: 60;
   display: grid;
   place-items: center;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
   padding: clamp(18px, 4vw, 54px);
+  border: 0;
+  background: transparent;
+  color: inherit;
 }
 
 .image-lightbox__backdrop {
@@ -1788,8 +1804,11 @@ button {
 .contact-modal__backdrop {
   position: absolute;
   inset: 0;
+  padding: 0;
+  border: 0;
   background: rgba(3, 7, 6, 0.42);
   backdrop-filter: blur(3px);
+  cursor: pointer;
   animation: contact-fade-in 220ms ease forwards;
 }
 
