@@ -67,7 +67,7 @@ const en = {
   },
   summerPage: {
     kicker: 'Summer on Senja',
-    title: 'Boat trips, swim stops\nand fishing on the fjord',
+    title: 'Boat trips, swim stops\nand fishing',
     description:
       'Roland offers boat trips and fishing trips on the fjord or offshore. Trips are adapted to guests’ wishes and the weather. He can also provide accommodation and arrange other services, such as summit hikes, sightseeing by car and transportation.',
     comingSoon: '',

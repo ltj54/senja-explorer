@@ -67,7 +67,7 @@ const de = {
   },
   summerPage: {
     kicker: 'Sommer auf Senja',
-    title: 'Bootstouren, Badestopps\nund Angeln auf dem Fjord',
+    title: 'Bootstouren, Badestopps\nund Angeln',
     description:
       'Roland bietet Boots- und Angeltouren auf dem Fjord oder auf See an. Die Touren werden an die Wünsche der Gäste und die Wetterverhältnisse angepasst. Außerdem kann er Unterkünfte anbieten und weitere Leistungen wie Gipfeltouren, Sightseeing mit dem Auto und Transport vermitteln.',
     comingSoon: '',

@@ -302,7 +302,7 @@ const homeBackgrounds = [
 
 const publicAssetPath = (path: string) => `${import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}${path}`
 const seasonBackgrounds = {
-  summer: publicAssetPath('images/backgrounds/summer.webp'),
+  summer: publicAssetPath('images/web/summer/1000000191.webp'),
   winter: publicAssetPath('images/backgrounds/winter.webp'),
 }
 const AirbnbText = ({ children }: { children: string }) => {

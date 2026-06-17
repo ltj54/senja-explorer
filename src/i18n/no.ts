@@ -67,7 +67,7 @@ const no = {
   },
   summerPage: {
     kicker: 'Sommer på Senja',
-    title: 'Båtturer, badestopp\nog fiske på fjorden',
+    title: 'Båtturer, badestopp\nog fiske',
     description:
         'Roland tilbyr båtturer og fisketurer på fjorden eller utaskjærs. Turene tilpasses ønsker og værforhold. Han kan også formidle andre tjenester, som toppturer, sightseeing med bil og transport.',
     comingSoon: '',
