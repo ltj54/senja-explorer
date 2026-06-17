@@ -78,8 +78,8 @@ button {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% 46%, rgba(4, 8, 7, 0.02), rgba(4, 8, 7, 0.16) 68%),
-    linear-gradient(180deg, rgba(4, 8, 7, 0), rgba(4, 8, 7, 0.28));
+    radial-gradient(circle at 50% 46%, rgba(4, 8, 7, 0.02), rgba(4, 8, 7, 0.12) 68%),
+    linear-gradient(180deg, rgba(4, 8, 7, 0), rgba(4, 8, 7, 0.22));
 }
 
 .home-background {
@@ -127,7 +127,7 @@ button {
   padding: 8px 13px;
   border-color: rgba(100, 203, 75, 0.9);
   border-left-width: 4px;
-  background: rgba(7, 13, 11, 0.76);
+  background: rgba(7, 13, 11, 0.48);
   box-shadow: 0 0 0 1px rgba(100, 203, 75, 0.12), 0 5px 20px rgba(0, 0, 0, 0.24);
   touch-action: none;
 }
@@ -146,9 +146,9 @@ button {
 
 .about-trigger,
 .language-switcher {
-  border: 1px solid rgba(247, 241, 231, 0.4);
-  background: rgba(7, 13, 11, 0.65);
-  backdrop-filter: blur(8px);
+  border: 1px solid rgba(247, 241, 231, 0.26);
+  background: rgba(7, 13, 11, 0.42);
+  backdrop-filter: blur(6px);
 }
 
 .about-trigger {
@@ -242,11 +242,11 @@ button {
   left: clamp(16px, 3vw, 42px);
   z-index: 4;
   width: min(330px, calc(100% - 32px));
-  padding: 14px 15px 15px;
-  border: 1px solid rgba(247, 241, 231, 0.28);
-  border-left-color: rgba(247, 241, 231, 0.58);
-  background: rgba(7, 13, 11, 0.58);
-  backdrop-filter: blur(10px);
+  padding: 13px 15px 14px;
+  border: 0;
+  border-left: 1px solid rgba(247, 241, 231, 0.52);
+  background: linear-gradient(90deg, rgba(7, 13, 11, 0.28), rgba(7, 13, 11, 0.06) 68%, transparent);
+  backdrop-filter: none;
   opacity: 0;
   transform: translateY(-12px);
   animation: language-appear 850ms ease forwards;
@@ -260,6 +260,7 @@ button {
   font-size: 22px;
   font-weight: 400;
   line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.78);
 }
 
 .home-accommodation p {
@@ -268,6 +269,7 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.5;
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.82);
 }
 
 .home-accommodation__links {
@@ -287,6 +289,7 @@ button {
   font-weight: 700;
   line-height: 1.35;
   text-decoration: none;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.86);
 }
 
 .home-accommodation__links a:hover,
@@ -420,13 +423,13 @@ button {
   min-height: 142px;
   flex-direction: column;
   align-items: flex-start;
-  padding: 16px 18px 17px;
-  border: 1px solid rgba(247, 241, 231, 0.22);
-  border-left-color: rgba(247, 241, 231, 0.48);
-  background: rgba(7, 13, 11, 0.34);
+  padding: 15px 18px 16px;
+  border: 0;
+  border-left: 1px solid rgba(247, 241, 231, 0.44);
+  background: linear-gradient(90deg, rgba(7, 13, 11, 0.22), rgba(7, 13, 11, 0.05) 76%, transparent);
   color: inherit;
   text-align: left;
-  backdrop-filter: blur(8px);
+  backdrop-filter: none;
   cursor: pointer;
   opacity: 0;
   transform: translateY(12px);
@@ -445,8 +448,8 @@ button {
 
 .home-season-card:hover,
 .home-season-card:focus-visible {
-  border-color: rgba(247, 241, 231, 0.62);
-  background: rgba(7, 13, 11, 0.58);
+  border-left-color: rgba(247, 241, 231, 0.74);
+  background: linear-gradient(90deg, rgba(7, 13, 11, 0.4), rgba(7, 13, 11, 0.1) 76%, transparent);
   transform: translateY(-4px);
 }
 
@@ -1999,6 +2002,7 @@ button {
     max-width: 128px;
     margin-right: auto;
     padding: 6px 9px;
+    background: rgba(7, 13, 11, 0.4);
     font-size: 10px;
     line-height: 1.15;
   }
@@ -2036,7 +2040,7 @@ button {
     inset: 0;
     z-index: 0;
     background-image:
-      linear-gradient(rgba(8, 15, 12, 0.04), rgba(8, 15, 12, 0.24)),
+      linear-gradient(rgba(8, 15, 12, 0.02), rgba(8, 15, 12, 0.2)),
       var(--home-background-image);
     background-size: cover;
     background-position: 50% 64%;
@@ -2108,7 +2112,8 @@ button {
     top: 72px;
     left: 20px;
     width: min(300px, calc(100% - 40px));
-    padding: 10px 11px 11px;
+    padding: 9px 12px 10px;
+    background: linear-gradient(90deg, rgba(7, 13, 11, 0.3), rgba(7, 13, 11, 0.08) 78%, transparent);
   }
 
   .home-accommodation h2 {
@@ -2194,7 +2199,9 @@ button {
 
   .home-season-card {
     min-height: 0;
-    padding: 11px 13px 12px;
+    padding: 10px 12px 11px;
+    background: linear-gradient(90deg, rgba(7, 13, 11, 0.28), rgba(7, 13, 11, 0.08) 78%, transparent);
+    border-left-color: rgba(247, 241, 231, 0.38);
   }
 
   .home-season-card__kicker {
