@@ -807,9 +807,6 @@ function App() {
                             src={publicAssetPath(`images/web/${galleryItem.source ?? 'summer'}/${galleryItem.name}.webp`)}
                             alt=""
                           />
-                          <span className="season-image-grid__filename">
-                            {galleryItem.name}
-                          </span>
                         </button>
                       )
                     })}
@@ -931,9 +928,6 @@ function App() {
                               alt=""
                             />
                           )}
-                          <span className="season-image-grid__filename">
-                            {galleryItem.name}
-                          </span>
                         </button>
                       )
                     })}
