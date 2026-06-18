@@ -45,10 +45,10 @@ const en = {
         'Roland offers safe, invigorating and exciting ski touring with beautiful descents all the way back to the car. He also offers ice fishing on the fjord, where there is often a catch. Trips are suited for small groups and adapted to the weather, snow conditions, wishes and skill level.',
     },
     summer: {
-      kicker: 'Boat trips, fishing and sightseeing',
+      kicker: 'Boat trips, swim stops and a fishing trip',
       title: 'Summer on Senja',
       description:
-        'Roland offers boat trips and fishing trips on the fjord or offshore. Trips are adapted to guests’ wishes and the weather. He can also provide accommodation and arrange other services, such as summit hikes, sightseeing by car and transportation.',
+        'Roland offers boat trips and fishing trips on the fjord or offshore. Trips are adapted to guests’ wishes and the weather.',
     },
   },
   yearRoundTitle: 'Practical help year round',
@@ -94,18 +94,13 @@ const en = {
             'Fishing trips with the option to rent a fishing rod. Roland can gut and fillet the fish if guests want to take it with them.',
         },
         {
-          title: 'Transportation and sightseeing by car',
-          description:
-            'Roland offers transportation and sightseeing by car to places guests would like to experience on Senja.',
-        },
-        {
           title: 'Practical details included',
           description: 'The larger boat has room for 2–3 people, while the smaller boat has room for 2. A simple lunch with drinks, suitable footwear and life jackets are provided.',
         },
         {
-          title: 'Summit hikes, accommodation and local contacts',
+          title: 'Other experiences on Senja',
           description:
-            'Roland can connect guests with local guides for summit hikes and help with accommodation and local contacts. He also has his own rental units that can be shown to guests on request.',
+            'Through other local operators, Roland can arrange beautiful summit hikes in the Senja mountains, experiences and sightseeing by car, and transportation. He also has his own rental units that can be shown to customers on request or booked directly here on the website.',
         },
       ],
     },
@@ -146,7 +141,7 @@ const en = {
         {
           title: 'Accommodation and local help',
           description:
-            'Roland can help with accommodation and other practical needs. His own rental units can be shown to guests on request.',
+            'Roland can help with accommodation and other practical needs. His own rental units can be shown to guests on request. He can arrange sightseeing by car, experiences and transportation.',
         },
       ],
     },

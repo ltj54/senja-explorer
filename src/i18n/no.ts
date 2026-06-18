@@ -45,10 +45,10 @@ const no = {
           'Roland tilbyr trygge, friske og spennende toppturer med flotte nedkjøringer helt til bilen. Han tilbyr også isfiske på fjorden, hvor det ofte blir fangst. Turene passer for små grupper og tilpasses vær, føre, ønsker og nivå.',
     },
     summer: {
-      kicker: 'Båtturer, fiske og sightseeing',
+      kicker: 'Båtturer, badestopp og fisketur',
       title: 'Sommer på Senja',
       description:
-          'Roland tilbyr båtturer og fisketurer på fjorden eller utaskjærs. Turene tilpasses ønsker og værforhold. Han kan også formidle andre tjenester, som toppturer, sightseeing med bil og transport.',
+          'Roland tilbyr båtturer og fisketurer på fjorden eller utaskjærs. Turene tilpasses ønsker og værforhold.',
     },
   },
   yearRoundTitle: 'Praktisk hjelp hele året',
@@ -94,18 +94,13 @@ const no = {
               'Fisketurer med mulighet for leie av fiskestang. Roland kan sløye og filetere fisken dersom gjestene ønsker å ta den med.',
         },
         {
-          title: 'Transport og sightseeing med bil',
-          description:
-              'Roland tilbyr transport og sightseeing med bil til steder gjestene ønsker å oppleve på Senja.',
-        },
-        {
           title: 'Praktisk inkludert',
           description: 'Den større båten har plass til 2–3 personer, og den mindre har plass til 2 personer. Enkel lunsj med drikke, egnet fottøy og redningsvester tilbys.',
         },
         {
-          title: 'Toppturer, overnatting og lokale kontakter',
+          title: 'Andre opplevelser på Senja',
           description:
-              'Roland kan formidle toppturer til fots med lokale guider og hjelpe med overnatting og lokale kontakter. Han har også egne utleie-enheter som kan vises til gjester ved forespørsel.',
+              'Roland kan via andre lokale aktører formidle fine toppturer på Senja-fjell, opplevelser og sightseeing i bil og transport. Han har også egne utleie-enheter som vises til kunder på forespørsel eller bookes direkte her på nettsiden.',
         },
       ],
     },
@@ -146,7 +141,7 @@ const no = {
         {
           title: 'Overnatting og lokal hjelp',
           description:
-              'Roland kan hjelpe med overnatting og andre praktiske behov. Egne utleie-enheter kan vises til gjester ved forespørsel.',
+              'Roland kan hjelpe med overnatting og andre praktiske behov. Egne utleie-enheter kan vises til gjester ved forespørsel. Formidling av sightseeing i bil, opplevelser og transport.',
         },
       ],
     },
