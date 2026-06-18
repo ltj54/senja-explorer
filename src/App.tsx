@@ -599,14 +599,6 @@ function App() {
       <h1 className="sr-only">{text.siteName}</h1>
 
       <div className="top-controls">
-        <img
-          className="brand-logo top-controls__logo"
-          src={publicAssetPath('images/breathe-senja-logo.png')}
-          alt="Breathe Senja"
-          width="1024"
-          height="1024"
-        />
-
         <button
           className={`contact-link contact-link--top${isContactDragging ? ' is-dragging' : ''}`}
           type="button"
@@ -679,6 +671,14 @@ function App() {
                 aria-hidden="true"
               />
             ))}
+
+            <img
+              className="brand-logo home-hero__logo"
+              src={publicAssetPath('images/breathe-senja-logo.png')}
+              alt="Breathe Senja"
+              width="1024"
+              height="1024"
+            />
 
             <section className="home-accommodation" aria-label={text.accommodation.title}>
               <h2>{text.accommodation.title}</h2>
