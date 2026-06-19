@@ -7,7 +7,7 @@ const de = {
   contactRoland: 'Roland kontaktieren',
   contactRolandContext: 'Ihr lokaler Guide auf Senja',
   homeIntro: {
-    kicker: 'Persönliche Touren und lokale Organisation',
+    kicker: 'Persönliche Touren und lokale Betreuung',
     tagline: '– From Summit to Sea –',
   },
   imageNotice: '',
@@ -35,25 +35,25 @@ const de = {
     orgNumber: '937 296 355',
     mapLabel: 'Adresse auf der Karte ansehen',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=St%C3%B8nesbotnveien%20583%2C%209373%20Botnhamn',
-    airbnbLinks: ['Mieteinheit 1 – Anzeige auf Airbnb ansehen', 'Mieteinheit 2 – Anzeige auf Airbnb ansehen'],
+    airbnbLinks: ['Ferienunterkunft 1 – Anzeige auf Airbnb ansehen', 'Ferienunterkunft 2 – Anzeige auf Airbnb ansehen'],
   },
   homeSeasonBoxes: {
     winter: {
-      kicker: 'Skitouren und Eisangeln',
+      kicker: 'Randonnée-Touren und Eisangeln',
       title: 'Winter auf Senja',
       description:
-        'Roland bietet sichere, belebende und spannende Skitouren mit schönen Abfahrten bis zurück zum Auto an. Außerdem bietet er Eisangeln auf dem Fjord an, wobei häufig Fische gefangen werden. Die Touren eignen sich für kleine Gruppen und werden an Wetter, Schneeverhältnisse, Wünsche und Niveau angepasst.',
+        'Roland bietet sichere, belebende und spannende Randonnée-Touren mit schönen Abfahrten bis zurück zum Auto an. Außerdem bietet er Eisangeln auf dem Fjord an, bei dem häufig Fische gefangen werden. Die Touren eignen sich für kleine Gruppen und werden an Wetter, Schneeverhältnisse, Wünsche und Niveau angepasst.',
     },
     summer: {
-      kicker: 'Bootstouren, Badestopps und Angeltour',
+      kicker: 'Bootstouren, Badepausen und Angeltouren',
       title: 'Sommer auf Senja',
       description:
-        'Roland bietet Boots- und Angeltouren auf dem Fjord oder auf See an. Die Touren werden an die Wünsche der Gäste und die Wetterverhältnisse angepasst.',
+        'Roland bietet Boots- und Angeltouren auf dem Fjord oder auf dem offenen Meer an. Die Touren werden an die Wünsche der Gäste und die Wetterverhältnisse angepasst.',
     },
   },
-  yearRoundTitle: 'Praktische Hilfe das ganze Jahr',
+  yearRoundTitle: 'Praktische Hilfe das ganze Jahr über',
   yearRound:
-    'Roland bietet Transport, Roadtrips und Sightseeing mit dem Auto an und kann bei Unterkunft und lokalen Kontakten auf Senja helfen. Er hat auch eigene Mieteinheiten, die Gäste auf Anfrage näher ansehen können.',
+    'Roland bietet Transport, Roadtrips und Sightseeing mit dem Auto an und kann bei Unterkunft und lokalen Kontakten auf Senja helfen. Er hat auch eigene Ferienunterkünfte, die Gäste auf Anfrage näher ansehen können.',
   footer: {
     company: 'Breathe Senja & Services Henriksen',
     orgNumber: 'Org.nr. 937 296 355',
@@ -61,15 +61,15 @@ const de = {
   },
   accommodation: {
     title: 'Unterkunft auf Senja',
-    description: 'Roland hat zwei Mieteinheiten, die sich gut mit den Touren verbinden lassen.',
-    homeLinks: ['Mieteinheit 1 – Anzeige auf Airbnb ansehen', 'Mieteinheit 2 – Anzeige auf Airbnb ansehen'],
-    links: ['Mieteinheit 1 auf Airbnb ansehen', 'Mieteinheit 2 auf Airbnb ansehen'],
+    description: 'Roland hat zwei Ferienunterkünfte, die sich gut mit den Touren verbinden lassen.',
+    homeLinks: ['Ferienunterkunft 1 – Anzeige auf Airbnb ansehen', 'Ferienunterkunft 2 – Anzeige auf Airbnb ansehen'],
+    links: ['Ferienunterkunft 1 auf Airbnb ansehen', 'Ferienunterkunft 2 auf Airbnb ansehen'],
   },
   summerPage: {
     kicker: 'Sommer auf Senja',
-    title: 'Bootstouren, Badestopps\nund Angeln',
+    title: 'Bootstouren, Badepausen\nund Angeln',
     description:
-      'Roland bietet Boots- und Angeltouren auf dem Fjord oder auf See an. Die Touren werden an die Wünsche der Gäste und die Wetterverhältnisse angepasst. Außerdem kann er Unterkünfte anbieten und weitere Leistungen wie Gipfeltouren, Sightseeing mit dem Auto und Transport vermitteln.',
+      'Roland bietet Boots- und Angeltouren auf dem Fjord oder auf dem offenen Meer an. Die Touren werden an die Wünsche der Gäste und die Wetterverhältnisse angepasst. Außerdem kann er Unterkünfte anbieten und weitere Leistungen wie Gipfeltouren, Sightseeing mit dem Auto und Transport vermitteln.',
     comingSoon: '',
     practical:
       'Das größere Boot bietet Platz für 2–3 Personen, das kleinere für 2 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
@@ -85,11 +85,11 @@ const de = {
       title: 'Sommererlebnisse auf Senja',
       items: [
         {
-          title: 'Bootstouren und Badestopps',
+          title: 'Bootstouren und Badepausen',
           description: 'Ruhige Touren zu schönen Stränden und geschützten Orten entlang der Küste.',
         },
         {
-          title: 'Angeln auf dem Fjord und auf See',
+          title: 'Angeln auf dem Fjord und auf dem offenen Meer',
           description:
             'Angeltouren mit der Möglichkeit, eine Angelrute zu mieten. Roland kann den Fisch ausnehmen und filetieren, wenn die Gäste ihn mitnehmen möchten.',
         },
@@ -100,16 +100,16 @@ const de = {
         {
           title: 'Weitere Erlebnisse auf Senja',
           description:
-            'Über andere lokale Anbieter kann Roland schöne Gipfeltouren in den Senja-Bergen, Erlebnisse und Sightseeing mit dem Auto sowie Transport vermitteln. Er hat auch eigene Mieteinheiten, die Kunden auf Anfrage gezeigt oder direkt hier auf der Website gebucht werden können.',
+            'Über andere lokale Anbieter kann Roland schöne Gipfeltouren in den Senja-Bergen, Erlebnisse und Sightseeing mit dem Auto sowie Transport vermitteln. Er hat auch eigene Ferienunterkünfte, die Kunden auf Anfrage gezeigt oder direkt hier auf der Website gebucht werden können.',
         },
       ],
     },
   },
   winterPage: {
     kicker: 'Winter auf Senja',
-    title: 'Skitouren, Eisangeln\nund Winterruhe',
+    title: 'Randonnée-Touren, Eisangeln\nund Winterruhe',
     description:
-      'Roland bietet sichere, belebende und spannende Skitouren mit schönen Abfahrten bis zurück zum Auto an. Außerdem bietet er Eisangeln auf dem Fjord an, wobei häufig Fische gefangen werden. Die Touren eignen sich für kleine Gruppen und werden an Wetter, Schneeverhältnisse, Wünsche und Niveau angepasst.',
+      'Roland bietet sichere, belebende und spannende Randonnée-Touren mit schönen Abfahrten bis zurück zum Auto an. Außerdem bietet er Eisangeln auf dem Fjord an, bei dem häufig Fische gefangen werden. Die Touren eignen sich für kleine Gruppen und werden an Wetter, Schneeverhältnisse, Wünsche und Niveau angepasst.',
     comingSoon: '',
     practical:
       'Maximal 6 Personen. Ein einfacher Lunch mit Getränken ist inbegriffen.',
@@ -117,8 +117,8 @@ const de = {
       'Roland kann auch bei praktischer Organisation, Unterkunft und lokalen Erlebnissen auf Senja helfen.',
     galleryTitle: 'Winterbilder von Senja',
     galleryGroups: {
-      randonee: 'Skitour-Bilder',
-      randoneeVideos: 'Skitour-Videos',
+      randonee: 'Randonnée-Bilder',
+      randoneeVideos: 'Randonnée-Videos',
       iceFishing: 'Eisangeln',
       winterCalm: 'Winterruhe',
       moreImages: 'Weitere Winterbilder',
@@ -127,8 +127,8 @@ const de = {
       title: 'Wintererlebnisse mit lokalem Guide',
       items: [
         {
-          title: 'Gipfeltouren mit Randonnée-Ski',
-          description: 'Sichere, belebende und spannende Gipfeltouren mit schönen Abfahrten bis zurück zum Auto, angepasst an Wetter, Schneeverhältnisse, Wünsche und Niveau.',
+          title: 'Randonnée-Touren auf Senja',
+          description: 'Sichere, belebende und spannende Gipfeltouren mit Randonnée-Ski und schönen Abfahrten bis zurück zum Auto, angepasst an Wetter, Schneeverhältnisse, Wünsche und Niveau.',
         },
         {
           title: 'Eisangeln auf dem Fjord',
@@ -141,7 +141,7 @@ const de = {
         {
           title: 'Unterkunft und lokale Hilfe',
           description:
-            'Roland kann bei Unterkunft und anderen praktischen Bedürfnissen helfen. Eigene Mieteinheiten können Gästen auf Anfrage gezeigt werden. Er kann Sightseeing mit dem Auto, Erlebnisse und Transport vermitteln.',
+            'Roland kann bei Unterkunft und anderen praktischen Bedürfnissen helfen. Eigene Ferienunterkünfte können Gästen auf Anfrage gezeigt werden. Er kann Sightseeing mit dem Auto, Erlebnisse und Transport vermitteln.',
         },
       ],
     },
