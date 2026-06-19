@@ -1,0 +1,4 @@
+Contact: tel:+4746544510
+Expires: 2027-06-19T00:00:00Z
+Preferred-Languages: no, en, de
+Canonical: https://www.breathesenja.com/.well-known/security.txt

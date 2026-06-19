@@ -2,6 +2,7 @@ const no = {
   siteName: 'Breathe Senja',
   chooseLanguage: 'Velg språk',
   chooseSeason: 'Velg årstid',
+  mainHeading: 'Guidede turer, fiske, transport og overnatting på Senja',
   back: 'Tilbake',
   continue: 'Fortsett',
   contactRoland: 'Kontakt Roland',

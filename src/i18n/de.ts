@@ -2,6 +2,7 @@ const de = {
   siteName: 'Breathe Senja',
   chooseLanguage: 'Sprache wählen',
   chooseSeason: 'Jahreszeit wählen',
+  mainHeading: 'Geführte Touren, Angeln, Transport und Unterkunft auf Senja',
   back: 'Zurück',
   continue: 'Fortfahren',
   contactRoland: 'Roland kontaktieren',

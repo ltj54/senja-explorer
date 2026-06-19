@@ -573,11 +573,18 @@ function App() {
     setContactFormStatus('sending')
 
     const form = event.currentTarget
+    const formData = new FormData(form)
+
+    if (formData.get('_gotcha')) {
+      setContactFormStatus('success')
+      form.reset()
+      return
+    }
 
     try {
       const response = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
+        body: formData,
         headers: {
           Accept: 'application/json',
         },
@@ -596,7 +603,7 @@ function App() {
 
   return (
     <main className={`site-page site-page--${page} site-page--language-${language}`} aria-label={text.siteName}>
-      <h1 className="sr-only">{text.siteName}</h1>
+      <h1 className="sr-only">{text.mainHeading}</h1>
 
       <div className="top-controls">
         <button
@@ -1069,6 +1076,14 @@ function App() {
               alt=""
             />
             <input type="hidden" name="_subject" value="Ny melding fra Breathe Senja" />
+            <input
+              className="contact-form__trap"
+              type="text"
+              name="_gotcha"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
             <input type="hidden" name="language" value={language} />
             <input type="hidden" name="page" value={page} />
 
@@ -1086,17 +1101,17 @@ function App() {
 
             <label>
               <span>{text.contactForm.name}</span>
-              <input type="text" name="name" autoComplete="name" required />
+              <input type="text" name="name" autoComplete="name" maxLength={120} required />
             </label>
 
             <label>
               <span>{text.contactForm.email}</span>
-              <input type="email" name="email" autoComplete="email" required />
+              <input type="email" name="email" autoComplete="email" maxLength={254} required />
             </label>
 
             <label>
               <span>{text.contactForm.message}</span>
-              <textarea name="message" rows={5} required />
+              <textarea name="message" rows={5} maxLength={3000} required />
             </label>
 
             <button

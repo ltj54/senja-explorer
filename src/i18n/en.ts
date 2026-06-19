@@ -2,6 +2,7 @@ const en = {
   siteName: 'Breathe Senja',
   chooseLanguage: 'Choose language',
   chooseSeason: 'Choose season',
+  mainHeading: 'Guided tours, fishing, transport and accommodation on Senja',
   back: 'Back',
   continue: 'Continue',
   contactRoland: 'Contact Roland',

@@ -1890,6 +1890,15 @@ button {
   color: rgba(255, 255, 255, 0.88);
 }
 
+.contact-form__trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
