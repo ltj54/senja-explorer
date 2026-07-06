@@ -424,13 +424,15 @@ button {
   min-height: 142px;
   flex-direction: column;
   align-items: flex-start;
-  padding: 15px 18px 16px;
-  border: 0;
-  border-left: 1px solid rgba(247, 241, 231, 0.44);
-  background: linear-gradient(90deg, rgba(7, 13, 11, 0.22), rgba(7, 13, 11, 0.05) 76%, transparent);
+  position: relative;
+  padding: 16px 54px 17px 18px;
+  border: 1px solid rgba(247, 241, 231, 0.36);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(7, 13, 11, 0.62), rgba(7, 13, 11, 0.24) 78%);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2);
   color: inherit;
   text-align: left;
-  backdrop-filter: none;
+  backdrop-filter: blur(10px);
   cursor: pointer;
   opacity: 0;
   transform: translateY(12px);
@@ -443,15 +445,44 @@ button {
     transform 220ms ease;
 }
 
+.home-season-card::after {
+  content: '>';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid rgba(247, 241, 231, 0.44);
+  border-radius: 999px;
+  background: rgba(247, 241, 231, 0.12);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  color: rgba(255, 250, 240, 0.94);
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    transform 220ms ease;
+}
+
 .home-season-card--summer {
   animation-delay: 1050ms;
 }
 
 .home-season-card:hover,
 .home-season-card:focus-visible {
-  border-left-color: rgba(247, 241, 231, 0.74);
-  background: linear-gradient(90deg, rgba(7, 13, 11, 0.4), rgba(7, 13, 11, 0.1) 76%, transparent);
+  border-color: rgba(247, 241, 231, 0.74);
+  background: linear-gradient(135deg, rgba(7, 13, 11, 0.78), rgba(7, 13, 11, 0.32) 78%);
   transform: translateY(-4px);
+}
+
+.home-season-card:hover::after,
+.home-season-card:focus-visible::after {
+  border-color: rgba(247, 241, 231, 0.78);
+  background: rgba(247, 241, 231, 0.2);
+  transform: translateX(3px);
 }
 
 .home-season-card:focus-visible {
@@ -686,10 +717,12 @@ button {
   position: relative;
   z-index: 1;
   min-width: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  backdrop-filter: none;
+  padding: 16px 26px 15px;
+  border: 1px solid rgba(247, 241, 231, 0.48);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(7, 13, 11, 0.7), rgba(7, 13, 11, 0.28));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.3);
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(24px, 3vw, 42px);
   line-height: 1;
@@ -698,7 +731,12 @@ button {
   text-transform: uppercase;
   text-shadow: 0 5px 24px rgba(0, 0, 0, 0.88);
   transform: translateX(var(--season-choice-label-x, 0)) translateY(0);
-  transition: transform 360ms ease, color 360ms ease, text-shadow 360ms ease;
+  transition:
+    background 360ms ease,
+    border-color 360ms ease,
+    transform 360ms ease,
+    color 360ms ease,
+    text-shadow 360ms ease;
 }
 
 @media (min-width: 761px) {
@@ -730,6 +768,8 @@ button {
 
 .season-choice:hover span,
 .season-choice:focus-visible span {
+  border-color: rgba(247, 241, 231, 0.84);
+  background: linear-gradient(135deg, rgba(7, 13, 11, 0.82), rgba(7, 13, 11, 0.38));
   color: #fffaf0;
   transform: translateX(var(--season-choice-label-x, 0)) translateY(-8px);
   text-shadow: 0 8px 30px rgba(0, 0, 0, 0.95);
@@ -831,7 +871,7 @@ button {
 
   .home-season-card {
     min-height: 0;
-    padding: 12px 14px 13px;
+    padding: 12px 48px 13px 14px;
   }
 
   .home-season-card__kicker {
@@ -2039,7 +2079,7 @@ button {
     min-height: 100svh;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 18px 20px 112px;
+    padding: 18px 20px max(74px, calc(env(safe-area-inset-bottom) + 42px));
   }
 
   .home-background {
@@ -2112,7 +2152,7 @@ button {
   .home-intro {
     align-self: flex-start;
     width: 100%;
-    margin-top: 250px;
+    margin-top: clamp(150px, 24svh, 210px);
     text-align: left;
   }
 
@@ -2199,17 +2239,26 @@ button {
     z-index: 3;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 10px;
     align-self: flex-start;
     width: min(100%, 420px);
-    margin-top: 16px;
+    margin-top: 14px;
   }
 
   .home-season-card {
     min-height: 0;
-    padding: 10px 12px 11px;
-    background: linear-gradient(90deg, rgba(7, 13, 11, 0.28), rgba(7, 13, 11, 0.08) 78%, transparent);
-    border-left-color: rgba(247, 241, 231, 0.38);
+    padding: 13px 52px 14px 14px;
+    border-color: rgba(247, 241, 231, 0.5);
+    background: linear-gradient(135deg, rgba(7, 13, 11, 0.76), rgba(7, 13, 11, 0.38) 78%);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+  }
+
+  .home-season-card::after {
+    top: 14px;
+    right: 14px;
+    width: 30px;
+    height: 30px;
+    background: rgba(247, 241, 231, 0.16);
   }
 
   .home-season-card__kicker {
@@ -2225,7 +2274,11 @@ button {
   .home-season-card__description {
     margin-top: 6px;
     font-size: 12px;
-    line-height: 1.36;
+    line-height: 1.34;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 
   .season-choices {
