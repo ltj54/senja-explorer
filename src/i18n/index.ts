@@ -17,3 +17,5 @@ export const translations = {
   en,
   de,
 } satisfies Record<Language, typeof no>
+
+export type Translation = typeof no

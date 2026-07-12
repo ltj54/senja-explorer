@@ -11,6 +11,10 @@ const no = {
     kicker: 'Personlige turer og lokal tilrettelegging',
     tagline: '– From Summit to Sea –',
   },
+  logo: {
+    open: 'Vis logoen større',
+    close: 'Lukk logo',
+  },
   imageNotice: '',
   contactSubject: 'Ny melding fra Breathe Senja',
   privacyNotice:
@@ -25,6 +29,7 @@ const no = {
     closeVideo: 'Lukk video',
     previous: 'Forrige bilde',
     next: 'Neste bilde',
+    captions: 'Ingen tale i videoen',
   },
   languages: {
     no: 'Norsk',

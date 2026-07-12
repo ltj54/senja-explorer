@@ -11,6 +11,10 @@ const de = {
     kicker: 'Persönliche Touren und lokale Betreuung',
     tagline: '– From Summit to Sea –',
   },
+  logo: {
+    open: 'Logo größer anzeigen',
+    close: 'Logo schließen',
+  },
   imageNotice: '',
   contactSubject: 'Neue Nachricht von Breathe Senja',
   privacyNotice:
@@ -25,6 +29,7 @@ const de = {
     closeVideo: 'Video schließen',
     previous: 'Vorheriges Bild',
     next: 'Nächstes Bild',
+    captions: 'Keine Sprache im Video',
   },
   languages: {
     no: 'Norsk',

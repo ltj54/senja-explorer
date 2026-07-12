@@ -1,5 +1,5 @@
-import { type PointerEvent, useCallback, useEffect, useRef, useState } from 'react'
-import { languageLabels, languages, translations, type Language } from './i18n'
+import { type PointerEvent, type ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { languageLabels, languages, translations, type Language, type Translation } from './i18n'
 
 type Page = 'home' | 'summer' | 'winter'
 type ContactPosition = { x: number; y: number }
@@ -49,6 +49,13 @@ const getStoredLanguage = (): Language => {
 
 const imageItem = (name: string): GalleryItem => ({ kind: 'image', name })
 const sharedImageItem = (name: string): GalleryItem => ({ kind: 'image', name, source: 'shared' })
+const galleryMediaClassName = (name: string) => {
+  if (name === '1000001424' || name === '1000013175') {
+    return 'season-image-grid__media--focus-face'
+  }
+
+  return undefined
+}
 
 const airbnbListings = [
   'https://www.airbnb.no/rooms/31561817',
@@ -326,6 +333,84 @@ const AirbnbText = ({ children }: { children: string }) => {
     </span>
   )
 }
+type GalleryPanelProps<TKey extends string> = {
+  allItems: GalleryItem[]
+  galleryType: GalleryType
+  getGroupTitle: (key: TKey) => string
+  groups: GalleryGroup<TKey>[]
+  openGalleryImage: (galleryImage: Exclude<ActiveGalleryImage, null>) => void
+  openLogo: () => void
+  renderMedia: (galleryItem: GalleryItem) => ReactNode
+  text: Translation
+}
+
+function GalleryPanels<TKey extends string>({
+  allItems,
+  galleryType,
+  getGroupTitle,
+  groups,
+  openGalleryImage,
+  openLogo,
+  renderMedia,
+  text,
+}: GalleryPanelProps<TKey>) {
+  return groups.flatMap((group, groupIndex) =>
+    chunkGalleryItems(group.items).map((galleryPage, pageIndex) => {
+      const galleryTitle = groupIndex === 0 && pageIndex === 0
+        ? (
+            <h3 className="season-gallery-title">
+              {galleryType === 'summer' ? text.summerPage.galleryTitle : text.winterPage.galleryTitle}
+            </h3>
+          )
+        : null
+      const groupHeading = pageIndex === 0
+        ? (
+            <div className="season-gallery-heading">
+              <button className="logo-button" type="button" aria-label={text.logo.open} onClick={openLogo}>
+                <img className="brand-logo" src={publicAssetPath('images/breathe-senja-logo.png')} alt="" />
+              </button>
+              <h4 className="season-gallery-group-title">{getGroupTitle(group.key)}</h4>
+            </div>
+          )
+        : null
+
+      return (
+        <div
+          key={`${group.key}-${pageIndex}`}
+          id={pageIndex === 0 ? `${galleryType}-gallery-${group.key}` : undefined}
+          className="season-page-panel season-page-panel--image"
+        >
+          {galleryTitle}
+          {groupHeading}
+          <div className="season-image-grid">
+            {galleryPage.map((galleryItem) => {
+              const galleryIndex = allItems.findIndex((item) => item.name === galleryItem.name)
+
+              return (
+                <button
+                  key={galleryItem.name}
+                  className={`season-image-grid__item${galleryItem.kind === 'video' ? ' season-image-grid__item--video' : ''}`}
+                  type="button"
+                  aria-label={
+                    galleryType === 'summer'
+                      ? text.gallery.summerImage(galleryIndex + 1)
+                      : galleryItem.kind === 'video'
+                        ? text.gallery.winterVideo(galleryIndex + 1)
+                        : text.gallery.winterImage(galleryIndex + 1)
+                  }
+                  onClick={() => openGalleryImage({ type: galleryType, index: galleryIndex })}
+                >
+                  {renderMedia(galleryItem)}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      )
+    }),
+  )
+}
+
 const getPageFromHash = (): Page => {
   const hashPage = window.location.hash.replace('#', '')
   return hashPage === 'summer' || hashPage === 'winter' ? hashPage : 'home'
@@ -336,6 +421,7 @@ function App() {
   const [page, setPage] = useState<Page>(() => getPageFromHash())
   const [isAboutOpen, setIsAboutOpen] = useState(false)
   const [isContactOpen, setIsContactOpen] = useState(false)
+  const [isLogoOpen, setIsLogoOpen] = useState(false)
   const [contactFormStatus, setContactFormStatus] = useState<ContactFormStatus>('idle')
   const [scrollOpacity, setScrollOpacity] = useState(1)
   const [contactPositions, setContactPositions] = useState<Partial<Record<Page, ContactPosition>>>({})
@@ -349,6 +435,7 @@ function App() {
   const aboutDialogRef = useRef<HTMLDialogElement>(null)
   const contactDialogRef = useRef<HTMLDialogElement>(null)
   const lightboxDialogRef = useRef<HTMLDialogElement>(null)
+  const logoDialogRef = useRef<HTMLDialogElement>(null)
   const lastFocusedElement = useRef<HTMLElement | null>(null)
 
   const rememberFocus = useCallback(() => {
@@ -365,12 +452,21 @@ function App() {
     setIsAboutOpen(true)
   }, [rememberFocus])
 
+  const openLogo = useCallback(() => {
+    rememberFocus()
+    setIsLogoOpen(true)
+  }, [rememberFocus])
+
   const closeAbout = useCallback(() => {
     setIsAboutOpen(false)
   }, [])
 
   const closeContact = useCallback(() => {
     setIsContactOpen(false)
+  }, [])
+
+  const closeLogo = useCallback(() => {
+    setIsLogoOpen(false)
   }, [])
 
   const openGalleryImage = useCallback((galleryImage: Exclude<ActiveGalleryImage, null>) => {
@@ -400,10 +496,10 @@ function App() {
   }, [language])
 
   useEffect(() => {
-    if (!isAboutOpen && !isContactOpen && activeGalleryImage === null) {
+    if (!isAboutOpen && !isContactOpen && !isLogoOpen && activeGalleryImage === null) {
       restoreFocus()
     }
-  }, [activeGalleryImage, isAboutOpen, isContactOpen, restoreFocus])
+  }, [activeGalleryImage, isAboutOpen, isContactOpen, isLogoOpen, restoreFocus])
 
   useEffect(() => {
     const dialog = aboutDialogRef.current
@@ -437,6 +533,17 @@ function App() {
       dialog.showModal()
     }
   }, [activeGalleryImage, closeGalleryImage])
+
+  useEffect(() => {
+    const dialog = logoDialogRef.current
+    if (!dialog) {
+      return
+    }
+
+    if (!dialog.open) {
+      dialog.showModal()
+    }
+  }, [isLogoOpen])
 
   // Håndter bakgrunns-fade ved scrolling
   useEffect(() => {
@@ -766,86 +873,86 @@ function App() {
       )}
 
       {page === 'home' && (
-        <>
-          <section className="home-hero" aria-label={text.siteName}>
-            {homeBackgrounds.map((background) => (
-              <div
-                key={background}
-                className={`home-background home-background--${background}`}
-                aria-hidden="true"
-              />
-            ))}
+        <section className="home-hero" aria-label={text.siteName}>
+          {homeBackgrounds.map((background) => (
+            <div
+              key={background}
+              className={`home-background home-background--${background}`}
+              aria-hidden="true"
+            />
+          ))}
 
+          <button className="logo-button home-hero__logo" type="button" aria-label={text.logo.open} onClick={openLogo}>
             <img
-              className="brand-logo home-hero__logo"
+              className="brand-logo"
               src={publicAssetPath('images/breathe-senja-logo.png')}
               alt="Breathe Senja"
               width="1024"
               height="1024"
             />
+          </button>
 
-            <section className="home-accommodation" aria-label={text.accommodation.title}>
-              <h2>{text.accommodation.title}</h2>
-              <p>{text.accommodation.description}</p>
-              <div className="home-accommodation__links">
-                {airbnbListings.map((url, index) => (
-                  <a key={url} href={url}>
-                    <AirbnbText>{text.accommodation.homeLinks[index]}</AirbnbText>
-                    <span className="external-link-arrow" aria-hidden="true">↗</span>
-                  </a>
-                ))}
-              </div>
-            </section>
-
-            <section className="home-intro" aria-label={text.siteName}>
-              <p>{text.homeIntro.kicker}</p>
-              <h2>{text.siteName}</h2>
-              <p>{text.homeIntro.tagline}</p>
-            </section>
-
-            <section className="season-choices" aria-label={text.chooseSeason}>
-              <button
-                className="season-choice season-choice--winter"
-                aria-label={text.seasons.winter}
-                type="button"
-                onClick={() => navigateTo('winter')}
-              >
-                <span>{text.seasons.winter}</span>
-              </button>
-
-              <button
-                className="season-choice season-choice--summer"
-                aria-label={text.seasons.summer}
-                type="button"
-                onClick={() => navigateTo('summer')}
-              >
-                <span>{text.seasons.summer}</span>
-              </button>
-            </section>
-
-            <section className="home-season-info" aria-label={text.chooseSeason}>
-              <button
-                className="home-season-card home-season-card--winter"
-                type="button"
-                onClick={() => navigateTo('winter')}
-              >
-                <span className="home-season-card__kicker">{text.homeSeasonBoxes.winter.kicker}</span>
-                <span className="home-season-card__title">{text.homeSeasonBoxes.winter.title}</span>
-                <span className="home-season-card__description">{text.homeSeasonBoxes.winter.description}</span>
-              </button>
-
-              <button
-                className="home-season-card home-season-card--summer"
-                type="button"
-                onClick={() => navigateTo('summer')}
-              >
-                <span className="home-season-card__kicker">{text.homeSeasonBoxes.summer.kicker}</span>
-                <span className="home-season-card__title">{text.homeSeasonBoxes.summer.title}</span>
-                <span className="home-season-card__description">{text.homeSeasonBoxes.summer.description}</span>
-              </button>
-            </section>
+          <section className="home-accommodation" aria-label={text.accommodation.title}>
+            <h2>{text.accommodation.title}</h2>
+            <p>{text.accommodation.description}</p>
+            <div className="home-accommodation__links">
+              {airbnbListings.map((url, index) => (
+                <a key={url} href={url}>
+                  <AirbnbText>{text.accommodation.homeLinks[index]}</AirbnbText>
+                  <span className="external-link-arrow" aria-hidden="true">↗</span>
+                </a>
+              ))}
+            </div>
           </section>
-        </>
+
+          <section className="home-intro" aria-label={text.siteName}>
+            <p>{text.homeIntro.kicker}</p>
+            <h2>{text.siteName}</h2>
+            <p>{text.homeIntro.tagline}</p>
+          </section>
+
+          <section className="season-choices" aria-label={text.chooseSeason}>
+            <button
+              className="season-choice season-choice--winter"
+              aria-label={text.seasons.winter}
+              type="button"
+              onClick={() => navigateTo('winter')}
+            >
+              <span>{text.seasons.winter}</span>
+            </button>
+
+            <button
+              className="season-choice season-choice--summer"
+              aria-label={text.seasons.summer}
+              type="button"
+              onClick={() => navigateTo('summer')}
+            >
+              <span>{text.seasons.summer}</span>
+            </button>
+          </section>
+
+          <section className="home-season-info" aria-label={text.chooseSeason}>
+            <button
+              className="home-season-card home-season-card--winter"
+              type="button"
+              onClick={() => navigateTo('winter')}
+            >
+              <span className="home-season-card__kicker">{text.homeSeasonBoxes.winter.kicker}</span>
+              <span className="home-season-card__title">{text.homeSeasonBoxes.winter.title}</span>
+              <span className="home-season-card__description">{text.homeSeasonBoxes.winter.description}</span>
+            </button>
+
+            <button
+              className="home-season-card home-season-card--summer"
+              type="button"
+              onClick={() => navigateTo('summer')}
+            >
+              <span className="home-season-card__kicker">{text.homeSeasonBoxes.summer.kicker}</span>
+              <span className="home-season-card__title">{text.homeSeasonBoxes.summer.title}</span>
+              <span className="home-season-card__description">{text.homeSeasonBoxes.summer.description}</span>
+            </button>
+          </section>
+        </section>
       )}
 
       {page === 'summer' && (
@@ -877,57 +984,31 @@ function App() {
             </div>
           </div>
 
-          {summerVisibleGalleryGroups.flatMap((group, groupIndex) =>
-            chunkGalleryItems(group.items).map((galleryPage, pageIndex) => {
-              const isFirstSummerPanel = groupIndex === 0 && pageIndex === 0
-              const showGroupTitle = pageIndex === 0
-
-              return (
-                <div
-                  key={`${group.key}-${pageIndex}`}
-                  id={pageIndex === 0 ? `summer-gallery-${group.key}` : undefined}
-                  className="season-page-panel season-page-panel--image"
-                >
-                  {isFirstSummerPanel && (
-                    <h3 className="season-gallery-title">{text.summerPage.galleryTitle}</h3>
-                  )}
-                  {showGroupTitle && (
-                    <div className="season-gallery-heading">
-                      <img className="brand-logo" src={publicAssetPath('images/breathe-senja-logo.png')} alt="" />
-                      <h4 className="season-gallery-group-title">{text.summerPage.galleryGroups[group.key]}</h4>
-                    </div>
-                  )}
-                  <div className="season-image-grid">
-                    {galleryPage.map((galleryItem) => {
-                      const galleryIndex = summerGalleryItems.findIndex((item) => item.name === galleryItem.name)
-
-                      return (
-                        <button
-                          key={galleryItem.name}
-                          className="season-image-grid__item"
-                          type="button"
-                          aria-label={text.gallery.summerImage(galleryIndex + 1)}
-                          onClick={() => openGalleryImage({ type: 'summer', index: galleryIndex })}
-                        >
-                          <img
-                            src={publicAssetPath(`images/web/${galleryItem.source ?? 'summer'}/${galleryItem.name}.webp`)}
-                            alt=""
-                          />
-                        </button>
-                      )
-                    })}
-                  </div>
-                </div>
-              )
-            }),
-          )}
+          <GalleryPanels
+            allItems={summerGalleryItems}
+            galleryType="summer"
+            getGroupTitle={(key) => text.summerPage.galleryGroups[key]}
+            groups={summerVisibleGalleryGroups}
+            openGalleryImage={openGalleryImage}
+            openLogo={openLogo}
+            text={text}
+            renderMedia={(galleryItem) => (
+              <img
+                className={galleryMediaClassName(galleryItem.name)}
+                src={publicAssetPath(`images/web/${galleryItem.source ?? 'summer'}/${galleryItem.name}.webp`)}
+                alt=""
+              />
+            )}
+          />
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
-            <img
-              className="brand-logo season-page-panel__logo"
-              src={publicAssetPath('images/breathe-senja-logo.png')}
-              alt="Breathe Senja"
-            />
+            <button className="logo-button season-page-panel__logo" type="button" aria-label={text.logo.open} onClick={openLogo}>
+              <img
+                className="brand-logo"
+                src={publicAssetPath('images/breathe-senja-logo.png')}
+                alt="Breathe Senja"
+              />
+            </button>
             {text.summerPage.comingSoon && <p className="season-coming-soon">{text.summerPage.comingSoon}</p>}
             <section className="season-experiences" aria-label={text.summerPage.experiences.title}>
               <h3>{text.summerPage.experiences.title}</h3>
@@ -985,74 +1066,52 @@ function App() {
             </div>
           </div>
 
-          {winterVisibleGalleryGroups.flatMap((group, groupIndex) =>
-            chunkGalleryItems(group.items).map((galleryPage, pageIndex) => {
-              const isFirstWinterPanel = groupIndex === 0 && pageIndex === 0
-              const showGroupTitle = pageIndex === 0
-
-              return (
-                <div
-                  key={`${group.key}-${pageIndex}`}
-                  id={pageIndex === 0 ? `winter-gallery-${group.key}` : undefined}
-                  className="season-page-panel season-page-panel--image"
-                >
-                  {isFirstWinterPanel && (
-                    <h3 className="season-gallery-title">{text.winterPage.galleryTitle}</h3>
-                  )}
-                  {showGroupTitle && (
-                    <div className="season-gallery-heading">
-                      <img className="brand-logo" src={publicAssetPath('images/breathe-senja-logo.png')} alt="" />
-                      <h4 className="season-gallery-group-title">{text.winterPage.galleryGroups[group.key]}</h4>
-                    </div>
-                  )}
-                  <div className="season-image-grid">
-                    {galleryPage.map((galleryItem) => {
-                      const galleryIndex = winterGalleryItems.findIndex((item) => item.name === galleryItem.name)
-
-                      return (
-                        <button
-                          key={galleryItem.name}
-                          className={`season-image-grid__item${galleryItem.kind === 'video' ? ' season-image-grid__item--video' : ''}`}
-                          type="button"
-                          aria-label={
-                            galleryItem.kind === 'video'
-                              ? text.gallery.winterVideo(galleryIndex + 1)
-                              : text.gallery.winterImage(galleryIndex + 1)
-                          }
-                          onClick={() => openGalleryImage({ type: 'winter', index: galleryIndex })}
-                        >
-                          {galleryItem.kind === 'video' ? (
-                            <>
-                              <video
-                                src={publicAssetPath(`images/web/winter/${galleryItem.name}.mp4`)}
-                                muted
-                                playsInline
-                                preload="metadata"
-                              />
-                              <span className="season-image-grid__badge">Video</span>
-                            </>
-                          ) : (
-                            <img
-                              className={galleryItem.name === '1000013175' ? 'season-image-grid__media--focus-face' : undefined}
-                              src={publicAssetPath(`images/web/${galleryItem.source ?? 'winter'}/${galleryItem.name}.webp`)}
-                              alt=""
-                            />
-                          )}
-                        </button>
-                      )
-                    })}
-                  </div>
-                </div>
+          <GalleryPanels
+            allItems={winterGalleryItems}
+            galleryType="winter"
+            getGroupTitle={(key) => text.winterPage.galleryGroups[key]}
+            groups={winterVisibleGalleryGroups}
+            openGalleryImage={openGalleryImage}
+            openLogo={openLogo}
+            text={text}
+            renderMedia={(galleryItem) => (
+              galleryItem.kind === 'video' ? (
+                <>
+                  <video
+                    src={publicAssetPath(`images/web/winter/${galleryItem.name}.mp4`)}
+                    muted
+                    playsInline
+                    preload="metadata"
+                    aria-hidden="true"
+                  >
+                    <track
+                      default
+                      kind="captions"
+                      src={publicAssetPath('captions/no-speech.vtt')}
+                      srcLang={language}
+                      label={text.gallery.captions}
+                    />
+                  </video>
+                  <span className="season-image-grid__badge">Video</span>
+                </>
+              ) : (
+                <img
+                  className={galleryMediaClassName(galleryItem.name)}
+                  src={publicAssetPath(`images/web/${galleryItem.source ?? 'winter'}/${galleryItem.name}.webp`)}
+                  alt=""
+                />
               )
-            }),
-          )}
+            )}
+          />
 
           <div id="about-panel" className="season-page-panel season-page-panel--about">
-            <img
-              className="brand-logo season-page-panel__logo"
-              src={publicAssetPath('images/breathe-senja-logo.png')}
-              alt="Breathe Senja"
-            />
+            <button className="logo-button season-page-panel__logo" type="button" aria-label={text.logo.open} onClick={openLogo}>
+              <img
+                className="brand-logo"
+                src={publicAssetPath('images/breathe-senja-logo.png')}
+                alt="Breathe Senja"
+              />
+            </button>
             {text.winterPage.comingSoon && <p className="season-coming-soon">{text.winterPage.comingSoon}</p>}
             <section className="season-experiences" aria-label={text.winterPage.experiences.title}>
               <h3>{text.winterPage.experiences.title}</h3>
@@ -1114,14 +1173,14 @@ function App() {
           />
 
           <section className="about-popover">
-            <div className="about-popover__logo">
+            <button className="about-popover__logo" type="button" aria-label={text.logo.open} onClick={openLogo}>
               <img
                 src={publicAssetPath('images/breathe-senja-logo.png')}
                 alt="Breathe Senja"
                 width="1024"
                 height="1024"
               />
-            </div>
+            </button>
             <button
               className="contact-form__close"
               type="button"
@@ -1287,7 +1346,15 @@ function App() {
                 controls
                 autoPlay
                 playsInline
-              />
+              >
+                <track
+                  default
+                  kind="captions"
+                  src={publicAssetPath('captions/no-speech.vtt')}
+                  srcLang={language}
+                  label={text.gallery.captions}
+                />
+              </video>
             ) : (
               <img
                 src={publicAssetPath(`images/web/${activeGalleryItem.source ?? activeGalleryImage.type}/${activeGalleryItem.name}.webp`)}
@@ -1302,6 +1369,38 @@ function App() {
             >
               ›
             </button>
+          </div>
+        </dialog>
+      )}
+
+      {isLogoOpen && (
+        <dialog
+          ref={logoDialogRef}
+          className="logo-lightbox"
+          aria-label={text.logo.open}
+          onCancel={closeLogo}
+        >
+          <button
+            className="logo-lightbox__backdrop"
+            type="button"
+            aria-label={text.logo.close}
+            onClick={closeLogo}
+          />
+          <div className="logo-lightbox__content">
+            <button
+              className="image-lightbox__close"
+              type="button"
+              aria-label={text.logo.close}
+              onClick={closeLogo}
+            >
+              ×
+            </button>
+            <img
+              src={publicAssetPath('images/breathe-senja-logo.png')}
+              alt="Breathe Senja"
+              width="1024"
+              height="1024"
+            />
           </div>
         </dialog>
       )}

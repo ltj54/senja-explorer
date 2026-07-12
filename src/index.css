@@ -131,6 +131,27 @@ button {
   transform: translateY(-2px) scale(1.04);
 }
 
+.logo-button {
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.logo-button .brand-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-button:focus-visible {
+  outline: 2px solid rgba(247, 241, 231, 0.86);
+  outline-offset: 5px;
+}
+
 .contact-link--top {
   min-height: 42px;
   padding: 8px 13px;
@@ -1054,6 +1075,12 @@ button {
   width: auto;
 }
 
+.season-gallery-heading .logo-button {
+  flex: 0 0 auto;
+  width: clamp(42px, 4vw, 58px);
+  height: clamp(42px, 4vw, 58px);
+}
+
 .season-gallery-heading img {
   width: clamp(42px, 4vw, 58px);
   height: clamp(42px, 4vw, 58px);
@@ -1173,7 +1200,7 @@ button {
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(247, 241, 231, 0.62);
+  color: rgba(247, 241, 231, 0.82);
 }
 
 .season-page h2 {
@@ -1201,13 +1228,13 @@ button {
   margin-top: 14px;
   font-size: clamp(13px, 1.35vw, 15px);
   line-height: 1.5;
-  color: rgba(247, 241, 231, 0.78);
+  color: rgba(247, 241, 231, 0.88);
 }
 
 .season-network {
   max-width: 520px;
   margin-top: 18px;
-  color: rgba(247, 241, 231, 0.76);
+  color: rgba(247, 241, 231, 0.88);
 }
 
 .season-details {
@@ -1225,7 +1252,7 @@ button {
 
 .season-coming-soon {
   max-width: 520px;
-  color: rgba(247, 241, 231, 0.76);
+  color: rgba(247, 241, 231, 0.88);
 }
 
 .season-about {
@@ -1241,7 +1268,7 @@ button {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(247, 241, 231, 0.70);
+  color: rgba(247, 241, 231, 0.86);
 }
 
 .season-about h3 {
@@ -1259,7 +1286,7 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(13px, 1.5vw, 15px);
   line-height: 1.6;
-  color: rgba(247, 241, 231, 0.76);
+  color: rgba(247, 241, 231, 0.88);
 }
 
 .season-experiences {
@@ -1296,7 +1323,7 @@ button {
 }
 
 .season-accommodation p {
-  color: rgba(247, 241, 231, 0.78);
+  color: rgba(247, 241, 231, 0.88);
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(13px, 1.35vw, 15px);
   line-height: 1.55;
@@ -1375,7 +1402,7 @@ button {
   font-size: clamp(13px, 1.5vw, 15px);
   line-height: 1.25;
   font-weight: 700;
-  color: rgba(255, 250, 240, 0.84);
+  color: rgba(255, 250, 240, 0.94);
 }
 
 .season-experiences p {
@@ -1383,14 +1410,14 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(13px, 1.35vw, 15px);
   line-height: 1.55;
-  color: rgba(247, 241, 231, 0.78);
+  color: rgba(247, 241, 231, 0.88);
 }
 
 .season-experiences .season-experiences__footer {
   margin-top: 4px;
   font-size: clamp(11px, 1.05vw, 13px);
   line-height: 1.45;
-  color: rgba(247, 241, 231, 0.72);
+  color: rgba(247, 241, 231, 0.86);
 }
 
 .season-guide-note {
@@ -1408,7 +1435,7 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(12px, 1.15vw, 14px);
   line-height: 1.55;
-  color: rgba(247, 241, 231, 0.78);
+  color: rgba(247, 241, 231, 0.88);
 }
 
 .continue-button {
@@ -1591,6 +1618,7 @@ button {
   background: rgba(255, 255, 255, 0.04);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   opacity: 0.7;
+  cursor: zoom-in;
   transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease, opacity 200ms ease, transform 200ms ease;
 }
 
@@ -1623,7 +1651,7 @@ button {
 
 .about-popover .contact-form__close {
   z-index: 3;
-  color: rgba(23, 34, 28, 0.58);
+  color: rgba(23, 34, 28, 0.72);
 }
 
 .about-popover .contact-form__close:hover,
@@ -1637,7 +1665,7 @@ button {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(23, 34, 28, 0.58);
+  color: rgba(23, 34, 28, 0.72);
 }
 
 .about-popover h2 {
@@ -1654,7 +1682,7 @@ button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.65;
-  color: rgba(23, 34, 28, 0.76);
+  color: rgba(23, 34, 28, 0.86);
 }
 
 .about-popover__details {
@@ -1677,7 +1705,7 @@ button {
 
 .about-popover__details dt {
   min-width: 68px;
-  color: rgba(23, 34, 28, 0.58);
+  color: rgba(23, 34, 28, 0.72);
   font-size: 13px;
 }
 
@@ -1771,6 +1799,51 @@ button {
   border: 0;
   background: transparent;
   color: inherit;
+}
+
+.logo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: clamp(20px, 5vw, 64px);
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.logo-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border: 0;
+  background: rgba(3, 7, 6, 0.88);
+  backdrop-filter: blur(8px);
+  cursor: zoom-out;
+}
+
+.logo-lightbox__content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: min(84vw, 460px);
+}
+
+.logo-lightbox__content img {
+  display: block;
+  width: min(84vw, 420px);
+  max-height: min(72vh, 420px);
+  object-fit: contain;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.62), 0 0 0 1px rgba(100, 203, 75, 0.36);
 }
 
 .image-lightbox__backdrop {
@@ -2134,8 +2207,10 @@ button {
   }
 
   .home-background--vinter {
-    --home-background-image: url('./assets/roland/home/07_vinter.webp');
-    animation-delay: 42s;
+    --home-background-image: url('./assets/roland/winter/1000021591.jpg');
+    background-position: 50% 50%;
+    opacity: 1;
+    animation: none;
   }
 
   .home-background--dypvinter {
@@ -2145,13 +2220,6 @@ button {
 
   .home-background:not(.home-background--vinter) {
     display: none;
-  }
-
-  .home-background--vinter {
-    --home-background-image: url('./assets/roland/winter/1000021591.jpg');
-    background-position: 50% 50%;
-    opacity: 1;
-    animation: none;
   }
 
   .home-intro {
@@ -2464,7 +2532,7 @@ button {
     animation: none !important;
   }
 
-  .home-background--vinter {
+  .home-background:is(.home-background--vinter) {
     opacity: 1 !important;
   }
 }

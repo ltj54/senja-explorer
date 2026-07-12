@@ -11,6 +11,10 @@ const en = {
     kicker: 'Personal tours and local arrangements',
     tagline: '– From Summit to Sea –',
   },
+  logo: {
+    open: 'Show logo larger',
+    close: 'Close logo',
+  },
   imageNotice: '',
   contactSubject: 'New message from Breathe Senja',
   privacyNotice:
@@ -25,6 +29,7 @@ const en = {
     closeVideo: 'Close video',
     previous: 'Previous image',
     next: 'Next image',
+    captions: 'No speech in the video',
   },
   languages: {
     no: 'Norsk',
