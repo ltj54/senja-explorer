@@ -2449,6 +2449,26 @@ button {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-delay: 0ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+
+  .home-background {
+    animation: none !important;
+  }
+
+  .home-background--vinter {
+    opacity: 1 !important;
+  }
+}
+
 @keyframes notice-appear {
   0% {
     opacity: 0;

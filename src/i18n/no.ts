@@ -12,8 +12,20 @@ const no = {
     tagline: '– From Summit to Sea –',
   },
   imageNotice: '',
+  contactSubject: 'Ny melding fra Breathe Senja',
   privacyNotice:
       'Når du sender skjemaet, sendes navn, e-post og melding via Formspree. Opplysningene brukes kun til å svare på henvendelsen.',
+  gallery: {
+    image: 'Bilde',
+    video: 'Video',
+    summerImage: (index: number) => `Vis sommerbilde ${index}`,
+    winterImage: (index: number) => `Vis vinterbilde ${index}`,
+    winterVideo: (index: number) => `Vis vintervideo ${index}`,
+    closeImage: 'Lukk bilde',
+    closeVideo: 'Lukk video',
+    previous: 'Forrige bilde',
+    next: 'Neste bilde',
+  },
   languages: {
     no: 'Norsk',
     en: 'English',

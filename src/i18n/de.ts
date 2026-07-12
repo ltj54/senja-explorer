@@ -12,8 +12,20 @@ const de = {
     tagline: '– From Summit to Sea –',
   },
   imageNotice: '',
+  contactSubject: 'Neue Nachricht von Breathe Senja',
   privacyNotice:
     'Wenn Sie das Formular senden, werden Name, E-Mail und Nachricht über Formspree übermittelt. Die Angaben werden nur zur Beantwortung der Anfrage verwendet.',
+  gallery: {
+    image: 'Bild',
+    video: 'Video',
+    summerImage: (index: number) => `Sommerbild ${index} anzeigen`,
+    winterImage: (index: number) => `Winterbild ${index} anzeigen`,
+    winterVideo: (index: number) => `Wintervideo ${index} anzeigen`,
+    closeImage: 'Bild schließen',
+    closeVideo: 'Video schließen',
+    previous: 'Vorheriges Bild',
+    next: 'Nächstes Bild',
+  },
   languages: {
     no: 'Norsk',
     en: 'English',

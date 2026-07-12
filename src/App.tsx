@@ -1,4 +1,4 @@
-import { type PointerEvent, useEffect, useRef, useState } from 'react'
+import { type PointerEvent, useCallback, useEffect, useRef, useState } from 'react'
 import { languageLabels, languages, translations, type Language } from './i18n'
 
 type Page = 'home' | 'summer' | 'winter'
@@ -33,6 +33,18 @@ type ContactDragState = {
 type ContactSubmitEvent = {
   preventDefault: () => void
   currentTarget: HTMLFormElement
+}
+
+const defaultLanguage: Language = 'no'
+const languageStorageKey = 'breathe-senja-language'
+
+const getStoredLanguage = (): Language => {
+  try {
+    const storedLanguage = window.localStorage.getItem(languageStorageKey)
+    return languages.includes(storedLanguage as Language) ? (storedLanguage as Language) : defaultLanguage
+  } catch {
+    return defaultLanguage
+  }
 }
 
 const imageItem = (name: string): GalleryItem => ({ kind: 'image', name })
@@ -320,7 +332,7 @@ const getPageFromHash = (): Page => {
 }
 
 function App() {
-  const [language, setLanguage] = useState<Language>('no')
+  const [language, setLanguage] = useState<Language>(() => getStoredLanguage())
   const [page, setPage] = useState<Page>(() => getPageFromHash())
   const [isAboutOpen, setIsAboutOpen] = useState(false)
   const [isContactOpen, setIsContactOpen] = useState(false)
@@ -334,6 +346,41 @@ function App() {
   const text = translations[language]
   const activeGalleryItems = activeGalleryImage ? galleryItemsByType[activeGalleryImage.type] : []
   const activeGalleryItem = activeGalleryImage ? activeGalleryItems[activeGalleryImage.index] : null
+  const aboutDialogRef = useRef<HTMLDialogElement>(null)
+  const contactDialogRef = useRef<HTMLDialogElement>(null)
+  const lightboxDialogRef = useRef<HTMLDialogElement>(null)
+  const lastFocusedElement = useRef<HTMLElement | null>(null)
+
+  const rememberFocus = useCallback(() => {
+    lastFocusedElement.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
+  }, [])
+
+  const restoreFocus = useCallback(() => {
+    lastFocusedElement.current?.focus()
+    lastFocusedElement.current = null
+  }, [])
+
+  const openAbout = useCallback(() => {
+    rememberFocus()
+    setIsAboutOpen(true)
+  }, [rememberFocus])
+
+  const closeAbout = useCallback(() => {
+    setIsAboutOpen(false)
+  }, [])
+
+  const closeContact = useCallback(() => {
+    setIsContactOpen(false)
+  }, [])
+
+  const openGalleryImage = useCallback((galleryImage: Exclude<ActiveGalleryImage, null>) => {
+    rememberFocus()
+    setActiveGalleryImage(galleryImage)
+  }, [rememberFocus])
+
+  const closeGalleryImage = useCallback(() => {
+    setActiveGalleryImage(null)
+  }, [])
 
   useEffect(() => {
     Object.values(seasonBackgrounds).forEach((source) => {
@@ -341,6 +388,55 @@ function App() {
       image.src = source
     })
   }, [])
+
+  useEffect(() => {
+    document.documentElement.lang = language
+
+    try {
+      window.localStorage.setItem(languageStorageKey, language)
+    } catch {
+      // Ignore storage failures so language switching still works in private contexts.
+    }
+  }, [language])
+
+  useEffect(() => {
+    if (!isAboutOpen && !isContactOpen && activeGalleryImage === null) {
+      restoreFocus()
+    }
+  }, [activeGalleryImage, isAboutOpen, isContactOpen, restoreFocus])
+
+  useEffect(() => {
+    const dialog = aboutDialogRef.current
+    if (!dialog) {
+      return
+    }
+
+    if (!dialog.open) {
+      dialog.showModal()
+    }
+  }, [isAboutOpen])
+
+  useEffect(() => {
+    const dialog = contactDialogRef.current
+    if (!dialog) {
+      return
+    }
+
+    if (!dialog.open) {
+      dialog.showModal()
+    }
+  }, [isContactOpen])
+
+  useEffect(() => {
+    const dialog = lightboxDialogRef.current
+    if (!dialog) {
+      return
+    }
+
+    if (!dialog.open) {
+      dialog.showModal()
+    }
+  }, [activeGalleryImage, closeGalleryImage])
 
   // Håndter bakgrunns-fade ved scrolling
   useEffect(() => {
@@ -387,7 +483,7 @@ function App() {
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setActiveGalleryImage(null)
+        closeGalleryImage()
       }
 
       if (event.key === 'ArrowLeft') {
@@ -417,7 +513,7 @@ function App() {
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [activeGalleryImage])
+  }, [activeGalleryImage, closeGalleryImage])
 
   const showPreviousGalleryImage = () => {
     setActiveGalleryImage((current) =>
@@ -564,6 +660,7 @@ function App() {
       return
     }
 
+    rememberFocus()
     setContactFormStatus('idle')
     setIsContactOpen(true)
   }
@@ -640,7 +737,7 @@ function App() {
           type="button"
           aria-label={text.about.triggerAriaLabel}
           title={text.about.triggerTitle}
-          onClick={() => setIsAboutOpen(true)}
+          onClick={openAbout}
         >
           ?
         </button>
@@ -709,6 +806,7 @@ function App() {
             <section className="season-choices" aria-label={text.chooseSeason}>
               <button
                 className="season-choice season-choice--winter"
+                aria-label={text.seasons.winter}
                 type="button"
                 onClick={() => navigateTo('winter')}
               >
@@ -717,6 +815,7 @@ function App() {
 
               <button
                 className="season-choice season-choice--summer"
+                aria-label={text.seasons.summer}
                 type="button"
                 onClick={() => navigateTo('summer')}
               >
@@ -807,8 +906,8 @@ function App() {
                           key={galleryItem.name}
                           className="season-image-grid__item"
                           type="button"
-                          aria-label={`Vis sommerbilde ${galleryIndex + 1}`}
-                          onClick={() => setActiveGalleryImage({ type: 'summer', index: galleryIndex })}
+                          aria-label={text.gallery.summerImage(galleryIndex + 1)}
+                          onClick={() => openGalleryImage({ type: 'summer', index: galleryIndex })}
                         >
                           <img
                             src={publicAssetPath(`images/web/${galleryItem.source ?? 'summer'}/${galleryItem.name}.webp`)}
@@ -915,8 +1014,12 @@ function App() {
                           key={galleryItem.name}
                           className={`season-image-grid__item${galleryItem.kind === 'video' ? ' season-image-grid__item--video' : ''}`}
                           type="button"
-                          aria-label={`Vis ${galleryItem.kind === 'video' ? 'vintervideo' : 'vinterbilde'} ${galleryIndex + 1}`}
-                          onClick={() => setActiveGalleryImage({ type: 'winter', index: galleryIndex })}
+                          aria-label={
+                            galleryItem.kind === 'video'
+                              ? text.gallery.winterVideo(galleryIndex + 1)
+                              : text.gallery.winterImage(galleryIndex + 1)
+                          }
+                          onClick={() => openGalleryImage({ type: 'winter', index: galleryIndex })}
                         >
                           {galleryItem.kind === 'video' ? (
                             <>
@@ -997,12 +1100,17 @@ function App() {
       )}
 
       {isAboutOpen && (
-        <dialog className="about-modal" aria-labelledby="about-modal-title" open>
+        <dialog
+          ref={aboutDialogRef}
+          className="about-modal"
+          aria-labelledby="about-modal-title"
+          onCancel={closeAbout}
+        >
           <button
             className="contact-modal__backdrop"
             type="button"
             aria-label={text.contactForm.close}
-            onClick={() => setIsAboutOpen(false)}
+            onClick={closeAbout}
           />
 
           <section className="about-popover">
@@ -1018,7 +1126,7 @@ function App() {
               className="contact-form__close"
               type="button"
               aria-label={text.contactForm.close}
-              onClick={() => setIsAboutOpen(false)}
+              onClick={closeAbout}
             >
               ×
             </button>
@@ -1056,12 +1164,17 @@ function App() {
       )}
 
       {isContactOpen && (
-        <dialog className="contact-modal" aria-label={text.contactForm.title} open>
+        <dialog
+          ref={contactDialogRef}
+          className="contact-modal"
+          aria-label={text.contactForm.title}
+          onCancel={closeContact}
+        >
           <button
             className="contact-modal__backdrop"
             type="button"
             aria-label={text.contactForm.close}
-            onClick={() => setIsContactOpen(false)}
+            onClick={closeContact}
           />
 
           <form
@@ -1075,7 +1188,7 @@ function App() {
               src={publicAssetPath('images/breathe-senja-logo.png')}
               alt=""
             />
-            <input type="hidden" name="_subject" value="Ny melding fra Breathe Senja" />
+            <input type="hidden" name="_subject" value={text.contactSubject} />
             <input
               className="contact-form__trap"
               type="text"
@@ -1091,7 +1204,7 @@ function App() {
               className="contact-form__close"
               type="button"
               aria-label={text.contactForm.close}
-              onClick={() => setIsContactOpen(false)}
+              onClick={closeContact}
             >
               ×
             </button>
@@ -1138,27 +1251,32 @@ function App() {
       )}
 
       {activeGalleryImage && activeGalleryItem && (
-        <dialog className="image-lightbox" aria-label={activeGalleryItem.kind === 'video' ? 'Video' : 'Bilde'} open>
+        <dialog
+          ref={lightboxDialogRef}
+          className="image-lightbox"
+          aria-label={activeGalleryItem.kind === 'video' ? text.gallery.video : text.gallery.image}
+          onCancel={closeGalleryImage}
+        >
           <button
             className="image-lightbox__backdrop"
             type="button"
-            aria-label={activeGalleryItem.kind === 'video' ? 'Lukk video' : 'Lukk bilde'}
-            onClick={() => setActiveGalleryImage(null)}
+            aria-label={activeGalleryItem.kind === 'video' ? text.gallery.closeVideo : text.gallery.closeImage}
+            onClick={closeGalleryImage}
           />
 
           <div className="image-lightbox__content">
             <button
               className="image-lightbox__close"
               type="button"
-              aria-label={activeGalleryItem.kind === 'video' ? 'Lukk video' : 'Lukk bilde'}
-              onClick={() => setActiveGalleryImage(null)}
+              aria-label={activeGalleryItem.kind === 'video' ? text.gallery.closeVideo : text.gallery.closeImage}
+              onClick={closeGalleryImage}
             >
               ×
             </button>
             <button
               className="image-lightbox__nav image-lightbox__nav--prev"
               type="button"
-              aria-label="Forrige bilde"
+              aria-label={text.gallery.previous}
               onClick={showPreviousGalleryImage}
             >
               ‹
@@ -1179,7 +1297,7 @@ function App() {
             <button
               className="image-lightbox__nav image-lightbox__nav--next"
               type="button"
-              aria-label="Neste bilde"
+              aria-label={text.gallery.next}
               onClick={showNextGalleryImage}
             >
               ›
